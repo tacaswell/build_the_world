@@ -1,0 +1,1349 @@
+function: main_build
+kind: source_install
+name: wheel
+proj_name: wheel
+project:
+  name: wheel
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: wheel
+    ssh_user: git
+    url: git@github.com:pypa/wheel.git
+    user: pypa
+    vc: git
+---
+args: install  black flake8
+kind: pip
+---
+args: install  setuptools<60'
+kind: pip
+---
+function: main_build
+kind: source_install
+name: pybind11
+proj_name: pybind11
+project:
+  name: pybind11
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: pybind11
+    ssh_user: git
+    url: git@github.com:pybind/pybind11.git
+    user: pybind
+    vc: git
+---
+function: cython_build
+kind: source_install
+name: cython
+proj_name: cython
+project:
+  name: cython
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: cython
+    ssh_user: git
+    url: git@github.com:cython/cython.git
+    user: cython
+    vc: git
+---
+function: numpy_build
+kind: source_install
+name: numpy
+proj_name: numpy
+project:
+  name: numpy
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: numpy
+    ssh_user: git
+    url: git@github.com:numpy/numpy.git
+    user: numpy
+    vc: git
+---
+function: main_build
+kind: source_install
+name: pythran
+proj_name: pythran
+project:
+  name: pythran
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: pythran
+    ssh_user: git
+    url: git@github.com:serge-sans-paille/pythran.git
+    user: serge-sans-paille
+    vc: git
+---
+function: main_build
+kind: source_install
+name: scipy
+proj_name: scipy
+project:
+  name: scipy
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: scipy
+    ssh_user: git
+    url: git@github.com:scipy/scipy.git
+    user: scipy
+    vc: git
+---
+args: install  pkgconfig six
+kind: pip
+---
+function: main_build
+kind: source_install
+name: h5py
+proj_name: h5py
+project:
+  name: h5py
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: h5py
+    ssh_user: git
+    url: git@github.com:h5py/h5py.git
+    user: h5py
+    vc: git
+---
+function: main_build
+kind: source_install
+name: pexpect
+proj_name: pexpect
+project:
+  name: pexpect
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: pexpect
+    ssh_user: git
+    url: git@github.com:pexpect/pexpect.git
+    user: pexpect
+    vc: git
+---
+function: main_build
+kind: source_install
+name: parso
+proj_name: parso
+project:
+  name: parso
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: parso
+    ssh_user: git
+    url: git@github.com:davidhalter/parso.git
+    user: davidhalter
+    vc: git
+---
+args: install --no-build-isolation  --use-feature=in-tree-build packaging
+kind: pip
+---
+function: pull_build
+kind: source_install
+name: pyzmq
+proj_name: pyzmq
+project:
+  name: pyzmq
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: pyzmq
+    ssh_user: git
+    url: git@github.com:zeromq/pyzmq.git
+    user: zeromq
+    vc: git
+---
+function: main_build
+kind: source_install
+name: jedi
+proj_name: jedi
+project:
+  name: jedi
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: jedi
+    ssh_user: git
+    url: git@github.com:davidhalter/jedi.git
+    user: davidhalter
+    vc: git
+---
+function: main_build
+kind: source_install
+name: IPython
+proj_name: IPython
+project:
+  name: IPython
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: IPython
+    ssh_user: git
+    url: git@github.com:IPython/IPython.git
+    user: IPython
+    vc: git
+---
+function: main_build
+kind: source_install
+name: nbformat
+proj_name: nbformat
+project:
+  name: nbformat
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: nbformat
+    ssh_user: git
+    url: git@github.com:jupyter/nbformat.git
+    user: jupyter
+    vc: git
+---
+function: main_build
+kind: source_install
+name: nbconvert
+proj_name: nbconvert
+project:
+  name: nbconvert
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: nbconvert
+    ssh_user: git
+    url: git@github.com:jupyter/nbconvert.git
+    user: jupyter
+    vc: git
+---
+function: main_build
+kind: source_install
+name: certifi
+proj_name: python-certifi
+project:
+  name: python-certifi
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: python-certifi
+    ssh_user: git
+    url: git@github.com:certifi/python-certifi.git
+    user: certifi
+    vc: git
+---
+function: pull_build
+kind: source_install
+name: matplotlib
+proj_name: matplotlib
+project:
+  name: matplotlib
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: matplotlib
+    ssh_user: git
+    url: git@github.com:matplotlib/matplotlib.git
+    user: matplotlib
+    vc: git
+---
+function: pandas_build
+kind: source_install
+name: pandas
+proj_name: pandas
+project:
+  name: pandas
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: pandas
+    ssh_user: git
+    url: git@github.com:pandas-dev/pandas.git
+    user: pandas-dev
+    vc: git
+---
+function: main_build
+kind: source_install
+name: networkx
+proj_name: networkx
+project:
+  name: networkx
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: networkx
+    ssh_user: git
+    url: git@github.com:networkx/networkx.git
+    user: networkx
+    vc: git
+---
+function: pull_build
+kind: source_install
+name: toolz
+proj_name: toolz
+project:
+  name: toolz
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: toolz
+    ssh_user: git
+    url: git@github.com:pytoolz/toolz.git
+    user: pytoolz
+    vc: git
+---
+function: main_build
+kind: source_install
+name: pyyaml
+proj_name: pyyaml
+project:
+  name: pyyaml
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: pyyaml
+    ssh_user: git
+    url: git@github.com:yaml/pyyaml.git
+    user: yaml
+    vc: git
+---
+function: main_build
+kind: source_install
+name: lxml
+proj_name: lxml
+project:
+  name: lxml
+  primary_remote:
+    host: github.com
+    protocol: https
+    repo_name: lxml
+    ssh_user: null
+    url: https://github.com/lxml/lxml.git
+    user: lxml
+    vc: git
+---
+args: install  pygraphviz pydot pyyaml
+kind: pip
+---
+function: main_build
+kind: source_install
+name: pytest
+proj_name: pytest
+project:
+  name: pytest
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: pytest
+    ssh_user: git
+    url: git@github.com:pytest-dev/pytest.git
+    user: pytest-dev
+    vc: git
+---
+function: main_build
+kind: source_install
+name: sphinx
+proj_name: sphinx
+project:
+  name: sphinx
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: sphinx
+    ssh_user: git
+    url: git@github.com:sphinx-doc/sphinx.git
+    user: sphinx-doc
+    vc: git
+---
+args: "install flake8>=3.8 pydocstyle>=5.1.0 flake8-docstrings>=1.4.0 certifi coverage<6.3 pytest!=4.6.0,!=5.4.0 pytest-cov pytest-rerunfailures pytest-timeout pytest-xdist python-dateutil tornado"
+kind: pip
+---
+args: "install colorspacious ipywidgets numpydoc>=0.8 pydata-sphinx-theme>=0.8.0 mpl-sphinx-theme sphinxcontrib-svg2pdfconverter>=1.1.0 sphinx-gallery>=0.10 sphinx-copybutton sphinx-panels"
+kind: pip
+---
+args: install coverage<6.3
+kind: pip
+---
+args: uninstall flake8-per-file-ignores
+kind: pip
+---
+args: install  jupyter_packaging
+kind: pip
+---
+function: pull_build
+kind: source_install
+name: jupyterlab
+proj_name: jupyterlab
+project:
+  name: jupyterlab
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: jupyterlab
+    ssh_user: git
+    url: git@github.com:jupyterlab/jupyterlab.git
+    user: jupyterlab
+    vc: git
+---
+function: main_build
+kind: source_install
+name: dask
+proj_name: dask
+project:
+  name: dask
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: dask
+    ssh_user: git
+    url: git@github.com:dask/dask.git
+    user: dask
+    vc: git
+---
+function: main_build
+kind: source_install
+name: distributed
+proj_name: distributed
+project:
+  name: distributed
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: distributed
+    ssh_user: git
+    url: git@github.com:dask/distributed.git
+    user: dask
+    vc: git
+---
+function: main_build
+kind: source_install
+name: pywt
+proj_name: pywt
+project:
+  name: pywt
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: pywt
+    ssh_user: git
+    url: git@github.com:PyWavelets/pywt.git
+    user: PyWavelets
+    vc: git
+---
+function: imagecodecs_build
+kind: source_install
+name: tac_hack
+proj_name: imagecodecs
+project:
+  name: imagecodecs
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: imagecodecs
+    ssh_user: git
+    url: git@github.com:cgohlke/imagecodecs.git
+    user: cgohlke
+    vc: git
+vc: none
+---
+function: pull_build
+kind: source_install
+name: scikit-image
+proj_name: scikit-image
+project:
+  name: scikit-image
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: scikit-image
+    ssh_user: git
+    url: git@github.com:scikit-image/scikit-image.git
+    user: scikit-image
+    vc: git
+---
+function: main_build
+kind: source_install
+name: uritemplate
+proj_name: uritemplate
+project:
+  name: uritemplate
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: uritemplate
+    ssh_user: git
+    url: git@github.com:python-hyper/uritemplate.git
+    user: python-hyper
+    vc: git
+---
+function: sip_build
+kind: source_install
+name: sip
+proj_name: sip
+project:
+  name: sip
+  primary_remote:
+    host: www.riverbankcomputing.com
+    protocol: https
+    repo_name: sip
+    ssh_user: null
+    url: https://www.riverbankcomputing.com/hg/sip
+    user: null
+    vc: hg
+vc: hg
+---
+args: install  pyqt5
+kind: pip
+---
+args: install  --index-url https://riverbankcomputing.com/pypi/simple/ --pre --upgrade
+  PyQt6
+kind: pip
+---
+function: build_cffi
+kind: source_install
+name: cffi
+proj_name: cffi
+project:
+  name: cffi
+  primary_remote:
+    host: foss.heptapod.net
+    protocol: https
+    repo_name: cffi
+    ssh_user: null
+    url: https://foss.heptapod.net/pypy/cffi
+    user: pypy
+    vc: hg
+vc: hg
+---
+args: install  pytest pytest-xdist curio asv pytest_benchmark trio coverage qtpy twine
+  beautifulsoup4 typing-extensions
+kind: pip
+---
+function: build_yarl
+kind: source_install
+kwargs:
+  name: yarl
+name: yarl
+proj_name: yarl
+project:
+  name: yarl
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: yarl
+    ssh_user: git
+    url: git@github.com:aio-libs/yarl.git
+    user: aio-libs
+    vc: git
+---
+function: build_yarl
+kind: source_install
+kwargs:
+  name: frozenlist
+name: frozenlist
+proj_name: frozenlist
+project:
+  name: frozenlist
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: frozenlist
+    ssh_user: git
+    url: git@github.com:aio-libs/frozenlist.git
+    user: aio-libs
+    vc: git
+---
+function: build_aiohttp
+kind: source_install
+name: aiohttp
+proj_name: aiohttp
+project:
+  name: aiohttp
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: aiohttp
+    ssh_user: git
+    url: git@github.com:aio-libs/aiohttp.git
+    user: aio-libs
+    vc: git
+---
+function: main_build
+kind: source_install
+name: cytoolz
+proj_name: cytoolz
+project:
+  name: cytoolz
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: cytoolz
+    ssh_user: git
+    url: git@github.com:pytoolz/cytoolz.git
+    user: pytoolz
+    vc: git
+---
+function: main_build
+kind: source_install
+name: intake
+proj_name: intake
+project:
+  name: intake
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: intake
+    ssh_user: git
+    url: git@github.com:intake/intake.git
+    user: intake
+    vc: git
+---
+function: pull_build
+kind: source_install
+name: historydict
+proj_name: historydict
+project:
+  name: historydict
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: historydict
+    ssh_user: git
+    url: git@github.com:Nikea/historydict.git
+    user: Nikea
+    vc: git
+---
+function: numcodecs_build
+kind: source_install
+name: numcodecs
+proj_name: numcodecs
+project:
+  name: numcodecs
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: numcodecs
+    ssh_user: git
+    url: git@github.com:zarr-developers/numcodecs.git
+    user: zarr-developers
+    vc: git
+---
+args: install --no-build-isolation  --use-feature=in-tree-build   cftime
+kind: pip
+---
+function: pycurl_build
+kind: source_install
+name: pycurl
+proj_name: pycurl
+project:
+  name: pycurl
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: pycurl
+    ssh_user: git
+    url: git@github.com:pycurl/pycurl.git
+    user: pycurl
+    vc: git
+---
+function: pull_build
+kind: source_install
+name: ophyd
+proj_name: ophyd
+project:
+  name: ophyd
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: ophyd
+    ssh_user: git
+    url: git@github.com:bluesky/ophyd.git
+    user: bluesky
+    vc: git
+---
+function: pull_build
+kind: source_install
+name: event-model
+proj_name: event-model
+project:
+  name: event-model
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: event-model
+    ssh_user: git
+    url: git@github.com:bluesky/event-model.git
+    user: bluesky
+    vc: git
+---
+function: pull_build
+kind: source_install
+name: area-detector-handlers
+proj_name: area-detector-handlers
+project:
+  name: area-detector-handlers
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: area-detector-handlers
+    ssh_user: git
+    url: git@github.com:bluesky/area-detector-handlers.git
+    user: bluesky
+    vc: git
+---
+function: pull_build
+kind: source_install
+name: bluesky
+proj_name: bluesky
+project:
+  name: bluesky
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: bluesky
+    ssh_user: git
+    url: git@github.com:bluesky/bluesky.git
+    user: bluesky
+    vc: git
+---
+function: pull_build
+kind: source_install
+name: databroker
+proj_name: databroker
+project:
+  name: databroker
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: databroker
+    ssh_user: git
+    url: git@github.com:bluesky/databroker.git
+    user: bluesky
+    vc: git
+---
+function: pull_build
+kind: source_install
+name: bluesky-darkframes
+proj_name: bluesky-darkframes
+project:
+  name: bluesky-darkframes
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: bluesky-darkframes
+    ssh_user: git
+    url: git@github.com:bluesky/bluesky-darkframes.git
+    user: bluesky
+    vc: git
+---
+function: pull_build
+kind: source_install
+name: bluesky-mpl
+proj_name: bluesky-mpl
+project:
+  name: bluesky-mpl
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: bluesky-mpl
+    ssh_user: git
+    url: git@github.com:bluesky/bluesky-mpl.git
+    user: bluesky
+    vc: git
+---
+function: pull_build
+kind: source_install
+name: bluesky-queueserver
+proj_name: bluesky-queueserver
+project:
+  name: bluesky-queueserver
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: bluesky-queueserver
+    ssh_user: git
+    url: git@github.com:bluesky/bluesky-queueserver.git
+    user: bluesky
+    vc: git
+---
+function: pull_build
+kind: source_install
+name: bluesky-spreadsheet
+proj_name: bluesky-spreadsheet
+project:
+  name: bluesky-spreadsheet
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: bluesky-spreadsheet
+    ssh_user: git
+    url: git@github.com:bluesky/bluesky-spreadsheet.git
+    user: bluesky
+    vc: git
+---
+function: pull_build
+kind: source_install
+name: bluesky-ui
+proj_name: bluesky-ui
+project:
+  name: bluesky-ui
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: bluesky-ui
+    ssh_user: git
+    url: git@github.com:bluesky/bluesky-ui.git
+    user: bluesky
+    vc: git
+---
+function: pull_build
+kind: source_install
+name: happi
+proj_name: happi
+project:
+  name: happi
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: happi
+    ssh_user: git
+    url: git@github.com:pcdshub/happi.git
+    user: pcdshub
+    vc: git
+---
+function: pull_build
+kind: source_install
+name: suitcase-utils
+proj_name: suitcase-utils
+project:
+  name: suitcase-utils
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: suitcase-utils
+    ssh_user: git
+    url: git@github.com:bluesky/suitcase-utils.git
+    user: bluesky
+    vc: git
+---
+function: pull_build
+kind: source_install
+name: suitcase-csv
+proj_name: suitcase-csv
+project:
+  name: suitcase-csv
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: suitcase-csv
+    ssh_user: git
+    url: git@github.com:bluesky/suitcase-csv.git
+    user: bluesky
+    vc: git
+---
+function: pull_build
+kind: source_install
+name: suitcase-dataexchange
+proj_name: suitcase-dataexchange
+project:
+  name: suitcase-dataexchange
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: suitcase-dataexchange
+    ssh_user: git
+    url: git@github.com:bluesky/suitcase-dataexchange.git
+    user: bluesky
+    vc: git
+---
+function: pull_build
+kind: source_install
+name: suitcase-jsonl
+proj_name: suitcase-jsonl
+project:
+  name: suitcase-jsonl
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: suitcase-jsonl
+    ssh_user: git
+    url: git@github.com:bluesky/suitcase-jsonl.git
+    user: bluesky
+    vc: git
+---
+function: pull_build
+kind: source_install
+name: suitcase-json-metadata
+proj_name: suitcase-json-metadata
+project:
+  name: suitcase-json-metadata
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: suitcase-json-metadata
+    ssh_user: git
+    url: git@github.com:bluesky/suitcase-json-metadata.git
+    user: bluesky
+    vc: git
+---
+function: pull_build
+kind: source_install
+name: suitcase-mongo
+proj_name: suitcase-mongo
+project:
+  name: suitcase-mongo
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: suitcase-mongo
+    ssh_user: git
+    url: git@github.com:bluesky/suitcase-mongo.git
+    user: bluesky
+    vc: git
+---
+function: pull_build
+kind: source_install
+name: suitcase-msgpack
+proj_name: suitcase-msgpack
+project:
+  name: suitcase-msgpack
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: suitcase-msgpack
+    ssh_user: git
+    url: git@github.com:bluesky/suitcase-msgpack.git
+    user: bluesky
+    vc: git
+---
+function: pull_build
+kind: source_install
+name: suitcase-nxstxm
+proj_name: suitcase-nxstxm
+project:
+  name: suitcase-nxstxm
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: suitcase-nxstxm
+    ssh_user: git
+    url: git@github.com:bluesky/suitcase-nxstxm.git
+    user: bluesky
+    vc: git
+---
+function: suitcaseserver_build
+kind: source_install
+name: suitcase-server
+proj_name: suitcase-server
+project:
+  name: suitcase-server
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: suitcase-server
+    ssh_user: git
+    url: git@github.com:bluesky/suitcase-server.git
+    user: bluesky
+    vc: git
+---
+function: pull_build
+kind: source_install
+name: suitcase-specfile
+proj_name: suitcase-specfile
+project:
+  name: suitcase-specfile
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: suitcase-specfile
+    ssh_user: git
+    url: git@github.com:bluesky/suitcase-specfile.git
+    user: bluesky
+    vc: git
+---
+function: pull_build
+kind: source_install
+name: suitcase-tiff
+proj_name: suitcase-tiff
+project:
+  name: suitcase-tiff
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: suitcase-tiff
+    ssh_user: git
+    url: git@github.com:bluesky/suitcase-tiff.git
+    user: bluesky
+    vc: git
+---
+function: pull_build
+kind: source_install
+name: suitcase-zarr
+proj_name: suitcase-zarr
+project:
+  name: suitcase-zarr
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: suitcase-zarr
+    ssh_user: git
+    url: git@github.com:bluesky/suitcase-zarr.git
+    user: bluesky
+    vc: git
+---
+function: pull_build
+kind: source_install
+name: hklpy
+proj_name: hklpy
+project:
+  name: hklpy
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: hklpy
+    ssh_user: git
+    url: git@github.com:bluesky/hklpy.git
+    user: bluesky
+    vc: git
+---
+function: pull_build
+kind: source_install
+name: nsls2-detector-handlers
+proj_name: nsls2-detector-handlers
+project:
+  name: nsls2-detector-handlers
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: nsls2-detector-handlers
+    ssh_user: git
+    url: git@github.com:bluesky/nsls2-detector-handlers.git
+    user: bluesky
+    vc: git
+---
+function: pull_build
+kind: source_install
+name: databroker-pack
+proj_name: databroker-pack
+project:
+  name: databroker-pack
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: databroker-pack
+    ssh_user: git
+    url: git@github.com:bluesky/databroker-pack.git
+    user: bluesky
+    vc: git
+---
+function: pull_build
+kind: source_install
+name: pyqtgraph
+proj_name: pyqtgraph
+project:
+  name: pyqtgraph
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: pyqtgraph
+    ssh_user: git
+    url: git@github.com:pyqtgraph/pyqtgraph.git
+    user: pyqtgraph
+    vc: git
+---
+function: pull_build
+kind: source_install
+name: caproto
+proj_name: caproto
+project:
+  name: caproto
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: caproto
+    ssh_user: git
+    url: git@github.com:NSLS-II/caproto.git
+    user: NSLS-II
+    vc: git
+---
+function: pull_build
+kind: source_install
+name: bcsio
+proj_name: bcsio
+project:
+  name: bcsio
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: bcsio
+    ssh_user: git
+    url: git@github.com:NSLS-II/bcsio.git
+    user: NSLS-II
+    vc: git
+---
+function: pull_build
+kind: source_install
+name: cantrips
+proj_name: cantrips
+project:
+  name: cantrips
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: cantrips
+    ssh_user: git
+    url: git@github.com:NSLS-II/cantrips.git
+    user: NSLS-II
+    vc: git
+---
+function: pull_build
+kind: source_install
+name: nslsii
+proj_name: nslsii
+project:
+  name: nslsii
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: nslsii
+    ssh_user: git
+    url: git@github.com:NSLS-II/nslsii.git
+    user: NSLS-II
+    vc: git
+---
+function: pull_build
+kind: source_install
+name: mily
+proj_name: mily
+project:
+  name: mily
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: mily
+    ssh_user: git
+    url: git@github.com:NSLS-II/mily.git
+    user: NSLS-II
+    vc: git
+---
+function: awkward_build
+kind: source_install
+name: awkward
+proj_name: awkward-1.0
+project:
+  name: awkward-1.0
+  primary_remote:
+    host: github.com
+    protocol: https
+    repo_name: awkward-1.0
+    ssh_user: null
+    url: https://github.com/scikit-hep/awkward-1.0.git
+    user: scikit-hep
+    vc: git
+---
+function: main_build
+kind: source_install
+name: fabio
+proj_name: fabio
+project:
+  name: fabio
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: fabio
+    ssh_user: git
+    url: git@github.com:silx-kit/fabio.git
+    user: silx-kit
+    vc: git
+---
+args: install  yapsy signalslot virtualenv requests appdirs
+kind: pip
+---
+function: main_build
+kind: source_install
+name: numexpr
+proj_name: numexpr
+project:
+  name: numexpr
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: numexpr
+    ssh_user: git
+    url: git@github.com:pydata/numexpr.git
+    user: pydata
+    vc: git
+---
+function: main_build
+kind: source_install
+name: silx
+proj_name: silx
+project:
+  name: silx
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: silx
+    ssh_user: git
+    url: git@github.com:silx-kit/silx.git
+    user: silx-kit
+    vc: git
+---
+function: pull_build
+kind: source_install
+name: pyFAI
+proj_name: pyFAI
+project:
+  name: pyFAI
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: pyFAI
+    ssh_user: git
+    url: git@github.com:silx-kit/pyFAI.git
+    user: silx-kit
+    vc: git
+---
+function: main_build
+kind: source_install
+name: typed_ast
+proj_name: typed_ast
+project:
+  name: typed_ast
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: typed_ast
+    ssh_user: git
+    url: git@github.com:python/typed_ast.git
+    user: python
+    vc: git
+---
+args: install  extension_helpers
+kind: pip
+---
+function: main_build
+kind: source_install
+name: pyerfa
+proj_name: pyerfa
+project:
+  name: pyerfa
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: pyerfa
+    ssh_user: git
+    url: git@github.com:liberfa/pyerfa.git
+    user: liberfa
+    vc: git
+---
+function: main_build
+kind: source_install
+name: astropy
+proj_name: astropy
+project:
+  name: astropy
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: astropy
+    ssh_user: git
+    url: git@github.com:astropy/astropy.git
+    user: astropy
+    vc: git
+---
+function: main_build
+kind: source_install
+name: greenlet
+proj_name: greenlet
+project:
+  name: greenlet
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: greenlet
+    ssh_user: git
+    url: git@github.com:python-greenlet/greenlet.git
+    user: python-greenlet
+    vc: git
+---
+args: install --no-build-isolation  --use-feature=in-tree-build pyca
+kind: pip
+---
+function: main_build
+kind: source_install
+name: pims
+proj_name: pims
+project:
+  name: pims
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: pims
+    ssh_user: git
+    url: git@github.com:soft-matter/pims.git
+    user: soft-matter
+    vc: git
+---
+function: main_build
+kind: source_install
+kwargs:
+  upstream_branch: develop
+name: wrapt
+proj_name: wrapt
+project:
+  name: wrapt
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: wrapt
+    ssh_user: git
+    url: git@github.com:GrahamDumpleton/wrapt.git
+    user: GrahamDumpleton
+    vc: git
+---
+args: 'install --no-build-isolation  --use-feature=in-tree-build  ujson pymongo black
+  sphinx_rtd_theme dpkt netifaces openpyxl '
+kind: pip
+---
+args: 'install --no-build-isolation  --use-feature=in-tree-build  vcrpy httpie pydocstyle
+  cookiecutter pytest-instafail httpx tzlocal doct boltons xarray pydata-sphinx-theme    '
+kind: pip
+---
+args: install --no-build-isolation  --use-feature=in-tree-build  jupyterlab-git jupyterlab-spellchecker
+  myst_parser
+kind: pip
+---
+args: uninstall -y pyepics
+kind: pip
+name: remove pyepics
+---
+args: install  xcffib pytest-tornasync
+kind: pip
+---
+args: install --no-cache-dir cairocffi
+kind: pip
+---
+args: install --no-build-isolation  --use-feature=in-tree-build  pycairo
+kind: pip
+---
+function: main_build
+kind: source_install
+name: mplcairo
+proj_name: mplcairo
+project:
+  name: mplcairo
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: mplcairo
+    ssh_user: git
+    url: git@github.com:matplotlib/mplcairo.git
+    user: matplotlib
+    vc: git
+---
+args: install --no-build-isolation  --use-feature=in-tree-build pelican[markdown]
+kind: pip
