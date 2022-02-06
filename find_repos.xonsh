@@ -1,0 +1,207 @@
+from typing import Dict
+from collections import defaultdict
+from pathlib import Path
+import sys
+from dataclasses import dataclass, asdict
+
+import yaml
+
+from xonsh.dirstack import with_pushd
+from xonsh.tools import XonshCalledProcessError
+
+_, path = sys.argv
+
+
+def find_repos(path):
+    for candidate in !(find @(path) -type d -name '.git'):
+        candidate = candidate.strip()
+        yield Path(candidate).resolve().parent
+
+
+
+def get_repo_remotes(repo):
+    """Given a path to a repository,
+    """
+    remotes = defaultdict(dict)
+
+    with with_pushd(repo):
+        for remote in !(git remote -v).itercheck():
+            name, _, rest = remote.strip().partition('\t')
+            url, _, direction = rest.partition(' (')
+            direction = direction[:-1]
+            remotes[name][direction] = url
+
+    return dict(remotes)
+
+def get_work_trees(repo):
+    with with_pushd(repo):
+        primary, *worktrees = [Path(_.split()[0]) for _ in !(git worktree list).itercheck()]
+
+    return primary, worktrees
+
+@dataclass
+class Remote:
+    url : str
+    protocol : str
+    host : str
+    user : str | None
+    repo_name : str | None
+    ssh_user : str | None=None
+
+@dataclass
+class Project:
+    name : str
+    primary_remote : Remote
+    remotes : Dict[str, Remote]
+    local_checkout : str
+
+def strip_dotgit(repo_name):
+    return repo_name[:-4] if repo_name.endswith('.git') else repo_name
+
+
+def parse_name(git_url):
+    if git_url.startswith('git@'):
+        _, _, rest = git_url.partition('@')
+        host, _, rest = rest.partition(':')
+        parts = rest.split('/')
+        if len(parts) == 1:
+            user = None
+            repo_name, = parts
+        elif len(parts) == 2:
+            user, repo_name = parts
+        else:
+            user, *rest = parts
+            repo_name = '/'.join(rest)
+        return Remote(
+            url=git_url,
+            host=host,
+            user=user,
+            repo_name=strip_dotgit(repo_name),
+            ssh_user='git',
+            protocol='ssh'
+        )
+    elif git_url.startswith('git://'):
+        rest = git_url[len('git://'):]
+        parts = rest.split('/')
+        if len(parts) == 1:
+            raise ValueError(f"this should not happen {git_url} {parts}")
+        elif len(parts) == 2:
+            host, repo_name = parts
+            user = None
+        elif len(parts) == 3:
+            host, user, repo_name = parts
+        else:
+            host, user,  *rest = parts
+            repo_name = '/'.join(rest)
+        return Remote(
+            url=git_url,
+            host=host,
+            user=user,
+            repo_name=strip_dotgit(repo_name),
+            protocol='git'
+        )
+    elif git_url.startswith('ssh://') or git_url.startswith('ssh+git://') :
+        _, _, rest = git_url.partition(':')
+        rest = rest[2:]
+        if '@' in rest:
+            ssh_user, _, rest = git_url.partition('@')
+        else:
+            ssh_user = ${'USER'}
+        host, _, repo_name = rest.partition('/')
+        return Remote(
+            url=git_url,
+            host=host,
+            user=None,
+            repo_name=strip_dotgit(repo_name),
+            ssh_user=ssh_user,
+            protocol='ssh'
+        )
+    elif git_url.startswith('https://'):
+        rest = git_url[len('https://'):]
+        parts = rest.split('/')
+        if len(parts) >= 3:
+            host, user, *rest = parts
+            repo_name = '/'.join(rest)
+        elif len(parts) == 2:
+            host, repo_name = parts
+            user = None
+        elif len(parts) < 2:
+            raise ValueError(f"do not think this can happen {git_url} {parts}")
+        return Remote(
+            url=git_url,
+            host=host,
+            user=user,
+            repo_name=strip_dotgit(repo_name),
+            protocol='https'
+        )
+        return ('http')
+    elif '@' in git_url:
+        ssh_user, _, rest = git_url.partition('@')
+        host, _, rest = rest.partition(':')
+        user, _, repo_name = rest.partition('/')
+        return Remote(
+            url=git_url,
+            host=host,
+            user=user,
+            repo_name=strip_dotgit(repo_name),
+            ssh_user=ssh_user,
+            protocol='ssh'
+        )
+    elif git_url.startswith('/') or git_url.startswith('.'):
+        return Remote(
+            url=git_url,
+            host='localhost',
+            user=None,
+            repo_name=None,
+            protocol='file'
+        )
+    elif ':' in git_url:
+        host, _, repo_name = git_url.partition(':')
+        ssh_user = ${'USER'}
+        return Remote(
+            url=git_url,
+            host=host,
+            user=None,
+            repo_name=strip_dotgit(repo_name),
+            ssh_user=ssh_user,
+            protocol='ssh'
+        )
+    else:
+        raise ValueError(f"unknown scheme: {git_url}")
+
+
+print(sys.version_info)
+
+projects = []
+
+for repo_path in find_repos(path):
+    print(repo_path)
+    remotes = {}
+    for k, v in get_repo_remotes(repo_path).items():
+        print(f'\t{k}')
+        parsed = {
+            direction:  parse_name(url)
+            for direction, url in v.items()
+        }
+        assert len(parsed) == 2
+        assert parsed['fetch'] == parsed['push']
+        remotes[k] = parsed['push']
+    if not len(remotes):
+        continue
+    for k in ['upstream', 'origin']:
+        if k in remotes:
+            primary_remote = remotes[k]
+            break
+    else:
+        primary_remote = next(iter(remotes.values()))
+    projects.append(Project(
+        name=primary_remote.repo_name,
+        primary_remote=primary_remote,
+        remotes=remotes,
+        local_checkout=str(repo_path)
+        )
+    )
+
+
+with open('all_repos.yaml', 'w') as fout:
+    yaml.dump_all([asdict(_) for _ in projects], fout)
