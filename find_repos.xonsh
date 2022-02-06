@@ -116,11 +116,12 @@ def parse_git_name(git_url):
             host, user, *rest = parts
             repo_name = "/".join(rest)
         return Remote(
-            url=git_url,
+            url=f'git@{host}:{user}/{repo_name}',
             host=host,
             user=user,
             repo_name=strip_dotgit(repo_name),
-            protocol="git",
+            ssh_user='git',
+            protocol="ssh",
         )
     elif git_url.startswith("ssh://") or git_url.startswith("ssh+git://"):
         _, _, rest = git_url.partition(":")
