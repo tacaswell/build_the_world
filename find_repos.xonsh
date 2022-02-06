@@ -12,14 +12,20 @@ from xonsh.tools import XonshCalledProcessError
 _, path = sys.argv
 
 
-def find_repos(path):
+def find_git_repos(path):
     for candidate in !(find @(path) -type d -name '.git'):
         candidate = candidate.strip()
         yield Path(candidate).resolve().parent
 
 
+def find_hg_repos(path):
+    for candidate in !(find @(path) -type d -name '.hg'):
+        candidate = candidate.strip()
+        yield Path(candidate).resolve().parent
 
-def get_repo_remotes(repo):
+
+
+def get_git_remotes(repo):
     """Given a path to a repository,
     """
     remotes = defaultdict(dict)
@@ -39,50 +45,66 @@ def get_work_trees(repo):
 
     return primary, worktrees
 
+def get_hg_remotes(repo):
+    """Given a path to a repository,
+    """
+    remotes = {}
+
+    with with_pushd(repo):
+        for remote in !(hg paths).itercheck():
+            name, _, url = [_.strip() for _ in remote.strip().partition('=')]
+            remotes[name] = url
+
+    return dict(remotes)
+
+
 @dataclass
 class Remote:
-    url : str
-    protocol : str
-    host : str
-    user : str | None
-    repo_name : str | None
-    ssh_user : str | None=None
+    url: str
+    protocol: str
+    host: str
+    user: str | None
+    repo_name: str | None
+    ssh_user: str | None = None
+    vc: str = "git"
+
 
 @dataclass
 class Project:
-    name : str
-    primary_remote : Remote
-    remotes : Dict[str, Remote]
-    local_checkout : str
+    name: str
+    primary_remote: Remote
+    remotes: Dict[str, Remote]
+    local_checkout: str
+
 
 def strip_dotgit(repo_name):
-    return repo_name[:-4] if repo_name.endswith('.git') else repo_name
+    return repo_name[:-4] if repo_name.endswith(".git") else repo_name
 
 
-def parse_name(git_url):
-    if git_url.startswith('git@'):
-        _, _, rest = git_url.partition('@')
-        host, _, rest = rest.partition(':')
-        parts = rest.split('/')
+def parse_git_name(git_url):
+    if git_url.startswith("git@"):
+        _, _, rest = git_url.partition("@")
+        host, _, rest = rest.partition(":")
+        parts = rest.split("/")
         if len(parts) == 1:
             user = None
-            repo_name, = parts
+            (repo_name,) = parts
         elif len(parts) == 2:
             user, repo_name = parts
         else:
             user, *rest = parts
-            repo_name = '/'.join(rest)
+            repo_name = "/".join(rest)
         return Remote(
             url=git_url,
             host=host,
             user=user,
             repo_name=strip_dotgit(repo_name),
-            ssh_user='git',
-            protocol='ssh'
+            ssh_user="git",
+            protocol="ssh",
         )
-    elif git_url.startswith('git://'):
-        rest = git_url[len('git://'):]
-        parts = rest.split('/')
+    elif git_url.startswith("git://"):
+        rest = git_url[len("git://") :]
+        parts = rest.split("/")
         if len(parts) == 1:
             raise ValueError(f"this should not happen {git_url} {parts}")
         elif len(parts) == 2:
@@ -91,37 +113,37 @@ def parse_name(git_url):
         elif len(parts) == 3:
             host, user, repo_name = parts
         else:
-            host, user,  *rest = parts
-            repo_name = '/'.join(rest)
+            host, user, *rest = parts
+            repo_name = "/".join(rest)
         return Remote(
             url=git_url,
             host=host,
             user=user,
             repo_name=strip_dotgit(repo_name),
-            protocol='git'
+            protocol="git",
         )
-    elif git_url.startswith('ssh://') or git_url.startswith('ssh+git://') :
-        _, _, rest = git_url.partition(':')
+    elif git_url.startswith("ssh://") or git_url.startswith("ssh+git://"):
+        _, _, rest = git_url.partition(":")
         rest = rest[2:]
-        if '@' in rest:
-            ssh_user, _, rest = git_url.partition('@')
+        if "@" in rest:
+            ssh_user, _, rest = git_url.partition("@")
         else:
             ssh_user = ${'USER'}
-        host, _, repo_name = rest.partition('/')
+        host, _, repo_name = rest.partition("/")
         return Remote(
             url=git_url,
             host=host,
             user=None,
             repo_name=strip_dotgit(repo_name),
             ssh_user=ssh_user,
-            protocol='ssh'
+            protocol="ssh",
         )
-    elif git_url.startswith('https://'):
-        rest = git_url[len('https://'):]
-        parts = rest.split('/')
+    elif git_url.startswith("https://"):
+        rest = git_url[len("https://") :]
+        parts = rest.split("/")
         if len(parts) >= 3:
             host, user, *rest = parts
-            repo_name = '/'.join(rest)
+            repo_name = "/".join(rest)
         elif len(parts) == 2:
             host, repo_name = parts
             user = None
@@ -132,31 +154,27 @@ def parse_name(git_url):
             host=host,
             user=user,
             repo_name=strip_dotgit(repo_name),
-            protocol='https'
+            protocol="https",
         )
-        return ('http')
-    elif '@' in git_url:
-        ssh_user, _, rest = git_url.partition('@')
-        host, _, rest = rest.partition(':')
-        user, _, repo_name = rest.partition('/')
+        return "http"
+    elif "@" in git_url:
+        ssh_user, _, rest = git_url.partition("@")
+        host, _, rest = rest.partition(":")
+        user, _, repo_name = rest.partition("/")
         return Remote(
             url=git_url,
             host=host,
             user=user,
             repo_name=strip_dotgit(repo_name),
             ssh_user=ssh_user,
-            protocol='ssh'
+            protocol="ssh",
         )
-    elif git_url.startswith('/') or git_url.startswith('.'):
+    elif git_url.startswith("/") or git_url.startswith("."):
         return Remote(
-            url=git_url,
-            host='localhost',
-            user=None,
-            repo_name=None,
-            protocol='file'
+            url=git_url, host="localhost", user=None, repo_name=None, protocol="file"
         )
-    elif ':' in git_url:
-        host, _, repo_name = git_url.partition(':')
+    elif ":" in git_url:
+        host, _, repo_name = git_url.partition(":")
         ssh_user = ${'USER'}
         return Remote(
             url=git_url,
@@ -164,44 +182,117 @@ def parse_name(git_url):
             user=None,
             repo_name=strip_dotgit(repo_name),
             ssh_user=ssh_user,
-            protocol='ssh'
+            protocol="ssh",
         )
     else:
         raise ValueError(f"unknown scheme: {git_url}")
+
+
+def parse_hg_name(hg_url):
+    if hg_url.startswith("http"):
+        proto, _, rest = hg_url.partition("://")
+        host, *parts = [_ for _ in rest.split("/") if len(_)]
+        if parts[0] == "hg":
+            parts = parts[1:]
+        if len(parts) == 1:
+            (repo_name,) = parts
+            user = None
+        elif len(parts) == 2:
+            user, repo_name = parts
+        else:
+            user, *rest = parts
+            repo_name = "/".join(parts)
+        return Remote(
+            url=hg_url,
+            host=host,
+            user=user,
+            repo_name=repo_name,
+            ssh_user=None,
+            protocol=proto,
+            vc="hg",
+        )
+    elif hg_url.startswith("ssh"):
+        proto, _, rest = hg_url.partition("://")
+        if "@" in rest:
+            ssh_user, _, rest = rest.partition("@")
+        else:
+            ssh_user = ${'USER'}
+        host, *parts = [_ for _ in rest.split("/") if len(_)]
+        if parts[0] == "hg":
+            parts = parts[1:]
+        if len(parts) == 1:
+            (repo_name,) = parts
+            user = None
+        elif len(parts) == 2:
+            user, repo_name = parts
+        else:
+            user, *rest = parts
+            repo_name = "/".join(parts)
+        return Remote(
+            url=hg_url,
+            host=host,
+            user=user,
+            repo_name=repo_name,
+            ssh_user=ssh_user,
+            protocol=proto,
+            vc="hg",
+        )
 
 
 print(sys.version_info)
 
 projects = []
 
-for repo_path in find_repos(path):
+for repo_path in find_git_repos(path):
     print(repo_path)
     remotes = {}
-    for k, v in get_repo_remotes(repo_path).items():
-        print(f'\t{k}')
-        parsed = {
-            direction:  parse_name(url)
-            for direction, url in v.items()
-        }
+    for k, v in get_git_remotes(repo_path).items():
+        print(f"\t{k}")
+        parsed = {direction: parse_git_name(url) for direction, url in v.items()}
         assert len(parsed) == 2
-        assert parsed['fetch'] == parsed['push']
-        remotes[k] = parsed['push']
+        assert parsed["fetch"] == parsed["push"]
+        remotes[k] = parsed["push"]
     if not len(remotes):
         continue
-    for k in ['upstream', 'origin']:
+    for k in ["upstream", "origin"]:
         if k in remotes:
             primary_remote = remotes[k]
             break
     else:
         primary_remote = next(iter(remotes.values()))
-    projects.append(Project(
-        name=primary_remote.repo_name,
-        primary_remote=primary_remote,
-        remotes=remotes,
-        local_checkout=str(repo_path)
+    projects.append(
+        Project(
+            name=primary_remote.repo_name,
+            primary_remote=primary_remote,
+            remotes=remotes,
+            local_checkout=str(repo_path),
         )
     )
 
 
-with open('all_repos.yaml', 'w') as fout:
+for repo_path in find_hg_repos(path):
+    print(repo_path)
+    remotes = {}
+    for k, url in get_hg_remotes(repo_path).items():
+        print(f"\t{k}")
+        remotes[k] = parse_hg_name(url)
+    if not len(remotes):
+        continue
+    for k in ["origin", "default"]:
+        if k in remotes:
+            primary_remote = remotes[k]
+            break
+    else:
+        primary_remote = next(iter(remotes.values()))
+    projects.append(
+        Project(
+            name=primary_remote.repo_name,
+            primary_remote=primary_remote,
+            remotes=remotes,
+            local_checkout=str(repo_path),
+        )
+    )
+
+
+with open("all_repos.yaml", "w") as fout:
     yaml.dump_all([asdict(_) for _ in projects], fout)
