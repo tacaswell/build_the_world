@@ -8,6 +8,7 @@ import yaml
 $XONSH_TRACE_SUBPROC = True
 $PIP_NO_BUILD_ISOLATION = 1
 
+
 class BuildLog:
     def __init__(self):
         self.conn = pymongo.MongoClient()
@@ -19,6 +20,7 @@ class BuildLog:
 
     def get_latest(self):
         return self.col.find_one(sort=[('start_time', -1)])['uid']
+
 
 bl = BuildLog()
 
@@ -35,11 +37,11 @@ for step in build_order:
         continue
     step['wd'] = wd_mapping[step['proj_name']]
 
+
 def extract_git_shas():
     headsha = $(git rev-parse HEAD).strip()
     describe = $(git describe --tags --abbrev=11 --long --dirty --always).strip()
     return {'head': headsha, 'describe': describe}
-
 
 
 def auto_main(upstream_remote='origin', upstream_branch='master'):
