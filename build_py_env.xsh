@@ -1,8 +1,8 @@
+import json
 import pymongo
+import sys
 import time
 import uuid
-import pymongo
-import json
 import yaml
 
 $XONSH_TRACE_SUBPROC = True
@@ -67,32 +67,31 @@ def cleanup_cython():
         rm @(generated_files)
 
 
-def setuptools_build():
-    auto_main(upstream_branch='main')
+def setuptools_build(**kwargs):
+    auto_main(**kwargs)
     git clean -xfd
     cleanup_cython()
     python bootstrap.py
     return !(pip install --no-build-isolation  --use-feature=in-tree-build  .)
 
 
-def pull_build():
-    git pull || echo failed
-    auto_main()
+def main_build(**kwargs):
+    auto_main(**kwargs)
     git clean -xfd
     git submodule init
     git submodule update
     cleanup_cython()
-    return !(pip install --no-build-isolation  --use-feature=in-tree-build  .)
+    return !(pip install --no-build-isolation  --use-feature=in-tree-build   .)
 
 
-def suitcaseserver_build():
+def suitcaseserver_build(**kwargs):
     pip install -r requirements-dev.txt --no-build-isolation  --use-feature=in-tree-build  --use-feature=2020-resolver
     pip install -r requirements.txt --no-build-isolation  --use-feature=in-tree-build  --use-feature=2020-resolver
-    return pull_build()
+    return main_build(**kwargs)
 
 
-def numcodecs_build():
-    auto_main()
+def numcodecs_build(**kwargs):
+    auto_main(**kwargs)
     git clean -xfd
     git submodule init
     git submodule update
@@ -101,23 +100,15 @@ def numcodecs_build():
     return !(pip install --no-use-pep517 --no-build-isolation  --use-feature=in-tree-build  .)
 
 
-def cython_build():
-    auto_main()
+def cython_build(**kwargs):
+    auto_main(**kwargs)
     git clean -xfd
     git submodule update
     return !(pip install --upgrade --no-use-pep517 --no-build-isolation  --use-feature=in-tree-build   .)
 
 
-def main_build(upstream_branch='master'):
-    auto_main(upstream_branch=upstream_branch)
-    git clean -xfd
-    git submodule init
-    git submodule update
-    cleanup_cython()
-    return !(pip install --no-build-isolation  --use-feature=in-tree-build   .)
-
-def awkward_build():
-    auto_main()
+def awkward_build(**kwargs):
+    auto_main(**kwargs)
     git clean -xfd
     git submodule init
     git submodule update
@@ -129,20 +120,19 @@ def awkward_build():
     return !(pip install --no-build-isolation  --use-feature=in-tree-build   .)
 
 
-def numpy_build():
+def numpy_build(**kwargs):
     CFLAGS = (" -Wall -O2 -pipe -fomit-frame-pointer  "
               "-fno-strict-aliasing -Wmaybe-uninitialized  "
               "-Wdeprecated-declarations -Wimplicit-function-declaration  "
               "-march=native")
     with ${...}.swap(CFLAGS=CFLAGS):
-        return main_build()
+        return main_build(**kwargs)
 
 
-def pandas_build():
-    auto_main()
+def pandas_build(**kwargs):
+    auto_main(**kwargs)
     git clean -xfd
     cleanup_cython()
-    # sed -i r's/\["-Werror"\]/[]/g' setup.py
     git submodule update
     ret = !(pip install -v  --no-build-isolation  --use-feature=in-tree-build   .)
     bool(ret)
@@ -157,15 +147,19 @@ def sip_build():
     return !(pip install pyqt5-sip --no-build-isolation  --use-feature=in-tree-build   --no-binary pyqt5-sip)
 
 
-def build_yarl(name):
+def build_yarl(name, **kwargs):
     git pull || echo failed
+    auto_main(**kwargs)
     git clean -xfd
     cleanup_cython()
     cythonize @(name)/*.pyx
     return !(pip install --no-build-isolation  --use-feature=in-tree-build   .)
 
-def build_aiohttp():
+def build_aiohttp(**kwargs):
+    # aiohttp has a makefile, but it pins to specific versions of cython which
+    # defeats the point here!
     git pull || echo failed
+    auto_main(**kwargs)
     git clean -xfd
     cleanup_cython()
     cd vendor/llhttp/
@@ -177,18 +171,19 @@ def build_aiohttp():
     return !(pip install --no-build-isolation  --use-feature=in-tree-build   .)
 
 
-def pycurl_build():
+def pycurl_build(**kwargs):
     git pull || echo failed
+    auto_main(**kwargs)
     git clean -xfd
     make gen
     python setup.py build
     return !(python setup.py install)
 
 
-def imagecodecs_build():
+def imagecodecs_build(upstream_branch, **kwargs):
     # nuke the c files to force cython to run
     git remote update
-    git rebase origin/master
+    git rebase origin/@(upstream_branch)
     cleanup_cython()
     # rm imagecodecs/_*.c || true
     return !(pip install -v --no-build-isolation  --use-feature=in-tree-build  .)
@@ -202,10 +197,8 @@ def build_cffi():
     return !(pip install --no-use-pep517 --no-build-isolation  --use-feature=in-tree-build   .)
 
 
-# pip install 'python-configuration[toml,yaml]'
-
-def build_scipp():
-    auto_main()
+def build_scipp(**kwargs):
+    auto_main(**kwargs)
     git clean -xfd
     install_dir = $(python -c 'import site; print(site.getsitepackages()[0].strip(), end="")')
     py_ex = $(which python)
@@ -214,8 +207,7 @@ def build_scipp():
     return !(cmake --build . --target install)
 
 
-# build_scipp()
-import sys
+
 
 if '--continue' in sys.argv:
     uid = bl.get_latest()
@@ -269,7 +261,13 @@ try:
                 else:
                     shas = {}
                 start_time = time.time()
-                build_log = func(**step.get('kwargs', {}))
+                kwargs = step.get('kwargs', {})
+                branch = step.get('project', {}
+                                  ).get('primary_remote', {}
+                                        ).get('default_branch', None)
+                if branch is not None:
+                    kwargs.setdefault('upstream_branch', branch)
+                build_log = func(**kwargs)
                 succcesss = bool(build_log)
                 stop_time = time.time()
                 pl = json.loads($(pip list --format json))

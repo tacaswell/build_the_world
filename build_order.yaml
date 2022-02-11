@@ -154,7 +154,7 @@ project:
 args: install --no-build-isolation  --use-feature=in-tree-build packaging
 kind: pip
 ---
-function: pull_build
+function: main_build
 kind: source_install
 name: pyzmq
 proj_name: pyzmq
@@ -250,7 +250,7 @@ project:
     user: certifi
     vc: git
 ---
-function: pull_build
+function: main_build
 kind: source_install
 name: matplotlib
 proj_name: matplotlib
@@ -298,7 +298,7 @@ project:
     user: networkx
     vc: git
 ---
-function: pull_build
+function: main_build
 kind: source_install
 name: toolz
 proj_name: toolz
@@ -396,7 +396,7 @@ kind: pip
 args: install  jupyter_packaging
 kind: pip
 ---
-function: pull_build
+function: main_build
 kind: source_install
 name: jupyterlab
 proj_name: jupyterlab
@@ -477,7 +477,7 @@ project:
     vc: git
 vc: none
 ---
-function: pull_build
+function: main_build
 kind: source_install
 name: scikit-image
 proj_name: scikit-image
@@ -636,7 +636,7 @@ project:
     user: intake
     vc: git
 ---
-function: pull_build
+function: main_build
 kind: source_install
 name: historydict
 proj_name: historydict
@@ -687,7 +687,7 @@ project:
     user: pycurl
     vc: git
 ---
-function: pull_build
+function: main_build
 kind: source_install
 name: ophyd
 proj_name: ophyd
@@ -703,7 +703,7 @@ project:
     user: bluesky
     vc: git
 ---
-function: pull_build
+function: main_build
 kind: source_install
 name: event-model
 proj_name: event-model
@@ -719,7 +719,7 @@ project:
     user: bluesky
     vc: git
 ---
-function: pull_build
+function: main_build
 kind: source_install
 name: area-detector-handlers
 proj_name: area-detector-handlers
@@ -735,7 +735,7 @@ project:
     user: bluesky
     vc: git
 ---
-function: pull_build
+function: main_build
 kind: source_install
 name: bluesky
 proj_name: bluesky
@@ -751,7 +751,7 @@ project:
     user: bluesky
     vc: git
 ---
-function: pull_build
+function: main_build
 kind: source_install
 name: databroker
 proj_name: databroker
@@ -767,7 +767,7 @@ project:
     user: bluesky
     vc: git
 ---
-function: pull_build
+function: main_build
 kind: source_install
 name: bluesky-darkframes
 proj_name: bluesky-darkframes
@@ -783,7 +783,7 @@ project:
     user: bluesky
     vc: git
 ---
-function: pull_build
+function: main_build
 kind: source_install
 name: bluesky-mpl
 proj_name: bluesky-mpl
@@ -799,7 +799,7 @@ project:
     user: bluesky
     vc: git
 ---
-function: pull_build
+function: main_build
 kind: source_install
 name: bluesky-queueserver
 proj_name: bluesky-queueserver
@@ -815,7 +815,7 @@ project:
     user: bluesky
     vc: git
 ---
-function: pull_build
+function: main_build
 kind: source_install
 name: bluesky-spreadsheet
 proj_name: bluesky-spreadsheet
@@ -831,7 +831,7 @@ project:
     user: bluesky
     vc: git
 ---
-function: pull_build
+function: main_build
 kind: source_install
 name: bluesky-ui
 proj_name: bluesky-ui
@@ -847,7 +847,7 @@ project:
     user: bluesky
     vc: git
 ---
-function: pull_build
+function: main_build
 kind: source_install
 name: happi
 proj_name: happi
@@ -863,7 +863,7 @@ project:
     user: pcdshub
     vc: git
 ---
-function: pull_build
+function: main_build
 kind: source_install
 name: suitcase-utils
 proj_name: suitcase-utils
@@ -879,7 +879,7 @@ project:
     user: bluesky
     vc: git
 ---
-function: pull_build
+function: main_build
 kind: source_install
 name: suitcase-csv
 proj_name: suitcase-csv
@@ -895,7 +895,7 @@ project:
     user: bluesky
     vc: git
 ---
-function: pull_build
+function: main_build
 kind: source_install
 name: suitcase-dataexchange
 proj_name: suitcase-dataexchange
@@ -911,7 +911,7 @@ project:
     user: bluesky
     vc: git
 ---
-function: pull_build
+function: main_build
 kind: source_install
 name: suitcase-jsonl
 proj_name: suitcase-jsonl
@@ -927,7 +927,7 @@ project:
     user: bluesky
     vc: git
 ---
-function: pull_build
+function: main_build
 kind: source_install
 name: suitcase-json-metadata
 proj_name: suitcase-json-metadata
@@ -943,7 +943,7 @@ project:
     user: bluesky
     vc: git
 ---
-function: pull_build
+function: main_build
 kind: source_install
 name: suitcase-mongo
 proj_name: suitcase-mongo
@@ -959,7 +959,7 @@ project:
     user: bluesky
     vc: git
 ---
-function: pull_build
+function: main_build
 kind: source_install
 name: suitcase-msgpack
 proj_name: suitcase-msgpack
@@ -975,7 +975,7 @@ project:
     user: bluesky
     vc: git
 ---
-function: pull_build
+function: main_build
 kind: source_install
 name: suitcase-nxstxm
 proj_name: suitcase-nxstxm
@@ -1007,7 +1007,7 @@ project:
     user: bluesky
     vc: git
 ---
-function: pull_build
+function: main_build
 kind: source_install
 name: suitcase-specfile
 proj_name: suitcase-specfile
@@ -1023,7 +1023,7 @@ project:
     user: bluesky
     vc: git
 ---
-function: pull_build
+function: main_build
 kind: source_install
 name: suitcase-tiff
 proj_name: suitcase-tiff
@@ -1039,7 +1039,7 @@ project:
     user: bluesky
     vc: git
 ---
-function: pull_build
+function: main_build
 kind: source_install
 name: suitcase-zarr
 proj_name: suitcase-zarr
@@ -1055,7 +1055,7 @@ project:
     user: bluesky
     vc: git
 ---
-function: pull_build
+function: main_build
 kind: source_install
 name: hklpy
 proj_name: hklpy
@@ -1071,7 +1071,7 @@ project:
     user: bluesky
     vc: git
 ---
-function: pull_build
+function: main_build
 kind: source_install
 name: nsls2-detector-handlers
 proj_name: nsls2-detector-handlers
@@ -1087,7 +1087,7 @@ project:
     user: bluesky
     vc: git
 ---
-function: pull_build
+function: main_build
 kind: source_install
 name: databroker-pack
 proj_name: databroker-pack
@@ -1103,7 +1103,7 @@ project:
     user: bluesky
     vc: git
 ---
-function: pull_build
+function: main_build
 kind: source_install
 name: pyqtgraph
 proj_name: pyqtgraph
@@ -1119,7 +1119,7 @@ project:
     user: pyqtgraph
     vc: git
 ---
-function: pull_build
+function: main_build
 kind: source_install
 name: caproto
 proj_name: caproto
@@ -1135,7 +1135,7 @@ project:
     user: NSLS-II
     vc: git
 ---
-function: pull_build
+function: main_build
 kind: source_install
 name: bcsio
 proj_name: bcsio
@@ -1151,7 +1151,7 @@ project:
     user: NSLS-II
     vc: git
 ---
-function: pull_build
+function: main_build
 kind: source_install
 name: cantrips
 proj_name: cantrips
@@ -1167,7 +1167,7 @@ project:
     user: NSLS-II
     vc: git
 ---
-function: pull_build
+function: main_build
 kind: source_install
 name: nslsii
 proj_name: nslsii
@@ -1183,7 +1183,7 @@ project:
     user: NSLS-II
     vc: git
 ---
-function: pull_build
+function: main_build
 kind: source_install
 name: mily
 proj_name: mily
@@ -1266,7 +1266,7 @@ project:
     user: silx-kit
     vc: git
 ---
-function: pull_build
+function: main_build
 kind: source_install
 name: pyFAI
 proj_name: pyFAI
@@ -1370,8 +1370,6 @@ project:
 ---
 function: main_build
 kind: source_install
-kwargs:
-  upstream_branch: develop
 name: wrapt
 proj_name: wrapt
 project:
