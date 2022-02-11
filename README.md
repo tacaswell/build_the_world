@@ -36,21 +36,21 @@ suggestions of how to improve it.
 I have not been carefully tracking what system dependencies these scripts rely
 on.  At a minimum running these scripts will require:
 
-#. xonsh
-#. c, c++, and fortran compilers
-#. mongodb running on the local host (for logging and resuming the build)
+1. xonsh
+2. c, c++, and fortran compilers
+3. mongodb running on the local host (for logging and resuming the build)
    and pymongo available to xonsh.
-#. pyyaml
-#. cmake
-#. npm
-#. git
-#. hg
-#. find
-#. make + autotools
-#. libhdf5 + headers
-#. all of the image libraries + headers supported by imagecodecs
-#. [gidgethub](https://gidgethub.readthedocs.io/en/latest/) (optional,
-   can be in a venv, needed to refresh default branch names)
+4. pyyaml
+5. cmake
+6. npm
+7. git
+8. hg
+9. find
+10. make + autotools
+11. libhdf5 + headers
+12. all of the image libraries + headers supported by imagecodecs
+13. [gidgethub](https://gidgethub.readthedocs.io/en/latest/) (optional,
+    can be in a venv, needed to refresh default branch names)
 
 
 ## Usage
@@ -121,19 +121,20 @@ $ xonsh build_py_env.xsh --continue
    do regularly run the test suites of the projects I work on day-to-day
    (Matplotlib, h5py, and the [bluesky suite](https://blueskyproject.io)) which
    covers the parts of the upstream code _I_ care most about.
-#. **Does this work on \<platform\>?**: I have only ever run this on an up-to-date
+5. **Does this work on \<platform\>?**: I have only ever run this on an up-to-date
    Arch Linux machine, so I have no idea!
-#. **How long does this take to build?**: A while!  It is about 2 hours on a 4th
+6. **How long does this take to build?**: A while!  It is about 2 hours on a 4th
    gen I7.
-#. **Could some of these build steps be done in parallel?**: Yes, but so far kicking
+7. **Could some of these build steps be done in parallel?**: Yes, but so far kicking
    this off and either doing other work or walking away has worked well enough for
    me.
-5. **Doesn't this break all the time?**: Yes
-6. **These answers all seem very selfish.**: That is more of a comment, but
+8. **Doesn't this break all the time?**: Yes
+9. **These answers all seem very selfish.**: That is more of a comment, but
    yes.  This project is currently all about solving _my_ problems (and my own
    amusement).
-7. **Do you actually want anyone else to use this project?**: Yes! That is why
-   this is now coming off of my computer and out into the world.  However, I am
-   not sure if anyone else would _want_ to participate in this admittedly silly
-   activity.  I am being honest about my current ambitions for it and the
-   history.  If this seems interesting / fun / useful to you lets be friends!
+10. **Do you actually want anyone else to use this project?**: Yes! That is why
+    this is now coming off of my computer and out into the world.  However, I
+    am not sure if anyone else would _want_ to participate in this admittedly
+    silly activity.  I am being honest about my current ambitions for it and
+    the history.  If this seems interesting / fun / useful to you lets be
+    friends!
