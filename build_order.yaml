@@ -5,6 +5,7 @@ proj_name: wheel
 project:
   name: wheel
   primary_remote:
+    default_branch: main
     host: github.com
     protocol: ssh
     repo_name: wheel
@@ -26,6 +27,7 @@ proj_name: pybind11
 project:
   name: pybind11
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: pybind11
@@ -41,6 +43,7 @@ proj_name: cython
 project:
   name: cython
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: cython
@@ -56,6 +59,7 @@ proj_name: numpy
 project:
   name: numpy
   primary_remote:
+    default_branch: main
     host: github.com
     protocol: ssh
     repo_name: numpy
@@ -71,6 +75,7 @@ proj_name: pythran
 project:
   name: pythran
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: pythran
@@ -86,6 +91,7 @@ proj_name: scipy
 project:
   name: scipy
   primary_remote:
+    default_branch: main
     host: github.com
     protocol: ssh
     repo_name: scipy
@@ -104,6 +110,7 @@ proj_name: h5py
 project:
   name: h5py
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: h5py
@@ -119,6 +126,7 @@ proj_name: pexpect
 project:
   name: pexpect
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: pexpect
@@ -134,6 +142,7 @@ proj_name: parso
 project:
   name: parso
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: parso
@@ -152,6 +161,7 @@ proj_name: pyzmq
 project:
   name: pyzmq
   primary_remote:
+    default_branch: main
     host: github.com
     protocol: ssh
     repo_name: pyzmq
@@ -167,6 +177,7 @@ proj_name: jedi
 project:
   name: jedi
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: jedi
@@ -182,6 +193,7 @@ proj_name: IPython
 project:
   name: IPython
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: IPython
@@ -197,6 +209,7 @@ proj_name: nbformat
 project:
   name: nbformat
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: nbformat
@@ -212,6 +225,7 @@ proj_name: nbconvert
 project:
   name: nbconvert
   primary_remote:
+    default_branch: main
     host: github.com
     protocol: ssh
     repo_name: nbconvert
@@ -227,6 +241,7 @@ proj_name: python-certifi
 project:
   name: python-certifi
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: python-certifi
@@ -242,6 +257,7 @@ proj_name: matplotlib
 project:
   name: matplotlib
   primary_remote:
+    default_branch: main
     host: github.com
     protocol: ssh
     repo_name: matplotlib
@@ -257,6 +273,7 @@ proj_name: pandas
 project:
   name: pandas
   primary_remote:
+    default_branch: main
     host: github.com
     protocol: ssh
     repo_name: pandas
@@ -272,6 +289,7 @@ proj_name: networkx
 project:
   name: networkx
   primary_remote:
+    default_branch: main
     host: github.com
     protocol: ssh
     repo_name: networkx
@@ -287,6 +305,7 @@ proj_name: toolz
 project:
   name: toolz
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: toolz
@@ -302,6 +321,7 @@ proj_name: pyyaml
 project:
   name: pyyaml
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: pyyaml
@@ -317,6 +337,7 @@ proj_name: lxml
 project:
   name: lxml
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: https
     repo_name: lxml
@@ -335,6 +356,7 @@ proj_name: pytest
 project:
   name: pytest
   primary_remote:
+    default_branch: main
     host: github.com
     protocol: ssh
     repo_name: pytest
@@ -350,6 +372,7 @@ proj_name: sphinx
 project:
   name: sphinx
   primary_remote:
+    default_branch: 4.x
     host: github.com
     protocol: ssh
     repo_name: sphinx
@@ -380,6 +403,7 @@ proj_name: jupyterlab
 project:
   name: jupyterlab
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: jupyterlab
@@ -395,6 +419,7 @@ proj_name: dask
 project:
   name: dask
   primary_remote:
+    default_branch: main
     host: github.com
     protocol: ssh
     repo_name: dask
@@ -410,6 +435,7 @@ proj_name: distributed
 project:
   name: distributed
   primary_remote:
+    default_branch: main
     host: github.com
     protocol: ssh
     repo_name: distributed
@@ -425,6 +451,7 @@ proj_name: pywt
 project:
   name: pywt
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: pywt
@@ -440,6 +467,7 @@ proj_name: imagecodecs
 project:
   name: imagecodecs
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: imagecodecs
@@ -456,6 +484,7 @@ proj_name: scikit-image
 project:
   name: scikit-image
   primary_remote:
+    default_branch: main
     host: github.com
     protocol: ssh
     repo_name: scikit-image
@@ -471,6 +500,7 @@ proj_name: uritemplate
 project:
   name: uritemplate
   primary_remote:
+    default_branch: main
     host: github.com
     protocol: ssh
     repo_name: uritemplate
@@ -531,6 +561,7 @@ proj_name: yarl
 project:
   name: yarl
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: yarl
@@ -548,6 +579,7 @@ proj_name: frozenlist
 project:
   name: frozenlist
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: frozenlist
@@ -563,6 +595,7 @@ proj_name: aiohttp
 project:
   name: aiohttp
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: aiohttp
@@ -578,6 +611,7 @@ proj_name: cytoolz
 project:
   name: cytoolz
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: cytoolz
@@ -593,6 +627,7 @@ proj_name: intake
 project:
   name: intake
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: intake
@@ -608,6 +643,7 @@ proj_name: historydict
 project:
   name: historydict
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: historydict
@@ -623,6 +659,7 @@ proj_name: numcodecs
 project:
   name: numcodecs
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: numcodecs
@@ -641,6 +678,7 @@ proj_name: pycurl
 project:
   name: pycurl
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: pycurl
@@ -656,6 +694,7 @@ proj_name: ophyd
 project:
   name: ophyd
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: ophyd
@@ -671,6 +710,7 @@ proj_name: event-model
 project:
   name: event-model
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: event-model
@@ -686,6 +726,7 @@ proj_name: area-detector-handlers
 project:
   name: area-detector-handlers
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: area-detector-handlers
@@ -701,6 +742,7 @@ proj_name: bluesky
 project:
   name: bluesky
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: bluesky
@@ -716,6 +758,7 @@ proj_name: databroker
 project:
   name: databroker
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: databroker
@@ -731,6 +774,7 @@ proj_name: bluesky-darkframes
 project:
   name: bluesky-darkframes
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: bluesky-darkframes
@@ -746,6 +790,7 @@ proj_name: bluesky-mpl
 project:
   name: bluesky-mpl
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: bluesky-mpl
@@ -761,6 +806,7 @@ proj_name: bluesky-queueserver
 project:
   name: bluesky-queueserver
   primary_remote:
+    default_branch: main
     host: github.com
     protocol: ssh
     repo_name: bluesky-queueserver
@@ -776,6 +822,7 @@ proj_name: bluesky-spreadsheet
 project:
   name: bluesky-spreadsheet
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: bluesky-spreadsheet
@@ -791,6 +838,7 @@ proj_name: bluesky-ui
 project:
   name: bluesky-ui
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: bluesky-ui
@@ -806,6 +854,7 @@ proj_name: happi
 project:
   name: happi
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: happi
@@ -821,6 +870,7 @@ proj_name: suitcase-utils
 project:
   name: suitcase-utils
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: suitcase-utils
@@ -836,6 +886,7 @@ proj_name: suitcase-csv
 project:
   name: suitcase-csv
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: suitcase-csv
@@ -851,6 +902,7 @@ proj_name: suitcase-dataexchange
 project:
   name: suitcase-dataexchange
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: suitcase-dataexchange
@@ -866,6 +918,7 @@ proj_name: suitcase-jsonl
 project:
   name: suitcase-jsonl
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: suitcase-jsonl
@@ -881,6 +934,7 @@ proj_name: suitcase-json-metadata
 project:
   name: suitcase-json-metadata
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: suitcase-json-metadata
@@ -896,6 +950,7 @@ proj_name: suitcase-mongo
 project:
   name: suitcase-mongo
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: suitcase-mongo
@@ -911,6 +966,7 @@ proj_name: suitcase-msgpack
 project:
   name: suitcase-msgpack
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: suitcase-msgpack
@@ -926,6 +982,7 @@ proj_name: suitcase-nxstxm
 project:
   name: suitcase-nxstxm
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: suitcase-nxstxm
@@ -941,6 +998,7 @@ proj_name: suitcase-server
 project:
   name: suitcase-server
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: suitcase-server
@@ -956,6 +1014,7 @@ proj_name: suitcase-specfile
 project:
   name: suitcase-specfile
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: suitcase-specfile
@@ -971,6 +1030,7 @@ proj_name: suitcase-tiff
 project:
   name: suitcase-tiff
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: suitcase-tiff
@@ -986,6 +1046,7 @@ proj_name: suitcase-zarr
 project:
   name: suitcase-zarr
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: suitcase-zarr
@@ -1001,6 +1062,7 @@ proj_name: hklpy
 project:
   name: hklpy
   primary_remote:
+    default_branch: main
     host: github.com
     protocol: ssh
     repo_name: hklpy
@@ -1016,6 +1078,7 @@ proj_name: nsls2-detector-handlers
 project:
   name: nsls2-detector-handlers
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: nsls2-detector-handlers
@@ -1031,6 +1094,7 @@ proj_name: databroker-pack
 project:
   name: databroker-pack
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: databroker-pack
@@ -1046,6 +1110,7 @@ proj_name: pyqtgraph
 project:
   name: pyqtgraph
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: pyqtgraph
@@ -1061,6 +1126,7 @@ proj_name: caproto
 project:
   name: caproto
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: caproto
@@ -1076,6 +1142,7 @@ proj_name: bcsio
 project:
   name: bcsio
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: bcsio
@@ -1091,6 +1158,7 @@ proj_name: cantrips
 project:
   name: cantrips
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: cantrips
@@ -1106,6 +1174,7 @@ proj_name: nslsii
 project:
   name: nslsii
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: nslsii
@@ -1121,6 +1190,7 @@ proj_name: mily
 project:
   name: mily
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: mily
@@ -1136,6 +1206,7 @@ proj_name: awkward-1.0
 project:
   name: awkward-1.0
   primary_remote:
+    default_branch: main
     host: github.com
     protocol: https
     repo_name: awkward-1.0
@@ -1151,6 +1222,7 @@ proj_name: fabio
 project:
   name: fabio
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: fabio
@@ -1169,6 +1241,7 @@ proj_name: numexpr
 project:
   name: numexpr
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: numexpr
@@ -1184,6 +1257,7 @@ proj_name: silx
 project:
   name: silx
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: silx
@@ -1199,6 +1273,7 @@ proj_name: pyFAI
 project:
   name: pyFAI
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: pyFAI
@@ -1214,6 +1289,7 @@ proj_name: typed_ast
 project:
   name: typed_ast
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: typed_ast
@@ -1232,6 +1308,7 @@ proj_name: pyerfa
 project:
   name: pyerfa
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: pyerfa
@@ -1247,6 +1324,7 @@ proj_name: astropy
 project:
   name: astropy
   primary_remote:
+    default_branch: main
     host: github.com
     protocol: ssh
     repo_name: astropy
@@ -1262,6 +1340,7 @@ proj_name: greenlet
 project:
   name: greenlet
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: greenlet
@@ -1280,6 +1359,7 @@ proj_name: pims
 project:
   name: pims
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: ssh
     repo_name: pims
@@ -1297,6 +1377,7 @@ proj_name: wrapt
 project:
   name: wrapt
   primary_remote:
+    default_branch: develop
     host: github.com
     protocol: ssh
     repo_name: wrapt
@@ -1337,6 +1418,7 @@ proj_name: mplcairo
 project:
   name: mplcairo
   primary_remote:
+    default_branch: main
     host: github.com
     protocol: ssh
     repo_name: mplcairo
