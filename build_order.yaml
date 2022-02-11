@@ -1347,3 +1347,6 @@ project:
 ---
 args: install --no-build-isolation  --use-feature=in-tree-build pelican[markdown]
 kind: pip
+---
+args: install --no-build-isolation  --use-feature=in-tree-build pre-commit
+kind: pip
