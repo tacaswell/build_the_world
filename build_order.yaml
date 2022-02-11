@@ -1,3 +1,7 @@
+---
+args: install --no-build-isolation --upgrade  --use-feature=in-tree-build pip
+kind: pip
+---
 function: main_build
 kind: source_install
 name: wheel
