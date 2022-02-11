@@ -13,10 +13,11 @@ import yaml
 with open(Path("~/.config/hub").expanduser(), "r") as f:
     oauth_token = f.read()
 
-if 'GITHUB_USERNAME' in os.environ:
-    requester = os.getenv('GITHUB_USERNAME')
+if "GITHUB_USERNAME" in os.environ:
+    requester = os.getenv("GITHUB_USERNAME")
 else:
-    raise ValueError(f'"GITHUB_USERNAME" env var must be set to proceed.')
+    raise ValueError('"GITHUB_USERNAME" env var must be set to proceed.')
+
 
 try:
     cache
@@ -69,22 +70,24 @@ async def get_all_default_branches(fname="all_repos.yaml", *, gh: GitHubAPI):
         checkouts = list(yaml.unsafe_load_all(fin))
 
     for proj in checkouts:
-        if proj["primary_remote"]['host'] == "github.com":
+        if proj["primary_remote"]["host"] == "github.com":
             try:
                 ret = await get_default_branch(
                     proj["primary_remote"]["user"],
                     proj["primary_remote"]["repo_name"],
                 )
             except gidgethub.BadRequest:
-                print(f'The project {proj["name"]} has no upstream on '
-                      f"{proj['primary_remote']['user']} with "
-                      f"{proj['primary_remote']['repo_name']}")
+                print(
+                    f'The project {proj["name"]} has no upstream on '
+                    f"{proj['primary_remote']['user']} with "
+                    f"{proj['primary_remote']['repo_name']}"
+                )
                 continue
             proj["primary_remote"]["default_branch"] = ret["default_branch"]
 
             for _, remote in proj["remotes"].items():
                 if remote["host"] == "github.com":
-                    remote['default_branch'] = proj["primary_remote"]["default_branch"]
+                    remote["default_branch"] = proj["primary_remote"]["default_branch"]
 
     return checkouts
 
