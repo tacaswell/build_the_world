@@ -34,6 +34,7 @@ with with_pushd(wd):
     git clean -xfd
     ./configure --prefix=@(prefix) --enable-shared LDFLAGS=-Wl,-rpath=$HOME/.pybuild/@(args.target)/lib
     make -j
+    make install
 
 $HOME/.pybuild/@(args.target)/bin/python3 -m venv --copies --clear ~/.virtualenvs/@(args.target)
 
