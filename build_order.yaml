@@ -193,7 +193,7 @@ project:
 function: main_build
 kind: source_install
 name: IPython
-proj_name: IPython
+proj_name: ipython
 project:
   name: IPython
   primary_remote:
