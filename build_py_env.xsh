@@ -114,7 +114,7 @@ def awkward_build(**kwargs):
     git submodule update
     cleanup_cython()
     pushd pybind11
-    git checkout master
+    git checkout test-311-frame-changes
     git pull
     popd
     return !(pip install --no-build-isolation  --use-feature=in-tree-build   .)
