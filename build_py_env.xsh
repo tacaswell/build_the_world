@@ -142,9 +142,8 @@ def pandas_build(**kwargs):
 def sip_build():
     hg purge
     hg pull
-    hg update 5.2-maint
-    pip install --no-build-isolation  --use-feature=in-tree-build   .
-    return !(pip install pyqt5-sip --no-build-isolation  --use-feature=in-tree-build   --no-binary pyqt5-sip)
+    hg update tip
+    return !(pip install --no-build-isolation  --use-feature=in-tree-build   .)
 
 
 def build_yarl(name, **kwargs):

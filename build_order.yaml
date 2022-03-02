@@ -529,11 +529,13 @@ project:
     vc: hg
 vc: hg
 ---
-args: install  pyqt5
-kind: pip
----
-args: install  --index-url https://riverbankcomputing.com/pypi/simple/ --pre --upgrade
-  PyQt6
+# args: install    --index-url https://riverbankcomputing.com/pypi/simple/ --pre --upgrade  PyQt5
+# kind: pip
+# ---
+# args: install  --index-url https://riverbankcomputing.com/pypi/simple/ --pre --upgrade  PyQt6
+# kind: pip
+# ---
+args: install PyQt6
 kind: pip
 ---
 function: build_cffi
