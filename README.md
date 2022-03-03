@@ -125,7 +125,7 @@ $ xonsh build_py_env.xsh --continue
 
 ## FAQ
 
-1. **Aren't you reinventing \<packaging system\>?**: Yes, well no, while this
+1. **Aren't you reinventing \<packaging system\>?**: Yes, well no. while this
    code and packaging systems both build from source, a packaging system is
    trying to create distributively artifacts.  This code is only about making
    the installs work on the machine the script is run on.  It is also very
@@ -133,14 +133,26 @@ $ xonsh build_py_env.xsh --continue
    project in the environment.
 
    I am solving a _much_ simpler problem than a packaging system.
+2. **What about [Spack](https://github.com/spack/spack)?** Spack has a
+   "(re)build the world" approach, but keeps careful track of versions,
+   provides tools to change versions and deterministically rebuild.  This
+   code's goal is to get a working environment with the development branch of a
+   majority of the Scientific Python stack installed and working.  Upgrading
+   via this code is _very_ destructive: it deletes the old environment and
+   replaces it!
+
+   Again, I am solving a much simpler problem that Spack is trying to solve.
 2. **Why xonsh?**: I wanted to learn xonsh and the shell/Python hybrid is really
    pleasant for this sort of work (even I sometimes have to trial-and-error moving
    variables between the two sides).
 3. **Is this re-inventing pythonci?**:
    No. [pythonci](https://github.com/vstinner/pythonci/) is a Victor Stinner
    project with a more reasonable goal of building the stable branches of
-   projects against the default development branch of CPython.   I am trying to
-   build the development branch of everything.
+   projects against the default development branch of CPython.  I am trying to
+   build the development branch of
+   everything. [pythonperformance](https://github.com/python/pyperformance)
+   also tries to rebuild stable versions of the ecosystem on top of the
+   development branch of CPython.
 4. **Do you run the tests for everything?**: No, that would be interesting.  I
    do regularly run the test suites of the projects I work on day-to-day
    (Matplotlib, h5py, and the [bluesky suite](https://blueskyproject.io)) which
