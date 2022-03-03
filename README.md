@@ -4,11 +4,22 @@ This is a repository of Python and [xonsh](https://xon.sh) scripts that I
 use to build a the section Python / pydata / scipy stack that I use (and help
 maintain).
 
+## Goals
+
 I have frequently been caught out by changes to my upstream dependencies
 breaking me.  Sometimes the changes are things I just have to adapt to, but in
 other cases I have been told the changes were unintentional and if the impact
 had been known they would not have been released.  Thus, I set out to try and
 find those issues as early as possible.
+
+The goals of this project are:
+
+1. Build and make available in a venv the main branch of CPython
+2. Install the main / default branch of most of the Scientific Python ecosystem
+3. Be able to easily switch any package to a source install for development.
+4. Be easy to re-build every from scratch.
+
+## History
 
 The first version of this script only complied CPython and created a virtual
 environment for me to work in.  However, due needing to install things from
@@ -21,10 +32,10 @@ with all of the source locations hard-coded, to finally the current state
 
 ## Code quality
 
-This is trash code that as of the time of this writing has been used by 1 (one)
-person on 1 (one) computer.  The unit testing is "can I rebuild the
-environment";  for a long while, the "continue" functionality was implemented by
-commenting out the already built projects.
+This is 🚮 trash 🚮 code that as of the time of this writing has been used by 1
+(one) person on 1 (one) computer.  The unit testing is "can I rebuild the
+environment"; for a long while, the "continue" functionality was implemented by
+commenting out the already built projects..
 
 These tools have been slowly moving towards being proper CLI tools, but they
 get the job done.  This code is offered in the fullest sense of "AS IS", but
@@ -52,22 +63,35 @@ on.  At a minimum running these scripts will require:
 13. [gidgethub](https://gidgethub.readthedocs.io/en/latest/) (optional,
     can be in a venv, needed to refresh default branch names)
 
+I use this on an up-to-date [Arch Linux](https://archlinux.org/) machine with a
+fair number of AUR packages installed (mostly for imagecodecs).
 
 ## Usage
 
-To use project is currently a multi step process.  The first step is to use
+To use project is currently a multi step process.  The first step is to make
+sure all of the relevant projects are cloned locally.  In principle there is
+enough information in `all_repos.yaml` and `build_order.yaml` to identify and
+clone any missing repositories.
+
+```bash
+xonsh ensure_clones.xonsh
+```
+
+will attempt clone most of the repositories (`sip` will need to be done by hand
+because it is mecurial and hosted directly by riverbank) in an organization
+that makes sense to my (and is related to which email address I use when
+commiting to them).  Your mileage may vary.
+
+The second step is locate all of the checkouts.
 
 ```bash
 $ cd build_the_world
 $ xonsh find_repos.xsh path/to/source/directory
 ```
 
-which will find all of the git and hg checkouts under the given directory and
-will write out a file `all_repos.yaml` with information about all of the
-checkouts it found.
-
-In principle there is enough information in `all_repos.yaml` and
-`build_order.yaml` to identify and clone any missing repositories.
+will find all of the git and hg checkouts under the given directory and will
+write out a file `all_repos.yaml` with information about all of the checkouts
+it found.
 
 Once all of the required repositories are checked out and found, run
 
