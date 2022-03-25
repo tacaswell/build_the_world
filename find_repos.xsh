@@ -23,7 +23,15 @@ def find_hg_repos(path):
         candidate = candidate.strip()
         yield Path(candidate).resolve().parent
 
-
+def fix_git_protcol_to_https(repo):
+    with with_pushd(repo):
+        for ln in !(git remote -v).itercheck():
+            if not ln.strip():
+                continue
+            name, url, _ = ln.split()
+            if url.startswith('git://') and 'github.com' in url:
+                print(url, '->', url.replace('git://', 'https://'))
+                git remote set-url @(name) @(url.replace('git://', 'https://'))
 
 def get_git_remotes(repo):
     """Given a path to a repository,
@@ -247,6 +255,7 @@ projects = []
 for repo_path in find_git_repos(path):
     print(repo_path)
     remotes = {}
+    fix_git_protcol_to_https(repo_path)
     for k, v in get_git_remotes(repo_path).items():
         print(f"\t{k}")
         parsed = {direction: parse_git_name(url) for direction, url in v.items()}
