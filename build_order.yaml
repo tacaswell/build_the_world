@@ -254,6 +254,9 @@ project:
     user: certifi
     vc: git
 ---
+args: install --no-build-isolation  --use-feature=in-tree-build cppy
+kind: pip
+---
 function: main_build
 kind: source_install
 name: matplotlib
