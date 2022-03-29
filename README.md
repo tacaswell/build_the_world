@@ -48,7 +48,7 @@ I have not been carefully tracking what system dependencies these scripts rely
 on.  At a minimum running these scripts will require:
 
 1. xonsh
-2. c, c++, and fortran compilers
+2. c, c++, rust, and fortran compilers
 3. mongodb running on the local host (for logging and resuming the build)
    and pymongo available to xonsh.
 4. pyyaml
