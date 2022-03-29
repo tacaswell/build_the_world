@@ -469,7 +469,7 @@ project:
 ---
 function: imagecodecs_build
 kind: source_install
-name: tac_hack
+name: imagecodecs
 proj_name: imagecodecs
 project:
   name: imagecodecs
