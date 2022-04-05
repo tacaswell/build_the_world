@@ -18,7 +18,7 @@ project:
     user: pypa
     vc: git
 ---
-args: install  black flake8
+args: install  black flake8 colorlog
 kind: pip
 ---
 args: install  setuptools<60'
