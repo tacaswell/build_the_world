@@ -35,12 +35,13 @@ local_checkouts = {co['name']: co for co in checkouts}
 for step in build_order:
     if step['kind'] != 'source_install':
         continue
-    if step['project']['primary_remote']['vc'] != 'git':
-        continue
     lc = local_checkouts[step['proj_name']]
     # get the working directory
     step['wd'] = lc['local_checkout']
     # set the default branch
+    if step['project']['primary_remote']['vc'] != 'git':
+        continue
+
     step.setdefault('kwargs', {})
     step['kwargs']['upstream_branch'] = step['project']['primary_remote']['default_branch']
 
