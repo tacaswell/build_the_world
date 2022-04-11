@@ -30,12 +30,23 @@ with open("build_order.yaml") as fin:
 with open('all_repos.yaml') as fin:
     checkouts = list(yaml.unsafe_load_all(fin))
 
-wd_mapping = {co['name']: co['local_checkout'] for co in checkouts}
+local_checkouts = {co['name']: co for co in checkouts}
 
 for step in build_order:
     if step['kind'] != 'source_install':
         continue
-    step['wd'] = wd_mapping[step['proj_name']]
+    if step['project']['primary_remote']['vc'] != 'git':
+        continue
+    lc = local_checkouts[step['proj_name']]
+    # get the working directory
+    step['wd'] = lc['local_checkout']
+    # set the default branch
+    step.setdefault('kwargs', {})
+    step['kwargs']['upstream_branch'] = step['project']['primary_remote']['default_branch']
+
+    step['kwargs']['upstream_remote'] = next(
+            n for n, r in lc['remotes'].items() if r['url'] == lc['primary_remote']['url']
+        )
 
 
 def extract_git_shas():
