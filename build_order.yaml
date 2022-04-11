@@ -1,4 +1,3 @@
----
 args: install --no-build-isolation --upgrade  --use-feature=in-tree-build pip
 kind: pip
 ---
@@ -11,10 +10,10 @@ project:
   primary_remote:
     default_branch: main
     host: github.com
-    protocol: ssh
+    protocol: https
     repo_name: wheel
-    ssh_user: git
-    url: git@github.com:pypa/wheel.git
+    ssh_user: null
+    url: https://github.com/pypa/wheel.git
     user: pypa
     vc: git
 ---
@@ -33,10 +32,10 @@ project:
   primary_remote:
     default_branch: master
     host: github.com
-    protocol: ssh
+    protocol: https
     repo_name: pybind11
-    ssh_user: git
-    url: git@github.com:pybind/pybind11.git
+    ssh_user: null
+    url: https://github.com/pybind/pybind11.git
     user: pybind
     vc: git
 ---
@@ -49,10 +48,10 @@ project:
   primary_remote:
     default_branch: master
     host: github.com
-    protocol: ssh
+    protocol: https
     repo_name: cython
-    ssh_user: git
-    url: git@github.com:cython/cython.git
+    ssh_user: null
+    url: https://github.com/cython/cython.git
     user: cython
     vc: git
 ---
@@ -65,10 +64,10 @@ project:
   primary_remote:
     default_branch: main
     host: github.com
-    protocol: ssh
+    protocol: https
     repo_name: numpy
-    ssh_user: git
-    url: git@github.com:numpy/numpy.git
+    ssh_user: null
+    url: https://github.com/numpy/numpy.git
     user: numpy
     vc: git
 ---
@@ -81,10 +80,10 @@ project:
   primary_remote:
     default_branch: master
     host: github.com
-    protocol: ssh
+    protocol: https
     repo_name: pythran
-    ssh_user: git
-    url: git@github.com:serge-sans-paille/pythran.git
+    ssh_user: null
+    url: https://github.com/serge-sans-paille/pythran.git
     user: serge-sans-paille
     vc: git
 ---
@@ -97,10 +96,10 @@ project:
   primary_remote:
     default_branch: main
     host: github.com
-    protocol: ssh
+    protocol: https
     repo_name: scipy
-    ssh_user: git
-    url: git@github.com:scipy/scipy.git
+    ssh_user: null
+    url: https://github.com/scipy/scipy.git
     user: scipy
     vc: git
 ---
@@ -132,10 +131,10 @@ project:
   primary_remote:
     default_branch: master
     host: github.com
-    protocol: ssh
+    protocol: https
     repo_name: pexpect
-    ssh_user: git
-    url: git@github.com:pexpect/pexpect.git
+    ssh_user: null
+    url: https://github.com/pexpect/pexpect.git
     user: pexpect
     vc: git
 ---
@@ -148,10 +147,10 @@ project:
   primary_remote:
     default_branch: master
     host: github.com
-    protocol: ssh
+    protocol: https
     repo_name: parso
-    ssh_user: git
-    url: git@github.com:davidhalter/parso.git
+    ssh_user: null
+    url: https://github.com/davidhalter/parso.git
     user: davidhalter
     vc: git
 ---
@@ -167,10 +166,10 @@ project:
   primary_remote:
     default_branch: main
     host: github.com
-    protocol: ssh
+    protocol: https
     repo_name: pyzmq
-    ssh_user: git
-    url: git@github.com:zeromq/pyzmq.git
+    ssh_user: null
+    url: https://github.com/zeromq/pyzmq.git
     user: zeromq
     vc: git
 ---
@@ -183,10 +182,10 @@ project:
   primary_remote:
     default_branch: master
     host: github.com
-    protocol: ssh
+    protocol: https
     repo_name: jedi
-    ssh_user: git
-    url: git@github.com:davidhalter/jedi.git
+    ssh_user: null
+    url: https://github.com/davidhalter/jedi.git
     user: davidhalter
     vc: git
 ---
@@ -199,11 +198,11 @@ project:
   primary_remote:
     default_branch: master
     host: github.com
-    protocol: ssh
-    repo_name: IPython
-    ssh_user: git
-    url: git@github.com:IPython/IPython.git
-    user: IPython
+    protocol: https
+    repo_name: ipython
+    ssh_user: null
+    url: https://github.com/ipython/ipython.git
+    user: ipython
     vc: git
 ---
 function: main_build
@@ -213,12 +212,12 @@ proj_name: nbformat
 project:
   name: nbformat
   primary_remote:
-    default_branch: master
+    default_branch: main
     host: github.com
-    protocol: ssh
+    protocol: https
     repo_name: nbformat
-    ssh_user: git
-    url: git@github.com:jupyter/nbformat.git
+    ssh_user: null
+    url: https://github.com/jupyter/nbformat.git
     user: jupyter
     vc: git
 ---
@@ -231,10 +230,10 @@ project:
   primary_remote:
     default_branch: main
     host: github.com
-    protocol: ssh
+    protocol: https
     repo_name: nbconvert
-    ssh_user: git
-    url: git@github.com:jupyter/nbconvert.git
+    ssh_user: null
+    url: https://github.com/jupyter/nbconvert.git
     user: jupyter
     vc: git
 ---
@@ -247,10 +246,10 @@ project:
   primary_remote:
     default_branch: master
     host: github.com
-    protocol: ssh
+    protocol: https
     repo_name: python-certifi
-    ssh_user: git
-    url: git@github.com:certifi/python-certifi.git
+    ssh_user: null
+    url: https://github.com/certifi/python-certifi.git
     user: certifi
     vc: git
 ---
@@ -264,6 +263,7 @@ proj_name: Pillow
 project:
   name: matplotlib
   primary_remote:
+    default_branch: main
     host: github.com
     protocol: https
     repo_name: Pillow
@@ -281,10 +281,10 @@ project:
   primary_remote:
     default_branch: main
     host: github.com
-    protocol: ssh
+    protocol: https
     repo_name: matplotlib
-    ssh_user: git
-    url: git@github.com:matplotlib/matplotlib.git
+    ssh_user: null
+    url: https://github.com/matplotlib/matplotlib.git
     user: matplotlib
     vc: git
 ---
@@ -297,10 +297,10 @@ project:
   primary_remote:
     default_branch: main
     host: github.com
-    protocol: ssh
+    protocol: https
     repo_name: pandas
-    ssh_user: git
-    url: git@github.com:pandas-dev/pandas.git
+    ssh_user: null
+    url: https://github.com/pandas-dev/pandas.git
     user: pandas-dev
     vc: git
 ---
@@ -313,10 +313,10 @@ project:
   primary_remote:
     default_branch: main
     host: github.com
-    protocol: ssh
+    protocol: https
     repo_name: networkx
-    ssh_user: git
-    url: git@github.com:networkx/networkx.git
+    ssh_user: null
+    url: https://github.com/networkx/networkx.git
     user: networkx
     vc: git
 ---
@@ -329,10 +329,10 @@ project:
   primary_remote:
     default_branch: master
     host: github.com
-    protocol: ssh
+    protocol: https
     repo_name: toolz
-    ssh_user: git
-    url: git@github.com:pytoolz/toolz.git
+    ssh_user: null
+    url: https://github.com/pytoolz/toolz.git
     user: pytoolz
     vc: git
 ---
@@ -345,10 +345,10 @@ project:
   primary_remote:
     default_branch: master
     host: github.com
-    protocol: ssh
+    protocol: https
     repo_name: pyyaml
-    ssh_user: git
-    url: git@github.com:yaml/pyyaml.git
+    ssh_user: null
+    url: https://github.com/yaml/pyyaml.git
     user: yaml
     vc: git
 ---
@@ -380,10 +380,10 @@ project:
   primary_remote:
     default_branch: main
     host: github.com
-    protocol: ssh
+    protocol: https
     repo_name: pytest
-    ssh_user: git
-    url: git@github.com:pytest-dev/pytest.git
+    ssh_user: null
+    url: https://github.com/pytest-dev/pytest.git
     user: pytest-dev
     vc: git
 ---
@@ -394,19 +394,22 @@ proj_name: sphinx
 project:
   name: sphinx
   primary_remote:
-    default_branch: 4.x
+    default_branch: 5.x
     host: github.com
-    protocol: ssh
+    protocol: https
     repo_name: sphinx
-    ssh_user: git
-    url: git@github.com:sphinx-doc/sphinx.git
+    ssh_user: null
+    url: https://github.com/sphinx-doc/sphinx.git
     user: sphinx-doc
     vc: git
 ---
-args: "install flake8>=3.8 pydocstyle>=5.1.0 flake8-docstrings>=1.4.0 certifi coverage<6.3 pytest!=4.6.0,!=5.4.0 pytest-cov pytest-rerunfailures pytest-timeout pytest-xdist python-dateutil tornado"
+args: install flake8>=3.8 pydocstyle>=5.1.0 flake8-docstrings>=1.4.0 certifi coverage<6.3
+  pytest!=4.6.0,!=5.4.0 pytest-cov pytest-rerunfailures pytest-timeout pytest-xdist
+  python-dateutil tornado
 kind: pip
 ---
-args: "install colorspacious ipywidgets numpydoc>=0.8 pydata-sphinx-theme>=0.8.0 mpl-sphinx-theme sphinxcontrib-svg2pdfconverter>=1.1.0 sphinx-gallery>=0.10 sphinx-copybutton sphinx-panels"
+args: install colorspacious ipywidgets numpydoc>=0.8 pydata-sphinx-theme>=0.8.0 mpl-sphinx-theme
+  sphinxcontrib-svg2pdfconverter>=1.1.0 sphinx-gallery>=0.10 sphinx-copybutton sphinx-panels
 kind: pip
 ---
 args: install coverage<6.3
@@ -430,10 +433,10 @@ project:
   primary_remote:
     default_branch: master
     host: github.com
-    protocol: ssh
+    protocol: https
     repo_name: jupyterlab
-    ssh_user: git
-    url: git@github.com:jupyterlab/jupyterlab.git
+    ssh_user: null
+    url: https://github.com/jupyterlab/jupyterlab.git
     user: jupyterlab
     vc: git
 ---
@@ -446,10 +449,10 @@ project:
   primary_remote:
     default_branch: main
     host: github.com
-    protocol: ssh
+    protocol: https
     repo_name: dask
-    ssh_user: git
-    url: git@github.com:dask/dask.git
+    ssh_user: null
+    url: https://github.com/dask/dask.git
     user: dask
     vc: git
 ---
@@ -462,10 +465,10 @@ project:
   primary_remote:
     default_branch: main
     host: github.com
-    protocol: ssh
+    protocol: https
     repo_name: distributed
-    ssh_user: git
-    url: git@github.com:dask/distributed.git
+    ssh_user: null
+    url: https://github.com/dask/distributed.git
     user: dask
     vc: git
 ---
@@ -478,10 +481,10 @@ project:
   primary_remote:
     default_branch: master
     host: github.com
-    protocol: ssh
+    protocol: https
     repo_name: pywt
-    ssh_user: git
-    url: git@github.com:PyWavelets/pywt.git
+    ssh_user: null
+    url: https://github.com/PyWavelets/pywt.git
     user: PyWavelets
     vc: git
 ---
@@ -494,10 +497,10 @@ project:
   primary_remote:
     default_branch: master
     host: github.com
-    protocol: ssh
+    protocol: https
     repo_name: imagecodecs
-    ssh_user: git
-    url: git@github.com:cgohlke/imagecodecs.git
+    ssh_user: null
+    url: https://github.com/cgohlke/imagecodecs.git
     user: cgohlke
     vc: git
 vc: none
@@ -511,10 +514,10 @@ project:
   primary_remote:
     default_branch: main
     host: github.com
-    protocol: ssh
+    protocol: https
     repo_name: scikit-image
-    ssh_user: git
-    url: git@github.com:scikit-image/scikit-image.git
+    ssh_user: null
+    url: https://github.com/scikit-image/scikit-image.git
     user: scikit-image
     vc: git
 ---
@@ -527,10 +530,10 @@ project:
   primary_remote:
     default_branch: main
     host: github.com
-    protocol: ssh
+    protocol: https
     repo_name: uritemplate
-    ssh_user: git
-    url: git@github.com:python-hyper/uritemplate.git
+    ssh_user: null
+    url: https://github.com/python-hyper/uritemplate.git
     user: python-hyper
     vc: git
 ---
@@ -590,10 +593,10 @@ project:
   primary_remote:
     default_branch: master
     host: github.com
-    protocol: ssh
+    protocol: https
     repo_name: yarl
-    ssh_user: git
-    url: git@github.com:aio-libs/yarl.git
+    ssh_user: null
+    url: https://github.com/aio-libs/yarl.git
     user: aio-libs
     vc: git
 ---
@@ -608,10 +611,10 @@ project:
   primary_remote:
     default_branch: master
     host: github.com
-    protocol: ssh
+    protocol: https
     repo_name: frozenlist
-    ssh_user: git
-    url: git@github.com:aio-libs/frozenlist.git
+    ssh_user: null
+    url: https://github.com/aio-libs/frozenlist.git
     user: aio-libs
     vc: git
 ---
@@ -624,10 +627,10 @@ project:
   primary_remote:
     default_branch: master
     host: github.com
-    protocol: ssh
+    protocol: https
     repo_name: aiohttp
-    ssh_user: git
-    url: git@github.com:aio-libs/aiohttp.git
+    ssh_user: null
+    url: https://github.com/aio-libs/aiohttp.git
     user: aio-libs
     vc: git
 ---
@@ -640,10 +643,10 @@ project:
   primary_remote:
     default_branch: master
     host: github.com
-    protocol: ssh
+    protocol: https
     repo_name: cytoolz
-    ssh_user: git
-    url: git@github.com:pytoolz/cytoolz.git
+    ssh_user: null
+    url: https://github.com/pytoolz/cytoolz.git
     user: pytoolz
     vc: git
 ---
@@ -656,10 +659,10 @@ project:
   primary_remote:
     default_branch: master
     host: github.com
-    protocol: ssh
+    protocol: https
     repo_name: intake
-    ssh_user: git
-    url: git@github.com:intake/intake.git
+    ssh_user: null
+    url: https://github.com/intake/intake.git
     user: intake
     vc: git
 ---
@@ -688,10 +691,10 @@ project:
   primary_remote:
     default_branch: master
     host: github.com
-    protocol: ssh
+    protocol: https
     repo_name: numcodecs
-    ssh_user: git
-    url: git@github.com:zarr-developers/numcodecs.git
+    ssh_user: null
+    url: https://github.com/zarr-developers/numcodecs.git
     user: zarr-developers
     vc: git
 ---
@@ -707,10 +710,10 @@ project:
   primary_remote:
     default_branch: master
     host: github.com
-    protocol: ssh
+    protocol: https
     repo_name: pycurl
-    ssh_user: git
-    url: git@github.com:pycurl/pycurl.git
+    ssh_user: null
+    url: https://github.com/pycurl/pycurl.git
     user: pycurl
     vc: git
 ---
@@ -785,7 +788,7 @@ proj_name: databroker
 project:
   name: databroker
   primary_remote:
-    default_branch: master
+    default_branch: main
     host: github.com
     protocol: ssh
     repo_name: databroker
@@ -833,11 +836,12 @@ proj_name: confluent-kafka-python
 project:
   name: confluent-kafka-python
   primary_remote:
+    default_branch: master
     host: github.com
-    protocol: ssh
+    protocol: https
     repo_name: confluent-kafka-python
-    ssh_user: git
-    url: git@github.com:confluentinc/confluent-kafka-python.git
+    ssh_user: null
+    url: https://github.com/confluentinc/confluent-kafka-python.git
     user: confluentinc
     vc: git
 ---
@@ -898,10 +902,10 @@ project:
   primary_remote:
     default_branch: master
     host: github.com
-    protocol: ssh
+    protocol: https
     repo_name: happi
-    ssh_user: git
-    url: git@github.com:pcdshub/happi.git
+    ssh_user: null
+    url: https://github.com/pcdshub/happi.git
     user: pcdshub
     vc: git
 ---
@@ -1125,8 +1129,8 @@ project:
     protocol: ssh
     repo_name: nsls2-detector-handlers
     ssh_user: git
-    url: git@github.com:bluesky/nsls2-detector-handlers.git
-    user: bluesky
+    url: git@github.com:NSLS-II/nsls2-detector-handlers.git
+    user: NSLS-II
     vc: git
 ---
 function: main_build
@@ -1173,8 +1177,8 @@ project:
     protocol: ssh
     repo_name: caproto
     ssh_user: git
-    url: git@github.com:NSLS-II/caproto.git
-    user: NSLS-II
+    url: git@github.com:caproto/caproto.git
+    user: caproto
     vc: git
 ---
 function: main_build
@@ -1266,10 +1270,10 @@ project:
   primary_remote:
     default_branch: master
     host: github.com
-    protocol: ssh
+    protocol: https
     repo_name: fabio
-    ssh_user: git
-    url: git@github.com:silx-kit/fabio.git
+    ssh_user: null
+    url: https://github.com/silx-kit/fabio.git
     user: silx-kit
     vc: git
 ---
@@ -1285,10 +1289,10 @@ project:
   primary_remote:
     default_branch: master
     host: github.com
-    protocol: ssh
+    protocol: https
     repo_name: numexpr
-    ssh_user: git
-    url: git@github.com:pydata/numexpr.git
+    ssh_user: null
+    url: https://github.com/pydata/numexpr.git
     user: pydata
     vc: git
 ---
@@ -1301,10 +1305,10 @@ project:
   primary_remote:
     default_branch: master
     host: github.com
-    protocol: ssh
+    protocol: https
     repo_name: silx
-    ssh_user: git
-    url: git@github.com:silx-kit/silx.git
+    ssh_user: null
+    url: https://github.com/silx-kit/silx.git
     user: silx-kit
     vc: git
 ---
@@ -1317,10 +1321,10 @@ project:
   primary_remote:
     default_branch: master
     host: github.com
-    protocol: ssh
+    protocol: https
     repo_name: pyFAI
-    ssh_user: git
-    url: git@github.com:silx-kit/pyFAI.git
+    ssh_user: null
+    url: https://github.com/silx-kit/pyFAI.git
     user: silx-kit
     vc: git
 ---
@@ -1333,10 +1337,10 @@ project:
   primary_remote:
     default_branch: master
     host: github.com
-    protocol: ssh
+    protocol: https
     repo_name: typed_ast
-    ssh_user: git
-    url: git@github.com:python/typed_ast.git
+    ssh_user: null
+    url: https://github.com/python/typed_ast.git
     user: python
     vc: git
 ---
@@ -1352,10 +1356,10 @@ project:
   primary_remote:
     default_branch: master
     host: github.com
-    protocol: ssh
+    protocol: https
     repo_name: pyerfa
-    ssh_user: git
-    url: git@github.com:liberfa/pyerfa.git
+    ssh_user: null
+    url: https://github.com/liberfa/pyerfa.git
     user: liberfa
     vc: git
 ---
@@ -1368,10 +1372,10 @@ project:
   primary_remote:
     default_branch: main
     host: github.com
-    protocol: ssh
+    protocol: https
     repo_name: astropy
-    ssh_user: git
-    url: git@github.com:astropy/astropy.git
+    ssh_user: null
+    url: https://github.com/astropy/astropy.git
     user: astropy
     vc: git
 ---
@@ -1384,10 +1388,10 @@ project:
   primary_remote:
     default_branch: master
     host: github.com
-    protocol: ssh
+    protocol: https
     repo_name: greenlet
-    ssh_user: git
-    url: git@github.com:python-greenlet/greenlet.git
+    ssh_user: null
+    url: https://github.com/python-greenlet/greenlet.git
     user: python-greenlet
     vc: git
 ---
@@ -1401,7 +1405,7 @@ proj_name: pims
 project:
   name: pims
   primary_remote:
-    default_branch: master
+    default_branch: main
     host: github.com
     protocol: ssh
     repo_name: pims
@@ -1419,10 +1423,10 @@ project:
   primary_remote:
     default_branch: develop
     host: github.com
-    protocol: ssh
+    protocol: https
     repo_name: wrapt
-    ssh_user: git
-    url: git@github.com:GrahamDumpleton/wrapt.git
+    ssh_user: null
+    url: https://github.com/GrahamDumpleton/wrapt.git
     user: GrahamDumpleton
     vc: git
 ---
