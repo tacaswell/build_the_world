@@ -7,40 +7,45 @@ maintain).
 ## Goals
 
 I have frequently been caught out by changes to my upstream dependencies
-breaking me.  Sometimes the changes are things I just have to adapt to, but in
+breaking me.  Sometimes the changes are things I just have to adapt to.  But in
 other cases I have been told the changes were unintentional and if the impact
 had been known they would not have been released.  Thus, I set out to try and
 find those issues as early as possible.
 
 The goals of this project are:
 
-1. Build and make available in a venv the main branch of CPython
-2. Install the main / default branch of most of the Scientific Python ecosystem
-3. Be able to easily switch any package to a source install for development.
-4. Be easy to re-build every from scratch.
+1. Build and make available in a venv the main branch of CPython.
+2. Install the main / default branch of most of the Scientific Python ecosystem.
+3. Incremental builds / ability to resume after debugging a package's install.
+4. Be able to easily switch any package to a source install for development.
+5. Be easy to re-build everything from scratch.
 
 ## History
 
-The first version of this script only complied CPython and created a virtual
-environment for me to work in.  However, due needing to install things from
-source (mostly to deal with projects that ship pre-cythonized c files in their
-sdists), to get bug fixes for the newest CPython that were not released yet, or
-because I had to work from a development branch the number of projects being
-built from git (or hg) checkouts kept growing.  Eventually I out-grew my bash
-script without functions, to a bash script with functions, then a xonsh script
-with all of the source locations hard-coded, to finally the current state
+The first version of this was a bash script that complied CPython and created a
+virtual environment.  Very quickly the script started to automate installing
+Python packages from source.  The number of projects that I was installing from
+version control rapidly grew -- driven by needing to work around projects that
+ship pre-cythonized c files in their sdists, needing un-released bug-fixes to
+support the main branch of CPython, or just projects I was personally
+contributing to.  Eventually a single `bash` script (without functions!) was refactored
+to a `bash` script _with_ functions, to a `xonsh` script with all of checkout locations
+hard-coded at the top of the file, to the current state which uses a handful of `xonsh` scripts
+and a `yaml` file to track where the checkouts are.
 
 ## Code quality
 
 This is 🚮 trash 🚮 code that as of the time of this writing has been used by 1
-(one) person on 1 (one) computer.  The unit testing is "can I rebuild the
-environment"; for a long while, the "continue" functionality was implemented by
-commenting out the already built projects..
+(one) person on 2 (two) computers (but one of those is now de-commissioned).
+The unit testing is "can I rebuild the environment"; for a long while, the
+"continue" functionality was implemented by commenting out the already built
+projects...  These tools have been slowly moving towards being proper CLI
+tools, but until then they get the job done.
 
-These tools have been slowly moving towards being proper CLI tools, but they
-get the job done.  This code is offered in the fullest sense of "AS IS", but
-I have been slowly adding quality of life features and am very open to any
-suggestions of how to improve it.
+
+This code is offered in the fullest sense of "AS IS".  However, I have been
+slowly adding quality of life features and am open to any suggestions and
+collaboration to improve it!
 
 ## Requirements
 
@@ -50,7 +55,7 @@ on.  At a minimum running these scripts will require:
 1. xonsh
 2. c, c++, rust, and fortran compilers
 3. mongodb running on the local host (for logging and resuming the build)
-   and pymongo available to xonsh.
+   and pymongo available to xonsh
 4. pyyaml
 5. cmake
 6. npm
@@ -91,7 +96,12 @@ $ xonsh find_repos.xsh path/to/source/directory
 
 will find all of the git and hg checkouts under the given directory and will
 write out a file `all_repos.yaml` with information about all of the checkouts
-it found.
+it found.  Optionally, you can sync the default branches via
+
+```bash
+python add_default_branch.py
+xonsh update_build_order.xsh
+```
 
 Once all of the required repositories are checked out and found, run
 
@@ -125,14 +135,16 @@ $ xonsh build_py_env.xsh --continue
 
 ## FAQ
 
-1. **Aren't you reinventing \<packaging system\>?**: Yes, well no. while this
+1. **Aren't you reinventing \<packaging system\>?**: Yes, well no.  While this
    code and packaging systems both build from source, a packaging system is
-   trying to create distributively artifacts.  This code is only about making
-   the installs work on the machine the script is run on.  It is also very
-   important to be to be able to source install from a development branch any
-   project in the environment.
+   trying to create distributable binary artifacts.  This code is only trying
+   to making the installs work on the machine the script is run on.  I am
+   solving a _much_ simpler problem than a packaging system.
 
-   I am solving a _much_ simpler problem than a packaging system.
+   This code does implicitly rely on `pip`'s dependency resolution, but the
+   build is ordered to be approximately right.
+
+
 2. **What about [Spack](https://github.com/spack/spack)?** Spack has a
    "(re)build the world" approach, but keeps careful track of versions,
    provides tools to change versions and deterministically rebuild.  This
@@ -142,12 +154,12 @@ $ xonsh build_py_env.xsh --continue
    replaces it!
 
    Again, I am solving a much simpler problem that Spack is trying to solve.
-2. **Why xonsh?**: I wanted to learn xonsh and the shell/Python hybrid is really
-   pleasant for this sort of work (even I sometimes have to trial-and-error moving
-   variables between the two sides).
+2. **Why xonsh?**: I wanted to learn xonsh and the shell/Python hybrid is
+   really pleasant for this sort of work (even if I sometimes have to
+   trial-and-error accessing variables between the two sides and with string escaping).
 3. **Is this re-inventing pythonci?**:
    No. [pythonci](https://github.com/vstinner/pythonci/) is a Victor Stinner
-   project with a more reasonable goal of building the stable branches of
+   project with a more reasonable goal of building the stable release of
    projects against the default development branch of CPython.  I am trying to
    build the development branch of
    everything. [pythonperformance](https://github.com/python/pyperformance)
@@ -172,5 +184,5 @@ $ xonsh build_py_env.xsh --continue
     this is now coming off of my computer and out into the world.  However, I
     am not sure if anyone else would _want_ to participate in this admittedly
     silly activity.  I am being honest about my current ambitions for it and
-    the history.  If this seems interesting / fun / useful to you lets be
+    the history.  If this seems interesting / fun / useful to you then lets be
     friends!
