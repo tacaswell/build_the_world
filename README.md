@@ -1,3 +1,4 @@
+
 # 🏗️ Build the world 🌐
 
 This is a repository of Python and [xonsh](https://xon.sh) scripts that I
@@ -96,7 +97,10 @@ $ xonsh find_repos.xsh path/to/source/directory
 
 will find all of the git and hg checkouts under the given directory and will
 write out a file `all_repos.yaml` with information about all of the checkouts
-it found.  Optionally, you can sync the default branches via
+it found.  While this is walking the repositories it will also change the url
+on any `git://` urls to `https://` as github has stopped supporting the
+unauthenticaed git protocol for fetching repostiory data.  Optionally, you can
+sync the default branches via
 
 ```bash
 python add_default_branch.py
