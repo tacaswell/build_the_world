@@ -33,7 +33,7 @@ project:
 args: install  black flake8 colorlog
 kind: pip
 ---
-args: install  setuptools<60'
+args: install  setuptools<60 cmake ninja
 kind: pip
 ---
 function: main_build
@@ -218,6 +218,9 @@ project:
     user: ipython
     vc: git
 ---
+args: install --no-build-isolation  flit
+kind: pip
+---
 function: main_build
 kind: source_install
 name: nbformat
@@ -233,6 +236,9 @@ project:
     url: https://github.com/jupyter/nbformat.git
     user: jupyter
     vc: git
+---
+args: install --no-build-isolation hatchling
+kind: pip
 ---
 function: main_build
 kind: source_install
@@ -381,7 +387,10 @@ project:
     user: lxml
     vc: git
 ---
-args: install  pygraphviz pydot pyyaml
+args: install  pygraphviz pydot
+kind: pip
+---
+args: install --no-build-isolation  pre-commit
 kind: pip
 ---
 function: main_build
