@@ -30,10 +30,10 @@ project:
     user: pypa
     vc: git
 ---
-args: install  black flake8 colorlog
+args: install black flake8 colorlog
 kind: pip
 ---
-args: install  setuptools<60 cmake ninja
+args: install setuptools<60 cmake ninja
 kind: pip
 ---
 function: main_build
@@ -116,7 +116,7 @@ project:
     user: scipy
     vc: git
 ---
-args: install  pkgconfig six
+args: install pkgconfig six
 kind: pip
 ---
 function: main_build
@@ -167,7 +167,7 @@ project:
     user: davidhalter
     vc: git
 ---
-args: install --no-build-isolation  packaging
+args: install --no-build-isolation packaging
 kind: pip
 ---
 function: main_build
@@ -218,7 +218,7 @@ project:
     user: ipython
     vc: git
 ---
-args: install --no-build-isolation  flit
+args: install --no-build-isolation flit
 kind: pip
 ---
 function: main_build
@@ -272,7 +272,7 @@ project:
     user: certifi
     vc: git
 ---
-args: install --no-build-isolation  cppy
+args: install --no-build-isolation cppy
 kind: pip
 ---
 function: main_build
@@ -387,10 +387,10 @@ project:
     user: lxml
     vc: git
 ---
-args: install  pygraphviz pydot
+args: install pygraphviz pydot
 kind: pip
 ---
-args: install --no-build-isolation  pre-commit
+args: install --no-build-isolation pre-commit
 kind: pip
 ---
 function: main_build
@@ -440,7 +440,7 @@ kind: pip
 args: uninstall flake8-per-file-ignores
 kind: pip
 ---
-args: install  jupyter_packaging
+args: install jupyter_packaging
 kind: pip
 ---
 args: install --no-build-isolation --upgrade maturin
@@ -575,10 +575,10 @@ project:
     vc: hg
 vc: hg
 #---
-#args: install    --index-url https://riverbankcomputing.com/pypi/simple/ --pre --upgrade  PyQt5
+#args: install --index-url https://riverbankcomputing.com/pypi/simple/ --pre --upgrade PyQt5
 #kind: pip
 ---
-args: install  --index-url https://riverbankcomputing.com/pypi/simple/ --pre --upgrade  PyQt6
+args: install --index-url https://riverbankcomputing.com/pypi/simple/ --pre --upgrade PyQt6
 kind: pip
 ---
 args: install PyQt6
@@ -600,7 +600,7 @@ project:
     vc: hg
 vc: hg
 ---
-args: install  pytest pytest-xdist curio asv pytest_benchmark trio coverage qtpy twine
+args: install pytest pytest-xdist curio asv pytest_benchmark trio coverage qtpy twine
   beautifulsoup4 typing-extensions
 kind: pip
 ---
@@ -720,7 +720,7 @@ project:
     user: zarr-developers
     vc: git
 ---
-args: install --no-build-isolation    cftime
+args: install --no-build-isolation cftime
 kind: pip
 ---
 function: pycurl_build
@@ -1299,7 +1299,7 @@ project:
     user: silx-kit
     vc: git
 ---
-args: install  yapsy signalslot virtualenv requests appdirs
+args: install yapsy signalslot virtualenv requests appdirs
 kind: pip
 ---
 function: main_build
@@ -1366,7 +1366,7 @@ project:
     user: python
     vc: git
 ---
-args: install  extension_helpers
+args: install extension_helpers
 kind: pip
 ---
 function: main_build
@@ -1417,7 +1417,7 @@ project:
     user: python-greenlet
     vc: git
 ---
-args: install --no-build-isolation  pyca
+args: install --no-build-isolation pyca
 kind: pip
 ---
 function: main_build
@@ -1452,15 +1452,13 @@ project:
     user: GrahamDumpleton
     vc: git
 ---
-args: 'install --no-build-isolation   ujson pymongo black
-  sphinx_rtd_theme dpkt netifaces openpyxl '
+args: 'install --no-build-isolation ujson pymongo sphinx_rtd_theme dpkt netifaces openpyxl'
 kind: pip
 ---
-args: 'install --no-build-isolation   vcrpy httpie pydocstyle
-  cookiecutter pytest-instafail httpx tzlocal doct boltons xarray pydata-sphinx-theme    '
+args: 'install --no-build-isolation vcrpy httpie pydocstyle cookiecutter pytest-instafail httpx tzlocal doct boltons xarray pydata-sphinx-theme'
 kind: pip
 ---
-args: install --no-build-isolation   jupyterlab-git jupyterlab-spellchecker
+args: install --no-build-isolation jupyterlab-git jupyterlab-spellchecker
   myst_parser
 kind: pip
 ---
@@ -1468,13 +1466,13 @@ args: uninstall -y pyepics
 kind: pip
 name: remove pyepics
 ---
-args: install  xcffib pytest-tornasync
+args: install xcffib pytest-tornasync
 kind: pip
 ---
 args: install --no-cache-dir cairocffi
 kind: pip
 ---
-args: install --no-build-isolation   pycairo
+args: install --no-build-isolation pycairo
 kind: pip
 ---
 function: main_build
@@ -1493,5 +1491,5 @@ project:
     user: matplotlib
     vc: git
 ---
-args: install --no-build-isolation  pelican[markdown]
+args: install --no-build-isolation pelican[markdown]
 kind: pip
