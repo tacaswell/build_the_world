@@ -270,6 +270,8 @@ for repo_path in find_git_repos(path):
             break
     else:
         primary_remote = next(iter(remotes.values()))
+    if primary_remote is None:
+        continue
     projects.append(
         Project(
             name=primary_remote.repo_name,
@@ -294,6 +296,8 @@ for repo_path in find_hg_repos(path):
             break
     else:
         primary_remote = next(iter(remotes.values()))
+    if primary_remote is None:
+        continue
     projects.append(
         Project(
             name=primary_remote.repo_name,
