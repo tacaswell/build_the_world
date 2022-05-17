@@ -1,6 +1,3 @@
-args: install --no-build-isolation --upgrade  --use-feature=in-tree-build pip
-kind: pip
----
 function: main_build
 kind: source_install
 name: wheel
@@ -14,6 +11,22 @@ project:
     repo_name: wheel
     ssh_user: null
     url: https://github.com/pypa/wheel.git
+    user: pypa
+    vc: git
+---
+function: main_build
+kind: source_install
+name: pip_src
+proj_name: pip
+project:
+  name: pip
+  primary_remote:
+    default_branch: main
+    host: github.com
+    protocol: https
+    repo_name: pip
+    ssh_user: null
+    url: https://github.com/pypa/pip.git
     user: pypa
     vc: git
 ---
