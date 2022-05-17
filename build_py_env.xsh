@@ -86,14 +86,23 @@ def setuptools_build(**kwargs):
     python bootstrap.py
     return !(pip install --no-build-isolation  --use-feature=in-tree-build  .)
 
-
-def main_build(**kwargs):
-    auto_main(**kwargs)
+def git_cleanup():
     git clean -xfd
     git submodule init
     git submodule update
     cleanup_cython()
-    return !(pip install --no-build-isolation  --use-feature=in-tree-build   .)
+
+
+def main_build(**kwargs):
+    auto_main(**kwargs)
+    git_cleanup()
+    return !(pip install --no-build-isolation .)
+
+
+def setup_py_build(**kwargs):
+    auto_main(**kwargs)
+    git_cleanup()
+    return !(python setup.py install)
 
 
 def suitcaseserver_build(**kwargs):
