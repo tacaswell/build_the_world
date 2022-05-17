@@ -167,7 +167,7 @@ project:
     user: davidhalter
     vc: git
 ---
-args: install --no-build-isolation  --use-feature=in-tree-build packaging
+args: install --no-build-isolation  packaging
 kind: pip
 ---
 function: main_build
@@ -266,7 +266,7 @@ project:
     user: certifi
     vc: git
 ---
-args: install --no-build-isolation  --use-feature=in-tree-build cppy
+args: install --no-build-isolation  cppy
 kind: pip
 ---
 function: main_build
@@ -711,7 +711,7 @@ project:
     user: zarr-developers
     vc: git
 ---
-args: install --no-build-isolation  --use-feature=in-tree-build   cftime
+args: install --no-build-isolation    cftime
 kind: pip
 ---
 function: pycurl_build
@@ -1408,7 +1408,7 @@ project:
     user: python-greenlet
     vc: git
 ---
-args: install --no-build-isolation  --use-feature=in-tree-build pyca
+args: install --no-build-isolation  pyca
 kind: pip
 ---
 function: main_build
@@ -1443,15 +1443,15 @@ project:
     user: GrahamDumpleton
     vc: git
 ---
-args: 'install --no-build-isolation  --use-feature=in-tree-build  ujson pymongo black
+args: 'install --no-build-isolation   ujson pymongo black
   sphinx_rtd_theme dpkt netifaces openpyxl '
 kind: pip
 ---
-args: 'install --no-build-isolation  --use-feature=in-tree-build  vcrpy httpie pydocstyle
+args: 'install --no-build-isolation   vcrpy httpie pydocstyle
   cookiecutter pytest-instafail httpx tzlocal doct boltons xarray pydata-sphinx-theme    '
 kind: pip
 ---
-args: install --no-build-isolation  --use-feature=in-tree-build  jupyterlab-git jupyterlab-spellchecker
+args: install --no-build-isolation   jupyterlab-git jupyterlab-spellchecker
   myst_parser
 kind: pip
 ---
@@ -1465,7 +1465,7 @@ kind: pip
 args: install --no-cache-dir cairocffi
 kind: pip
 ---
-args: install --no-build-isolation  --use-feature=in-tree-build  pycairo
+args: install --no-build-isolation   pycairo
 kind: pip
 ---
 function: main_build
@@ -1484,8 +1484,5 @@ project:
     user: matplotlib
     vc: git
 ---
-args: install --no-build-isolation  --use-feature=in-tree-build pelican[markdown]
-kind: pip
----
-args: install --no-build-isolation  --use-feature=in-tree-build pre-commit
+args: install --no-build-isolation  pelican[markdown]
 kind: pip

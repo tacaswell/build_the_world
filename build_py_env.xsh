@@ -84,7 +84,7 @@ def setuptools_build(**kwargs):
     git clean -xfd
     cleanup_cython()
     python bootstrap.py
-    return !(pip install --no-build-isolation  --use-feature=in-tree-build  .)
+    return !(pip install --no-build-isolation    .)
 
 def git_cleanup():
     git clean -xfd
@@ -106,8 +106,8 @@ def setup_py_build(**kwargs):
 
 
 def suitcaseserver_build(**kwargs):
-    pip install -r requirements-dev.txt --no-build-isolation  --use-feature=in-tree-build  --use-feature=2020-resolver
-    pip install -r requirements.txt --no-build-isolation  --use-feature=in-tree-build  --use-feature=2020-resolver
+    pip install -r requirements-dev.txt --no-build-isolation    --use-feature=2020-resolver
+    pip install -r requirements.txt --no-build-isolation    --use-feature=2020-resolver
     return main_build(**kwargs)
 
 
@@ -118,14 +118,14 @@ def numcodecs_build(**kwargs):
     git submodule update
     cleanup_cython()
     rm -rf numcodecs/*.c
-    return !(pip install --no-use-pep517 --no-build-isolation  --use-feature=in-tree-build  .)
+    return !(pip install --no-use-pep517 --no-build-isolation    .)
 
 
 def cython_build(**kwargs):
     auto_main(**kwargs)
     git clean -xfd
     git submodule update
-    return !(pip install --upgrade --no-use-pep517 --no-build-isolation  --use-feature=in-tree-build   .)
+    return !(pip install --upgrade --no-use-pep517 --no-build-isolation     .)
 
 
 def awkward_build(**kwargs):
@@ -138,7 +138,7 @@ def awkward_build(**kwargs):
     git checkout test-311-frame-changes
     git pull
     popd
-    return !(pip install --no-build-isolation  --use-feature=in-tree-build   .)
+    return !(pip install --no-build-isolation     .)
 
 
 def numpy_build(**kwargs):
@@ -155,7 +155,7 @@ def pandas_build(**kwargs):
     git clean -xfd
     cleanup_cython()
     git submodule update
-    ret = !(pip install -v  --no-build-isolation  --use-feature=in-tree-build   .)
+    ret = !(pip install -v  --no-build-isolation     .)
     bool(ret)
     return ret
 
@@ -164,7 +164,7 @@ def sip_build():
     hg purge
     hg pull
     hg update tip
-    return !(pip install --no-build-isolation  --use-feature=in-tree-build   .)
+    return !(pip install --no-build-isolation     .)
 
 
 def build_yarl(name, **kwargs):
@@ -173,7 +173,7 @@ def build_yarl(name, **kwargs):
     git clean -xfd
     cleanup_cython()
     cythonize @(name)/*.pyx
-    return !(pip install --no-build-isolation  --use-feature=in-tree-build   .)
+    return !(pip install --no-build-isolation     .)
 
 def build_aiohttp(**kwargs):
     # aiohttp has a makefile, but it pins to specific versions of cython which
@@ -188,7 +188,7 @@ def build_aiohttp(**kwargs):
     popd
     python tools/gen.py
     cythonize -3 aiohttp/*.pyx
-    return !(pip install --no-build-isolation  --use-feature=in-tree-build   .)
+    return !(pip install --no-build-isolation     .)
 
 
 def pycurl_build(**kwargs):
@@ -206,7 +206,7 @@ def imagecodecs_build(upstream_branch, **kwargs):
     git rebase origin/@(upstream_branch)
     cleanup_cython()
     # rm imagecodecs/_*.c || true
-    return !(pip install -v --no-build-isolation  --use-feature=in-tree-build  .)
+    return !(pip install -v --no-build-isolation    .)
 
 
 def build_cffi():
@@ -214,7 +214,7 @@ def build_cffi():
     hg pull
     hg update
     cleanup_cython()
-    return !(pip install --no-use-pep517 --no-build-isolation  --use-feature=in-tree-build   .)
+    return !(pip install --no-use-pep517 --no-build-isolation     .)
 
 
 def build_scipp(**kwargs):
