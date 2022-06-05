@@ -68,6 +68,9 @@ on.  At a minimum running these scripts will require:
 12. all of the image libraries + headers supported by imagecodecs
 13. [gidgethub](https://gidgethub.readthedocs.io/en/latest/) (optional,
     can be in a venv, needed to refresh default branch names)
+14. meson
+15. openblas
+16. patchelf
 
 I use this on an up-to-date [Arch Linux](https://archlinux.org/) machine with a
 fair number of AUR packages installed (mostly for imagecodecs).

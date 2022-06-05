@@ -100,6 +100,9 @@ project:
     user: serge-sans-paille
     vc: git
 ---
+args: install meson-python
+kind: pip
+---
 function: main_build
 kind: source_install
 name: scipy
