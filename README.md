@@ -129,6 +129,14 @@ $ # repeat as needed
 Eventually you will have a virtual environment with the development branch of
 a large swath of the Scientific Python (and some web) ecosystem installed!
 
+If you want to build a different branch of CPython than `main`, you can use the
+`--branch` flag to select the branch:
+
+```bash
+$ xonsh make_bleeding.xsh --branch=aardvark_special
+```
+
+
 If you only want to install the development versions of the downstream
 projects, but not CPython itself, you can do:
 
