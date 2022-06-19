@@ -68,7 +68,7 @@ project:
     user: cython
     vc: git
 ---
-function: numpy_build
+function: main_build
 kind: source_install
 name: numpy
 proj_name: numpy
