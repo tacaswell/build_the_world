@@ -1,8 +1,10 @@
 #! /usr/env xonsh
 import sys
 import argparse
+from pathlib import Path
 
 import yaml
+
 
 from xonsh.dirstack import with_pushd
 
@@ -26,6 +28,10 @@ wd_mapping = {co['name']: co['local_checkout'] for co in checkouts}
 wd = wd_mapping['cpython']
 
 prefix = ${'HOME'}+f"/.pybuild/{args.target}"
+prefix_as_path = Path(prefix)
+if prefix_as_path.exists():
+    rm -rf @(prefix)
+prefix_as_path.mkdir(parents=True)
 
 with with_pushd(wd):
     git remote update
