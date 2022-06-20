@@ -8,7 +8,7 @@ import yaml
 
 from xonsh.dirstack import with_pushd
 
-
+$RAISE_SUBPROC_ERROR = True 
 
 $XONSH_TRACE_SUBPROC = True
 $PIP_NO_BUILD_ISOLATION = 1
@@ -38,7 +38,7 @@ with with_pushd(wd):
     git checkout @(args.branch)
     git pull
     git clean -xfd
-    ./configure --prefix=@(prefix) --enable-shared LDFLAGS=-Wl,-rpath=$HOME/.pybuild/@(args.target)/lib
+    ./configure --prefix=@(prefix) --enable-shared LDFLAGS=@(f"-Wl,-rpath,$HOME/.pybuild/{args.target}/lib")
     make -j
     make install
 
