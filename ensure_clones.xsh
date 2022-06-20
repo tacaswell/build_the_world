@@ -1,22 +1,44 @@
+$RAISE_SUBPROC_ERROR = True 
+
 from pathlib import Path
 import yaml
 
 with open("build_order.yaml") as fin:
     build_order = list(yaml.unsafe_load_all(fin))
 
-build_order = [b for b in build_order if b["kind"] == "source_install"]
+source_build_order = [b for b in build_order if b["kind"] == "source_install"]
 
-build_order = [
-    b for b in build_order if b["project"]["primary_remote"].get("vc", None) == "git"
+# handle hg
+
+hg_build_order = [
+    b for b in source_build_order if b["project"]["primary_remote"].get("vc", None) == "hg"
+]
+hg_build_order = [
+    b for b in hg_build_order if b["project"]["primary_remote"].get("user", None) is not None
 ]
 
-build_order = [
+for b in hg_build_order:
+    target = p'~/source/p' / b['project']["primary_remote"]['user']
+    target.mkdir(parents=True, exist_ok=True)
+    cd @(target)
+    hg clone @(b["project"]["primary_remote"]["url"])
+
+
+# Handle git
+import sys
+sys.exit(0)
+
+git_build_order = [
+    b for b in source_build_order if b["project"]["primary_remote"].get("vc", None) == "git"
+]
+
+git_build_order = [
     b
-    for b in build_order
-    if b["project"]["primary_remote"].get("host", None) == "github.com"
+    for b in git_build_order
+    if b["project"]["primary_remote"].get("user", None) is not None
 ]
 
-print(set(b["project"]["primary_remote"]["user"] for b in build_order))
+print(set(b["project"]["primary_remote"]["user"] for b in git_build_order))
 
 bnl_orgs = {
     "networkx",
@@ -49,9 +71,9 @@ def sc_wrapper(target, org, repo, fork=True):
         hub fork
 
 
-for b in build_order:
+for b in git_build_order:
     remote = b["project"]["primary_remote"]
     if remote["user"] in bnl_orgs:
-        sc_wrapper('bnl', remote['user'],remote['repo_name'])
+        sc_wrapper('bnl', remote['user'], remote['repo_name'])
     else:
-        sc_wrapper('p', remote['user'],remote['repo_name'])
+        sc_wrapper('p', remote['user'] ,remote['repo_name'])
