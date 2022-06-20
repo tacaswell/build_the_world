@@ -1,6 +1,7 @@
 import json
 import pymongo
 import sys
+
 import time
 import uuid
 import yaml
@@ -8,6 +9,12 @@ import yaml
 $XONSH_TRACE_SUBPROC = True
 $PIP_NO_BUILD_ISOLATION = 1
 
+
+if sys.platform == 'darwin':
+    # make sure we find openblas from homebrew      
+    $LDFLAGS = "-L/opt/homebrew/opt/openblas/lib"
+    $CPPFLAGS = "-I/opt/homebrew/opt/openblas/include"
+    $PKG_CONFIG_PATH = "/opt/homebrew/opt/openblas/lib/pkgconfig"
 
 class BuildLog:
     def __init__(self):
