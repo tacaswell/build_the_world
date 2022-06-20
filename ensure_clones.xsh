@@ -25,8 +25,6 @@ for b in hg_build_order:
 
 
 # Handle git
-import sys
-sys.exit(0)
 
 git_build_order = [
     b for b in source_build_order if b["project"]["primary_remote"].get("vc", None) == "git"
