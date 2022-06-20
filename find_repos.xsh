@@ -1,4 +1,4 @@
-from typing import Dict
+from typing import Dict, Optional
 from collections import defaultdict
 from pathlib import Path
 import sys
@@ -71,9 +71,9 @@ class Remote:
     url: str
     protocol: str
     host: str
-    user: str | None
-    repo_name: str | None
-    ssh_user: str | None = None
+    user: Optional[str]
+    repo_name: Optional[str]
+    ssh_user: Optional[str] = None
     vc: str = "git"
 
 
