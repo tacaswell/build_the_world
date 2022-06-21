@@ -8,7 +8,9 @@ import yaml
 
 from xonsh.dirstack import with_pushd
 
-$RAISE_SUBPROC_ERROR = True 
+xonsh_abs_path = $(which xonsh)
+
+$RAISE_SUBPROC_ERROR = True
 
 $XONSH_TRACE_SUBPROC = True
 $PIP_NO_BUILD_ISOLATION = 1
@@ -44,9 +46,12 @@ with with_pushd(wd):
 
 $HOME/.pybuild/@(args.target)/bin/python3 -m venv --copies --clear ~/.virtualenvs/@(args.target)
 
+
+
 source-bash  f'~/.virtualenvs/{args.target}/bin/activate'
 
 pip install --upgrade pip
 pip cache remove '*cp311-linux*' || true
 
-@(sys.executable) -m xonsh build_py_env.xsh
+
+@(xonsh_abs_path) build_py_env.xsh
