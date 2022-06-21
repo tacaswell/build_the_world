@@ -40,7 +40,9 @@ with with_pushd(wd):
     git checkout @(args.branch)
     git pull
     git clean -xfd
-    ./configure --prefix=@(prefix) --enable-shared LDFLAGS=@(f"-Wl,-rpath,$HOME/.pybuild/{args.target}/lib")
+    ./configure \
+        --prefix=@(prefix) \
+        --enable-shared LDFLAGS=@(f"-Wl,-rpath,$HOME/.pybuild/{args.target}/lib")
     make -j
     make install
 
