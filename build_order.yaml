@@ -294,6 +294,9 @@ project:
 args: install --no-build-isolation cppy
 kind: pip
 ---
+args: install --no-build-isolation setuptools_scm!=7.0.1
+kind: pip
+---
 function: main_build
 kind: source_install
 name: matplotlib
