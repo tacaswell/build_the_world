@@ -434,7 +434,7 @@ args: install flake8>=3.8 pydocstyle>=5.1.0 flake8-docstrings>=1.4.0 certifi cov
 kind: pip
 ---
 args: install colorspacious ipywidgets numpydoc>=0.8 pydata-sphinx-theme>=0.8.0 mpl-sphinx-theme
-  sphinxcontrib-svg2pdfconverter>=1.1.0 sphinx-gallery>=0.10 sphinx-copybutton sphinx-panels
+  sphinxcontrib-svg2pdfconverter>=1.1.0 sphinx-gallery>=0.10 sphinx-copybutton sphinx-panels sphinx-design
 kind: pip
 ---
 args: install coverage<6.3
