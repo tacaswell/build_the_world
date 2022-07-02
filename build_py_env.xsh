@@ -18,6 +18,14 @@ if sys.platform == 'darwin':
     $LDFLAGS = "-L/opt/homebrew/opt/openblas/lib"
     $CPPFLAGS = "-I/opt/homebrew/opt/openblas/include"
     $PKG_CONFIG_PATH = "/opt/homebrew/opt/openblas/lib/pkgconfig"
+    $CFLAGS = ' '.join(
+        (
+        '-I/opt/homebrew/Cellar/libyaml/0.2.5/include/',
+        '-I/opt/homebrew/Cellar/graphviz/3.0.0/include',
+        '-I/opt/homebrew/Cellar/librdkafka/1.9.0/include',
+        )
+    )
+    $HDF5_DIR = '/opt/homebrew/Cellar/hdf5/1.12.2'
 
 class BuildLog:
     def __init__(self):
