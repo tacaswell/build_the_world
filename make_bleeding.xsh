@@ -8,7 +8,7 @@ import yaml
 
 from xonsh.dirstack import with_pushd
 
-xonsh_abs_path = $(which xonsh)
+xonsh_abs_path = str(Path(sys.executable).parent / 'xonsh') 
 
 $RAISE_SUBPROC_ERROR = True
 
