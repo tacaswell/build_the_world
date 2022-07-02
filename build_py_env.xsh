@@ -207,7 +207,7 @@ def build_aiohttp(**kwargs):
     auto_main(**kwargs)
     git clean -xfd
     cleanup_cython()
-    cd vendor/llhttp/
+    pushd vendor/llhttp/
     npm install
     make generate
     popd
