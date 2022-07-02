@@ -328,7 +328,7 @@ try:
             if not build_log:
                 print(build_log.lines)
                 print(build_log.errors)
-                print(f"cd {step['wd']}")
+                print(f"pushd {step['wd']}")
                 raise Exception
 
         elif step['kind'] == 'pip':
