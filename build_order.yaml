@@ -1104,7 +1104,7 @@ proj_name: suitcase-tiff
 project:
   name: suitcase-tiff
   primary_remote:
-    default_branch: master
+    default_branch: main
     host: github.com
     protocol: ssh
     repo_name: suitcase-tiff
