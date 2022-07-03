@@ -15,7 +15,13 @@ $PIP_NO_BUILD_ISOLATION = 1
 
 if sys.platform == 'darwin':
     # make sure we find openblas from homebrew
-    $LDFLAGS = "-L/opt/homebrew/opt/openblas/lib"
+    $LDFLAGS = ' '.join(
+        (
+        "-L/opt/homebrew/opt/openblas/lib",
+        "-L/opt/homebrew/Cellar/libxcb/1.15/lib/"
+        )
+    )
+    $LD_LIBRARY_PATH = '/opt/homebrew/Cellar/libxcb/1.15/lib/'
     $CPPFLAGS = "-I/opt/homebrew/opt/openblas/include"
     $PKG_CONFIG_PATH = "/opt/homebrew/opt/openblas/lib/pkgconfig"
     $CFLAGS = ' '.join(
@@ -23,9 +29,13 @@ if sys.platform == 'darwin':
         '-I/opt/homebrew/Cellar/libyaml/0.2.5/include/',
         '-I/opt/homebrew/Cellar/graphviz/3.0.0/include',
         '-I/opt/homebrew/Cellar/librdkafka/1.9.0/include',
+        '-I/opt/homebrew/Cellar/libxcb/1.15'
         )
     )
     $HDF5_DIR = '/opt/homebrew/Cellar/hdf5/1.12.2'
+    # un-comment these to build freetype with CF compilers
+    # del $host_alias
+    # del $build_alias
 
 class BuildLog:
     def __init__(self):
