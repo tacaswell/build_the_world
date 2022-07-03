@@ -37,7 +37,7 @@ and a `yaml` file to track where the checkouts are.
 ## Code quality
 
 This is 🚮 trash 🚮 code that as of the time of this writing has been used by 1
-(one) person on 2 (two) computers (but one of those is now de-commissioned).
+(one) person on 3 (three) computers (but one of those is now de-commissioned).
 The unit testing is "can I rebuild the environment"; for a long while, the
 "continue" functionality was implemented by commenting out the already built
 projects...  These tools have been slowly moving towards being proper CLI
@@ -72,8 +72,12 @@ on.  At a minimum running these scripts will require:
 15. openblas
 16. patchelf
 
-I use this on an up-to-date [Arch Linux](https://archlinux.org/) machine with a
-fair number of AUR packages installed (mostly for imagecodecs).
+I currently use this on:
+
+- an up-to-date [Arch Linux](https://archlinux.org/) machine with a fair number
+  of AUR packages installed (mostly for imagecodecs).
+- an OSX 12.4 M1 machine with a fair number of brew packages installed.  I have
+  not gotten imagecodecs or cairocffi to build yet.
 
 ## Usage
 
@@ -184,10 +188,13 @@ $ xonsh build_py_env.xsh --continue
    do regularly run the test suites of the projects I work on day-to-day
    (Matplotlib, h5py, and the [bluesky suite](https://blueskyproject.io)) which
    covers the parts of the upstream code _I_ care most about.
-5. **Does this work on \<platform\>?**: I have only ever run this on an up-to-date
-   Arch Linux machine, so I have no idea!
-6. **How long does this take to build?**: A while!  It is about 2 hours on a 4th
-   gen I7.
+5. **Does this work on \<platform\>?**: I have only ever run this on an
+   up-to-date Arch Linux machine and an up-to-date OSX M1 machine, so I have no
+   idea!  Given the changes I had to make to get it to run on OSX, I would
+   expect significant changes to work on Windows, but a fair chance of working
+   on other *nix.
+6. **How long does this take to build?**: A while!  It is about the order of an
+   hour (with ccache) on both an Apple M1 and 12th gen i7.
 7. **Could some of these build steps be done in parallel?**: Yes, but so far kicking
    this off and either doing other work or walking away has worked well enough for
    me.
