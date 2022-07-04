@@ -193,12 +193,12 @@ $ xonsh build_py_env.xsh --continue
    idea!  Given the changes I had to make to get it to run on OSX, I would
    expect significant changes to work on Windows, but a fair chance of working
    on other *nix.
-6. **How long does this take to build?**: A while!  It is about the order of an
-   hour (with ccache) on both an Apple M1 and 12th gen i7.
-7. **Could some of these build steps be done in parallel?**: Yes, but so far kicking
-   this off and either doing other work or walking away has worked well enough for
-   me.
-8. **Doesn't this break all the time?**: Yes
+6. **Doesn't this break all the time?**: Yes.
+7. **How long does this take to build?**: A while!  It is about 15min with
+    ccache (and 40min without) when it does not break.
+8. **Could some of these build steps be done in parallel?**: Yes, but so far
+   kicking this off and either doing other work or walking away has worked well
+   enough for me.
 9. **These answers all seem very selfish.**: That is more of a comment, but
    yes.  This project is currently all about solving _my_ problems (and my own
    amusement).
