@@ -260,8 +260,7 @@ for repo_path in find_git_repos(path):
         print(f"\t{k}")
         parsed = {direction: parse_git_name(url) for direction, url in v.items()}
         assert len(parsed) == 2
-        assert parsed["fetch"] == parsed["push"]
-        remotes[k] = parsed["push"]
+        remotes[k] = parsed["fetch"]
     if not len(remotes):
         continue
     for k in ["upstream", "origin"]:
