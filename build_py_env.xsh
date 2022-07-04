@@ -18,7 +18,10 @@ if sys.platform == 'darwin':
     $LDFLAGS = ' '.join(
         (
         "-L/opt/homebrew/opt/openblas/lib",
-        "-L/opt/homebrew/Cellar/libxcb/1.15/lib/"
+        "-L/opt/homebrew/Cellar/libxcb/1.15/lib/",
+        '-L/opt/homebrew/Cellar/libyaml/0.2.5/lib/',
+        '-L/opt/homebrew/Cellar/librdkafka/1.9.0/lib',
+        '-L/opt/homebrew/Cellar/libxcb/1.15/lib',
         )
     )
     $LD_LIBRARY_PATH = '/opt/homebrew/Cellar/libxcb/1.15/lib/'
@@ -29,7 +32,7 @@ if sys.platform == 'darwin':
         '-I/opt/homebrew/Cellar/libyaml/0.2.5/include/',
         '-I/opt/homebrew/Cellar/graphviz/3.0.0/include',
         '-I/opt/homebrew/Cellar/librdkafka/1.9.0/include',
-        '-I/opt/homebrew/Cellar/libxcb/1.15'
+        '-I/opt/homebrew/Cellar/libxcb/1.15/include',
         )
     )
     $HDF5_DIR = '/opt/homebrew/Cellar/hdf5/1.12.2'
