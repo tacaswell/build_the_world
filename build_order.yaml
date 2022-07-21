@@ -1515,3 +1515,6 @@ project:
 ---
 args: install --no-build-isolation --pre  pelican[markdown]
 kind: pip
+---
+args: install --no-build-isolation --pre  mypy
+kind: pip
