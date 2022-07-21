@@ -109,7 +109,8 @@ def auto_main(upstream_remote='origin', upstream_branch='master'):
                 print('Done')
                 git checkout @(upstream_branch)
                 git merge @(upstream)
-                git branch -d @(cur_branch)
+                if len(cur_branch):
+                    git branch -d @(cur_branch)
 
 
 def cleanup_cython():
