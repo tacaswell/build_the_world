@@ -1513,7 +1513,7 @@ project:
     user: matplotlib
     vc: git
 ---
-args: install --no-build-isolation --pre  pelican[markdown]
+args: install --no-build-isolation --pre  pelican[markdown] pymdown-extensions
 kind: pip
 ---
 args: install --no-build-isolation --pre  mypy
