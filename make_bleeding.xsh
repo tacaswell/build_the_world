@@ -38,7 +38,9 @@ prefix_as_path.mkdir(parents=True)
 with with_pushd(wd):
     git remote update
     git checkout @(args.branch)
-    git pull
+    cur_branch = $(git branch --show-current).strip()
+    if len(cur_branch):
+        git pull
     git clean -xfd
     ./configure \
         --prefix=@(prefix) \
