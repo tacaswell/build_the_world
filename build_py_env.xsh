@@ -142,6 +142,13 @@ def main_build(**kwargs):
     return !(pip install --no-build-isolation .)
 
 
+def ipympl_build(**kwargs):
+    auto_main(**kwargs)
+    git_cleanup()
+    # TODO can we do this without an isolated env?
+    return !(python -m build) and !(pip install dist/*.whl)
+
+
 def setup_py_build(**kwargs):
     auto_main(**kwargs)
     git_cleanup()

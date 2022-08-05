@@ -1513,6 +1513,25 @@ project:
     user: matplotlib
     vc: git
 ---
+args: install --no-build-isolation --pre  build
+kind: pip
+---
+function: ipympl_build
+kind: source_install
+name: ipympl
+proj_name: ipympl
+project:
+  name: ipympl
+  primary_remote:
+    default_branch: main
+    host: github.com
+    protocol: https
+    repo_name: ipympl
+    ssh_user: null
+    url: https://github.com/matplotlib/ipympl.git
+    user: matplotlib
+    vc: git
+---
 args: install --no-build-isolation --pre  pelican[markdown] pymdown-extensions
 kind: pip
 ---
