@@ -57,6 +57,7 @@ source-bash  f'~/.virtualenvs/{args.target}/bin/activate'
 
 pip install --upgrade pip
 pip cache remove '*cp311-linux*' || true
+pip cache remove '*cp312-linux*' || true
 
 
 @(xonsh_abs_path) build_py_env.xsh
