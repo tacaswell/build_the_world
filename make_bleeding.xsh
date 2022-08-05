@@ -49,7 +49,8 @@ with with_pushd(wd):
     make install
 
 $HOME/.pybuild/@(args.target)/bin/python3 -m venv --copies --clear ~/.virtualenvs/@(args.target)
-
+# the build package seems to require this?
+ln $HOME/.pybuild/@(args.target)/bin/python3 $HOME/.pybuild/@(args.target)/bin/python
 
 
 source-bash  f'~/.virtualenvs/{args.target}/bin/activate'
