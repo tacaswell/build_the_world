@@ -315,6 +315,22 @@ kind: pip
 ---
 function: main_build
 kind: source_install
+name: contourpy
+proj_name: contourpy
+project:
+  name: contourpy
+  primary_remote:
+    default_branch: main
+    host: github.com
+    protocol: ssh
+    repo_name: contourpy
+    ssh_user: git
+    url: git@github.com:contourpy/contourpy.git
+    user: contourpy
+    vc: git
+---
+function: main_build
+kind: source_install
 name: matplotlib
 proj_name: matplotlib
 project:
