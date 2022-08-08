@@ -642,6 +642,25 @@ args: install pytest pytest-xdist curio asv pytest_benchmark trio coverage qtpy 
   beautifulsoup4 typing-extensions
 kind: pip
 ---
+args: install --no-build-isolation --pre  --upgrade maturin
+kind: pip
+---
+function: main_build
+kind: source_install
+name: pydantic-core
+proj_name: pydantic-core
+project:
+  name: pydantic-core
+  primary_remote:
+    default_branch: main
+    host: github.com
+    protocol: ssh
+    repo_name: pydantic-core
+    ssh_user: git
+    url: git@github.com:pydantic/pydantic-core.git
+    user: pydantic
+    vc: git
+---
 function: build_yarl
 kind: source_install
 kwargs:
