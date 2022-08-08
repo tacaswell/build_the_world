@@ -478,10 +478,7 @@ kind: pip
 args: uninstall flake8-per-file-ignores
 kind: pip
 ---
-args: install jupyter_packaging
-kind: pip
----
-args: install --no-build-isolation --pre  --upgrade maturin
+args: install --pre --upgrade jupyter_packaging hatch-jupyter-builder
 kind: pip
 ---
 function: main_build
