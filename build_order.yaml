@@ -244,7 +244,7 @@ proj_name: ipython
 project:
   name: IPython
   primary_remote:
-    default_branch: master
+    default_branch: main
     host: github.com
     protocol: https
     repo_name: ipython
