@@ -46,10 +46,10 @@ project:
     user: python-pillow
     vc: git
 ---
-args: install black flake8 colorlog
+args: install --pre --upgrade --no-build-isolation black flake8 colorlog
 kind: pip
 ---
-args: install setuptools<60 cmake ninja
+args: install --pre --upgrade --no-build-isolation setuptools<60 cmake ninja
 kind: pip
 ---
 function: main_build
@@ -116,7 +116,7 @@ project:
     user: serge-sans-paille
     vc: git
 ---
-args: install --no-build-isolation --pre  meson tomli ninja packaging pyparsing pyproject-metadata
+args: install --no-build-isolation --pre --upgrade  meson tomli ninja packaging pyparsing pyproject-metadata
 kind: pip
 ---
 function: main_build
@@ -151,7 +151,7 @@ project:
     user: scipy
     vc: git
 ---
-args: install pkgconfig six
+args: install --pre --upgrade --no-build-isolation pkgconfig six
 kind: pip
 ---
 function: main_build
@@ -202,7 +202,7 @@ project:
     user: davidhalter
     vc: git
 ---
-args: install --no-build-isolation --pre  packaging
+args: install --no-build-isolation --pre --upgrade  packaging
 kind: pip
 ---
 function: main_build
@@ -253,7 +253,7 @@ project:
     user: ipython
     vc: git
 ---
-args: install --no-build-isolation --pre  flit
+args: install --no-build-isolation --pre --upgrade  flit
 kind: pip
 ---
 function: main_build
@@ -272,7 +272,7 @@ project:
     user: jupyter
     vc: git
 ---
-args: install --no-build-isolation --pre  hatchling
+args: install --no-build-isolation --pre --upgrade  hatchling
 kind: pip
 ---
 function: main_build
@@ -307,10 +307,10 @@ project:
     user: certifi
     vc: git
 ---
-args: install --no-build-isolation --pre  cppy
+args: install --no-build-isolation --pre --upgrade  cppy
 kind: pip
 ---
-args: install --no-build-isolation --pre  setuptools_scm!=7.0.1
+args: install --no-build-isolation --pre --upgrade  setuptools_scm!=7.0.1
 kind: pip
 ---
 function: main_build
@@ -425,10 +425,10 @@ project:
     user: lxml
     vc: git
 ---
-args: install pygraphviz pydot
+args: install --pre --upgrade --no-build-isolation pygraphviz pydot
 kind: pip
 ---
-args: install --no-build-isolation --pre  pre-commit
+args: install --no-build-isolation --pre --upgrade  pre-commit
 kind: pip
 ---
 function: main_build
@@ -463,16 +463,16 @@ project:
     user: sphinx-doc
     vc: git
 ---
-args: install flake8>=3.8 pydocstyle>=5.1.0 flake8-docstrings>=1.4.0 certifi coverage<6.3
+args: install --pre --upgrade --no-build-isolation flake8>=3.8 pydocstyle>=5.1.0 flake8-docstrings>=1.4.0 certifi coverage<6.3
   pytest!=4.6.0,!=5.4.0 pytest-cov pytest-rerunfailures pytest-timeout pytest-xdist
-  python-dateutil tornado
+  python-dateutil tornado pytest-xvfb
 kind: pip
 ---
-args: install colorspacious ipywidgets numpydoc>=0.8 pydata-sphinx-theme>=0.8.0 mpl-sphinx-theme
+args: install --pre --upgrade --no-build-isolation colorspacious ipywidgets numpydoc>=0.8 pydata-sphinx-theme>=0.8.0 mpl-sphinx-theme
   sphinxcontrib-svg2pdfconverter>=1.1.0 sphinx-gallery>=0.10 sphinx-copybutton sphinx-panels sphinx-design
 kind: pip
 ---
-args: install coverage<6.3
+args: install --pre --upgrade --no-build-isolation coverage<6.3
 kind: pip
 ---
 args: uninstall flake8-per-file-ignores
@@ -616,7 +616,7 @@ vc: hg
 args: install --index-url https://riverbankcomputing.com/pypi/simple/ --pre --upgrade PyQt6
 kind: pip
 ---
-args: install PyQt6
+args: install --pre --upgrade --no-build-isolation PyQt6
 kind: pip
 ---
 function: build_cffi
@@ -635,7 +635,7 @@ project:
     vc: hg
 vc: hg
 ---
-args: install pytest pytest-xdist curio asv pytest_benchmark trio coverage qtpy twine
+args: install --pre --upgrade --no-build-isolation pytest pytest-xdist curio asv pytest_benchmark trio coverage qtpy twine
   beautifulsoup4 typing-extensions
 kind: pip
 ---
@@ -774,7 +774,7 @@ project:
     user: zarr-developers
     vc: git
 ---
-args: install --no-build-isolation --pre  cftime
+args: install --upgrade --no-build-isolation --no-build-isolation --pre  cftime
 kind: pip
 ---
 function: pycurl_build
@@ -1353,7 +1353,7 @@ project:
     user: silx-kit
     vc: git
 ---
-args: install yapsy signalslot virtualenv requests appdirs
+args: install --pre --upgrade --no-build-isolation yapsy signalslot virtualenv requests appdirs
 kind: pip
 ---
 function: main_build
@@ -1420,7 +1420,7 @@ project:
     user: python
     vc: git
 ---
-args: install extension_helpers
+args: install --pre --upgrade --no-build-isolation extension_helpers
 kind: pip
 ---
 function: main_build
@@ -1471,7 +1471,7 @@ project:
     user: python-greenlet
     vc: git
 ---
-args: install --no-build-isolation --pre  pyca
+args: install --no-build-isolation --pre --upgrade  pyca
 kind: pip
 ---
 function: main_build
@@ -1506,13 +1506,13 @@ project:
     user: GrahamDumpleton
     vc: git
 ---
-args: 'install --no-build-isolation --pre  ujson pymongo sphinx_rtd_theme dpkt netifaces openpyxl'
+args: 'install --no-build-isolation --pre --upgrade  ujson pymongo sphinx_rtd_theme dpkt netifaces openpyxl'
 kind: pip
 ---
-args: 'install --no-build-isolation --pre  vcrpy httpie pydocstyle cookiecutter pytest-instafail httpx tzlocal doct boltons xarray pydata-sphinx-theme'
+args: 'install --no-build-isolation --pre --upgrade  vcrpy httpie pydocstyle cookiecutter pytest-instafail httpx tzlocal doct boltons xarray pydata-sphinx-theme'
 kind: pip
 ---
-args: install --no-build-isolation --pre  jupyterlab-git jupyterlab-spellchecker
+args: install --no-build-isolation --pre --upgrade  jupyterlab-git jupyterlab-spellchecker
   myst_parser
 kind: pip
 ---
@@ -1520,13 +1520,13 @@ args: uninstall -y pyepics
 kind: pip
 name: remove pyepics
 ---
-args: install xcffib pytest-tornasync
+args: install --pre --upgrade --no-build-isolation xcffib pytest-tornasync
 kind: pip
 ---
-args: install --no-cache-dir cairocffi
+args: install --pre --upgrade --no-build-isolation --no-cache-dir cairocffi
 kind: pip
 ---
-args: install --no-build-isolation --pre  pycairo
+args: install --no-build-isolation --pre --upgrade  pycairo
 kind: pip
 ---
 function: main_build
@@ -1545,7 +1545,7 @@ project:
     user: matplotlib
     vc: git
 ---
-args: install --no-build-isolation --pre  build
+args: install --no-build-isolation --pre --upgrade  build
 kind: pip
 ---
 function: ipympl_build
@@ -1564,8 +1564,11 @@ project:
     user: matplotlib
     vc: git
 ---
-args: install --no-build-isolation --pre  pelican[markdown] pymdown-extensions
+args: install --no-build-isolation --pre --upgrade pelican[markdown] pymdown-extensions
 kind: pip
 ---
-args: install --no-build-isolation --pre  mypy
+args: install --no-build-isolation --pre --upgrade mypy
+kind: pip
+---
+args: install --no-build-isolation --pre --upgrade rich
 kind: pip
