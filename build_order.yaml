@@ -272,7 +272,7 @@ project:
     user: jupyter
     vc: git
 ---
-args: install --no-build-isolation --pre --upgrade  hatchling
+args: install --no-build-isolation --pre --upgrade  hatchling hatch-nodejs-version
 kind: pip
 ---
 function: main_build
