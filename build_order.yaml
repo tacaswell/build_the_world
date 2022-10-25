@@ -35,7 +35,7 @@ kind: source_install
 name: Pillow
 proj_name: Pillow
 project:
-  name: matplotlib
+  name: Pillow
   primary_remote:
     default_branch: main
     host: github.com
