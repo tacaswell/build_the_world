@@ -454,7 +454,7 @@ proj_name: sphinx
 project:
   name: sphinx
   primary_remote:
-    default_branch: 5.x
+    default_branch: master
     host: github.com
     protocol: https
     repo_name: sphinx
@@ -931,7 +931,7 @@ proj_name: bluesky-ui
 project:
   name: bluesky-ui
   primary_remote:
-    default_branch: master
+    default_branch: main
     host: github.com
     protocol: ssh
     repo_name: bluesky-ui
