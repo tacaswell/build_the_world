@@ -1134,22 +1134,6 @@ project:
 ---
 function: main_build
 kind: source_install
-name: suitcase-zarr
-proj_name: suitcase-zarr
-project:
-  name: suitcase-zarr
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: ssh
-    repo_name: suitcase-zarr
-    ssh_user: git
-    url: git@github.com:bluesky/suitcase-zarr.git
-    user: bluesky
-    vc: git
----
-function: main_build
-kind: source_install
 name: hklpy
 proj_name: hklpy
 project:
