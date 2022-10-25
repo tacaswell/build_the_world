@@ -21,7 +21,8 @@ for b in hg_build_order:
     target = p'~/source/p' / b['project']["primary_remote"]['user']
     target.mkdir(parents=True, exist_ok=True)
     cd @(target)
-    hg clone @(b["project"]["primary_remote"]["url"])
+    if not (target / b['project']['name']).exists():
+        hg clone @(b["project"]["primary_remote"]["url"])
 
 
 # Handle git
