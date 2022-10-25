@@ -59,11 +59,12 @@ def source_clone(org, repo, dest='other_source'):
     target = p'~/source' / dest / org
     target.mkdir(parents=True, exist_ok=True)
     cd @(target)
-    hub clone --recursive @('/'.join((org, repo)))
+    if not (target / repo).exists():
+        git clone --recursive @('git@github.com:' + '/'.join((org, repo)))
     cd @(repo)
 
 
-def sc_wrapper(target, org, repo, fork=True):
+def sc_wrapper(target, org, repo, fork=False):
     source_clone(org, repo, dest=target)
     if fork:
         hub fork

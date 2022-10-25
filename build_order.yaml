@@ -547,23 +547,7 @@ project:
     url: https://github.com/PyWavelets/pywt.git
     user: PyWavelets
     vc: git
----
-function: imagecodecs_build
-kind: source_install
-name: imagecodecs
-proj_name: imagecodecs
-project:
-  name: imagecodecs
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: https
-    repo_name: imagecodecs
-    ssh_user: null
-    url: https://github.com/cgohlke/imagecodecs.git
-    user: cgohlke
-    vc: git
-vc: none
+
 ---
 function: main_build
 kind: source_install
@@ -886,22 +870,6 @@ project:
     repo_name: bluesky-darkframes
     ssh_user: git
     url: git@github.com:bluesky/bluesky-darkframes.git
-    user: bluesky
-    vc: git
----
-function: main_build
-kind: source_install
-name: bluesky-mpl
-proj_name: bluesky-mpl
-project:
-  name: bluesky-mpl
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: ssh
-    repo_name: bluesky-mpl
-    ssh_user: git
-    url: git@github.com:bluesky/bluesky-mpl.git
     user: bluesky
     vc: git
 ---
@@ -1324,16 +1292,16 @@ project:
 function: awkward_build
 kind: source_install
 name: awkward
-proj_name: awkward-1.0
+proj_name: awkward
 project:
-  name: awkward-1.0
+  name: awkward
   primary_remote:
     default_branch: main
     host: github.com
     protocol: https
-    repo_name: awkward-1.0
+    repo_name: awkward
     ssh_user: null
-    url: https://github.com/scikit-hep/awkward-1.0.git
+    url: https://github.com/scikit-hep/awkward.git
     user: scikit-hep
     vc: git
 ---
