@@ -35,7 +35,7 @@ if sys.platform == 'darwin':
         '-I/opt/homebrew/Cellar/libxcb/1.15/include',
         )
     )
-    $HDF5_DIR = '/opt/homebrew/Cellar/hdf5/1.12.2'
+    $HDF5_DIR = '/opt/homebrew/Cellar/hdf5/1.12.2_2'
     # un-comment these to build freetype with CF compilers
     # del $host_alias
     # del $build_alias
