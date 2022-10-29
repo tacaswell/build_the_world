@@ -168,7 +168,7 @@ def numcodecs_build(**kwargs):
     git submodule update
     cleanup_cython()
     rm -rf numcodecs/*.c
-    return !(pip install --no-use-pep517 --no-build-isolation    .)
+    return !(pip install --no-build-isolation -v  .)
 
 
 def cython_build(**kwargs):
