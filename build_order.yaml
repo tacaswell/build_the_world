@@ -58,6 +58,7 @@ project:
     protocol: ssh
     repo_name: flake8
     ssh_user: git
+    default_branch: main
     url: git@github.com:PyCQA/flake8.git
     user: PyCQA
     vc: git
