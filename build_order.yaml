@@ -46,7 +46,26 @@ project:
     user: python-pillow
     vc: git
 ---
-args: install --pre --upgrade --no-build-isolation black flake8 colorlog
+function: main_build
+kind: source_install
+name: flake8
+proj_name: flake8
+name: flake8
+project:
+  name: flake8
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: flake8
+    ssh_user: git
+    url: git@github.com:PyCQA/flake8.git
+    user: PyCQA
+    vc: git
+---
+args: install --pre --upgrade --no-build-isolation flake8-force
+kind: pip
+---
+args: install --pre --upgrade --no-build-isolation black colorlog
 kind: pip
 ---
 args: install --pre --upgrade --no-build-isolation setuptools<60 cmake ninja
