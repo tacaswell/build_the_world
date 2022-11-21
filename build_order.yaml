@@ -69,7 +69,7 @@ kind: pip
 args: install --pre --upgrade --no-build-isolation black colorlog
 kind: pip
 ---
-args: install --pre --upgrade --no-build-isolation setuptools<60 cmake ninja
+args: install --pre --upgrade --no-build-isolation setuptools cmake ninja
 kind: pip
 ---
 function: main_build
@@ -104,7 +104,29 @@ project:
     user: cython
     vc: git
 ---
+args: install --no-build-isolation --pre --upgrade --force setuptools
+kind: pip
+---
+args: install --no-build-isolation --pre --upgrade  meson tomli ninja packaging pyparsing pyproject-metadata
+kind: pip
+---
 function: main_build
+kind: source_install
+name: meson-python
+proj_name: meson-python
+project:
+  name: meson-python
+  primary_remote:
+    default_branch: main
+    host: github.com
+    protocol: ssh
+    repo_name: meson-python
+    ssh_user: git
+    url: git@github.com:FFY00/meson-python.git
+    user: FFY00
+    vc: git
+---
+function: numpy_build
 kind: source_install
 name: numpy
 proj_name: numpy
@@ -136,24 +158,8 @@ project:
     user: serge-sans-paille
     vc: git
 ---
-args: install --no-build-isolation --pre --upgrade  meson tomli ninja packaging pyparsing pyproject-metadata
+args: install --pre --upgrade --no-build-isolation --force cython
 kind: pip
----
-function: main_build
-kind: source_install
-name: meson-python
-proj_name: meson-python
-project:
-  name: meson-python
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: ssh
-    repo_name: meson-python
-    ssh_user: git
-    url: git@github.com:FFY00/meson-python.git
-    user: FFY00
-    vc: git
 ---
 function: main_build
 kind: source_install
@@ -1312,22 +1318,6 @@ project:
     user: scikit-hep
     vc: git
 ---
-function: main_build
-kind: source_install
-name: fabio
-proj_name: fabio
-project:
-  name: fabio
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: https
-    repo_name: fabio
-    ssh_user: null
-    url: https://github.com/silx-kit/fabio.git
-    user: silx-kit
-    vc: git
----
 args: install --pre --upgrade --no-build-isolation yapsy signalslot virtualenv requests appdirs
 kind: pip
 ---
@@ -1349,38 +1339,6 @@ project:
 ---
 function: main_build
 kind: source_install
-name: silx
-proj_name: silx
-project:
-  name: silx
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: https
-    repo_name: silx
-    ssh_user: null
-    url: https://github.com/silx-kit/silx.git
-    user: silx-kit
-    vc: git
----
-function: main_build
-kind: source_install
-name: pyFAI
-proj_name: pyFAI
-project:
-  name: pyFAI
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: https
-    repo_name: pyFAI
-    ssh_user: null
-    url: https://github.com/silx-kit/pyFAI.git
-    user: silx-kit
-    vc: git
----
-function: main_build
-kind: source_install
 name: typed_ast
 proj_name: typed_ast
 project:
@@ -1395,6 +1353,54 @@ project:
     user: python
     vc: git
 ---
+# function: main_build
+# kind: source_install
+# name: fabio
+# proj_name: fabio
+# project:
+#   name: fabio
+#   primary_remote:
+#     default_branch: master
+#     host: github.com
+#     protocol: https
+#     repo_name: fabio
+#     ssh_user: null
+#     url: https://github.com/silx-kit/fabio.git
+#     user: silx-kit
+#     vc: git
+# ---
+# function: main_build
+# kind: source_install
+# name: silx
+# proj_name: silx
+# project:
+#   name: silx
+#   primary_remote:
+#     default_branch: master
+#     host: github.com
+#     protocol: https
+#     repo_name: silx
+#     ssh_user: null
+#     url: https://github.com/silx-kit/silx.git
+#     user: silx-kit
+#     vc: git
+# ---
+# function: main_build
+# kind: source_install
+# name: pyFAI
+# proj_name: pyFAI
+# project:
+#   name: pyFAI
+#   primary_remote:
+#     default_branch: master
+#     host: github.com
+#     protocol: https
+#     repo_name: pyFAI
+#     ssh_user: null
+#     url: https://github.com/silx-kit/pyFAI.git
+#     user: silx-kit
+#     vc: git
+# ---
 args: install --pre --upgrade --no-build-isolation extension_helpers
 kind: pip
 ---
@@ -1523,7 +1529,7 @@ project:
 args: install --no-build-isolation --pre --upgrade  build
 kind: pip
 ---
-function: ipympl_build
+function: main_build
 kind: source_install
 name: ipympl
 proj_name: ipympl

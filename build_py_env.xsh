@@ -128,13 +128,6 @@ def main_build(**kwargs):
     return !(pip install --no-build-isolation .)
 
 
-def ipympl_build(**kwargs):
-    auto_main(**kwargs)
-    git_cleanup()
-    # TODO can we do this without an isolated env?
-    return !(python -m build) and !(pip install dist/*.whl)
-
-
 def setup_py_build(**kwargs):
     auto_main(**kwargs)
     git_cleanup()
@@ -174,13 +167,19 @@ def awkward_build(**kwargs):
 
 
 def numpy_build(**kwargs):
+    auto_main(**kwargs)
+    git clean -xfd
+    cleanup_cython()
+    git submodule update
+    prefix = $(python -c 'import sys; from pathlib import Path;print(Path(sys.executable).parent.parent)').strip()
     CFLAGS = (" -Wall -O2 -pipe -fomit-frame-pointer  "
               "-fno-strict-aliasing -Wmaybe-uninitialized  "
               "-Wdeprecated-declarations -Wimplicit-function-declaration  "
               "-march=native")
     with ${...}.swap(CFLAGS=CFLAGS):
-        return main_build(**kwargs)
-
+        meson setup build --prefix=@(prefix)
+        ninja -C build
+        return !(meson install -C build)
 
 def pandas_build(**kwargs):
     auto_main(**kwargs)
