@@ -44,7 +44,8 @@ with with_pushd(wd):
     git clean -xfd
     ./configure \
         --prefix=@(prefix) \
-        --enable-shared LDFLAGS=@(f"-Wl,-rpath,$HOME/.pybuild/{args.target}/lib")
+        --enable-shared LDFLAGS=@(f"-Wl,-rpath,$HOME/.pybuild/{args.target}/lib") \
+        --with-ssl
     make -j
     make install
 
