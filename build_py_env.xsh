@@ -1,10 +1,11 @@
 import json
-import pymongo
 import sys
 
 import time
 import uuid
 import yaml
+import datetime
+from pathlib import Path
 
 from subprocess import CalledProcessError
 
@@ -39,21 +40,6 @@ if sys.platform == 'darwin':
     # un-comment these to build freetype with CF compilers
     # del $host_alias
     # del $build_alias
-
-class BuildLog:
-    def __init__(self):
-        self.conn = pymongo.MongoClient()
-        self.db = self.conn.get_database('bleeding_build')
-        self.col = self.db.get_collection('log')
-
-    def get_run(self, uid):
-        return self.col.find_one({'uid': uid})
-
-    def get_latest(self):
-        return self.col.find_one(sort=[('start_time', -1)])['uid']
-
-
-bl = BuildLog()
 
 with open("build_order.yaml") as fin:
     build_order = list(yaml.unsafe_load_all(fin))
@@ -214,7 +200,6 @@ def sip_build():
 
 
 def build_yarl(name, **kwargs):
-    git pull || echo failed
     auto_main(**kwargs)
     git clean -xfd
     cleanup_cython()
@@ -224,7 +209,6 @@ def build_yarl(name, **kwargs):
 def build_aiohttp(**kwargs):
     # aiohttp has a makefile, but it pins to specific versions of cython which
     # defeats the point here!
-    git pull || echo failed
     auto_main(**kwargs)
     git clean -xfd
     cleanup_cython()
@@ -238,7 +222,6 @@ def build_aiohttp(**kwargs):
 
 
 def pycurl_build(**kwargs):
-    git pull || echo failed
     auto_main(**kwargs)
     git clean -xfd
     make gen
@@ -273,116 +256,133 @@ def build_scipp(**kwargs):
     return !(cmake --build . --target install)
 
 
+class JsonBuildRecord:
+    @classmethod
+    def start_record(cls, *, directory='logs'):
+        p = Path(directory)
+        p.mkdir(exist_ok=True, parents=True)
+        uid = str(uuid.uuid4())
+        now = datetime.datetime.now()
+        fname = f'{now:%Y%m%dT%H%M}.json'
+
+        record = {'start_time': now.isoformat(),
+                  'build_steps': [],
+                  'uid': uid,
+                  }
+        with open(p / fname, 'w') as fin:
+            json.dump(record, fin)
+
+        return cls(p / fname)
+
+    def __init__(self, fname):
+        self._fname = Path(fname).absolute()
+        with open(fname, 'r') as fin:
+            self._data = json.load(fin)
+
+    def add_build_record(self, build_data):
+        self._data['build_steps'].append(build_data)
+        with open(self._fname, 'w') as fin:
+            json.dump(self._data, fin)
+
+    @property
+    def steps(self):
+        for record in self._data['build_steps']:
+            yield record
 
 
 if '--continue' in sys.argv:
-    uid = bl.get_latest()
-    record = bl.get_run(uid)
-elif 'BUILD_UID' in ${...}:
-    record = bl.get_run($BUILD_UID)
-    uid = $BUILD_UID
+    p, *_ = sorted(Path('logs').glob('*.json'))
+    record = JsonBuildRecord(p)
 else:
-    uid = str(uuid.uuid4())
-    print(f'The uid is {uid}')
-    record = {'start_time': time.time(),
-              'build_steps': [],
-              'uid': uid,
-              }
-    bl.col.replace_one({'uid': uid}, record, upsert=True)
+    record = JsonBuildRecord.start_record()
 
-
-def add_build_record(build_data):
-    record['build_steps'].append(build_data)
-    bl.col.replace_one({'uid': uid}, record, upsert=True)
+add_build_record = record.add_build_record
 
 
 pre_done = set()
-for build_step in record['build_steps']:
+for build_step in record.steps:
     if build_step['returncode'] == 0:
         if build_step['name'] == 'pip':
             pre_done.add(build_step['args'])
         else:
             pre_done.add(build_step['name'])
 print(pre_done)
-try:
-    for j, step in enumerate(build_order):
-        print('*'*45)
-        print(f'{"  " + step.get("name", step.get("args", "")) + "  ":*^45s}')
-        print('*'*45)
-        if step.get('name', 'pip') == 'pip':
-            if step['args'] in pre_done:
-                continue
-        elif step['name'] in pre_done:
+for j, step in enumerate(build_order):
+    print('*'*45)
+    print(f'{"  " + step.get("name", step.get("args", "")) + "  ":*^45s}')
+    print('*'*45)
+    if step.get('name', 'pip') == 'pip':
+        if step['args'] in pre_done:
             continue
+    elif step['name'] in pre_done:
+        continue
 
-        if step['kind'] == 'source_install':
-            echo @(step['wd'])
-            pushd @(step['wd'])
-            try:
-                echo @(step['function'])
-                func_name = step['function']
-                func = locals()[func_name]
-                if step.get('vc', 'git') == 'git':
-                    shas = extract_git_shas()
-                else:
-                    shas = {}
-                start_time = time.time()
-                kwargs = step.get('kwargs', {})
-                branch = step.get('project', {}
-                                  ).get('primary_remote', {}
-                                        ).get('default_branch', None)
-                if branch is not None:
-                    kwargs.setdefault('upstream_branch', branch)
-                build_log = func(**kwargs)
-                succcesss = bool(build_log)
-                stop_time = time.time()
-                pl = json.loads($(pip list --format json))
-
-                add_build_record(
-                    {
-                        'stdout': build_log.lines,
-                        'stderr': build_log.errors,
-                        'pip list': pl,
-                        'start_time': start_time,
-                        'stop_time': stop_time,
-                        'shas': shas,
-                        'step_inedx': j,
-                        'name': step['name'],
-                        'returncode': build_log.returncode
-                    }
-                )
-            finally:
-                popd
-
-            if not build_log:
-                print(build_log.lines)
-                print(build_log.errors)
-                print(f"pushd {step['wd']}")
-                raise Exception
-
-        elif step['kind'] == 'pip':
-
-            build_log = !(pip @(step['args'].split()))
+    if step['kind'] == 'source_install':
+        echo @(step['wd'])
+        pushd @(step['wd'])
+        try:
+            echo @(step['function'])
+            func_name = step['function']
+            func = locals()[func_name]
+            if step.get('vc', 'git') == 'git':
+                shas = extract_git_shas()
+            else:
+                shas = {}
+            start_time = time.time()
+            kwargs = step.get('kwargs', {})
+            branch = step.get('project', {}
+                              ).get('primary_remote', {}
+                                    ).get('default_branch', None)
+            if branch is not None:
+                kwargs.setdefault('upstream_branch', branch)
+            build_log = func(**kwargs)
             succcesss = bool(build_log)
+            stop_time = time.time()
             pl = json.loads($(pip list --format json))
+
             add_build_record(
                 {
                     'stdout': build_log.lines,
                     'stderr': build_log.errors,
                     'pip list': pl,
-                    'start_time': build_log.starttime,
-                    'stop_time': build_log.endtime,
-                    'args': step['args'],
+                    'start_time': start_time,
+                    'stop_time': stop_time,
+                    'shas': shas,
                     'step_inedx': j,
-                    'name': step['args'] if step.get('name', 'pip') == 'pip' else step['name'],
+                    'name': step['name'],
                     'returncode': build_log.returncode
                 }
             )
-            if not build_log:
-                print(build_log.lines)
-                print(build_log.errors)
-                raise Exception
-        else:
-           raise Exception("womp womp")
-finally:
-    print(f'The uid is {uid}')
+        finally:
+            popd
+
+        if not build_log:
+            print(build_log.lines)
+            print(build_log.errors)
+            print(f"pushd {step['wd']}")
+            raise Exception
+
+    elif step['kind'] == 'pip':
+
+        build_log = !(pip @(step['args'].split()))
+        succcesss = bool(build_log)
+        pl = json.loads($(pip list --format json))
+        add_build_record(
+            {
+                'stdout': build_log.lines,
+                'stderr': build_log.errors,
+                'pip list': pl,
+                'start_time': build_log.starttime,
+                'stop_time': build_log.endtime,
+                'args': step['args'],
+                'step_inedx': j,
+                'name': step['args'] if step.get('name', 'pip') == 'pip' else step['name'],
+                'returncode': build_log.returncode
+            }
+        )
+        if not build_log:
+            print(build_log.lines)
+            print(build_log.errors)
+            raise Exception
+    else:
+       raise Exception("womp womp")
