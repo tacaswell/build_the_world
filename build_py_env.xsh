@@ -303,7 +303,7 @@ class JsonBuildRecord:
 
 
 if '--continue' in sys.argv:
-    p, *_ = sorted(Path('logs').glob('*.json'))
+    p, *_ = sorted(Path('logs').glob('*.json'), reverse=True)
     record = JsonBuildRecord(p)
 else:
     record = JsonBuildRecord.start_record()
