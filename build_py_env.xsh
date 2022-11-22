@@ -13,7 +13,7 @@ $RAISE_SUBPROC_ERROR = False
 $XONSH_TRACE_SUBPROC = True
 $PIP_NO_BUILD_ISOLATION = 1
 
-$CFLAGS = ' '.join(('-fpermissive', ${...}.get('CFLAGS', '')))
+$CXXFLAGS = ' '.join(('-fpermissive', ${...}.get('CXXFLAGS', '')))
 
 if sys.platform == 'darwin':
     # make sure we find openblas from homebrew
