@@ -1318,7 +1318,7 @@ project:
     user: NSLS-II
     vc: git
 ---
-args: install --pre --upgrade --no-build-isolation hatch-fancy-pypi-readme
+args: install --pre --upgrade --no-build-isolation hatch-fancy-pypi-readme  scikit-build-core
 kind: pip
 ---
 function: awkward_build
