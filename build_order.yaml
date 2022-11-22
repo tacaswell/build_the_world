@@ -69,7 +69,7 @@ kind: pip
 args: install --pre --upgrade --no-build-isolation black colorlog
 kind: pip
 ---
-args: install --pre --upgrade --no-build-isolation setuptools cmake ninja
+args: install --pre --upgrade --no-build-isolation setuptools<65 cmake ninja
 kind: pip
 ---
 function: main_build
