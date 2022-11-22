@@ -1318,6 +1318,9 @@ project:
     user: NSLS-II
     vc: git
 ---
+args: install --pre --upgrade --no-build-isolation hatch-fancy-pypi-readme
+kind: pip
+---
 function: awkward_build
 kind: source_install
 name: awkward
