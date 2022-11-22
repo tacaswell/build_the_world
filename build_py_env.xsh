@@ -13,6 +13,7 @@ $RAISE_SUBPROC_ERROR = False
 $XONSH_TRACE_SUBPROC = True
 $PIP_NO_BUILD_ISOLATION = 1
 
+$CFLAGS = ' '.join(('-fpermissive', ${...}.get('CFLAGS', '')))
 
 if sys.platform == 'darwin':
     # make sure we find openblas from homebrew
@@ -180,6 +181,16 @@ def numpy_build(**kwargs):
         meson setup build --prefix=@(prefix)
         ninja -C build
         return !(meson install -C build)
+
+def scipy_build(**kwargs):
+    auto_main(**kwargs)
+    git clean -xfd
+    git submodule update
+    cleanup_cython()
+    prefix = $(python -c 'import sys; from pathlib import Path;print(Path(sys.executable).parent.parent)').strip()
+    meson setup build --prefix=@(prefix) -Dblas=flexiblas -Dlapack=flexiblas
+    ninja -C build
+    return !(meson install -C build)
 
 def pandas_build(**kwargs):
     auto_main(**kwargs)
