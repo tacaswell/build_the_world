@@ -104,7 +104,7 @@ project:
     user: cython
     vc: git
 ---
-args: install --no-build-isolation --pre --upgrade --force setuptools
+args: install --no-build-isolation --pre --upgrade --force setuptools build
 kind: pip
 ---
 args: install --no-build-isolation --pre --upgrade  meson tomli ninja packaging pyparsing pyproject-metadata

@@ -15,6 +15,8 @@ $PIP_NO_BUILD_ISOLATION = 1
 
 $CXXFLAGS = ' '.join(('-fpermissive', ${...}.get('CXXFLAGS', '')))
 
+MESON_LAPACK = ''
+
 if sys.platform == 'darwin':
     # make sure we find openblas from homebrew
     $LDFLAGS = ' '.join(
@@ -42,6 +44,16 @@ if sys.platform == 'darwin':
     # un-comment these to build freetype with CF compilers
     # del $host_alias
     # del $build_alias
+    os = 'OSX'
+else:
+    os_release = {}
+    with open('/etc/os-release') as fin:
+        for ln in fin:
+            k, _, v = ln.strip().partition('=')
+            os_release[k] = v
+    if os_release['ID'] == 'fedora':
+       MESON_LAPACK = '-Csetup-args=-Dblas=flexiblas -Csetup-args=-Dlapack=flexiblas'
+
 
 with open("build_order.yaml") as fin:
     build_order = list(yaml.unsafe_load_all(fin))
@@ -174,25 +186,29 @@ def numpy_build(**kwargs):
     git clean -xfd
     cleanup_cython()
     git submodule update
-    prefix = $(python -c 'import sys; from pathlib import Path;print(Path(sys.executable).parent.parent)').strip()
+
     CFLAGS = (" -Wall -O2 -pipe -fomit-frame-pointer  "
               "-fno-strict-aliasing -Wmaybe-uninitialized  "
               "-Wdeprecated-declarations -Wimplicit-function-declaration  "
               "-march=native")
     with ${...}.swap(CFLAGS=CFLAGS):
-        meson setup build --prefix=@(prefix)
-        ninja -C build
-        return !(meson install -C build)
+        ret = !(python -m build --no-isolation --skip-dependency-check @(MESON_LAPACK.split()) .)
+        if ret:
+            wheel_file, = g`dist/*.whl`
+            pip install @(wheel_file)
+        return ret
 
 def scipy_build(**kwargs):
     auto_main(**kwargs)
     git clean -xfd
     git submodule update
     cleanup_cython()
-    prefix = $(python -c 'import sys; from pathlib import Path;print(Path(sys.executable).parent.parent)').strip()
-    meson setup build --prefix=@(prefix) -Dblas=flexiblas -Dlapack=flexiblas
-    ninja -C build
-    return !(meson install -C build)
+
+    ret = !(python -m build --no-isolation --skip-dependency-check @(MESON_LAPACK.split()) .)
+    if ret:
+        wheel_file, = g`dist/*.whl`
+        pip install @(wheel_file)
+    return ret
 
 def pandas_build(**kwargs):
     auto_main(**kwargs)
