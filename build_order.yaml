@@ -122,8 +122,8 @@ project:
     protocol: ssh
     repo_name: meson-python
     ssh_user: git
-    url: git@github.com:FFY00/meson-python.git
-    user: FFY00
+    url:  git@github.com:mesonbuild/meson-python.git
+    user: mesonbuild
     vc: git
 ---
 function: numpy_build
