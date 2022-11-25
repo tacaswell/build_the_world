@@ -55,8 +55,6 @@ on.  At a minimum running these scripts will require:
 
 1. xonsh
 2. c, c++, rust, and fortran compilers
-3. mongodb running on the local host (for logging and resuming the build)
-   and pymongo available to xonsh
 4. pyyaml
 5. cmake
 6. npm
@@ -72,12 +70,15 @@ on.  At a minimum running these scripts will require:
 15. openblas
 16. patchelf
 
-I currently use this on:
+This has been run (mostly successfully) on:
 
 - an up-to-date [Arch Linux](https://archlinux.org/) machine with a fair number
   of AUR packages installed (mostly for imagecodecs).
 - an OSX 12.4 M1 machine with a fair number of brew packages installed.  I have
   not gotten imagecodecs or cairocffi to build yet.
+- an up-to-date Fedora 37 machine with a few non-standard repositories (mostly kafka)
+- under Windows Subsystem for Linux (skipping all the kafka related packages and imagecodecs)
+
 
 ## Usage
 
