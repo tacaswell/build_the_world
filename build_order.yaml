@@ -1272,22 +1272,6 @@ project:
 ---
 function: main_build
 kind: source_install
-name: cantrips
-proj_name: cantrips
-project:
-  name: cantrips
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: ssh
-    repo_name: cantrips
-    ssh_user: git
-    url: git@github.com:NSLS-II/cantrips.git
-    user: NSLS-II
-    vc: git
----
-function: main_build
-kind: source_install
 name: nslsii
 proj_name: nslsii
 project:
