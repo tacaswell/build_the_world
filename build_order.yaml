@@ -387,6 +387,9 @@ project:
     user: matplotlib
     vc: git
 ---
+args: install --pre --upgrade --no-build-isolation versioneer
+kind: pip
+---
 function: pandas_build
 kind: source_install
 name: pandas
