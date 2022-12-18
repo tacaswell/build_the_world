@@ -36,7 +36,6 @@ if prefix_as_path.exists():
 prefix_as_path.mkdir(parents=True)
 
 with with_pushd(wd):
-    git remote update
     git checkout @(args.branch)
     cur_branch = $(git branch --show-current).strip()
     if len(cur_branch):
