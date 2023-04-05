@@ -111,7 +111,10 @@ project:
 args: install --no-build-isolation --pre --upgrade --force setuptools build
 kind: pip
 ---
-args: install --no-build-isolation --pre --upgrade  meson tomli ninja packaging pyparsing pyproject-metadata
+args: install --no-build-isolation --pre --upgrade  ninja packaging pyparsing pyproject-metadata
+kind: pip
+---
+args: install --no-build-isolation --upgrade  --pre meson
 kind: pip
 ---
 function: main_build
