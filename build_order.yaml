@@ -165,9 +165,6 @@ project:
     user: serge-sans-paille
     vc: git
 ---
-args: install --pre --upgrade --no-build-isolation --force cython
-kind: pip
----
 function: scipy_build
 kind: source_install
 name: scipy
