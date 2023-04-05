@@ -149,8 +149,8 @@ def setup_py_build(**kwargs):
 
 
 def suitcaseserver_build(**kwargs):
-    pip install -r requirements-dev.txt --no-build-isolation    --use-feature=2020-resolver --pre
-    pip install -r requirements.txt --no-build-isolation    --use-feature=2020-resolver --pre
+    pip install -r requirements-dev.txt --no-build-isolation  --pre
+    pip install -r requirements.txt --no-build-isolation  --pre
     return main_build(**kwargs)
 
 
