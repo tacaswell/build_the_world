@@ -1484,8 +1484,11 @@ project:
 args: 'install --no-build-isolation --pre --upgrade  ujson pymongo sphinx_rtd_theme dpkt netifaces openpyxl'
 kind: pip
 ---
-args: 'install --no-build-isolation --pre --upgrade  vcrpy httpie pydocstyle cookiecutter pytest-instafail httpx tzlocal doct boltons xarray pydata-sphinx-theme'
+args: 'install --no-build-isolation --pre --upgrade  vcrpy httpie pydocstyle cookiecutter pytest-instafail httpx tzlocal doct boltons pydata-sphinx-theme'
 kind: pip
+# ---
+# args: 'install --no-build-isolation --pre --upgrade  xarray'
+# kind: pip
 ---
 args: install --no-build-isolation --pre --upgrade  jupyterlab-git jupyterlab-spellchecker
   myst_parser
