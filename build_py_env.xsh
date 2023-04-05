@@ -385,7 +385,7 @@ for j, step in enumerate(build_order):
             popd
 
         if not build_log:
-            print(build_log.lines)
+            print(''.join(build_log.lines))
             print(build_log.errors)
             print(f"pushd {step['wd']}")
             raise Exception
