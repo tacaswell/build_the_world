@@ -1,3 +1,7 @@
+---
+args: install --pre --upgrade --no-build-isolation flit
+kind: pip
+---
 function: main_build
 kind: source_install
 name: wheel
