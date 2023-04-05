@@ -69,6 +69,7 @@ on.  At a minimum running these scripts will require:
 14. meson
 15. openblas
 16. patchelf
+17. a development version of librdkafka
 
 This has been run (mostly successfully) on:
 
