@@ -140,7 +140,7 @@ proj_name: numpy
 project:
   name: numpy
   primary_remote:
-    default_branch: meson
+    default_branch: main
     host: github.com
     protocol: https
     repo_name: numpy
