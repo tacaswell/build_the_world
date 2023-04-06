@@ -584,7 +584,7 @@ project:
 args: install --no-build-isolation --pre  --upgrade lazy_loader
 kind: pip
 ---
-function: scipy_build
+function: main_build
 kind: source_install
 name: scikit-image
 proj_name: scikit-image
