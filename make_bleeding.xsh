@@ -17,7 +17,7 @@ $PIP_NO_BUILD_ISOLATION = 1
 
 parser = argparse.ArgumentParser(description='Build the world.')
 parser.add_argument("--target", help="name of env to create", type=str, default='bleeding')
-parser.add_argument("--branch", help="CPython branch to build", type=str, default='main')
+parser.add_argument("--branch", help="CPython branch to build", type=str, default=None)
 args = parser.parse_args()
 
 
@@ -36,11 +36,14 @@ if prefix_as_path.exists():
 prefix_as_path.mkdir(parents=True)
 
 with with_pushd(wd):
-    git checkout @(args.branch)
+    if args.branch is not None:
+        git checkout @(args.branch)
     cur_branch = $(git branch --show-current).strip()
     if len(cur_branch):
         git pull
     git clean -xfd
+    # $CC = 'clang'
+    # $CXX = 'clang++'
     ./configure \
         --prefix=@(prefix) \
         --enable-shared LDFLAGS=@(f"-Wl,-rpath,$HOME/.pybuild/{args.target}/lib") \
