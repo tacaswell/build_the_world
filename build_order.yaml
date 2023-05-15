@@ -2,6 +2,9 @@
 args: install --pre --upgrade --no-build-isolation flit
 kind: pip
 ---
+args: install --pre --upgrade --no-build-isolation setuptools
+kind: pip
+---
 function: main_build
 kind: source_install
 name: wheel
@@ -73,9 +76,6 @@ kind: pip
 args: install --pre --upgrade --no-build-isolation black colorlog
 kind: pip
 ---
-args: install --pre --upgrade --no-build-isolation setuptools<65 cmake ninja
-kind: pip
----
 function: main_build
 kind: source_install
 name: pybind11
@@ -91,6 +91,9 @@ project:
     url: https://github.com/pybind/pybind11.git
     user: pybind
     vc: git
+---
+args: install --pre --upgrade --no-build-isolation setuptools cmake ninja
+kind: pip
 ---
 function: cython_build
 kind: source_install
