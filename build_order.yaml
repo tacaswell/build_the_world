@@ -637,9 +637,9 @@ vc: hg
 #---
 #args: install --index-url https://riverbankcomputing.com/pypi/simple/ --pre --upgrade PyQt5
 #kind: pip
----
-args: install --index-url https://riverbankcomputing.com/pypi/simple/ --pre --upgrade PyQt6
-kind: pip
+# ---
+# args: install --index-url https://riverbankcomputing.com/pypi/simple/ --pre --upgrade PyQt6
+# kind: pip
 ---
 args: install --pre --upgrade --no-build-isolation PyQt6
 kind: pip
@@ -1297,22 +1297,22 @@ project:
 ---
 args: install --pre --upgrade --no-build-isolation hatch-fancy-pypi-readme  scikit-build-core
 kind: pip
----
-function: awkward_build
-kind: source_install
-name: awkward
-proj_name: awkward
-project:
-  name: awkward
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: https
-    repo_name: awkward
-    ssh_user: null
-    url: https://github.com/scikit-hep/awkward.git
-    user: scikit-hep
-    vc: git
+# ---
+# function: awkward_build
+# kind: source_install
+# name: awkward
+# proj_name: awkward
+# project:
+#   name: awkward
+#   primary_remote:
+#     default_branch: main
+#     host: github.com
+#     protocol: https
+#     repo_name: awkward
+#     ssh_user: null
+#     url: https://github.com/scikit-hep/awkward.git
+#     user: scikit-hep
+#     vc: git
 ---
 args: install --pre --upgrade --no-build-isolation yapsy signalslot virtualenv requests appdirs
 kind: pip
