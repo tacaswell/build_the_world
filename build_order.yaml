@@ -835,7 +835,7 @@ proj_name: event-model
 project:
   name: event-model
   primary_remote:
-    default_branch: master
+    default_branch: main
     host: github.com
     protocol: ssh
     repo_name: event-model
