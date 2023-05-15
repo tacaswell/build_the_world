@@ -53,6 +53,7 @@ else:
             os_release[k] = v
     if os_release['ID'] == 'fedora':
        MESON_LAPACK = '-Csetup-args=-Dblas=flexiblas -Csetup-args=-Dlapack=flexiblas'
+$CFLAGS='-DCYTHON_FAST_THREAD_STATE=0'
 
 
 with open("build_order.yaml") as fin:
@@ -190,13 +191,17 @@ def numpy_build(**kwargs):
     CFLAGS = (" -Wall -O2 -pipe -fomit-frame-pointer  "
               "-fno-strict-aliasing -Wmaybe-uninitialized  "
               "-Wdeprecated-declarations -Wimplicit-function-declaration  "
-              "-march=native")
+              "-march=native -DCYTHON_FAST_THREAD_STATE=0")
+    # CFLAGS = ""
     with ${...}.swap(CFLAGS=CFLAGS):
         ret = !(python -m build --no-isolation --skip-dependency-check @(MESON_LAPACK.split()) .)
         if ret:
             wheel_file, = g`dist/*.whl`
             pip install @(wheel_file)
+
         return ret
+
+
 
 def scipy_build(**kwargs):
     auto_main(**kwargs)
