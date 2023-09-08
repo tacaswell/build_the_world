@@ -352,7 +352,8 @@ for j, step in enumerate(build_order):
 
     if step['kind'] == 'source_install':
         echo @(step['wd'])
-        pushd @(step['wd'])
+        with ${...}.swap(RAISE_SUBPROC_ERROR=True):
+            pushd @(step['wd'])
         try:
             echo @(step['function'])
             func_name = step['function']
