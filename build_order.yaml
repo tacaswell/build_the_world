@@ -117,8 +117,21 @@ kind: pip
 args: install --no-build-isolation --pre --upgrade  ninja packaging pyparsing pyproject-metadata
 kind: pip
 ---
-args: install --no-build-isolation --upgrade  --pre meson
-kind: pip
+function: main_build
+kind: source_install
+name: meson
+proj_name: meson
+project:
+  name: meson
+  primary_remote:
+    default_branch: master
+    host: github.com
+    protocol: ssh
+    repo_name: meson
+    ssh_user: git
+    url:  git@github.com:mesonbuild/meson.git
+    user: mesonbuild
+    vc: git
 ---
 function: main_build
 kind: source_install
@@ -292,6 +305,9 @@ kind: pip
 args: install --no-build-isolation --pre --upgrade  hatchling hatch-nodejs-version
 kind: pip
 ---
+args: install --no-build-isolation --pre  --upgrade maturin
+kind: pip
+---
 function: main_build
 kind: source_install
 name: nbformat
@@ -360,6 +376,22 @@ project:
     ssh_user: git
     url: git@github.com:contourpy/contourpy.git
     user: contourpy
+    vc: git
+---
+function: main_build
+kind: source_install
+name: dateutil
+proj_name: dateutil
+project:
+  name: dateutil
+  primary_remote:
+    default_branch: master
+    host: github.com
+    protocol: ssh
+    repo_name: dateutil
+    ssh_user: git
+    url: git@github.com:dateutil/dateutil.git
+    user: dateutil
     vc: git
 ---
 function: main_build
@@ -517,9 +549,6 @@ kind: pip
 args: install --pre --upgrade jupyter_packaging hatch-jupyter-builder
 kind: pip
 ---
-args: install --no-build-isolation --pre  --upgrade maturin
-kind: pip
----
 function: main_build
 kind: source_install
 name: jupyterlab
@@ -637,9 +666,9 @@ vc: hg
 #---
 #args: install --index-url https://riverbankcomputing.com/pypi/simple/ --pre --upgrade PyQt5
 #kind: pip
-# ---
-# args: install --index-url https://riverbankcomputing.com/pypi/simple/ --pre --upgrade PyQt6
-# kind: pip
+---
+args: install --index-url https://riverbankcomputing.com/pypi/simple/ --pre --upgrade PyQt6
+kind: pip
 ---
 args: install --pre --upgrade --no-build-isolation PyQt6
 kind: pip
@@ -771,7 +800,7 @@ proj_name: historydict
 project:
   name: historydict
   primary_remote:
-    default_branch: master
+    default_branch: main
     host: github.com
     protocol: ssh
     repo_name: historydict
@@ -1190,7 +1219,7 @@ proj_name: nsls2-detector-handlers
 project:
   name: nsls2-detector-handlers
   primary_remote:
-    default_branch: master
+    default_branch: main
     host: github.com
     protocol: ssh
     repo_name: nsls2-detector-handlers
