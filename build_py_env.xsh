@@ -254,14 +254,6 @@ def build_aiohttp(**kwargs):
     return !(pip install --no-build-isolation     .)
 
 
-def pycurl_build(**kwargs):
-    auto_main(**kwargs)
-    git clean -xfd
-    make gen
-    python setup.py build
-    return !(python setup.py install)
-
-
 def imagecodecs_build(upstream_branch, **kwargs):
     # nuke the c files to force cython to run
     git remote update

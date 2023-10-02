@@ -828,7 +828,7 @@ project:
 args: install --upgrade --no-build-isolation --no-build-isolation --pre  cftime
 kind: pip
 ---
-function: pycurl_build
+function: main_build
 kind: source_install
 name: pycurl
 proj_name: pycurl
