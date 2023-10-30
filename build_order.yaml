@@ -1436,7 +1436,7 @@ proj_name: pyerfa
 project:
   name: pyerfa
   primary_remote:
-    default_branch: master
+    default_branch: main
     host: github.com
     protocol: https
     repo_name: pyerfa
