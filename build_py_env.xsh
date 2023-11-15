@@ -190,7 +190,12 @@ def awkward_build(**kwargs):
     git submodule init
     git submodule update
     cleanup_cython()
-    return !(pip install --no-build-isolation     .)
+    # this is what nox -s prepare does but without needing nox
+    python dev/copy-cpp-headers.py
+    python dev/generate-kernel-signatures.py
+    python dev/generate-tests.py
+    python dev/generate-kernel-docs.py
+    return !(pip install -v ./awkward-cpp --no-build-isolation) and !(pip install --no-build-isolation .)
 
 
 def numpy_build(**kwargs):
