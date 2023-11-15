@@ -131,10 +131,21 @@ def setuptools_build(**kwargs):
     return !(pip install --no-build-isolation    .)
 
 def git_cleanup():
+
+    meson_packagecache = gp`subprojects/packagecache/*`
+    print(meson_packagecache)
+    for p in meson_packagecache:
+        cp @(p) /tmp/@(p.name)
+
     git clean -xfd
     git submodule init
     git submodule update
     cleanup_cython()
+    mkdir -p subprojects/packagecache
+    for p in meson_packagecache:
+        cp /tmp/@(p.name) @(p)
+
+
 
 
 def main_build(**kwargs):
