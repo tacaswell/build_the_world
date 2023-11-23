@@ -709,6 +709,25 @@ project:
     user: pydantic
     vc: git
 ---
+function: main_build
+kind: source_install
+name: multidict
+proj_name: multidict
+project:
+  name: multidict
+  primary_remote:
+    default_branch: master
+    host: github.com
+    protocol: https
+    repo_name: multidict
+    ssh_user: null
+    url: https://github.com/aio-libs/multidict.git
+    user: aio-libs
+    vc: git
+---
+args: install --pre --upgrade expandvars
+kind: pip
+---
 function: build_yarl
 kind: source_install
 kwargs:
