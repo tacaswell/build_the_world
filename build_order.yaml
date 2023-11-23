@@ -1479,25 +1479,25 @@ project:
     url: https://github.com/astropy/astropy.git
     user: astropy
     vc: git
----
-function: main_build
-kind: source_install
-name: greenlet
-proj_name: greenlet
-project:
-  name: greenlet
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: https
-    repo_name: greenlet
-    ssh_user: null
-    url: https://github.com/python-greenlet/greenlet.git
-    user: python-greenlet
-    vc: git
----
-args: install --no-build-isolation --pre --upgrade  pyca
-kind: pip
+# ---
+# function: main_build
+# kind: source_install
+# name: greenlet
+# proj_name: greenlet
+# project:
+#   name: greenlet
+#   primary_remote:
+#     default_branch: master
+#     host: github.com
+#     protocol: https
+#     repo_name: greenlet
+#     ssh_user: null
+#     url: https://github.com/python-greenlet/greenlet.git
+#     user: python-greenlet
+#     vc: git
+# ---
+# args: install --no-build-isolation --pre --upgrade  pyca
+# kind: pip
 ---
 function: main_build
 kind: source_install
