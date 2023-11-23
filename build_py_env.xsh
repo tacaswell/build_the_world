@@ -141,7 +141,8 @@ def git_cleanup():
     git submodule init
     git submodule update
     cleanup_cython()
-    mkdir -p subprojects/packagecache
+    if meson_packagecache:
+        mkdir -p subprojects/packagecache
     for p in meson_packagecache:
         cp /tmp/@(p.name) @(p)
 
