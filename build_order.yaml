@@ -53,6 +53,9 @@ project:
     user: python-pillow
     vc: git
 ---
+args: install --pre --upgrade --no-build-isolation mccabe pycodestyle pyflakes
+kind: pip
+---
 function: main_build
 kind: source_install
 name: flake8
@@ -73,7 +76,7 @@ project:
 args: install --pre --upgrade --no-build-isolation flake8-force
 kind: pip
 ---
-args: install --pre --upgrade --no-build-isolation black colorlog
+args: install --pre --upgrade --no-build-isolation black colorlog click mypy-extensions packaging pathspec platformdirs
 kind: pip
 ---
 function: main_build
@@ -111,10 +114,10 @@ project:
     user: cython
     vc: git
 ---
-args: install --no-build-isolation --pre --upgrade --force setuptools build
+args: install --no-build-isolation --pre --upgrade --force packaging build pyproject-hooks
 kind: pip
 ---
-args: install --no-build-isolation --pre --upgrade  ninja packaging pyparsing pyproject-metadata
+args: install --no-build-isolation --pre --upgrade  ninja pyparsing pyproject-metadata
 kind: pip
 ---
 function: main_build
@@ -164,6 +167,9 @@ project:
     url: https://github.com/numpy/numpy.git
     user: numpy
     vc: git
+---
+args: install --pre --upgrade --no-build-isolation beniget gast ply
+kind: pip
 ---
 function: main_build
 kind: source_install
@@ -216,6 +222,9 @@ project:
     user: h5py
     vc: git
 ---
+args: install --pre --upgrade --no-build-isolation ptyprocess
+kind: pip
+---
 function: main_build
 kind: source_install
 name: pexpect
@@ -248,7 +257,7 @@ project:
     user: davidhalter
     vc: git
 ---
-args: install --no-build-isolation --pre --upgrade  packaging
+args: install --pre --upgrade --no-build-isolation setuptools_scm[toml] typing-extensions
 kind: pip
 ---
 function: main_build
