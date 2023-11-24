@@ -401,7 +401,7 @@ for j, step in enumerate(build_order):
 
         if not build_log:
             print(''.join(build_log.lines))
-            print(build_log.errors)
+            print(''.join(build_log.errors) if build_log.errors is not None else None)
             print(f"pushd {step['wd']}")
             raise Exception
 
@@ -424,8 +424,8 @@ for j, step in enumerate(build_order):
             }
         )
         if not build_log:
-            print(build_log.lines)
-            print(build_log.errors)
+            print(''.join(build_log.lines))
+            print(''.join(build_log.errors) if build_log.errors is not None else None)
             raise Exception
     else:
        raise Exception("womp womp")
