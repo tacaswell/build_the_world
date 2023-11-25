@@ -292,6 +292,9 @@ project:
     user: davidhalter
     vc: git
 ---
+args: install --pre --upgrade --no-build-isolation prompt-toolkit pygments traitlets decorator matplotlib-inline stack-data asttokens executing pure-eval wcwidth
+kind: pip
+---
 function: main_build
 kind: source_install
 name: IPython
@@ -311,10 +314,14 @@ project:
 args: install --no-build-isolation --pre --upgrade  flit
 kind: pip
 ---
-args: install --no-build-isolation --pre --upgrade  hatchling hatch-nodejs-version
+args: install --no-build-isolation --pre --upgrade hatchling hatch-nodejs-version editables pluggy trove-classifiers
+
 kind: pip
 ---
 args: install --no-build-isolation --pre  --upgrade maturin
+kind: pip
+---
+args: install --pre --upgrade --no-build-isolation jsonschema fastjsonschema jupyter-core attrs jsonschema-specifications referencing rpds-py
 kind: pip
 ---
 function: main_build
@@ -332,6 +339,9 @@ project:
     url: https://github.com/jupyter/nbformat.git
     user: jupyter
     vc: git
+---
+args: install --pre --upgrade --no-build-isolation bleach jinja2 markupsafe mistune nbclient pandocfilters beautifulsoup4 defusedxml jupyterlab-pygments tinycss2 jupyter-client soupsieve webencodings python-dateutil tornado
+kind: pip
 ---
 function: main_build
 kind: source_install
@@ -403,6 +413,9 @@ project:
     user: dateutil
     vc: git
 ---
+args: install --pre --upgrade --no-build-isolation cycler fonttools kiwisolver
+kind: pip
+---
 function: main_build
 kind: source_install
 name: matplotlib
@@ -420,6 +433,9 @@ project:
     vc: git
 ---
 args: install --pre --upgrade --no-build-isolation versioneer
+kind: pip
+---
+args: install --pre --upgrade --no-build-isolation pytz tzdata
 kind: pip
 ---
 function: pandas_build
@@ -505,7 +521,10 @@ project:
 args: install --pre --upgrade --no-build-isolation pygraphviz pydot
 kind: pip
 ---
-args: install --no-build-isolation --pre --upgrade  pre-commit
+args: install --pre --upgrade --no-build-isolation pre-commit cfgv identify nodeenv virtualenv distlib filelock
+kind: pip
+---
+args: install --pre --upgrade --no-build-isolation iniconfig
 kind: pip
 ---
 function: main_build
@@ -524,6 +543,9 @@ project:
     user: pytest-dev
     vc: git
 ---
+args: install --pre --upgrade --no-build-isolation alabaster babel imagesize snowballstemmer sphinxcontrib-htmlhelp sphinxcontrib-serializinghtml sphinxcontrib-applehelp sphinxcontrib-devhelp sphinxcontrib-jsmath sphinxcontrib-qthelp sphinx
+kind: pip
+---
 function: main_build
 kind: source_install
 name: sphinx
@@ -539,14 +561,12 @@ project:
     url: https://github.com/sphinx-doc/sphinx.git
     user: sphinx-doc
     vc: git
+
 ---
-args: install --pre --upgrade --no-build-isolation flake8>=3.8 pydocstyle>=5.1.0 flake8-docstrings>=1.4.0 certifi coverage<6.3
-  pytest!=4.6.0,!=5.4.0 pytest-cov pytest-rerunfailures pytest-timeout pytest-xdist
-  python-dateutil tornado pytest-xvfb
+args: install --pre --upgrade --no-build-isolation pydocstyle flake8-docstrings pytest-cov pytest-rerunfailures pytest-timeout pytest-xdist pytest-xvfb execnet pyvirtualdisplay tomli coverage
 kind: pip
 ---
-args: install --pre --upgrade --no-build-isolation colorspacious ipywidgets numpydoc>=0.8 pydata-sphinx-theme>=0.8.0 mpl-sphinx-theme
-  sphinxcontrib-svg2pdfconverter>=1.1.0 sphinx-gallery>=0.10 sphinx-copybutton sphinx-panels sphinx-design
+args: install --pre --upgrade --no-build-isolation colorspacious ipywidgets numpydoc pydata-sphinx-theme mpl-sphinx-theme sphinxcontrib-svg2pdfconverter sphinx-gallery sphinx-copybutton sphinx-panels sphinx-design comm jupyterlab-widgets tabulate widgetsnbextension accessible-pygments
 kind: pip
 ---
 args: install --pre --upgrade --no-build-isolation coverage<6.3
@@ -555,7 +575,7 @@ kind: pip
 args: uninstall flake8-per-file-ignores
 kind: pip
 ---
-args: install --pre --upgrade jupyter_packaging hatch-jupyter-builder
+args: install --pre --upgrade --no-build-isolation jupyter-packaging hatch-jupyter-builder deprecation tomlkit
 kind: pip
 ---
 function: main_build
@@ -967,38 +987,38 @@ project:
     url: git@github.com:bluesky/bluesky-darkframes.git
     user: bluesky
     vc: git
----
-function: main_build
-kind: source_install
-name: confluent-kafka-python
-proj_name: confluent-kafka-python
-project:
-  name: confluent-kafka-python
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: https
-    repo_name: confluent-kafka-python
-    ssh_user: null
-    url: https://github.com/confluentinc/confluent-kafka-python.git
-    user: confluentinc
-    vc: git
----
-function: main_build
-kind: source_install
-name: bluesky-queueserver
-proj_name: bluesky-queueserver
-project:
-  name: bluesky-queueserver
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: ssh
-    repo_name: bluesky-queueserver
-    ssh_user: git
-    url: git@github.com:bluesky/bluesky-queueserver.git
-    user: bluesky
-    vc: git
+# ---
+# function: main_build
+# kind: source_install
+# name: confluent-kafka-python
+# proj_name: confluent-kafka-python
+# project:
+#   name: confluent-kafka-python
+#   primary_remote:
+#     default_branch: master
+#     host: github.com
+#     protocol: https
+#     repo_name: confluent-kafka-python
+#     ssh_user: null
+#     url: https://github.com/confluentinc/confluent-kafka-python.git
+#     user: confluentinc
+#     vc: git
+# ---
+# function: main_build
+# kind: source_install
+# name: bluesky-queueserver
+# proj_name: bluesky-queueserver
+# project:
+#   name: bluesky-queueserver
+#   primary_remote:
+#     default_branch: main
+#     host: github.com
+#     protocol: ssh
+#     repo_name: bluesky-queueserver
+#     ssh_user: git
+#     url: git@github.com:bluesky/bluesky-queueserver.git
+#     user: bluesky
+#     vc: git
 ---
 function: main_build
 kind: source_install
@@ -1319,22 +1339,22 @@ project:
     url: git@github.com:NSLS-II/bcsio.git
     user: NSLS-II
     vc: git
----
-function: main_build
-kind: source_install
-name: nslsii
-proj_name: nslsii
-project:
-  name: nslsii
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: ssh
-    repo_name: nslsii
-    ssh_user: git
-    url: git@github.com:NSLS-II/nslsii.git
-    user: NSLS-II
-    vc: git
+# ---
+# function: main_build
+# kind: source_install
+# name: nslsii
+# proj_name: nslsii
+# project:
+#   name: nslsii
+#   primary_remote:
+#     default_branch: master
+#     host: github.com
+#     protocol: ssh
+#     repo_name: nslsii
+#     ssh_user: git
+#     url: git@github.com:NSLS-II/nslsii.git
+#     user: NSLS-II
+#     vc: git
 ---
 function: main_build
 kind: source_install
