@@ -112,6 +112,8 @@ def auto_main(upstream_remote='origin', upstream_branch='master'):
                 git merge @(upstream)
                 if len(cur_branch):
                     git branch -d @(cur_branch)
+            else:
+                git push tacaswell
 
 
 def cleanup_cython():
