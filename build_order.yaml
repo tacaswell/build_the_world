@@ -578,6 +578,9 @@ kind: pip
 args: install --pre --upgrade --no-build-isolation jupyter-packaging hatch-jupyter-builder deprecation tomlkit
 kind: pip
 ---
+args: install --pre --upgrade --no-build-isolation async-lru httpx httpcore jupyter-lsp jupyter-server jupyterlab-server notebook-shim ipykernel anyio debugpy json5 jupyter-events send2trash sniffio terminado argon2-cffi jupyter-server-terminals nest-asyncio overrides prometheus-client psutil websocket-client h11 python-json-logger rfc3986-validator argon2-cffi-bindings rfc3339-validator cffi jsonpointer webcolors fqdn isoduration uri-template arrow pycparser types-python-dateutil
+kind: pip
+---
 function: main_build
 kind: source_install
 name: jupyterlab
@@ -594,6 +597,9 @@ project:
     user: jupyterlab
     vc: git
 ---
+args: install --pre --upgrade --no-build-isolation cloudpickle fsspec importlib-metadata partd zipp locket
+kind: pip
+---
 function: main_build
 kind: source_install
 name: dask
@@ -609,6 +615,9 @@ project:
     url: https://github.com/dask/dask.git
     user: dask
     vc: git
+---
+args: install --pre --upgrade --no-build-isolation msgpack sortedcontainers tblib zict
+kind: pip
 ---
 function: main_build
 kind: source_install
@@ -643,6 +652,9 @@ project:
     vc: git
 ---
 args: install --no-build-isolation --pre  --upgrade lazy_loader
+kind: pip
+---
+args: install --pre --upgrade --no-build-isolation imageio tifffile
 kind: pip
 ---
 function: main_build
@@ -696,7 +708,7 @@ vc: hg
 #args: install --index-url https://riverbankcomputing.com/pypi/simple/ --pre --upgrade PyQt5
 #kind: pip
 ---
-args: install --index-url https://riverbankcomputing.com/pypi/simple/ --pre --upgrade PyQt6
+args: install --index-url https://riverbankcomputing.com/pypi/simple/ --pre --upgrade PyQt6 pyqt6-qt6 pyqt6-sip
 kind: pip
 ---
 args: install --pre --upgrade --no-build-isolation PyQt6
@@ -718,8 +730,7 @@ project:
     vc: hg
 vc: hg
 ---
-args: install --pre --upgrade --no-build-isolation pytest pytest-xdist curio asv pytest_benchmark trio coverage qtpy twine
-  beautifulsoup4 typing-extensions
+args: install --pre --upgrade --no-build-isolation asv pytest-benchmark trio coverage qtpy twine asv-runner keyring pkginfo readme-renderer requests-toolbelt rfc3986 rich outcome py-cpuinfo pympler jeepney markdown-it-py nh3 secretstorage jaraco-classes cryptography mdurl more-itertools
 kind: pip
 ---
 function: main_build
@@ -793,6 +804,9 @@ project:
     user: aio-libs
     vc: git
 ---
+args: install --pre --upgrade --no-build-isolation aiosignal
+kind: pip
+---
 function: build_aiohttp
 kind: source_install
 name: aiohttp
@@ -825,6 +839,10 @@ project:
     user: pytoolz
     vc: git
 ---
+args: install --pre --upgrade --no-build-isolation appdirs entrypoints
+kind: pip
+---
+
 function: main_build
 kind: source_install
 name: intake
@@ -892,6 +910,9 @@ project:
     user: pycurl
     vc: git
 ---
+args: install --pre --upgrade --no-build-isolation pint
+kind: pip
+---
 function: main_build
 kind: source_install
 name: ophyd
@@ -907,6 +928,9 @@ project:
     url: git@github.com:bluesky/ophyd.git
     user: bluesky
     vc: git
+---
+args: install --pre --upgrade --no-build-isolation importlib-resources
+kind: pip
 ---
 function: main_build
 kind: source_install
@@ -940,6 +964,9 @@ project:
     user: bluesky
     vc: git
 ---
+args: install --pre --upgrade --no-build-isolation tqdm zict<3 msgpack-numpy super-state-machine heapdict
+kind: pip
+---
 function: main_build
 kind: source_install
 name: bluesky
@@ -956,6 +983,9 @@ project:
     user: bluesky
     vc: git
 ---
+args: install --pre --upgrade --no-build-isolation tiled typer
+kind: pip
+---
 function: main_build
 kind: source_install
 name: databroker
@@ -971,6 +1001,9 @@ project:
     url: git@github.com:bluesky/databroker.git
     user: bluesky
     vc: git
+---
+args: install --pre --upgrade --no-build-isolation frozendict
+kind: pip
 ---
 function: main_build
 kind: source_install
@@ -1020,6 +1053,9 @@ project:
 #     user: bluesky
 #     vc: git
 ---
+args: install --pre --upgrade --no-build-isolation openpyxl xlrd et-xmlfile
+kind: pip
+---
 function: main_build
 kind: source_install
 name: bluesky-spreadsheet
@@ -1036,6 +1072,9 @@ project:
     user: bluesky
     vc: git
 ---
+args: install --pre --upgrade --no-build-isolation aiohttp-jinja2 mily
+kind: pip
+---
 function: main_build
 kind: source_install
 name: bluesky-ui
@@ -1051,6 +1090,9 @@ project:
     url: git@github.com:bluesky/bluesky-ui.git
     user: bluesky
     vc: git
+---
+args: install --pre --upgrade --no-build-isolation coloredlogs prettytable simplejson humanfriendly
+kind: pip
 ---
 function: main_build
 kind: source_install
@@ -1148,6 +1190,9 @@ project:
     user: bluesky
     vc: git
 ---
+args: install --pre --upgrade --no-build-isolation pymongo dnspython
+kind: pip
+---
 function: main_build
 kind: source_install
 name: suitcase-mongo
@@ -1243,6 +1288,12 @@ project:
     url: git@github.com:bluesky/suitcase-tiff.git
     user: bluesky
     vc: git
+---
+args: install --pre --upgrade pygobject pycairo
+kind: pip
+---
+args: install --pre --upgrade --no-build-isolation apischema pygobject pyresttable pycairo
+kind: pip
 ---
 function: main_build
 kind: source_install
@@ -1391,7 +1442,7 @@ project:
     user: scikit-hep
     vc: git
 ---
-args: install --pre --upgrade --no-build-isolation yapsy signalslot virtualenv requests appdirs
+args: install --pre --upgrade --no-build-isolation signalslot contexter
 kind: pip
 ---
 function: main_build
@@ -1493,6 +1544,10 @@ project:
     user: liberfa
     vc: git
 ---
+args: install --pre --upgrade --no-build-isolation astropy-iers-data
+kind: pip
+---
+
 function: main_build
 kind: source_install
 name: astropy
@@ -1528,6 +1583,9 @@ project:
 # args: install --no-build-isolation --pre --upgrade  pyca
 # kind: pip
 ---
+args: install --pre --upgrade --no-build-isolation slicerator
+kind: pip
+---
 function: main_build
 kind: source_install
 name: pims
@@ -1560,17 +1618,17 @@ project:
     user: GrahamDumpleton
     vc: git
 ---
-args: 'install --no-build-isolation --pre --upgrade  ujson pymongo sphinx_rtd_theme dpkt netifaces openpyxl'
+args: install --pre --upgrade --no-build-isolation ujson sphinx-rtd-theme dpkt netifaces sphinxcontrib-jquery
 kind: pip
+
 ---
-args: 'install --no-build-isolation --pre --upgrade  vcrpy httpie pydocstyle cookiecutter pytest-instafail httpx tzlocal doct boltons pydata-sphinx-theme'
+args: install --pre --upgrade --no-build-isolation vcrpy httpie cookiecutter pytest-instafail tzlocal doct boltons binaryornot python-slugify humanize chardet pysocks text-unidecode
 kind: pip
 ---
 args: 'install --no-build-isolation --pre --upgrade  xarray'
 kind: pip
 ---
-args: install --no-build-isolation --pre --upgrade  jupyterlab-git jupyterlab-spellchecker
-  myst_parser
+args: install --pre --upgrade --no-build-isolation jupyterlab-git jupyterlab-spellchecker myst-parser mdit-py-plugins nbdime gitpython jupyter-server-mathjax colorama gitdb smmap
 kind: pip
 ---
 args: uninstall -y pyepics
@@ -1621,13 +1679,16 @@ project:
     user: matplotlib
     vc: git
 ---
-args: install --no-build-isolation --pre --upgrade pelican[markdown] pymdown-extensions
+args: install --pre --upgrade --no-build-isolation pymdown-extensions blinker feedgenerator markdown ordered-set unidecode watchfiles pelican[markdown]
 kind: pip
 ---
 args: install --no-build-isolation --pre --upgrade mypy
 kind: pip
 ---
 args: install --no-build-isolation --pre --upgrade rich
+kind: pip
+---
+args: install --pre --upgrade --no-build-isolation joblib threadpoolctl
 kind: pip
 ---
 function: main_build
@@ -1645,6 +1706,9 @@ project:
     user: scikit-learn
     vc: git
     default_branch: main
+---
+args: install --pre --upgrade --no-build-isolation mpmath
+kind: pip
 ---
 function: main_build
 kind: source_install
