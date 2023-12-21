@@ -76,9 +76,6 @@ project:
 args: install --pre --upgrade --no-build-isolation flake8-force
 kind: pip
 ---
-args: install --pre --upgrade --no-build-isolation black colorlog click mypy-extensions packaging pathspec platformdirs
-kind: pip
----
 function: main_build
 kind: source_install
 name: pybind11
@@ -314,14 +311,13 @@ project:
 args: install --no-build-isolation --pre --upgrade  flit
 kind: pip
 ---
-args: install --no-build-isolation --pre --upgrade hatchling hatch-nodejs-version editables pluggy trove-classifiers
-
+args: install --pre --upgrade --no-build-isolation hatchling hatch-nodejs-version editables pluggy trove-classifiers pathspec
 kind: pip
 ---
 args: install --no-build-isolation --pre  --upgrade maturin
 kind: pip
 ---
-args: install --pre --upgrade --no-build-isolation jsonschema fastjsonschema jupyter-core attrs jsonschema-specifications referencing rpds-py
+args: install --pre --upgrade --no-build-isolation jsonschema fastjsonschema jupyter-core attrs jsonschema-specifications referencing rpds-py platformdirs
 kind: pip
 ---
 function: main_build
@@ -597,7 +593,7 @@ project:
     user: jupyterlab
     vc: git
 ---
-args: install --pre --upgrade --no-build-isolation cloudpickle fsspec importlib-metadata partd zipp locket
+args: install --pre --upgrade --no-build-isolation cloudpickle fsspec importlib-metadata partd zipp locket click
 kind: pip
 ---
 function: main_build
@@ -838,6 +834,9 @@ project:
     url: https://github.com/pytoolz/cytoolz.git
     user: pytoolz
     vc: git
+---
+args: install --pre --upgrade --no-build-isolation colorlog click mypy-extensions packaging pathspec platformdirs black aiohttp aiosignal attrs
+kind: pip
 ---
 args: install --pre --upgrade --no-build-isolation appdirs entrypoints
 kind: pip
