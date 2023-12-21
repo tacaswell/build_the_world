@@ -1725,3 +1725,19 @@ project:
     url: git@github.com:sympy/sympy.git
     user: sympy
     vc: git
+---
+function: main_build
+kind: source_install
+name: msgspec
+proj_name: msgspec
+project:
+  name: msgspec
+  primary_remote:
+    default_branch: master
+    host: github.com
+    protocol: ssh
+    repo_name: msgspec
+    ssh_user: git
+    url: git@github.com:jcrist/msgspec.git
+    user: jcrist
+    vc: git
