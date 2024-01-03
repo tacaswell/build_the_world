@@ -1019,23 +1019,6 @@ project:
     url: git@github.com:bluesky/bluesky-darkframes.git
     user: bluesky
     vc: git
-# ---
-# function: main_build
-# kind: source_install
-# name: confluent-kafka-python
-# proj_name: confluent-kafka-python
-# project:
-#   name: confluent-kafka-python
-#   primary_remote:
-#     default_branch: master
-#     host: github.com
-#     protocol: https
-#     repo_name: confluent-kafka-python
-#     ssh_user: null
-#     url: https://github.com/confluentinc/confluent-kafka-python.git
-#     user: confluentinc
-#     vc: git
-# ---
 # function: main_build
 # kind: source_install
 # name: bluesky-queueserver
@@ -1051,6 +1034,22 @@ project:
 #     url: git@github.com:bluesky/bluesky-queueserver.git
 #     user: bluesky
 #     vc: git
+---
+function: main_build
+kind: source_install
+name: confluent-kafka-python
+proj_name: confluent-kafka-python
+project:
+  name: confluent-kafka-python
+  primary_remote:
+    default_branch: master
+    host: github.com
+    protocol: https
+    repo_name: confluent-kafka-python
+    ssh_user: null
+    url: https://github.com/confluentinc/confluent-kafka-python.git
+    user: confluentinc
+    vc: git
 ---
 args: install --pre --upgrade --no-build-isolation openpyxl xlrd et-xmlfile
 kind: pip
