@@ -1019,21 +1019,6 @@ project:
     url: git@github.com:bluesky/bluesky-darkframes.git
     user: bluesky
     vc: git
-# function: main_build
-# kind: source_install
-# name: bluesky-queueserver
-# proj_name: bluesky-queueserver
-# project:
-#   name: bluesky-queueserver
-#   primary_remote:
-#     default_branch: main
-#     host: github.com
-#     protocol: ssh
-#     repo_name: bluesky-queueserver
-#     ssh_user: git
-#     url: git@github.com:bluesky/bluesky-queueserver.git
-#     user: bluesky
-#     vc: git
 ---
 function: main_build
 kind: source_install
@@ -1049,6 +1034,25 @@ project:
     ssh_user: null
     url: https://github.com/confluentinc/confluent-kafka-python.git
     user: confluentinc
+    vc: git
+---
+args: install --pre --upgrade --no-build-isolation bluesky-kafka json-rpc jupyter-console pydantic pydantic-core python-multipart annotated-types hiredis redis
+kind: pip
+---
+function: main_build
+kind: source_install
+name: bluesky-queueserver
+proj_name: bluesky-queueserver
+project:
+  name: bluesky-queueserver
+  primary_remote:
+    default_branch: main
+    host: github.com
+    protocol: ssh
+    repo_name: bluesky-queueserver
+    ssh_user: git
+    url: git@github.com:bluesky/bluesky-queueserver.git
+    user: bluesky
     vc: git
 ---
 args: install --pre --upgrade --no-build-isolation openpyxl xlrd et-xmlfile
