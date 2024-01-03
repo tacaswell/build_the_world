@@ -728,22 +728,22 @@ vc: hg
 ---
 args: install --pre --upgrade --no-build-isolation asv pytest-benchmark trio coverage qtpy twine asv-runner keyring pkginfo readme-renderer requests-toolbelt rfc3986 rich outcome py-cpuinfo pympler jeepney markdown-it-py nh3 secretstorage jaraco-classes cryptography mdurl more-itertools
 kind: pip
----
-function: main_build
-kind: source_install
-name: pydantic-core
-proj_name: pydantic-core
-project:
-  name: pydantic-core
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: ssh
-    repo_name: pydantic-core
-    ssh_user: git
-    url: git@github.com:pydantic/pydantic-core.git
-    user: pydantic
-    vc: git
+# ---
+# function: main_build
+# kind: source_install
+# name: pydantic-core
+# proj_name: pydantic-core
+# project:
+#   name: pydantic-core
+#   primary_remote:
+#     default_branch: main
+#     host: github.com
+#     protocol: ssh
+#     repo_name: pydantic-core
+#     ssh_user: git
+#     url: git@github.com:pydantic/pydantic-core.git
+#     user: pydantic
+#     vc: git
 ---
 function: main_build
 kind: source_install
