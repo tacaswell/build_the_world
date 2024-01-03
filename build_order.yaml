@@ -1735,7 +1735,7 @@ proj_name: msgspec
 project:
   name: msgspec
   primary_remote:
-    default_branch: master
+    default_branch: main
     host: github.com
     protocol: ssh
     repo_name: msgspec
