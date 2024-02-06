@@ -800,7 +800,7 @@ project:
     user: aio-libs
     vc: git
 ---
-args: install --pre --upgrade --no-build-isolation aiosignal
+args: install --pre --upgrade --no-build-isolation aiosignal aiohappyeyeballs
 kind: pip
 ---
 function: build_aiohttp
@@ -981,6 +981,9 @@ project:
     url: git@github.com:bluesky/bluesky.git
     user: bluesky
     vc: git
+---
+args: install --pre --upgrade --no-build-isolation orjson
+kind: pip
 ---
 args: install --pre --upgrade --no-build-isolation tiled typer
 kind: pip
@@ -1272,7 +1275,7 @@ project:
     user: bluesky
     vc: git
 ---
-args: install --pre --upgrade --no-build-isolation bluesky-kafka json-rpc jupyter-console pydantic pydantic-core python-multipart annotated-types hiredis redis
+args: install --pre --upgrade --no-build-isolation bluesky-kafka json-rpc jupyter-console pydantic pydantic-core python-multipart annotated-types hiredis redis async-timeout
 kind: pip
 ---
 function: main_build
