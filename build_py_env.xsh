@@ -244,13 +244,6 @@ def pandas_build(**kwargs):
     return ret
 
 
-def sip_build():
-    hg purge
-    hg pull
-    hg update tip
-    return !(pip install --no-build-isolation     .)
-
-
 def build_yarl(name, **kwargs):
     auto_main(**kwargs)
     git clean -xfd

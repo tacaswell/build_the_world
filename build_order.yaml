@@ -685,21 +685,21 @@ project:
     user: python-hyper
     vc: git
 ---
-function: sip_build
+function: main_build
 kind: source_install
 name: sip
 proj_name: sip
 project:
   name: sip
   primary_remote:
-    host: www.riverbankcomputing.com
-    protocol: https
+    default_branch: main
+    host: github.com
+    protocol: ssh
     repo_name: sip
-    ssh_user: null
-    url: https://www.riverbankcomputing.com/hg/sip
-    user: null
-    vc: hg
-vc: hg
+    ssh_user: git
+    url: git@github.com:Python-SIP/sip.git
+    user: Python-SIP
+    vc: git
 #---
 #args: install --index-url https://riverbankcomputing.com/pypi/simple/ --pre --upgrade PyQt5
 #kind: pip
