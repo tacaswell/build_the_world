@@ -603,7 +603,7 @@ project:
     user: pytest-dev
     vc: git
 ---
-args: install --pre --upgrade --no-build-isolation alabaster babel imagesize snowballstemmer sphinxcontrib-htmlhelp sphinxcontrib-serializinghtml sphinxcontrib-applehelp sphinxcontrib-devhelp sphinxcontrib-jsmath sphinxcontrib-qthelp sphinx
+args: install --pre --upgrade --no-build-isolation alabaster babel imagesize snowballstemmer sphinxcontrib-htmlhelp sphinxcontrib-serializinghtml sphinxcontrib-applehelp sphinxcontrib-devhelp sphinxcontrib-jsmath sphinxcontrib-qthelp sphinx docutils
 kind: pip
 ---
 function: main_build
@@ -806,7 +806,7 @@ project:
     vc: hg
 vc: hg
 ---
-args: install --pre --upgrade --no-build-isolation asv pytest-benchmark trio coverage qtpy twine asv-runner keyring pkginfo readme-renderer requests-toolbelt rfc3986 rich outcome py-cpuinfo pympler jeepney markdown-it-py nh3 secretstorage jaraco-classes cryptography mdurl more-itertools
+args: install --pre --upgrade --no-build-isolation asv asv-runner coverage cryptography jaraco-classes jaraco-context jaraco-functools jeepney keyring markdown-it-py mdurl more-itertools nh3 outcome pkginfo py-cpuinfo pympler pytest-benchmark qtpy readme-renderer requests-toolbelt rfc3986 rich secretstorage trio twine
 kind: pip
 # ---
 # function: main_build
