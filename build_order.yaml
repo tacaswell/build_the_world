@@ -638,6 +638,22 @@ kind: pip
 args: install --pre --upgrade --no-build-isolation jupyter-packaging hatch-jupyter-builder deprecation tomlkit
 kind: pip
 ---
+function: main_build
+kind: source_install
+name: cffi
+proj_name: cffi
+project:
+  name: cffi
+  primary_remote:
+    host: github.com
+    protocol: ssh
+    repo_name: cffi
+    default_branch: main
+    ssh_user: git
+    url: git@github.com:python-cffi/cffi.git
+    user: python-cffi
+    vc: git
+---
 args: install --pre --upgrade --no-build-isolation async-lru httpx httpcore jupyter-lsp jupyter-server jupyterlab-server notebook-shim ipykernel anyio debugpy json5 jupyter-events send2trash sniffio terminado argon2-cffi jupyter-server-terminals nest-asyncio overrides prometheus-client psutil websocket-client h11 python-json-logger rfc3986-validator argon2-cffi-bindings rfc3339-validator cffi jsonpointer webcolors fqdn isoduration uri-template arrow pycparser types-python-dateutil
 kind: pip
 ---
@@ -789,22 +805,6 @@ kind: pip
 ---
 args: install --pre --upgrade --no-build-isolation PyQt6
 kind: pip
----
-function: build_cffi
-kind: source_install
-name: cffi
-proj_name: cffi
-project:
-  name: cffi
-  primary_remote:
-    host: foss.heptapod.net
-    protocol: https
-    repo_name: cffi
-    ssh_user: null
-    url: https://foss.heptapod.net/pypy/cffi
-    user: pypy
-    vc: hg
-vc: hg
 ---
 args: install --pre --upgrade --no-build-isolation asv asv-runner coverage cryptography jaraco-classes jaraco-context jaraco-functools jeepney keyring markdown-it-py mdurl more-itertools nh3 outcome pkginfo py-cpuinfo pympler pytest-benchmark qtpy readme-renderer requests-toolbelt rfc3986 rich secretstorage trio twine
 kind: pip
