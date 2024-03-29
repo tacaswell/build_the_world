@@ -1,9 +1,10 @@
----
-args: install --pre --upgrade --no-build-isolation flit
+flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: flit
 ---
-args: install --pre --upgrade --no-build-isolation setuptools
+flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: setuptools
 ---
 function: main_build
 kind: source_install
@@ -53,28 +54,29 @@ project:
     user: python-pillow
     vc: git
 ---
-args: install --pre --upgrade --no-build-isolation mccabe pycodestyle pyflakes
+flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: mccabe pycodestyle pyflakes
 ---
 function: main_build
 kind: source_install
 name: flake8
 proj_name: flake8
-name: flake8
 project:
   name: flake8
   primary_remote:
+    default_branch: main
     host: github.com
     protocol: ssh
     repo_name: flake8
     ssh_user: git
-    default_branch: main
     url: git@github.com:PyCQA/flake8.git
     user: PyCQA
     vc: git
 ---
-args: install --pre --upgrade --no-build-isolation flake8-force
+flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: flake8-force
 ---
 function: main_build
 kind: source_install
@@ -92,8 +94,9 @@ project:
     user: pybind
     vc: git
 ---
-args: install --pre --upgrade --no-build-isolation cmake ninja
+flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: cmake ninja
 ---
 function: cython_build
 kind: source_install
@@ -111,8 +114,9 @@ project:
     user: cython
     vc: git
 ---
-args: install --pre --upgrade --no-build-isolation packaging pyproject-hooks
+flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: packaging pyproject-hooks
 ---
 function: main_build
 kind: source_install
@@ -121,6 +125,7 @@ proj_name: build
 project:
   name: build
   primary_remote:
+    default_branch: main
     host: github.com
     protocol: ssh
     repo_name: build
@@ -128,10 +133,10 @@ project:
     url: git@github.com:pypa/build.git
     user: pypa
     vc: git
-    default_branch: main
 ---
-args: install --no-build-isolation --pre --upgrade  ninja pyparsing pyproject-metadata
+flags: --no-build-isolation --pre --upgrade
 kind: pip
+packages: ninja pyparsing pyproject-metadata
 ---
 function: main_build
 kind: source_install
@@ -145,7 +150,7 @@ project:
     protocol: ssh
     repo_name: meson
     ssh_user: git
-    url:  git@github.com:mesonbuild/meson.git
+    url: git@github.com:mesonbuild/meson.git
     user: mesonbuild
     vc: git
 ---
@@ -161,7 +166,7 @@ project:
     protocol: ssh
     repo_name: meson-python
     ssh_user: git
-    url:  git@github.com:mesonbuild/meson-python.git
+    url: git@github.com:mesonbuild/meson-python.git
     user: mesonbuild
     vc: git
 ---
@@ -181,8 +186,9 @@ project:
     user: numpy
     vc: git
 ---
-args: install --pre --upgrade --no-build-isolation beniget gast ply
+flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: beniget gast ply
 ---
 function: main_build
 kind: source_install
@@ -216,8 +222,9 @@ project:
     user: scipy
     vc: git
 ---
-args: install --pre --upgrade --no-build-isolation pkgconfig six
+flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: pkgconfig six
 ---
 function: main_build
 kind: source_install
@@ -235,8 +242,9 @@ project:
     user: h5py
     vc: git
 ---
-args: install --pre --upgrade --no-build-isolation ptyprocess
+flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: ptyprocess
 ---
 function: main_build
 kind: source_install
@@ -270,11 +278,13 @@ project:
     user: davidhalter
     vc: git
 ---
-args: install --pre --upgrade --no-build-isolation setuptools_scm[toml] typing-extensions
+flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: setuptools_scm[toml] typing-extensions
 ---
-args: install --pre --upgrade --no-build-isolation scikit-build distro pathspec scikit-build-core
+flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: scikit-build distro pathspec scikit-build-core
 ---
 function: main_build
 kind: source_install
@@ -308,8 +318,10 @@ project:
     user: davidhalter
     vc: git
 ---
-args: install --pre --upgrade --no-build-isolation prompt-toolkit pygments traitlets decorator matplotlib-inline stack-data asttokens executing pure-eval wcwidth
+flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: prompt-toolkit pygments traitlets decorator matplotlib-inline stack-data
+  asttokens executing pure-eval wcwidth
 ---
 function: main_build
 kind: source_install
@@ -327,17 +339,23 @@ project:
     user: ipython
     vc: git
 ---
-args: install --no-build-isolation --pre --upgrade  flit
+flags: --no-build-isolation --pre --upgrade
 kind: pip
+packages: flit
 ---
-args: install --pre --upgrade --no-build-isolation hatchling hatch-nodejs-version editables pluggy trove-classifiers pathspec
+flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: hatchling hatch-nodejs-version editables pluggy trove-classifiers
+  pathspec
 ---
-args: install --no-build-isolation --pre  --upgrade maturin
+flags: --no-build-isolation --pre --upgrade
 kind: pip
+packages: maturin
 ---
-args: install --pre --upgrade --no-build-isolation jsonschema fastjsonschema jupyter-core attrs jsonschema-specifications referencing rpds-py platformdirs
+flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: jsonschema fastjsonschema jupyter-core attrs jsonschema-specifications
+  referencing rpds-py platformdirs
 ---
 function: main_build
 kind: source_install
@@ -355,8 +373,11 @@ project:
     user: jupyter
     vc: git
 ---
-args: install --pre --upgrade --no-build-isolation bleach jinja2 markupsafe mistune nbclient pandocfilters beautifulsoup4 defusedxml jupyterlab-pygments tinycss2 jupyter-client soupsieve webencodings python-dateutil tornado
+flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: bleach jinja2 markupsafe mistune nbclient pandocfilters beautifulsoup4
+  defusedxml jupyterlab-pygments tinycss2 jupyter-client soupsieve webencodings python-dateutil
+  tornado
 ---
 function: main_build
 kind: source_install
@@ -390,8 +411,9 @@ project:
     user: certifi
     vc: git
 ---
-args: install --no-build-isolation --pre --upgrade  cppy
+flags: --no-build-isolation --pre --upgrade
 kind: pip
+packages: cppy
 ---
 function: main_build
 kind: source_install
@@ -425,8 +447,9 @@ project:
     user: dateutil
     vc: git
 ---
-args: install --pre --upgrade --no-build-isolation fonttools kiwisolver
+flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: fonttools kiwisolver
 ---
 function: main_build
 kind: source_install
@@ -476,11 +499,13 @@ project:
     user: matplotlib
     vc: git
 ---
-args: install --pre --upgrade --no-build-isolation versioneer
+flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: versioneer
 ---
-args: install --pre --upgrade --no-build-isolation pytz tzdata
+flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: pytz tzdata
 ---
 function: pandas_build
 kind: source_install
@@ -578,14 +603,17 @@ project:
     user: lxml
     vc: git
 ---
-args: install --pre --upgrade --no-build-isolation pygraphviz pydot
+flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: pygraphviz pydot
 ---
-args: install --pre --upgrade --no-build-isolation pre-commit cfgv identify nodeenv virtualenv distlib filelock
+flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: pre-commit cfgv identify nodeenv virtualenv distlib filelock
 ---
-args: install --pre --upgrade --no-build-isolation iniconfig
+flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: iniconfig
 ---
 function: main_build
 kind: source_install
@@ -603,8 +631,11 @@ project:
     user: pytest-dev
     vc: git
 ---
-args: install --pre --upgrade --no-build-isolation alabaster babel imagesize snowballstemmer sphinxcontrib-htmlhelp sphinxcontrib-serializinghtml sphinxcontrib-applehelp sphinxcontrib-devhelp sphinxcontrib-jsmath sphinxcontrib-qthelp sphinx docutils
+flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: alabaster babel imagesize snowballstemmer sphinxcontrib-htmlhelp
+  sphinxcontrib-serializinghtml sphinxcontrib-applehelp sphinxcontrib-devhelp sphinxcontrib-jsmath
+  sphinxcontrib-qthelp sphinx docutils
 ---
 function: main_build
 kind: source_install
@@ -621,22 +652,33 @@ project:
     url: https://github.com/sphinx-doc/sphinx.git
     user: sphinx-doc
     vc: git
-
 ---
-args: install --pre --upgrade --no-build-isolation pydocstyle flake8-docstrings pytest-cov pytest-rerunfailures pytest-timeout pytest-xdist pytest-xvfb execnet pyvirtualdisplay tomli coverage
+flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: pydocstyle flake8-docstrings pytest-cov pytest-rerunfailures pytest-timeout
+  pytest-xdist pytest-xvfb execnet pyvirtualdisplay tomli coverage
 ---
-args: install --pre --upgrade --no-build-isolation colorspacious ipywidgets numpydoc pydata-sphinx-theme mpl-sphinx-theme sphinxcontrib-svg2pdfconverter sphinx-gallery sphinx-copybutton sphinx-panels sphinx-design comm jupyterlab-widgets tabulate widgetsnbextension accessible-pygments sphinx-tags
+flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: colorspacious ipywidgets numpydoc pydata-sphinx-theme mpl-sphinx-theme
+  sphinxcontrib-svg2pdfconverter sphinx-gallery sphinx-copybutton sphinx-panels sphinx-design
+  comm jupyterlab-widgets tabulate widgetsnbextension accessible-pygments sphinx-tags
 ---
-args: install --pre --upgrade --no-build-isolation coverage<6.3
+flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: coverage<6.3
 ---
-args: uninstall flake8-per-file-ignores
-kind: pip
+flags: ''
+kind: pip-remove
+packages: flake8-per-file-ignores
 ---
-args: install --pre --upgrade --no-build-isolation jupyter-packaging hatch-jupyter-builder deprecation tomlkit
+flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: jupyter-packaging hatch-jupyter-builder deprecation tomlkit
+---
+flags: --pre --upgrade --no-build-isolation
+kind: pip
+packages: pycparser
 ---
 function: main_build
 kind: source_install
@@ -645,17 +687,22 @@ proj_name: cffi
 project:
   name: cffi
   primary_remote:
+    default_branch: main
     host: github.com
     protocol: ssh
     repo_name: cffi
-    default_branch: main
     ssh_user: git
     url: git@github.com:python-cffi/cffi.git
     user: python-cffi
     vc: git
 ---
-args: install --pre --upgrade --no-build-isolation async-lru httpx httpcore jupyter-lsp jupyter-server jupyterlab-server notebook-shim ipykernel anyio debugpy json5 jupyter-events send2trash sniffio terminado argon2-cffi jupyter-server-terminals nest-asyncio overrides prometheus-client psutil websocket-client h11 python-json-logger rfc3986-validator argon2-cffi-bindings rfc3339-validator cffi jsonpointer webcolors fqdn isoduration uri-template arrow pycparser types-python-dateutil
+flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: async-lru httpx httpcore jupyter-lsp jupyter-server jupyterlab-server
+  notebook-shim ipykernel anyio debugpy json5 jupyter-events send2trash sniffio terminado
+  argon2-cffi jupyter-server-terminals nest-asyncio overrides prometheus-client psutil
+  websocket-client h11 python-json-logger rfc3986-validator argon2-cffi-bindings rfc3339-validator
+  jsonpointer webcolors fqdn isoduration uri-template arrow pycparser types-python-dateutil
 ---
 function: main_build
 kind: source_install
@@ -673,8 +720,9 @@ project:
     user: jupyterlab
     vc: git
 ---
-args: install --pre --upgrade --no-build-isolation cloudpickle fsspec importlib-metadata partd zipp locket click
+flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: cloudpickle fsspec importlib-metadata partd zipp locket click
 ---
 function: main_build
 kind: source_install
@@ -692,8 +740,9 @@ project:
     user: dask
     vc: git
 ---
-args: install --pre --upgrade --no-build-isolation msgpack sortedcontainers tblib zict
+flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: msgpack sortedcontainers tblib zict
 ---
 function: main_build
 kind: source_install
@@ -727,8 +776,9 @@ project:
     user: PyWavelets
     vc: git
 ---
-args: install --no-build-isolation --pre  --upgrade lazy_loader
+flags: --no-build-isolation --pre --upgrade
 kind: pip
+packages: lazy_loader
 ---
 function: main_build
 kind: source_install
@@ -737,6 +787,7 @@ proj_name: tifffile
 project:
   name: tifffile
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: https
     repo_name: tifffile
@@ -744,10 +795,10 @@ project:
     url: https://github.com/cgohlke/tifffile.git
     user: cgohlke
     vc: git
-    default_branch: master
 ---
-args: install --pre --upgrade --no-build-isolation imageio
+flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: imageio
 ---
 function: main_build
 kind: source_install
@@ -800,14 +851,9 @@ project:
 #args: install --index-url https://riverbankcomputing.com/pypi/simple/ --pre --upgrade PyQt5
 #kind: pip
 ---
-args: install --index-url https://riverbankcomputing.com/pypi/simple/ --pre --upgrade PyQt6 pyqt6-qt6 pyqt6-sip
+flags: --index-url https://riverbankcomputing.com/pypi/simple/  --pre --upgrade
 kind: pip
----
-args: install --pre --upgrade --no-build-isolation PyQt6
-kind: pip
----
-args: install --pre --upgrade --no-build-isolation asv asv-runner coverage cryptography jaraco-classes jaraco-context jaraco-functools jeepney keyring markdown-it-py mdurl more-itertools nh3 outcome pkginfo py-cpuinfo pympler pytest-benchmark qtpy readme-renderer requests-toolbelt rfc3986 rich secretstorage trio twine
-kind: pip
+packages: PyQt6 pyqt6-qt6 pyqt6-sip
 # ---
 # function: main_build
 # kind: source_install
@@ -825,6 +871,13 @@ kind: pip
 #     user: pydantic
 #     vc: git
 ---
+flags: --pre --upgrade --no-build-isolation
+kind: pip
+packages: asv asv-runner coverage cryptography jaraco-classes jaraco-context
+  jaraco-functools jeepney keyring markdown-it-py mdurl more-itertools nh3 outcome
+  pkginfo py-cpuinfo pympler pytest-benchmark qtpy readme-renderer requests-toolbelt
+  rfc3986 rich secretstorage trio twine
+---
 function: main_build
 kind: source_install
 name: multidict
@@ -841,8 +894,9 @@ project:
     user: aio-libs
     vc: git
 ---
-args: install --pre --upgrade expandvars
+flags: --pre --upgrade
 kind: pip
+packages: expandvars
 ---
 function: build_yarl
 kind: source_install
@@ -880,8 +934,9 @@ project:
     user: aio-libs
     vc: git
 ---
-args: install --pre --upgrade --no-build-isolation aiosignal aiohappyeyeballs
+flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: aiosignal aiohappyeyeballs
 ---
 function: build_aiohttp
 kind: source_install
@@ -915,13 +970,15 @@ project:
     user: pytoolz
     vc: git
 ---
-args: install --pre --upgrade --no-build-isolation colorlog click mypy-extensions packaging pathspec platformdirs black aiohttp aiosignal attrs
+flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: colorlog click mypy-extensions packaging pathspec platformdirs black
+  aiohttp aiosignal attrs
 ---
-args: install --pre --upgrade --no-build-isolation appdirs entrypoints
+flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: appdirs entrypoints
 ---
-
 function: main_build
 kind: source_install
 name: intake
@@ -970,8 +1027,9 @@ project:
     user: zarr-developers
     vc: git
 ---
-args: install --upgrade --no-build-isolation --no-build-isolation --pre  cftime
+flags: --upgrade --no-build-isolation --no-build-isolation --pre
 kind: pip
+packages: cftime
 ---
 function: main_build
 kind: source_install
@@ -989,8 +1047,9 @@ project:
     user: pycurl
     vc: git
 ---
-args: install --pre --upgrade --no-build-isolation pint
+flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: pint
 ---
 function: main_build
 kind: source_install
@@ -1008,8 +1067,9 @@ project:
     user: bluesky
     vc: git
 ---
-args: install --pre --upgrade --no-build-isolation importlib-resources
+flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: importlib-resources
 ---
 function: main_build
 kind: source_install
@@ -1043,8 +1103,9 @@ project:
     user: bluesky
     vc: git
 ---
-args: install --pre --upgrade --no-build-isolation tqdm zict<3 msgpack-numpy super-state-machine heapdict
+flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: tqdm zict<3 msgpack-numpy super-state-machine heapdict
 ---
 function: main_build
 kind: source_install
@@ -1062,11 +1123,13 @@ project:
     user: bluesky
     vc: git
 ---
-args: install --pre --upgrade --no-build-isolation orjson
+flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: orjson
 ---
-args: install --pre --upgrade --no-build-isolation tiled typer
+flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: tiled typer
 ---
 function: main_build
 kind: source_install
@@ -1084,8 +1147,9 @@ project:
     user: bluesky
     vc: git
 ---
-args: install --pre --upgrade --no-build-isolation frozendict
+flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: frozendict
 ---
 function: main_build
 kind: source_install
@@ -1119,8 +1183,9 @@ project:
     user: confluentinc
     vc: git
 ---
-args: install --pre --upgrade --no-build-isolation openpyxl xlrd et-xmlfile
+flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: openpyxl xlrd et-xmlfile
 ---
 function: main_build
 kind: source_install
@@ -1138,8 +1203,9 @@ project:
     user: bluesky
     vc: git
 ---
-args: install --pre --upgrade --no-build-isolation aiohttp-jinja2 mily
+flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: aiohttp-jinja2 mily
 ---
 function: main_build
 kind: source_install
@@ -1157,8 +1223,9 @@ project:
     user: bluesky
     vc: git
 ---
-args: install --pre --upgrade --no-build-isolation coloredlogs prettytable simplejson humanfriendly
+flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: coloredlogs prettytable simplejson humanfriendly
 ---
 function: main_build
 kind: source_install
@@ -1256,8 +1323,9 @@ project:
     user: bluesky
     vc: git
 ---
-args: install --pre --upgrade --no-build-isolation pymongo dnspython
+flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: pymongo dnspython
 ---
 function: main_build
 kind: source_install
@@ -1355,8 +1423,10 @@ project:
     user: bluesky
     vc: git
 ---
-args: install --pre --upgrade --no-build-isolation bluesky-kafka json-rpc jupyter-console pydantic pydantic-core python-multipart annotated-types hiredis redis async-timeout
+flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: bluesky-kafka json-rpc jupyter-console pydantic pydantic-core python-multipart
+  annotated-types hiredis redis async-timeout
 ---
 function: main_build
 kind: source_install
@@ -1374,8 +1444,9 @@ project:
     user: bluesky
     vc: git
 ---
-args: install --pre --upgrade --no-build-isolation apischema  pyresttable
+flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: apischema pyresttable
 ---
 function: main_build
 kind: source_install
@@ -1505,8 +1576,9 @@ project:
     user: NSLS-II
     vc: git
 ---
-args: install --pre --upgrade --no-build-isolation hatch-fancy-pypi-readme
+flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: hatch-fancy-pypi-readme
 ---
 function: awkward_build
 kind: source_install
@@ -1524,8 +1596,9 @@ project:
     user: scikit-hep
     vc: git
 ---
-args: install --pre --upgrade --no-build-isolation signalslot contexter
+flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: signalslot contexter
 ---
 function: main_build
 kind: source_install
@@ -1607,8 +1680,9 @@ project:
 #     user: silx-kit
 #     vc: git
 # ---
-args: install --pre --upgrade --no-build-isolation extension_helpers
+flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: extension_helpers
 ---
 function: main_build
 kind: source_install
@@ -1626,10 +1700,10 @@ project:
     user: liberfa
     vc: git
 ---
-args: install --pre --upgrade --no-build-isolation astropy-iers-data
+flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: astropy-iers-data
 ---
-
 function: main_build
 kind: source_install
 name: astropy
@@ -1665,8 +1739,9 @@ project:
 # args: install --no-build-isolation --pre --upgrade  pyca
 # kind: pip
 ---
-args: install --pre --upgrade --no-build-isolation slicerator
+flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: slicerator
 ---
 function: main_build
 kind: source_install
@@ -1700,31 +1775,39 @@ project:
     user: GrahamDumpleton
     vc: git
 ---
-args: install --pre --upgrade --no-build-isolation ujson sphinx-rtd-theme dpkt netifaces sphinxcontrib-jquery
+flags: --pre --upgrade --no-build-isolation
 kind: pip
-
+packages: ujson sphinx-rtd-theme dpkt netifaces sphinxcontrib-jquery
 ---
-args: install --pre --upgrade --no-build-isolation vcrpy httpie cookiecutter pytest-instafail tzlocal doct boltons binaryornot python-slugify humanize chardet pysocks text-unidecode
+flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: vcrpy httpie cookiecutter pytest-instafail tzlocal doct boltons
+  binaryornot python-slugify humanize chardet pysocks text-unidecode
 ---
-args: 'install --no-build-isolation --pre --upgrade  xarray'
+flags: --no-build-isolation --pre --upgrade
 kind: pip
+packages: xarray
 ---
-args: install --pre --upgrade --no-build-isolation jupyterlab-git jupyterlab-spellchecker myst-parser mdit-py-plugins nbdime gitpython jupyter-server-mathjax colorama gitdb smmap
+flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: jupyterlab-git jupyterlab-spellchecker myst-parser mdit-py-plugins
+  nbdime gitpython jupyter-server-mathjax colorama gitdb smmap
 ---
-args: uninstall -y pyepics
-kind: pip
-name: remove pyepics
+flags: -y
+kind: pip-remove
+packages: pyepics
 ---
-args: install --pre --upgrade --no-build-isolation xcffib pytest-tornasync
+flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: xcffib pytest-tornasync
 ---
-args: install --pre --upgrade --no-build-isolation --no-cache-dir cairocffi
+flags: --pre --upgrade --no-build-isolation --no-cache-dir
 kind: pip
+packages: cairocffi
 ---
-args: install --no-build-isolation --pre --upgrade  pycairo
+flags: --no-build-isolation --pre --upgrade
 kind: pip
+packages: pycairo
 ---
 function: main_build
 kind: source_install
@@ -1742,8 +1825,9 @@ project:
     user: matplotlib
     vc: git
 ---
-args: install --no-build-isolation --pre --upgrade  build
+flags: --no-build-isolation --pre --upgrade
 kind: pip
+packages: build
 # ---
 # function: main_build
 # kind: source_install
@@ -1761,14 +1845,18 @@ kind: pip
 #     user: matplotlib
 #     vc: git
 ---
-args: install --pre --upgrade --no-build-isolation pymdown-extensions blinker feedgenerator markdown ordered-set unidecode watchfiles pelican[markdown]
+flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: pymdown-extensions blinker feedgenerator markdown ordered-set unidecode
+  watchfiles pelican[markdown]
 ---
-args: install --no-build-isolation --pre --upgrade mypy
+flags: --no-build-isolation --pre --upgrade
 kind: pip
+packages: mypy
 ---
-args: install --pre --upgrade --no-build-isolation joblib threadpoolctl
+flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: joblib threadpoolctl
 ---
 function: main_build
 kind: source_install
@@ -1777,6 +1865,7 @@ proj_name: scikit-learn
 project:
   name: scikit-learn
   primary_remote:
+    default_branch: main
     host: github.com
     protocol: ssh
     repo_name: scikit-learn
@@ -1784,10 +1873,10 @@ project:
     url: git@github.com:scikit-learn/scikit-learn.git
     user: scikit-learn
     vc: git
-    default_branch: main
 ---
-args: install --pre --upgrade --no-build-isolation mpmath
+flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: mpmath
 ---
 function: main_build
 kind: source_install
@@ -1828,6 +1917,7 @@ proj_name: imagecodecs
 project:
   name: imagecodecs
   primary_remote:
+    default_branch: master
     host: github.com
     protocol: https
     repo_name: imagecodecs
@@ -1835,7 +1925,6 @@ project:
     url: https://github.com/cgohlke/imagecodecs.git
     user: cgohlke
     vc: git
-    default_branch: master
 ---
 function: main_build
 kind: source_install
@@ -1901,8 +1990,9 @@ project:
     user: bluesky
     vc: git
 ---
-args: install --pre --upgrade --no-build-isolation xkcdpass
+flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: xkcdpass
 ---
 function: main_build
 kind: source_install
@@ -1920,8 +2010,10 @@ project:
     user: bluesky
     vc: git
 ---
-args: install --pre --upgrade --no-build-isolation alembic sqlalchemy fastapi starlette ldap3 pamela python-jose uvicorn ecdsa pyasn1 mako rsa
+flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: alembic sqlalchemy fastapi starlette ldap3 pamela python-jose uvicorn
+  ecdsa pyasn1 mako rsa
 ---
 function: main_build
 kind: source_install

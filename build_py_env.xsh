@@ -340,16 +340,16 @@ pre_done = set()
 for build_step in record.steps:
     if build_step['returncode'] == 0:
         if build_step['name'] == 'pip':
-            pre_done.add(build_step['args'])
+            pre_done.add(build_step['packages'])
         else:
             pre_done.add(build_step['name'])
 print(pre_done)
 for j, step in enumerate(build_order):
     print('*'*45)
-    print(f'{"  " + step.get("name", step.get("args", "")) + "  ":*^45s}')
+    print(f'{"  " + step.get("name", step.get("packages", "")) + "  ":*^45s}')
     print('*'*45)
     if step.get('name', 'pip') == 'pip':
-        if step['args'] in pre_done:
+        if step['packages'] in pre_done:
             continue
     elif step['name'] in pre_done:
         continue
@@ -400,9 +400,14 @@ for j, step in enumerate(build_order):
             print(f"pushd {step['wd']}")
             raise Exception
 
-    elif step['kind'] == 'pip':
-
-        build_log = !(pip @(step['args'].split()))
+    elif step['kind'] == 'pip' or step['kind'] == 'pip-remove':
+        if step['kind'] == 'pip':
+            cmd = 'install'
+        elif step['kind'] == 'pip-remove':
+            cmd ='uninstall'
+        else:
+            raise Exception('womp womp')
+        build_log = !(pip @(cmd) @(step['flags'].split()) @(step['packages'].split()))
         succcesss = bool(build_log)
         pl = json.loads($(pip list --format json))
         add_build_record(
@@ -412,9 +417,10 @@ for j, step in enumerate(build_order):
                 'pip list': pl,
                 'start_time': build_log.starttime,
                 'stop_time': build_log.endtime,
-                'args': step['args'],
+                'packages': step['packages'],
+                'flags': step['flags'],
                 'step_inedx': j,
-                'name': step['args'] if step.get('name', 'pip') == 'pip' else step['name'],
+                'name': step['packages'],
                 'returncode': build_log.returncode
             }
         )
