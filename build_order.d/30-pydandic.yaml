@@ -1,0 +1,23 @@
+flags: --pre --upgrade --no-build-isolation
+kind: pip
+packages: annotated-types cachetools cachey jmespath pydantic pydantic-core pydantic-settings python-dotenv shellingham typer
+---
+function: main_build
+kind: source_install
+name: greenlet
+proj_name: greenlet
+project:
+  name: greenlet
+  primary_remote:
+    default_branch: master
+    host: github.com
+    protocol: https
+    repo_name: greenlet
+    ssh_user: null
+    url: https://github.com/python-greenlet/greenlet.git
+    user: python-greenlet
+    vc: git
+---
+flags: --pre --upgrade --no-build-isolation
+kind: pip
+packages: alembic ecdsa email-validator fastapi fastapi-cli ldap3 mako pamela pyasn1 python-jose rsa sqlalchemy uvicorn

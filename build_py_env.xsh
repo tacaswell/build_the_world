@@ -56,8 +56,10 @@ else:
 $CFLAGS='-DCYTHON_FAST_THREAD_STATE=0'
 
 
-with open("build_order.yaml") as fin:
-    build_order = list(yaml.unsafe_load_all(fin))
+build_order = []
+for order in  sorted(Path('build_order.d').glob('[!.]*yaml')):
+    with open(order) as fin:
+        build_order += list(yaml.unsafe_load_all(fin))
 
 with open('all_repos.yaml') as fin:
     checkouts = list(yaml.unsafe_load_all(fin))
@@ -98,6 +100,7 @@ def auto_main(upstream_remote='origin', upstream_branch='master'):
     with ${...}.swap(RAISE_SUBPROC_ERROR=True):
         if has_tracking:
             git merge @(tracking_branch)
+        git submodule update
         cur_branch = $(git branch --show-current).strip()
         upstream = f'{upstream_remote}/{upstream_branch}'
         # git fetch @(upstream_remote)

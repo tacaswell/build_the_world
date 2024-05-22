@@ -1,5 +1,9 @@
 flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: flit-core
+---
+flags: --pre --upgrade --no-build-isolation
+kind: pip
 packages: flit
 ---
 flags: --pre --upgrade --no-build-isolation
@@ -578,7 +582,7 @@ proj_name: pyyaml
 project:
   name: pyyaml
   primary_remote:
-    default_branch: master
+    default_branch: main
     host: github.com
     protocol: https
     repo_name: pyyaml
@@ -664,10 +668,6 @@ packages: colorspacious ipywidgets numpydoc pydata-sphinx-theme mpl-sphinx-theme
   sphinxcontrib-svg2pdfconverter sphinx-gallery sphinx-copybutton sphinx-panels sphinx-design
   comm jupyterlab-widgets tabulate widgetsnbextension accessible-pygments sphinx-tags
 ---
-flags: --pre --upgrade --no-build-isolation
-kind: pip
-packages: coverage<6.3
----
 flags: ''
 kind: pip-remove
 packages: flake8-per-file-ignores
@@ -703,22 +703,6 @@ packages: async-lru httpx httpcore jupyter-lsp jupyter-server jupyterlab-server
   argon2-cffi jupyter-server-terminals nest-asyncio overrides prometheus-client psutil
   websocket-client h11 python-json-logger rfc3986-validator argon2-cffi-bindings rfc3339-validator
   jsonpointer webcolors fqdn isoduration uri-template arrow pycparser types-python-dateutil
----
-function: main_build
-kind: source_install
-name: jupyterlab
-proj_name: jupyterlab
-project:
-  name: jupyterlab
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: https
-    repo_name: jupyterlab
-    ssh_user: null
-    url: https://github.com/jupyterlab/jupyterlab.git
-    user: jupyterlab
-    vc: git
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
@@ -851,7 +835,7 @@ project:
 #args: install --index-url https://riverbankcomputing.com/pypi/simple/ --pre --upgrade PyQt5
 #kind: pip
 ---
-flags: --index-url https://riverbankcomputing.com/pypi/simple/  --pre --upgrade
+flags:  --pre --upgrade # --index-url https://riverbankcomputing.com/pypi/simple/
 kind: pip
 packages: PyQt6 pyqt6-qt6 pyqt6-sip
 # ---
@@ -1027,7 +1011,7 @@ project:
     user: zarr-developers
     vc: git
 ---
-flags: --upgrade --no-build-isolation --no-build-isolation --pre
+flags: --upgrade --no-build-isolation --pre --no-binary cftime
 kind: pip
 packages: cftime
 ---
@@ -1114,7 +1098,7 @@ proj_name: bluesky
 project:
   name: bluesky
   primary_remote:
-    default_branch: master
+    default_branch: main
     host: github.com
     protocol: ssh
     repo_name: bluesky
@@ -1123,29 +1107,28 @@ project:
     user: bluesky
     vc: git
 ---
-flags: --pre --upgrade --no-build-isolation
-kind: pip
-packages: orjson
----
-flags: --pre --upgrade --no-build-isolation
-kind: pip
-packages: tiled typer
----
 function: main_build
 kind: source_install
-name: databroker
-proj_name: databroker
+name: python-blosc
+proj_name: python-blosc
 project:
-  name: databroker
+  name: python-blosc
   primary_remote:
-    default_branch: main
     host: github.com
-    protocol: ssh
-    repo_name: databroker
-    ssh_user: git
-    url: git@github.com:bluesky/databroker.git
-    user: bluesky
+    protocol: https
+    repo_name: python-blosc
+    ssh_user: null
+    url: https://github.com/Blosc/python-blosc.git
+    user: Blosc
     vc: git
+    default_branch: main
+---
+flags: --pre --upgrade --no-build-isolation
+packages: aiofiles aiosqlite anyio asciitree asgi-correlation-id blosc
+    canonicaljson fasteners h5netcdf install lz4 mongomock
+    mongoquery ndindex parquet sentinels starlette thriftpy2
+    watchgod websockets zarr zstandard
+kind: pip
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
@@ -1425,24 +1408,8 @@ project:
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: bluesky-kafka json-rpc jupyter-console pydantic pydantic-core python-multipart
+packages: bluesky-kafka json-rpc jupyter-console python-multipart
   annotated-types hiredis redis async-timeout
----
-function: main_build
-kind: source_install
-name: bluesky-queueserver
-proj_name: bluesky-queueserver
-project:
-  name: bluesky-queueserver
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: ssh
-    repo_name: bluesky-queueserver
-    ssh_user: git
-    url: git@github.com:bluesky/bluesky-queueserver.git
-    user: bluesky
-    vc: git
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
@@ -1482,22 +1449,6 @@ project:
 ---
 function: main_build
 kind: source_install
-name: databroker-pack
-proj_name: databroker-pack
-project:
-  name: databroker-pack
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: ssh
-    repo_name: databroker-pack
-    ssh_user: git
-    url: git@github.com:bluesky/databroker-pack.git
-    user: bluesky
-    vc: git
----
-function: main_build
-kind: source_install
 name: pyqtgraph
 proj_name: pyqtgraph
 project:
@@ -1511,6 +1462,22 @@ project:
     url: git@github.com:pyqtgraph/pyqtgraph.git
     user: pyqtgraph
     vc: git
+---
+function: main_build
+kind: source_install
+name: curio
+proj_name: curio
+project:
+  name: curio
+  primary_remote:
+    host: github.com
+    protocol: https
+    repo_name: curio
+    ssh_user: null
+    url: https://github.com/dabeaz/curio.git
+    user: dabeaz
+    vc: git
+    default_branch: master
 ---
 function: main_build
 kind: source_install
@@ -1616,22 +1583,6 @@ project:
     user: pydata
     vc: git
 ---
-function: main_build
-kind: source_install
-name: typed_ast
-proj_name: typed_ast
-project:
-  name: typed_ast
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: https
-    repo_name: typed_ast
-    ssh_user: null
-    url: https://github.com/python/typed_ast.git
-    user: python
-    vc: git
----
 # function: main_build
 # kind: source_install
 # name: fabio
@@ -1703,38 +1654,22 @@ project:
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: astropy-iers-data
----
-function: main_build
-kind: source_install
-name: astropy
-proj_name: astropy
-project:
-  name: astropy
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: https
-    repo_name: astropy
-    ssh_user: null
-    url: https://github.com/astropy/astropy.git
-    user: astropy
-    vc: git
----
-function: main_build
-kind: source_install
-name: greenlet
-proj_name: greenlet
-project:
-  name: greenlet
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: https
-    repo_name: greenlet
-    ssh_user: null
-    url: https://github.com/python-greenlet/greenlet.git
-    user: python-greenlet
-    vc: git
+# ---
+# function: main_build
+# kind: source_install
+# name: astropy
+# proj_name: astropy
+# project:
+#   name: astropy
+#   primary_remote:
+#     default_branch: main
+#     host: github.com
+#     protocol: https
+#     repo_name: astropy
+#     ssh_user: null
+#     url: https://github.com/astropy/astropy.git
+#     user: astropy
+#     vc: git
 # ---
 # args: install --no-build-isolation --pre --upgrade  pyca
 # kind: pip
@@ -1776,8 +1711,8 @@ project:
     vc: git
 ---
 flags: --pre --upgrade --no-build-isolation
+packages: docutils dpkt netifaces sphinx-rtd-theme sphinxcontrib-jquery ujson
 kind: pip
-packages: ujson sphinx-rtd-theme dpkt netifaces sphinxcontrib-jquery
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
@@ -1787,11 +1722,27 @@ packages: vcrpy httpie cookiecutter pytest-instafail tzlocal doct boltons
 flags: --no-build-isolation --pre --upgrade
 kind: pip
 packages: xarray
+# ---
+# function: main_build
+# kind: source_install
+# name: jupyterlab
+# proj_name: jupyterlab
+# project:
+#   name: jupyterlab
+#   primary_remote:
+#     default_branch: main
+#     host: github.com
+#     protocol: https
+#     repo_name: jupyterlab
+#     ssh_user: null
+#     url: https://github.com/jupyterlab/jupyterlab.git
+#     user: jupyterlab
+#     vc: git
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: jupyterlab-git jupyterlab-spellchecker myst-parser mdit-py-plugins
-  nbdime gitpython jupyter-server-mathjax colorama gitdb smmap
+  nbdime gitpython jupyter-server-mathjax colorama gitdb smmap jupyterlab
 ---
 flags: -y
 kind: pip-remove
@@ -1896,22 +1847,6 @@ project:
 ---
 function: main_build
 kind: source_install
-name: msgspec
-proj_name: msgspec
-project:
-  name: msgspec
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: ssh
-    repo_name: msgspec
-    ssh_user: git
-    url: git@github.com:jcrist/msgspec.git
-    user: jcrist
-    vc: git
----
-function: main_build
-kind: source_install
 name: imagecodecs
 proj_name: imagecodecs
 project:
@@ -1974,59 +1909,10 @@ project:
     user: bluesky
     vc: git
 ---
-function: main_build
-kind: source_install
-name: bluesky-queueserver-api
-proj_name: bluesky-queueserver-api
-project:
-  name: bluesky-queueserver-api
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: ssh
-    repo_name: bluesky-queueserver-api
-    ssh_user: git
-    url: git@github.com:bluesky/bluesky-queueserver-api.git
-    user: bluesky
-    vc: git
----
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: xkcdpass
 ---
-function: main_build
-kind: source_install
-name: bluesky-adaptive
-proj_name: bluesky-adaptive
-project:
-  name: bluesky-adaptive
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: ssh
-    repo_name: bluesky-adaptive
-    ssh_user: git
-    url: git@github.com:bluesky/bluesky-adaptive.git
-    user: bluesky
-    vc: git
----
 flags: --pre --upgrade --no-build-isolation
+packages: blosc2
 kind: pip
-packages: alembic sqlalchemy fastapi starlette ldap3 pamela python-jose uvicorn
-  ecdsa pyasn1 mako rsa
----
-function: main_build
-kind: source_install
-name: bluesky-httpserver
-proj_name: bluesky-httpserver
-project:
-  name: bluesky-httpserver
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: ssh
-    repo_name: bluesky-httpserver
-    ssh_user: git
-    url: git@github.com:bluesky/bluesky-httpserver.git
-    user: bluesky
-    vc: git
