@@ -18,6 +18,23 @@ project:
     user: python-greenlet
     vc: git
 ---
+function: main_build
+kind: source_install
+name: orjson
+proj_name: orjson
+project:
+  name: orjson
+  primary_remote:
+    host: github.com
+    protocol: https
+    repo_name: orjson
+    ssh_user: null
+    url: https://github.com/ijl/orjson.git
+    user: ijl
+    vc: git
+    default_branch: master
+
+---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: alembic ecdsa email-validator fastapi fastapi-cli ldap3 mako pamela pyasn1 python-jose rsa sqlalchemy uvicorn

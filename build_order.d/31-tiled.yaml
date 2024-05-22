@@ -1,20 +1,4 @@
 ---
-function: main_build
-kind: source_install
-name: orjson
-proj_name: orjson
-project:
-  name: orjson
-  primary_remote:
-    host: github.com
-    protocol: https
-    repo_name: orjson
-    ssh_user: null
-    url: https://github.com/ijl/orjson.git
-    user: ijl
-    vc: git
-    default_branch: master
----
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: tiled
@@ -48,21 +32,5 @@ project:
     repo_name: databroker-pack
     ssh_user: git
     url: git@github.com:bluesky/databroker-pack.git
-    user: bluesky
-    vc: git
----
-function: main_build
-kind: source_install
-name: bluesky-adaptive
-proj_name: bluesky-adaptive
-project:
-  name: bluesky-adaptive
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: ssh
-    repo_name: bluesky-adaptive
-    ssh_user: git
-    url: git@github.com:bluesky/bluesky-adaptive.git
     user: bluesky
     vc: git
