@@ -20,9 +20,10 @@ def extract_git_shas():
     describe = $(git describe --tags --abbrev=11 --long --dirty --always).strip()
     return {'head': headsha, 'describe': describe}
 
-
-with open("build_order.yaml") as fin:
-    build_order = list(yaml.unsafe_load_all(fin))
+build_order = []
+for order in  sorted(Path('build_order.d').glob('[!.]*yaml')):
+    with open(order) as fin:
+        build_order += list(yaml.unsafe_load_all(fin))
 
 with open('all_repos.yaml') as fin:
     checkouts = list(yaml.unsafe_load_all(fin))
