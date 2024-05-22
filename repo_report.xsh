@@ -2,9 +2,7 @@ import json
 import sys
 
 import time
-import uuid
 import yaml
-import datetime
 from pathlib import Path
 
 from subprocess import CalledProcessError
