@@ -68,4 +68,6 @@ for step in build_order:
 
 for k, v in out.items():
     if v['cur_branch'] != v['upstream_branch']:
-        print(k, v['upstream_branch'], v['cur_branch'], v['has_tracking'], v['tracking_branch'], v['checkout'])
+        print(f"{k} ({v['checkout']})")
+        print(f"   default: {v['upstream_branch']}")
+        print(f"   on: {v['cur_branch']} ({v['tracking_branch'] if v['has_tracking'] else '-'})")
