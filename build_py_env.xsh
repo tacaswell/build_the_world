@@ -9,6 +9,9 @@ from pathlib import Path
 
 from subprocess import CalledProcessError
 
+from xonsh.dirstack import with_pushd
+
+
 $RAISE_SUBPROC_ERROR = False
 $XONSH_TRACE_SUBPROC = True
 $PIP_NO_BUILD_ISOLATION = 1
@@ -152,6 +155,14 @@ def git_cleanup():
         cp /tmp/@(p.name) @(p)
 
 
+
+def flit_build(**kwargs):
+    auto_main(**kwargs)
+    git_cleanup()
+    with with_pushd('flit_core'):
+        whl = $(python -m flit_core.wheel).split('\n')[1].split(' ')[-1]
+        python bootstrap_install.py @(whl)
+    return !(pip install --no-build-isolation .)
 
 
 def main_build(**kwargs):
