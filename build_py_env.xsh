@@ -177,12 +177,6 @@ def setup_py_build(**kwargs):
     return !(python setup.py install)
 
 
-def suitcaseserver_build(**kwargs):
-    pip install -r requirements-dev.txt --no-build-isolation  --pre
-    pip install -r requirements.txt --no-build-isolation  --pre
-    return main_build(**kwargs)
-
-
 def numcodecs_build(**kwargs):
     auto_main(**kwargs)
     git clean -xfd
