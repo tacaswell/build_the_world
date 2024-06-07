@@ -46,6 +46,10 @@ project:
     user: bluesky
     vc: git
 ---
+flags: --pre --upgrade --no-build-isolation
+packages: jsonpatch
+kind: pip
+---
 function: main_build
 kind: source_install
 name: bluesky-adaptive

@@ -702,11 +702,8 @@ project:
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: async-lru httpx httpcore jupyter-lsp jupyter-server jupyterlab-server
-  notebook-shim ipykernel anyio debugpy json5 jupyter-events send2trash sniffio terminado
-  argon2-cffi jupyter-server-terminals nest-asyncio overrides prometheus-client psutil
-  websocket-client h11 python-json-logger rfc3986-validator argon2-cffi-bindings rfc3339-validator
-  jsonpointer webcolors fqdn isoduration uri-template arrow pycparser types-python-dateutil
+packages: anyio argon2-cffi argon2-cffi-bindings arrow async-lru debugpy fqdn h11 httpcore httpx ipykernel isoduration json5 jsonpointer jupyter-events jupyter-lsp jupyter-server jupyter-server-terminals jupyterlab-server nest-asyncio notebook-shim overrides prometheus-client psutil python-json-logger rfc3339-validator rfc3986-validator send2trash sniffio terminado types-python-dateutil uri-template webcolors websocket-client
+
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
@@ -1037,7 +1034,7 @@ project:
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: pint
+packages: flexcache flexparser pint
 ---
 function: main_build
 kind: source_install
@@ -1362,7 +1359,11 @@ project:
     user: bluesky
     vc: git
 ---
-function: suitcaseserver_build
+flags: --pre --upgrade --no-build-isolation
+packages: codecov docutils sphinx-rtd-theme sphinxcontrib-jquery
+kind: pip
+---
+function: main_build
 kind: source_install
 name: suitcase-server
 proj_name: suitcase-server
