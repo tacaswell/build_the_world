@@ -351,10 +351,6 @@ project:
     user: ipython
     vc: git
 ---
-flags: --no-build-isolation --pre --upgrade
-kind: pip
-packages: flit
----
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: hatchling hatch-nodejs-version editables pluggy trove-classifiers
