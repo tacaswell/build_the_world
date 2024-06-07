@@ -1,3 +1,16 @@
-flags: --pre --upgrade --no-build-isolation
-kind: pip
-packages: pyarrow
+---
+function: build_pyarrow
+kind: source_install
+name: pyarrow
+proj_name: arrow
+project:
+  name: arrow
+  primary_remote:
+    host: github.com
+    protocol: https
+    repo_name: arrow
+    ssh_user: null
+    url: https://github.com/apache/arrow.git
+    user: apache
+    vc: git
+    default_branch: main

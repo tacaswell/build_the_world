@@ -257,6 +257,47 @@ def pandas_build(**kwargs):
     bool(ret)
     return ret
 
+def build_pyarrow(**kwargs):
+    patch = """diff --git a/cpp/cmake_modules/Findlz4Alt.cmake b/cpp/cmake_modules/Findlz4Alt.cmake
+index 77a22957f..ce35d81eb 100644
+--- a/cpp/cmake_modules/Findlz4Alt.cmake
++++ b/cpp/cmake_modules/Findlz4Alt.cmake
+@@ -33,6 +33,9 @@ if(lz4_FOUND)
+   if(NOT TARGET LZ4::lz4 AND TARGET lz4::lz4)
+     add_library(LZ4::lz4 ALIAS lz4::lz4)
+   endif()
++  if(NOT TARGET LZ4::lz4 AND TARGET LZ4::lz4_shared)
++    add_library(LZ4::lz4 ALIAS LZ4::lz4_shared)
++  endif()
+   return()
+ endif()
+
+"""
+    auto_main(**kwargs)
+    git stash
+    git clean -xfd
+    cleanup_cython()
+    git stash pop
+    $PARQUET_TEST_DATA=$PWD+"/cpp/submodules/parquet-testing/data"
+    $PARQUET_TEST_DATA
+    $ARROW_TEST_DATA=$PWD+"/testing/data"
+    cd ../
+    mkdir dist
+    $ARROW_HOME=$PWD +'/dist'
+    $LD_LIBRARY_PATH= [$PWD+"/dist/lib"]
+    $CMAKE_PREFIX_PATH=[$ARROW_HOME]
+    # patch from Arch packages
+    # patch < lz4-cmake.patch  -p 1
+    cmake -S arrow/cpp -B arrow/cpp/build \
+               -DCMAKE_INSTALL_PREFIX=$ARROW_HOME \
+               --preset ninja-release-python
+    cmake --build arrow/cpp/build --target install -j
+    pushd arrow/python
+    git clean -xfd
+    $PYARROW_WITH_PARQUET=1
+    $PYARROW_WITH_DATASET=1
+    $PYARROW_PARALLEL=25
+    return !(pip install -v . --no-build-isolation)
 
 def build_yarl(name, **kwargs):
     auto_main(**kwargs)
