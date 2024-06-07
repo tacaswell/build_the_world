@@ -594,8 +594,8 @@ host: github.com
 protocol: https
 repo_name: nsls2-detector-handlers
 ssh_user: null
-url: https://github.com/NSLS-II/nsls2-detector-handlers.git
-user: NSLS-II
+url: https://github.com/nsls-ii/nsls2-detector-handlers.git
+user: nsls-ii
 vc: git
 ---
 host: github.com
@@ -626,16 +626,16 @@ host: github.com
 protocol: https
 repo_name: bcsio
 ssh_user: null
-url: https://github.com/NSLS-II/bcsio.git
-user: NSLS-II
+url: https://github.com/nsls-ii/bcsio.git
+user: nsls-ii
 vc: git
 ---
 host: github.com
 protocol: https
 repo_name: mily
 ssh_user: null
-url: https://github.com/NSLS-II/mily.git
-user: NSLS-II
+url: https://github.com/nsls-ii/mily.git
+user: nsls-ii
 vc: git
 ---
 host: github.com

@@ -13,7 +13,7 @@ bnl_orgs = {
     "soft-matter",
     "zarr-developers",
     "pcdshub",
-    "NSLS-II",
+    "nsls-ii",
     "silx-kit",
     "dask",
     "bluesky",
@@ -21,7 +21,7 @@ bnl_orgs = {
     "intake",
     "scikit-hep",
     "cgohlke",
-    "Nikea",
+    "nikea",
     "astropy",
 }
 
@@ -40,7 +40,7 @@ with open('used_repos.yaml') as fin:
 print(set(b["user"] for b in required_repos))
 
 for remote in required_repos:
-    if remote["user"] in bnl_orgs:
+    if remote["user"].lower() in bnl_orgs:
         source_clone(remote['user'], remote['repo_name'], dest='bnl')
     else:
         source_clone(remote['user'] ,remote['repo_name'], dest='p')
