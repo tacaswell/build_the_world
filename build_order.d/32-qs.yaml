@@ -1,67 +1,27 @@
+default_branch: main
 function: main_build
 kind: source_install
 name: bluesky-queueserver
 proj_name: bluesky-queueserver
-project:
-  name: bluesky-queueserver
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: ssh
-    repo_name: bluesky-queueserver
-    ssh_user: git
-    url: git@github.com:bluesky/bluesky-queueserver.git
-    user: bluesky
-    vc: git
 ---
+default_branch: main
 function: main_build
 kind: source_install
 name: bluesky-queueserver-api
 proj_name: bluesky-queueserver-api
-project:
-  name: bluesky-queueserver-api
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: ssh
-    repo_name: bluesky-queueserver-api
-    ssh_user: git
-    url: git@github.com:bluesky/bluesky-queueserver-api.git
-    user: bluesky
-    vc: git
 ---
+default_branch: main
 function: main_build
 kind: source_install
 name: bluesky-httpserver
 proj_name: bluesky-httpserver
-project:
-  name: bluesky-httpserver
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: ssh
-    repo_name: bluesky-httpserver
-    ssh_user: git
-    url: git@github.com:bluesky/bluesky-httpserver.git
-    user: bluesky
-    vc: git
 ---
 flags: --pre --upgrade --no-build-isolation
-packages: jsonpatch
 kind: pip
+packages: jsonpatch
 ---
+default_branch: main
 function: main_build
 kind: source_install
 name: bluesky-adaptive
 proj_name: bluesky-adaptive
-project:
-  name: bluesky-adaptive
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: ssh
-    repo_name: bluesky-adaptive
-    ssh_user: git
-    url: git@github.com:bluesky/bluesky-adaptive.git
-    user: bluesky
-    vc: git

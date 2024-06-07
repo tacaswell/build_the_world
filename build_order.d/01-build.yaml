@@ -1,294 +1,134 @@
+default_branch: main
 function: flit_build
 kind: source_install
 name: flit
 proj_name: flit
-project:
-  name: flit
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: https
-    repo_name: flit
-    ssh_user: null
-    url: https://github.com/pypa/flit.git
-    user: pypa
-    vc: git
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: setuptools
 ---
+default_branch: main
 function: main_build
 kind: source_install
 name: wheel
 proj_name: wheel
-project:
-  name: wheel
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: https
-    repo_name: wheel
-    ssh_user: null
-    url: https://github.com/pypa/wheel.git
-    user: pypa
-    vc: git
 ---
+default_branch: main
 function: main_build
 kind: source_install
 name: pip_src
 proj_name: pip
-project:
-  name: pip
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: https
-    repo_name: pip
-    ssh_user: null
-    url: https://github.com/pypa/pip.git
-    user: pypa
-    vc: git
 ---
+default_branch: main
 function: main_build
 kind: source_install
 name: Pillow
 proj_name: Pillow
-project:
-  name: Pillow
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: https
-    repo_name: Pillow
-    ssh_user: null
-    url: https://github.com/python-pillow/Pillow.git
-    user: python-pillow
-    vc: git
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: mccabe pycodestyle pyflakes
 ---
+default_branch: main
 function: main_build
 kind: source_install
 name: flake8
 proj_name: flake8
-project:
-  name: flake8
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: ssh
-    repo_name: flake8
-    ssh_user: git
-    url: git@github.com:PyCQA/flake8.git
-    user: PyCQA
-    vc: git
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: flake8-force
 ---
+default_branch: master
 function: main_build
 kind: source_install
 name: pybind11
 proj_name: pybind11
-project:
-  name: pybind11
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: https
-    repo_name: pybind11
-    ssh_user: null
-    url: https://github.com/pybind/pybind11.git
-    user: pybind
-    vc: git
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: cmake ninja
 ---
+default_branch: master
 function: cython_build
 kind: source_install
 name: cython
 proj_name: cython
-project:
-  name: cython
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: https
-    repo_name: cython
-    ssh_user: null
-    url: https://github.com/cython/cython.git
-    user: cython
-    vc: git
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: packaging pyproject-hooks
 ---
+default_branch: main
 function: main_build
 kind: source_install
 name: build
 proj_name: build
-project:
-  name: build
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: ssh
-    repo_name: build
-    ssh_user: git
-    url: git@github.com:pypa/build.git
-    user: pypa
-    vc: git
 ---
 flags: --no-build-isolation --pre --upgrade
 kind: pip
 packages: ninja pyparsing pyproject-metadata
 ---
+default_branch: master
 function: main_build
 kind: source_install
 name: meson
 proj_name: meson
-project:
-  name: meson
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: ssh
-    repo_name: meson
-    ssh_user: git
-    url: git@github.com:mesonbuild/meson.git
-    user: mesonbuild
-    vc: git
 ---
+default_branch: main
 function: main_build
 kind: source_install
 name: meson-python
 proj_name: meson-python
-project:
-  name: meson-python
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: ssh
-    repo_name: meson-python
-    ssh_user: git
-    url: git@github.com:mesonbuild/meson-python.git
-    user: mesonbuild
-    vc: git
 ---
+default_branch: main
 function: numpy_build
 kind: source_install
 name: numpy
 proj_name: numpy
-project:
-  name: numpy
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: https
-    repo_name: numpy
-    ssh_user: null
-    url: https://github.com/numpy/numpy.git
-    user: numpy
-    vc: git
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: beniget gast ply
 ---
+default_branch: master
 function: main_build
 kind: source_install
 name: pythran
 proj_name: pythran
-project:
-  name: pythran
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: https
-    repo_name: pythran
-    ssh_user: null
-    url: https://github.com/serge-sans-paille/pythran.git
-    user: serge-sans-paille
-    vc: git
 ---
+default_branch: main
 function: scipy_build
 kind: source_install
 name: scipy
 proj_name: scipy
-project:
-  name: scipy
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: https
-    repo_name: scipy
-    ssh_user: null
-    url: https://github.com/scipy/scipy.git
-    user: scipy
-    vc: git
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: pkgconfig six
 ---
+default_branch: master
 function: main_build
 kind: source_install
 name: h5py
 proj_name: h5py
-project:
-  name: h5py
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: ssh
-    repo_name: h5py
-    ssh_user: git
-    url: git@github.com:h5py/h5py.git
-    user: h5py
-    vc: git
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: ptyprocess
 ---
+default_branch: master
 function: main_build
 kind: source_install
 name: pexpect
 proj_name: pexpect
-project:
-  name: pexpect
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: https
-    repo_name: pexpect
-    ssh_user: null
-    url: https://github.com/pexpect/pexpect.git
-    user: pexpect
-    vc: git
 ---
+default_branch: master
 function: main_build
 kind: source_install
 name: parso
 proj_name: parso
-project:
-  name: parso
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: https
-    repo_name: parso
-    ssh_user: null
-    url: https://github.com/davidhalter/parso.git
-    user: davidhalter
-    vc: git
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
@@ -298,63 +138,32 @@ flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: scikit-build distro pathspec scikit-build-core
 ---
+default_branch: main
 function: main_build
 kind: source_install
 name: pyzmq
 proj_name: pyzmq
-project:
-  name: pyzmq
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: https
-    repo_name: pyzmq
-    ssh_user: null
-    url: https://github.com/zeromq/pyzmq.git
-    user: zeromq
-    vc: git
 ---
+default_branch: master
 function: main_build
 kind: source_install
 name: jedi
 proj_name: jedi
-project:
-  name: jedi
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: https
-    repo_name: jedi
-    ssh_user: null
-    url: https://github.com/davidhalter/jedi.git
-    user: davidhalter
-    vc: git
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: prompt-toolkit pygments traitlets decorator matplotlib-inline stack-data
   asttokens executing pure-eval wcwidth
 ---
+default_branch: main
 function: main_build
 kind: source_install
 name: IPython
 proj_name: ipython
-project:
-  name: IPython
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: https
-    repo_name: ipython
-    ssh_user: null
-    url: https://github.com/ipython/ipython.git
-    user: ipython
-    vc: git
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: hatchling hatch-nodejs-version editables pluggy trove-classifiers
-  pathspec
+packages: hatchling hatch-nodejs-version editables pluggy trove-classifiers pathspec
 ---
 flags: --no-build-isolation --pre --upgrade
 kind: pip
@@ -362,150 +171,70 @@ packages: maturin
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: jsonschema fastjsonschema jupyter-core attrs jsonschema-specifications
-  referencing rpds-py platformdirs
+packages: jsonschema fastjsonschema jupyter-core attrs jsonschema-specifications referencing
+  rpds-py platformdirs
 ---
+default_branch: main
 function: main_build
 kind: source_install
 name: nbformat
 proj_name: nbformat
-project:
-  name: nbformat
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: https
-    repo_name: nbformat
-    ssh_user: null
-    url: https://github.com/jupyter/nbformat.git
-    user: jupyter
-    vc: git
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: bleach jinja2 markupsafe mistune nbclient pandocfilters beautifulsoup4
-  defusedxml jupyterlab-pygments tinycss2 jupyter-client soupsieve webencodings python-dateutil
+packages: bleach jinja2 markupsafe mistune nbclient pandocfilters beautifulsoup4 defusedxml
+  jupyterlab-pygments tinycss2 jupyter-client soupsieve webencodings python-dateutil
   tornado
 ---
+default_branch: main
 function: main_build
 kind: source_install
 name: nbconvert
 proj_name: nbconvert
-project:
-  name: nbconvert
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: https
-    repo_name: nbconvert
-    ssh_user: null
-    url: https://github.com/jupyter/nbconvert.git
-    user: jupyter
-    vc: git
 ---
+default_branch: master
 function: main_build
 kind: source_install
 name: certifi
 proj_name: python-certifi
-project:
-  name: python-certifi
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: https
-    repo_name: python-certifi
-    ssh_user: null
-    url: https://github.com/certifi/python-certifi.git
-    user: certifi
-    vc: git
 ---
 flags: --no-build-isolation --pre --upgrade
 kind: pip
 packages: cppy
 ---
+default_branch: main
 function: main_build
 kind: source_install
 name: contourpy
 proj_name: contourpy
-project:
-  name: contourpy
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: ssh
-    repo_name: contourpy
-    ssh_user: git
-    url: git@github.com:contourpy/contourpy.git
-    user: contourpy
-    vc: git
 ---
+default_branch: master
 function: main_build
 kind: source_install
 name: dateutil
 proj_name: dateutil
-project:
-  name: dateutil
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: ssh
-    repo_name: dateutil
-    ssh_user: git
-    url: git@github.com:dateutil/dateutil.git
-    user: dateutil
-    vc: git
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: fonttools kiwisolver
 ---
+default_branch: main
 function: main_build
 kind: source_install
 name: cycler
 proj_name: cycler
-project:
-  name: cycler
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: https
-    repo_name: cycler
-    ssh_user: null
-    url: https://github.com/matplotlib/cycler.git
-    user: matplotlib
-    vc: git
 ---
+default_branch: main
 function: main_build
 kind: source_install
 name: matplotlib
 proj_name: matplotlib
-project:
-  name: matplotlib
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: https
-    repo_name: matplotlib
-    ssh_user: null
-    url: https://github.com/matplotlib/matplotlib.git
-    user: matplotlib
-    vc: git
 ---
+default_branch: main
 function: main_build
 kind: source_install
 name: mpl-gui
 proj_name: mpl-gui
-project:
-  name: mpl-gui
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: https
-    repo_name: mpl-gui
-    ssh_user: null
-    url: https://github.com/matplotlib/mpl-gui.git
-    user: matplotlib
-    vc: git
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
@@ -515,101 +244,41 @@ flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: pytz tzdata
 ---
+default_branch: main
 function: pandas_build
 kind: source_install
 name: pandas
 proj_name: pandas
-project:
-  name: pandas
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: https
-    repo_name: pandas
-    ssh_user: null
-    url: https://github.com/pandas-dev/pandas.git
-    user: pandas-dev
-    vc: git
 ---
+default_branch: master
 function: main_build
 kind: source_install
 name: mplfinance
 proj_name: mplfinance
-project:
-  name: mplfinance
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: https
-    repo_name: mplfinance
-    ssh_user: null
-    url: https://github.com/matplotlib/mplfinance.git
-    user: matplotlib
-    vc: git
 ---
+default_branch: main
 function: main_build
 kind: source_install
 name: networkx
 proj_name: networkx
-project:
-  name: networkx
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: https
-    repo_name: networkx
-    ssh_user: null
-    url: https://github.com/networkx/networkx.git
-    user: networkx
-    vc: git
 ---
+default_branch: master
 function: main_build
 kind: source_install
 name: toolz
 proj_name: toolz
-project:
-  name: toolz
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: https
-    repo_name: toolz
-    ssh_user: null
-    url: https://github.com/pytoolz/toolz.git
-    user: pytoolz
-    vc: git
 ---
+default_branch: main
 function: main_build
 kind: source_install
 name: pyyaml
 proj_name: pyyaml
-project:
-  name: pyyaml
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: https
-    repo_name: pyyaml
-    ssh_user: null
-    url: https://github.com/yaml/pyyaml.git
-    user: yaml
-    vc: git
 ---
+default_branch: master
 function: main_build
 kind: source_install
 name: lxml
 proj_name: lxml
-project:
-  name: lxml
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: https
-    repo_name: lxml
-    ssh_user: null
-    url: https://github.com/lxml/lxml.git
-    user: lxml
-    vc: git
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
@@ -623,43 +292,23 @@ flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: iniconfig
 ---
+default_branch: main
 function: main_build
 kind: source_install
 name: pytest
 proj_name: pytest
-project:
-  name: pytest
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: https
-    repo_name: pytest
-    ssh_user: null
-    url: https://github.com/pytest-dev/pytest.git
-    user: pytest-dev
-    vc: git
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: alabaster babel imagesize snowballstemmer sphinxcontrib-htmlhelp
-  sphinxcontrib-serializinghtml sphinxcontrib-applehelp sphinxcontrib-devhelp sphinxcontrib-jsmath
-  sphinxcontrib-qthelp sphinx docutils
+packages: alabaster babel imagesize snowballstemmer sphinxcontrib-htmlhelp sphinxcontrib-serializinghtml
+  sphinxcontrib-applehelp sphinxcontrib-devhelp sphinxcontrib-jsmath sphinxcontrib-qthelp
+  sphinx docutils
 ---
+default_branch: master
 function: main_build
 kind: source_install
 name: sphinx
 proj_name: sphinx
-project:
-  name: sphinx
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: https
-    repo_name: sphinx
-    ssh_user: null
-    url: https://github.com/sphinx-doc/sphinx.git
-    user: sphinx-doc
-    vc: git
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
@@ -668,9 +317,9 @@ packages: pydocstyle flake8-docstrings pytest-cov pytest-rerunfailures pytest-ti
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: colorspacious ipywidgets numpydoc pydata-sphinx-theme mpl-sphinx-theme
-  sphinxcontrib-svg2pdfconverter sphinx-gallery sphinx-copybutton sphinx-panels sphinx-design
-  comm jupyterlab-widgets tabulate widgetsnbextension accessible-pygments sphinx-tags
+packages: colorspacious ipywidgets numpydoc pydata-sphinx-theme mpl-sphinx-theme sphinxcontrib-svg2pdfconverter
+  sphinx-gallery sphinx-copybutton sphinx-panels sphinx-design comm jupyterlab-widgets
+  tabulate widgetsnbextension accessible-pygments sphinx-tags
 ---
 flags: ''
 kind: pip-remove
@@ -684,1070 +333,454 @@ flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: pycparser
 ---
+default_branch: main
 function: main_build
 kind: source_install
 name: cffi
 proj_name: cffi
-project:
-  name: cffi
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: ssh
-    repo_name: cffi
-    ssh_user: git
-    url: git@github.com:python-cffi/cffi.git
-    user: python-cffi
-    vc: git
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: anyio argon2-cffi argon2-cffi-bindings arrow async-lru debugpy fqdn h11 httpcore httpx ipykernel isoduration json5 jsonpointer jupyter-events jupyter-lsp jupyter-server jupyter-server-terminals jupyterlab-server nest-asyncio notebook-shim overrides prometheus-client psutil python-json-logger rfc3339-validator rfc3986-validator send2trash sniffio terminado types-python-dateutil uri-template webcolors websocket-client
-
+packages: anyio argon2-cffi argon2-cffi-bindings arrow async-lru debugpy fqdn h11
+  httpcore httpx ipykernel isoduration json5 jsonpointer jupyter-events jupyter-lsp
+  jupyter-server jupyter-server-terminals jupyterlab-server nest-asyncio notebook-shim
+  overrides prometheus-client psutil python-json-logger rfc3339-validator rfc3986-validator
+  send2trash sniffio terminado types-python-dateutil uri-template webcolors websocket-client
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: cloudpickle fsspec importlib-metadata partd zipp locket click
 ---
+default_branch: main
 function: main_build
 kind: source_install
 name: dask
 proj_name: dask
-project:
-  name: dask
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: https
-    repo_name: dask
-    ssh_user: null
-    url: https://github.com/dask/dask.git
-    user: dask
-    vc: git
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: msgpack sortedcontainers tblib zict
 ---
+default_branch: main
 function: main_build
 kind: source_install
 name: distributed
 proj_name: distributed
-project:
-  name: distributed
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: https
-    repo_name: distributed
-    ssh_user: null
-    url: https://github.com/dask/distributed.git
-    user: dask
-    vc: git
 ---
+default_branch: main
 function: main_build
 kind: source_install
 name: pywt
 proj_name: pywt
-project:
-  name: pywt
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: https
-    repo_name: pywt
-    ssh_user: null
-    url: https://github.com/PyWavelets/pywt.git
-    user: PyWavelets
-    vc: git
 ---
 flags: --no-build-isolation --pre --upgrade
 kind: pip
 packages: lazy_loader
 ---
+default_branch: master
 function: main_build
 kind: source_install
 name: tifffile
 proj_name: tifffile
-project:
-  name: tifffile
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: https
-    repo_name: tifffile
-    ssh_user: null
-    url: https://github.com/cgohlke/tifffile.git
-    user: cgohlke
-    vc: git
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: imageio
 ---
+default_branch: main
 function: main_build
 kind: source_install
 name: scikit-image
 proj_name: scikit-image
-project:
-  name: scikit-image
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: https
-    repo_name: scikit-image
-    ssh_user: null
-    url: https://github.com/scikit-image/scikit-image.git
-    user: scikit-image
-    vc: git
 ---
+default_branch: main
 function: main_build
 kind: source_install
 name: uritemplate
 proj_name: uritemplate
-project:
-  name: uritemplate
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: https
-    repo_name: uritemplate
-    ssh_user: null
-    url: https://github.com/python-hyper/uritemplate.git
-    user: python-hyper
-    vc: git
 ---
+default_branch: main
 function: main_build
 kind: source_install
 name: sip
 proj_name: sip
-project:
-  name: sip
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: ssh
-    repo_name: sip
-    ssh_user: git
-    url: git@github.com:Python-SIP/sip.git
-    user: Python-SIP
-    vc: git
-#---
-#args: install --index-url https://riverbankcomputing.com/pypi/simple/ --pre --upgrade PyQt5
-#kind: pip
 ---
-flags:  --pre --upgrade # --index-url https://riverbankcomputing.com/pypi/simple/
+flags: --pre --upgrade
 kind: pip
 packages: PyQt6 pyqt6-qt6 pyqt6-sip
-# ---
-# function: main_build
-# kind: source_install
-# name: pydantic-core
-# proj_name: pydantic-core
-# project:
-#   name: pydantic-core
-#   primary_remote:
-#     default_branch: main
-#     host: github.com
-#     protocol: ssh
-#     repo_name: pydantic-core
-#     ssh_user: git
-#     url: git@github.com:pydantic/pydantic-core.git
-#     user: pydantic
-#     vc: git
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: asv asv-runner coverage cryptography jaraco-classes jaraco-context
-  jaraco-functools jeepney keyring markdown-it-py mdurl more-itertools nh3 outcome
-  pkginfo py-cpuinfo pympler pytest-benchmark qtpy readme-renderer requests-toolbelt
-  rfc3986 rich secretstorage trio twine
+packages: asv asv-runner coverage cryptography jaraco-classes jaraco-context jaraco-functools
+  jeepney keyring markdown-it-py mdurl more-itertools nh3 outcome pkginfo py-cpuinfo
+  pympler pytest-benchmark qtpy readme-renderer requests-toolbelt rfc3986 rich secretstorage
+  trio twine
 ---
+default_branch: master
 function: main_build
 kind: source_install
 name: multidict
 proj_name: multidict
-project:
-  name: multidict
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: https
-    repo_name: multidict
-    ssh_user: null
-    url: https://github.com/aio-libs/multidict.git
-    user: aio-libs
-    vc: git
 ---
 flags: --pre --upgrade
 kind: pip
 packages: expandvars
 ---
+default_branch: master
 function: build_yarl
 kind: source_install
 kwargs:
   name: yarl
 name: yarl
 proj_name: yarl
-project:
-  name: yarl
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: https
-    repo_name: yarl
-    ssh_user: null
-    url: https://github.com/aio-libs/yarl.git
-    user: aio-libs
-    vc: git
 ---
+default_branch: master
 function: build_yarl
 kind: source_install
 kwargs:
   name: frozenlist
 name: frozenlist
 proj_name: frozenlist
-project:
-  name: frozenlist
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: https
-    repo_name: frozenlist
-    ssh_user: null
-    url: https://github.com/aio-libs/frozenlist.git
-    user: aio-libs
-    vc: git
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: aiosignal aiohappyeyeballs
 ---
+default_branch: master
 function: build_aiohttp
 kind: source_install
 name: aiohttp
 proj_name: aiohttp
-project:
-  name: aiohttp
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: https
-    repo_name: aiohttp
-    ssh_user: null
-    url: https://github.com/aio-libs/aiohttp.git
-    user: aio-libs
-    vc: git
 ---
+default_branch: master
 function: main_build
 kind: source_install
 name: cytoolz
 proj_name: cytoolz
-project:
-  name: cytoolz
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: https
-    repo_name: cytoolz
-    ssh_user: null
-    url: https://github.com/pytoolz/cytoolz.git
-    user: pytoolz
-    vc: git
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: colorlog click mypy-extensions packaging pathspec platformdirs black
-  aiohttp aiosignal attrs
+packages: colorlog click mypy-extensions packaging pathspec platformdirs black aiohttp
+  aiosignal attrs
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: appdirs entrypoints
 ---
+default_branch: master
 function: main_build
 kind: source_install
 name: intake
 proj_name: intake
-project:
-  name: intake
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: https
-    repo_name: intake
-    ssh_user: null
-    url: https://github.com/intake/intake.git
-    user: intake
-    vc: git
 ---
+default_branch: main
 function: main_build
 kind: source_install
 name: historydict
 proj_name: historydict
-project:
-  name: historydict
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: ssh
-    repo_name: historydict
-    ssh_user: git
-    url: git@github.com:Nikea/historydict.git
-    user: Nikea
-    vc: git
 ---
+default_branch: main
 function: numcodecs_build
 kind: source_install
 name: numcodecs
 proj_name: numcodecs
-project:
-  name: numcodecs
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: https
-    repo_name: numcodecs
-    ssh_user: null
-    url: https://github.com/zarr-developers/numcodecs.git
-    user: zarr-developers
-    vc: git
 ---
 flags: --upgrade --no-build-isolation --pre --no-binary cftime
 kind: pip
 packages: cftime
 ---
+default_branch: master
 function: main_build
 kind: source_install
 name: pycurl
 proj_name: pycurl
-project:
-  name: pycurl
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: https
-    repo_name: pycurl
-    ssh_user: null
-    url: https://github.com/pycurl/pycurl.git
-    user: pycurl
-    vc: git
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: flexcache flexparser pint
 ---
+default_branch: master
 function: main_build
 kind: source_install
 name: ophyd
 proj_name: ophyd
-project:
-  name: ophyd
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: ssh
-    repo_name: ophyd
-    ssh_user: git
-    url: git@github.com:bluesky/ophyd.git
-    user: bluesky
-    vc: git
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: importlib-resources
 ---
+default_branch: main
 function: main_build
 kind: source_install
 name: event-model
 proj_name: event-model
-project:
-  name: event-model
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: ssh
-    repo_name: event-model
-    ssh_user: git
-    url: git@github.com:bluesky/event-model.git
-    user: bluesky
-    vc: git
 ---
+default_branch: master
 function: main_build
 kind: source_install
 name: area-detector-handlers
 proj_name: area-detector-handlers
-project:
-  name: area-detector-handlers
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: ssh
-    repo_name: area-detector-handlers
-    ssh_user: git
-    url: git@github.com:bluesky/area-detector-handlers.git
-    user: bluesky
-    vc: git
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: tqdm zict<3 msgpack-numpy super-state-machine heapdict
 ---
+default_branch: main
 function: main_build
 kind: source_install
 name: bluesky
 proj_name: bluesky
-project:
-  name: bluesky
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: ssh
-    repo_name: bluesky
-    ssh_user: git
-    url: git@github.com:bluesky/bluesky.git
-    user: bluesky
-    vc: git
 ---
+default_branch: main
 function: main_build
 kind: source_install
 name: python-blosc
 proj_name: python-blosc
-project:
-  name: python-blosc
-  primary_remote:
-    host: github.com
-    protocol: https
-    repo_name: python-blosc
-    ssh_user: null
-    url: https://github.com/Blosc/python-blosc.git
-    user: Blosc
-    vc: git
-    default_branch: main
 ---
 flags: --pre --upgrade --no-build-isolation
-packages: aiofiles aiosqlite anyio asciitree asgi-correlation-id blosc
-    canonicaljson fasteners h5netcdf install lz4 mongomock
-    mongoquery ndindex parquet sentinels starlette thriftpy2
-    watchgod websockets zarr zstandard
 kind: pip
+packages: aiofiles aiosqlite anyio asciitree asgi-correlation-id blosc canonicaljson
+  fasteners h5netcdf install lz4 mongomock mongoquery ndindex parquet sentinels starlette
+  thriftpy2 watchgod websockets zarr zstandard
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: frozendict
 ---
+default_branch: main
 function: main_build
 kind: source_install
 name: bluesky-darkframes
 proj_name: bluesky-darkframes
-project:
-  name: bluesky-darkframes
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: ssh
-    repo_name: bluesky-darkframes
-    ssh_user: git
-    url: git@github.com:bluesky/bluesky-darkframes.git
-    user: bluesky
-    vc: git
 ---
+default_branch: master
 function: main_build
 kind: source_install
 name: confluent-kafka-python
 proj_name: confluent-kafka-python
-project:
-  name: confluent-kafka-python
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: https
-    repo_name: confluent-kafka-python
-    ssh_user: null
-    url: https://github.com/confluentinc/confluent-kafka-python.git
-    user: confluentinc
-    vc: git
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: openpyxl xlrd et-xmlfile
 ---
+default_branch: master
 function: main_build
 kind: source_install
 name: bluesky-spreadsheet
 proj_name: bluesky-spreadsheet
-project:
-  name: bluesky-spreadsheet
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: ssh
-    repo_name: bluesky-spreadsheet
-    ssh_user: git
-    url: git@github.com:bluesky/bluesky-spreadsheet.git
-    user: bluesky
-    vc: git
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: aiohttp-jinja2 mily
 ---
+default_branch: main
 function: main_build
 kind: source_install
 name: bluesky-ui
 proj_name: bluesky-ui
-project:
-  name: bluesky-ui
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: ssh
-    repo_name: bluesky-ui
-    ssh_user: git
-    url: git@github.com:bluesky/bluesky-ui.git
-    user: bluesky
-    vc: git
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: coloredlogs prettytable simplejson humanfriendly
 ---
+default_branch: master
 function: main_build
 kind: source_install
 name: happi
 proj_name: happi
-project:
-  name: happi
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: https
-    repo_name: happi
-    ssh_user: null
-    url: https://github.com/pcdshub/happi.git
-    user: pcdshub
-    vc: git
 ---
+default_branch: master
 function: main_build
 kind: source_install
 name: suitcase-utils
 proj_name: suitcase-utils
-project:
-  name: suitcase-utils
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: ssh
-    repo_name: suitcase-utils
-    ssh_user: git
-    url: git@github.com:bluesky/suitcase-utils.git
-    user: bluesky
-    vc: git
 ---
+default_branch: master
 function: main_build
 kind: source_install
 name: suitcase-csv
 proj_name: suitcase-csv
-project:
-  name: suitcase-csv
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: ssh
-    repo_name: suitcase-csv
-    ssh_user: git
-    url: git@github.com:bluesky/suitcase-csv.git
-    user: bluesky
-    vc: git
 ---
+default_branch: master
 function: main_build
 kind: source_install
 name: suitcase-dataexchange
 proj_name: suitcase-dataexchange
-project:
-  name: suitcase-dataexchange
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: ssh
-    repo_name: suitcase-dataexchange
-    ssh_user: git
-    url: git@github.com:bluesky/suitcase-dataexchange.git
-    user: bluesky
-    vc: git
 ---
+default_branch: master
 function: main_build
 kind: source_install
 name: suitcase-jsonl
 proj_name: suitcase-jsonl
-project:
-  name: suitcase-jsonl
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: ssh
-    repo_name: suitcase-jsonl
-    ssh_user: git
-    url: git@github.com:bluesky/suitcase-jsonl.git
-    user: bluesky
-    vc: git
 ---
+default_branch: master
 function: main_build
 kind: source_install
 name: suitcase-json-metadata
 proj_name: suitcase-json-metadata
-project:
-  name: suitcase-json-metadata
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: ssh
-    repo_name: suitcase-json-metadata
-    ssh_user: git
-    url: git@github.com:bluesky/suitcase-json-metadata.git
-    user: bluesky
-    vc: git
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: pymongo dnspython
 ---
+default_branch: master
 function: main_build
 kind: source_install
 name: suitcase-mongo
 proj_name: suitcase-mongo
-project:
-  name: suitcase-mongo
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: ssh
-    repo_name: suitcase-mongo
-    ssh_user: git
-    url: git@github.com:bluesky/suitcase-mongo.git
-    user: bluesky
-    vc: git
 ---
+default_branch: master
 function: main_build
 kind: source_install
 name: suitcase-msgpack
 proj_name: suitcase-msgpack
-project:
-  name: suitcase-msgpack
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: ssh
-    repo_name: suitcase-msgpack
-    ssh_user: git
-    url: git@github.com:bluesky/suitcase-msgpack.git
-    user: bluesky
-    vc: git
 ---
+default_branch: master
 function: main_build
 kind: source_install
 name: suitcase-nxstxm
 proj_name: suitcase-nxstxm
-project:
-  name: suitcase-nxstxm
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: ssh
-    repo_name: suitcase-nxstxm
-    ssh_user: git
-    url: git@github.com:bluesky/suitcase-nxstxm.git
-    user: bluesky
-    vc: git
 ---
 flags: --pre --upgrade --no-build-isolation
-packages: codecov docutils sphinx-rtd-theme sphinxcontrib-jquery
 kind: pip
+packages: codecov docutils sphinx-rtd-theme sphinxcontrib-jquery
 ---
+default_branch: master
 function: main_build
 kind: source_install
 name: suitcase-server
 proj_name: suitcase-server
-project:
-  name: suitcase-server
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: ssh
-    repo_name: suitcase-server
-    ssh_user: git
-    url: git@github.com:bluesky/suitcase-server.git
-    user: bluesky
-    vc: git
 ---
+default_branch: master
 function: main_build
 kind: source_install
 name: suitcase-specfile
 proj_name: suitcase-specfile
-project:
-  name: suitcase-specfile
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: ssh
-    repo_name: suitcase-specfile
-    ssh_user: git
-    url: git@github.com:bluesky/suitcase-specfile.git
-    user: bluesky
-    vc: git
 ---
+default_branch: main
 function: main_build
 kind: source_install
 name: suitcase-tiff
 proj_name: suitcase-tiff
-project:
-  name: suitcase-tiff
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: ssh
-    repo_name: suitcase-tiff
-    ssh_user: git
-    url: git@github.com:bluesky/suitcase-tiff.git
-    user: bluesky
-    vc: git
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: bluesky-kafka json-rpc jupyter-console python-multipart
-  annotated-types hiredis redis async-timeout
+packages: bluesky-kafka json-rpc jupyter-console python-multipart annotated-types
+  hiredis redis async-timeout
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: apischema pyresttable
 ---
+default_branch: main
 function: main_build
 kind: source_install
 name: hklpy
 proj_name: hklpy
-project:
-  name: hklpy
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: ssh
-    repo_name: hklpy
-    ssh_user: git
-    url: git@github.com:bluesky/hklpy.git
-    user: bluesky
-    vc: git
 ---
+default_branch: main
 function: main_build
 kind: source_install
 name: nsls2-detector-handlers
 proj_name: nsls2-detector-handlers
-project:
-  name: nsls2-detector-handlers
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: ssh
-    repo_name: nsls2-detector-handlers
-    ssh_user: git
-    url: git@github.com:NSLS-II/nsls2-detector-handlers.git
-    user: NSLS-II
-    vc: git
 ---
+default_branch: master
 function: main_build
 kind: source_install
 name: pyqtgraph
 proj_name: pyqtgraph
-project:
-  name: pyqtgraph
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: ssh
-    repo_name: pyqtgraph
-    ssh_user: git
-    url: git@github.com:pyqtgraph/pyqtgraph.git
-    user: pyqtgraph
-    vc: git
 ---
+default_branch: master
 function: main_build
 kind: source_install
 name: curio
 proj_name: curio
-project:
-  name: curio
-  primary_remote:
-    host: github.com
-    protocol: https
-    repo_name: curio
-    ssh_user: null
-    url: https://github.com/dabeaz/curio.git
-    user: dabeaz
-    vc: git
-    default_branch: master
 ---
+default_branch: master
 function: main_build
 kind: source_install
 name: caproto
 proj_name: caproto
-project:
-  name: caproto
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: ssh
-    repo_name: caproto
-    ssh_user: git
-    url: git@github.com:caproto/caproto.git
-    user: caproto
-    vc: git
 ---
+default_branch: master
 function: main_build
 kind: source_install
 name: bcsio
 proj_name: bcsio
-project:
-  name: bcsio
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: ssh
-    repo_name: bcsio
-    ssh_user: git
-    url: git@github.com:NSLS-II/bcsio.git
-    user: NSLS-II
-    vc: git
-# ---
-# function: main_build
-# kind: source_install
-# name: nslsii
-# proj_name: nslsii
-# project:
-#   name: nslsii
-#   primary_remote:
-#     default_branch: master
-#     host: github.com
-#     protocol: ssh
-#     repo_name: nslsii
-#     ssh_user: git
-#     url: git@github.com:NSLS-II/nslsii.git
-#     user: NSLS-II
-#     vc: git
 ---
+default_branch: master
 function: main_build
 kind: source_install
 name: mily
 proj_name: mily
-project:
-  name: mily
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: ssh
-    repo_name: mily
-    ssh_user: git
-    url: git@github.com:NSLS-II/mily.git
-    user: NSLS-II
-    vc: git
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: hatch-fancy-pypi-readme
 ---
+default_branch: main
 function: awkward_build
 kind: source_install
 name: awkward
 proj_name: awkward
-project:
-  name: awkward
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: https
-    repo_name: awkward
-    ssh_user: null
-    url: https://github.com/scikit-hep/awkward.git
-    user: scikit-hep
-    vc: git
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: signalslot contexter
 ---
+default_branch: master
 function: main_build
 kind: source_install
 name: numexpr
 proj_name: numexpr
-project:
-  name: numexpr
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: https
-    repo_name: numexpr
-    ssh_user: null
-    url: https://github.com/pydata/numexpr.git
-    user: pydata
-    vc: git
 ---
-# function: main_build
-# kind: source_install
-# name: fabio
-# proj_name: fabio
-# project:
-#   name: fabio
-#   primary_remote:
-#     default_branch: master
-#     host: github.com
-#     protocol: https
-#     repo_name: fabio
-#     ssh_user: null
-#     url: https://github.com/silx-kit/fabio.git
-#     user: silx-kit
-#     vc: git
-# ---
-# function: main_build
-# kind: source_install
-# name: silx
-# proj_name: silx
-# project:
-#   name: silx
-#   primary_remote:
-#     default_branch: master
-#     host: github.com
-#     protocol: https
-#     repo_name: silx
-#     ssh_user: null
-#     url: https://github.com/silx-kit/silx.git
-#     user: silx-kit
-#     vc: git
-# ---
-# function: main_build
-# kind: source_install
-# name: pyFAI
-# proj_name: pyFAI
-# project:
-#   name: pyFAI
-#   primary_remote:
-#     default_branch: master
-#     host: github.com
-#     protocol: https
-#     repo_name: pyFAI
-#     ssh_user: null
-#     url: https://github.com/silx-kit/pyFAI.git
-#     user: silx-kit
-#     vc: git
-# ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: extension_helpers
 ---
+default_branch: main
 function: main_build
 kind: source_install
 name: pyerfa
 proj_name: pyerfa
-project:
-  name: pyerfa
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: https
-    repo_name: pyerfa
-    ssh_user: null
-    url: https://github.com/liberfa/pyerfa.git
-    user: liberfa
-    vc: git
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: astropy-iers-data
-# ---
-# function: main_build
-# kind: source_install
-# name: astropy
-# proj_name: astropy
-# project:
-#   name: astropy
-#   primary_remote:
-#     default_branch: main
-#     host: github.com
-#     protocol: https
-#     repo_name: astropy
-#     ssh_user: null
-#     url: https://github.com/astropy/astropy.git
-#     user: astropy
-#     vc: git
-# ---
-# args: install --no-build-isolation --pre --upgrade  pyca
-# kind: pip
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: slicerator
 ---
+default_branch: main
 function: main_build
 kind: source_install
 name: pims
 proj_name: pims
-project:
-  name: pims
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: ssh
-    repo_name: pims
-    ssh_user: git
-    url: git@github.com:soft-matter/pims.git
-    user: soft-matter
-    vc: git
 ---
+default_branch: develop
 function: main_build
 kind: source_install
 name: wrapt
 proj_name: wrapt
-project:
-  name: wrapt
-  primary_remote:
-    default_branch: develop
-    host: github.com
-    protocol: https
-    repo_name: wrapt
-    ssh_user: null
-    url: https://github.com/GrahamDumpleton/wrapt.git
-    user: GrahamDumpleton
-    vc: git
 ---
 flags: --pre --upgrade --no-build-isolation
+kind: pip
 packages: docutils dpkt netifaces sphinx-rtd-theme sphinxcontrib-jquery ujson
-kind: pip
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: vcrpy httpie cookiecutter pytest-instafail tzlocal doct boltons
-  binaryornot python-slugify humanize chardet pysocks text-unidecode
+packages: vcrpy httpie cookiecutter pytest-instafail tzlocal doct boltons binaryornot
+  python-slugify humanize chardet pysocks text-unidecode
 ---
 flags: --no-build-isolation --pre --upgrade
 kind: pip
 packages: xarray
-# ---
-# function: main_build
-# kind: source_install
-# name: jupyterlab
-# proj_name: jupyterlab
-# project:
-#   name: jupyterlab
-#   primary_remote:
-#     default_branch: main
-#     host: github.com
-#     protocol: https
-#     repo_name: jupyterlab
-#     ssh_user: null
-#     url: https://github.com/jupyterlab/jupyterlab.git
-#     user: jupyterlab
-#     vc: git
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: jupyterlab-git jupyterlab-spellchecker myst-parser mdit-py-plugins
-  nbdime gitpython jupyter-server-mathjax colorama gitdb smmap jupyterlab
+packages: jupyterlab-git jupyterlab-spellchecker myst-parser mdit-py-plugins nbdime
+  gitpython jupyter-server-mathjax colorama gitdb smmap jupyterlab
 ---
 flags: -y
 kind: pip-remove
@@ -1765,41 +798,15 @@ flags: --no-build-isolation --pre --upgrade
 kind: pip
 packages: pycairo
 ---
+default_branch: main
 function: main_build
 kind: source_install
 name: mplcairo
 proj_name: mplcairo
-project:
-  name: mplcairo
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: ssh
-    repo_name: mplcairo
-    ssh_user: git
-    url: git@github.com:matplotlib/mplcairo.git
-    user: matplotlib
-    vc: git
 ---
 flags: --no-build-isolation --pre --upgrade
 kind: pip
 packages: build
-# ---
-# function: main_build
-# kind: source_install
-# name: ipympl
-# proj_name: ipympl
-# project:
-#   name: ipympl
-#   primary_remote:
-#     default_branch: main
-#     host: github.com
-#     protocol: https
-#     repo_name: ipympl
-#     ssh_user: null
-#     url: https://github.com/matplotlib/ipympl.git
-#     user: matplotlib
-#     vc: git
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
@@ -1814,110 +821,50 @@ flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: joblib threadpoolctl
 ---
+default_branch: main
 function: main_build
 kind: source_install
 name: scikit-learn
 proj_name: scikit-learn
-project:
-  name: scikit-learn
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: ssh
-    repo_name: scikit-learn
-    ssh_user: git
-    url: git@github.com:scikit-learn/scikit-learn.git
-    user: scikit-learn
-    vc: git
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: mpmath
 ---
+default_branch: master
 function: main_build
 kind: source_install
 name: sympy
 proj_name: sympy
-project:
-  name: sympy
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: ssh
-    repo_name: sympy
-    ssh_user: git
-    url: git@github.com:sympy/sympy.git
-    user: sympy
-    vc: git
 ---
+default_branch: master
 function: main_build
 kind: source_install
 name: imagecodecs
 proj_name: imagecodecs
-project:
-  name: imagecodecs
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: https
-    repo_name: imagecodecs
-    ssh_user: null
-    url: https://github.com/cgohlke/imagecodecs.git
-    user: cgohlke
-    vc: git
 ---
+default_branch: main
 function: main_build
 kind: source_install
 name: mpl-qtthread
 proj_name: mpl-qtthread
-project:
-  name: mpl-qtthread
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: https
-    repo_name: mpl-qtthread
-    ssh_user: null
-    url: https://github.com/matplotlib/mpl-qtthread.git
-    user: matplotlib
-    vc: git
 ---
+default_branch: main
 function: main_build
 kind: source_install
 name: bluesky-live
 proj_name: bluesky-live
-project:
-  name: bluesky-live
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: ssh
-    repo_name: bluesky-live
-    ssh_user: git
-    url: git@github.com:bluesky/bluesky-live.git
-    user: bluesky
-    vc: git
 ---
+default_branch: master
 function: main_build
 kind: source_install
 name: bluesky-widgets
 proj_name: bluesky-widgets
-project:
-  name: bluesky-widgets
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: ssh
-    repo_name: bluesky-widgets
-    ssh_user: git
-    url: git@github.com:bluesky/bluesky-widgets.git
-    user: bluesky
-    vc: git
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: xkcdpass
 ---
 flags: --pre --upgrade --no-build-isolation
-packages: blosc2
 kind: pip
+packages: blosc2

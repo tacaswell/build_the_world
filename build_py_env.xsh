@@ -75,12 +75,9 @@ for step in build_order:
     lc = local_checkouts[step['proj_name']]
     # get the working directory
     step['wd'] = lc['local_checkout']
-    # set the default branch
-    if step['project']['primary_remote']['vc'] != 'git':
-        continue
 
     step.setdefault('kwargs', {})
-    step['kwargs']['upstream_branch'] = step['project']['primary_remote']['default_branch']
+    step['kwargs']['upstream_branch'] = step['default_branch']
 
     step['kwargs']['upstream_remote'] = next(
             n for n, r in lc['remotes'].items() if r['url'] == lc['primary_remote']['url']

@@ -1,43 +1,12 @@
-$RAISE_SUBPROC_ERROR = True 
+$RAISE_SUBPROC_ERROR = True
 
 from pathlib import Path
 import yaml
 
-with open("build_order.yaml") as fin:
-    build_order = list(yaml.unsafe_load_all(fin))
-
-source_build_order = [b for b in build_order if b["kind"] == "source_install"]
-
-# handle hg
-
-hg_build_order = [
-    b for b in source_build_order if b["project"]["primary_remote"].get("vc", None) == "hg"
-]
-hg_build_order = [
-    b for b in hg_build_order if b["project"]["primary_remote"].get("user", None) is not None
-]
-
-for b in hg_build_order:
-    target = p'~/source/p' / b['project']["primary_remote"]['user']
-    target.mkdir(parents=True, exist_ok=True)
-    cd @(target)
-    if not (target / b['project']['name']).exists():
-        hg clone @(b["project"]["primary_remote"]["url"])
-
-
 # Handle git
 
-git_build_order = [
-    b for b in source_build_order if b["project"]["primary_remote"].get("vc", None) == "git"
-]
 
-git_build_order = [
-    b
-    for b in git_build_order
-    if b["project"]["primary_remote"].get("user", None) is not None
-]
 
-print(set(b["project"]["primary_remote"]["user"] for b in git_build_order))
 
 bnl_orgs = {
     "networkx",
@@ -62,18 +31,16 @@ def source_clone(org, repo, dest='other_source'):
     cd @(target)
     if not (target / repo).exists():
         git clone --recursive @('git@github.com:' + '/'.join((org, repo)))
-    cd @(repo)
 
 
-def sc_wrapper(target, org, repo, fork=False):
-    source_clone(org, repo, dest=target)
-    if fork:
-        hub fork
 
+with open('used_repos.yaml') as fin:
+    required_repos = list(yaml.unsafe_load_all(fin))
 
-for b in git_build_order:
-    remote = b["project"]["primary_remote"]
+print(set(b["user"] for b in required_repos))
+
+for remote in required_repos:
     if remote["user"] in bnl_orgs:
-        sc_wrapper('bnl', remote['user'], remote['repo_name'])
+        source_clone(remote['user'], remote['repo_name'], dest='bnl')
     else:
-        sc_wrapper('p', remote['user'] ,remote['repo_name'])
+        source_clone(remote['user'] ,remote['repo_name'], dest='p')

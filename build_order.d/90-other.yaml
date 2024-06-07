@@ -1,32 +1,11 @@
----
+default_branch: master
 function: main_build
 kind: source_install
 name: typed_ast
 proj_name: typed_ast
-project:
-  name: typed_ast
-  primary_remote:
-    default_branch: master
-    host: github.com
-    protocol: https
-    repo_name: typed_ast
-    ssh_user: null
-    url: https://github.com/python/typed_ast.git
-    user: python
-    vc: git
 ---
+default_branch: main
 function: main_build
 kind: source_install
 name: msgspec
 proj_name: msgspec
-project:
-  name: msgspec
-  primary_remote:
-    default_branch: main
-    host: github.com
-    protocol: ssh
-    repo_name: msgspec
-    ssh_user: git
-    url: git@github.com:jcrist/msgspec.git
-    user: jcrist
-    vc: git
