@@ -108,13 +108,7 @@ will find all of the git and hg checkouts under the given directory and will
 write out a file `all_repos.yaml` with information about all of the checkouts
 it found.  While this is walking the repositories it will also change the url
 on any `git://` urls to `https://` as github has stopped supporting the
-unauthenticaed git protocol for fetching repostiory data.  Optionally, you can
-sync the default branches via
-
-```bash
-python add_default_branch.py
-xonsh update_build_order.xsh
-```
+unauthenticaed git protocol for fetching repostiory data.
 
 Once all of the required repositories are checked out and found, run
 
@@ -136,10 +130,10 @@ Eventually you will have a virtual environment with the development branch of
 a large swath of the Scientific Python (and some web) ecosystem installed!
 
 If you want to build a different branch of CPython than `main`, you can use the
-`--branch` flag to select the branch:
+`--branch` flag to select the branch and `--target` flag to control the venv name
 
 ```bash
-$ xonsh make_bleeding.xsh --branch=aardvark_special
+$ xonsh make_bleeding.xsh --branch=aardvark_special  --target burrow
 ```
 
 
