@@ -18,7 +18,9 @@ $PIP_NO_BUILD_ISOLATION = 1
 parser = argparse.ArgumentParser(description='Build the world.')
 parser.add_argument("--target", help="name of env to create", type=str, default='bleeding')
 parser.add_argument("--branch", help="CPython branch to build", type=str, default=None)
+parser.add_argument("--no-pull", help="Try pull before building cpython (if on a branch)", action='store_true')
 parser.add_argument("--clang", help="Try to use clang", action='store_true')
+parser.add_argument("--freethread", help="Try to use freethreading (no GIL)", action='store_true')
 args = parser.parse_args()
 
 
@@ -40,7 +42,7 @@ with with_pushd(wd):
     if args.branch is not None:
         git checkout @(args.branch)
     cur_branch = $(git branch --show-current).strip()
-    if len(cur_branch):
+    if not args.no_pull and len(cur_branch):
         git pull
     git clean -xfd
     if args.clang:
@@ -49,7 +51,8 @@ with with_pushd(wd):
     ./configure \
         --prefix=@(prefix) \
         --enable-shared LDFLAGS=@(f"-Wl,-rpath,$HOME/.pybuild/{args.target}/lib") \
-        --with-ssl
+        --with-ssl \
+        @('--disable-gil' if args.freethread else '')
     make -j
     make install
 
