@@ -539,9 +539,7 @@ proj_name: python-blosc
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: aiofiles aiosqlite anyio asciitree asgi-correlation-id blosc canonicaljson
-  fasteners h5netcdf install lz4 mongomock mongoquery ndindex parquet sentinels starlette
-  thriftpy2 watchgod websockets zarr zstandard
+packages: aiofiles aiosqlite anyio asciitree asgi-correlation-id canonicaljson crc32c donfig fasteners h5netcdf install lz4 mongomock mongoquery ndindex parquet sentinels starlette thriftpy2 watchgod websockets zarr zstandard
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip

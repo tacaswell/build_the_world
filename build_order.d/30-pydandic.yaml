@@ -17,5 +17,4 @@ proj_name: orjson
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: alembic ecdsa email-validator fastapi fastapi-cli ldap3 mako pamela pyasn1
-  python-jose rsa sqlalchemy uvicorn
+packages: alembic ecdsa email-validator fastapi fastapi-cli httptools ldap3 mako pamela pyasn1 python-jose rsa sqlalchemy uvicorn uvloop

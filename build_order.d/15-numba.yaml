@@ -1,3 +1,0 @@
-flags: --pre --upgrade --no-build-isolation
-kind: pip
-packages: numba sparse asyncpg httptools llvmlite uvloop dask-expr
