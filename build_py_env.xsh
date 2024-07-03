@@ -221,7 +221,9 @@ def numpy_build(**kwargs):
         ret = !(python -m build --no-isolation --skip-dependency-check @(MESON_LAPACK.split()) .)
         if ret:
             wheel_file, = g`dist/*.whl`
-            pip install @(wheel_file)
+            ret2 = !(pip install @(wheel_file))
+            if not ret2:
+                return ret2
 
         return ret
 
