@@ -619,7 +619,11 @@ proj_name: suitcase-json-metadata
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: pymongo dnspython
+packages: hatch-requirements-txt
+---
+flags: --pre --upgrade --no-build-isolation
+kind: pip
+packages: pymongo
 ---
 default_branch: master
 function: main_build
@@ -681,6 +685,10 @@ function: main_build
 kind: source_install
 name: nsls2-detector-handlers
 proj_name: nsls2-detector-handlers
+---
+flags: --pre --upgrade --no-build-isolation
+packages: colorama
+kind: pip
 ---
 default_branch: master
 function: main_build
