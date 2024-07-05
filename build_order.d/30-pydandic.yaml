@@ -15,6 +15,18 @@ kind: source_install
 name: orjson
 proj_name: orjson
 ---
+default_branch: master
+function: main_build
+kind: source_install
+name: uvloop
+proj_name: uvloop
+---
+default_branch: master
+function: main_build
+kind: source_install
+name: httptools
+proj_name: httptools
+---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: alembic ecdsa email-validator fastapi fastapi-cli httptools ldap3 mako pamela pyasn1 python-jose rsa sqlalchemy uvicorn uvloop
+packages: alembic ecdsa email-validator fastapi fastapi-cli ldap3 mako pamela pyasn1 python-jose rsa sqlalchemy uvicorn

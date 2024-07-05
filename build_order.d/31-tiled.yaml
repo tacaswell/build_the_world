@@ -2,6 +2,10 @@ flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: tiled
 ---
+flags: --pre --upgrade --no-build-isolation
+packages: json-merge-patch jsonpatch
+kind: pip
+---
 default_branch: main
 function: main_build
 kind: source_install
