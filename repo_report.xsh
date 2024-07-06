@@ -41,13 +41,13 @@ for step in build_order:
     # get the working directory
     step['wd'] = lc['local_checkout']
     # set the default branch
-    if step['project']['primary_remote']['vc'] != 'git':
+    if lc['primary_remote']['vc'] != 'git':
         continue
 
     upstream_remote = next(
             n for n, r in lc['remotes'].items() if r['url'] == lc['primary_remote']['url']
         )
-    upstream_branch = step['project']['primary_remote']['default_branch']
+    upstream_branch = step['default_branch']
 
     def foo(upstream_branch, checkout):
         with with_pushd(checkout):
@@ -70,4 +70,4 @@ for k, v in out.items():
     if v['cur_branch'] != v['upstream_branch']:
         print(f"{k} ({v['checkout']})")
         print(f"   default: {v['upstream_branch']}")
-        print(f"   on: {v['cur_branch']} ({v['tracking_branch'] if v['has_tracking'] else '-'})")
+        print(f"   on: {v['cur_branch']} [{v['shas']['describe']}]({v['tracking_branch'] if v['has_tracking'] else '-'})")
