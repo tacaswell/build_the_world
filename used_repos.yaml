@@ -144,6 +144,14 @@ vc: git
 ---
 host: github.com
 protocol: https
+repo_name: executing
+ssh_user: null
+url: https://github.com/alexmojaki/executing.git
+user: alexmojaki
+vc: git
+---
+host: github.com
+protocol: https
 repo_name: ipython
 ssh_user: null
 url: https://github.com/ipython/ipython
@@ -338,7 +346,7 @@ host: github.com
 protocol: https
 repo_name: sip
 ssh_user: null
-url: https://github.com/Python-SIP/sip.git
+url: https://github.com/Python-SIP/sip
 user: Python-SIP
 vc: git
 ---
@@ -394,7 +402,7 @@ host: github.com
 protocol: https
 repo_name: historydict
 ssh_user: null
-url: https://github.com/Nikea/historydict.git
+url: https://github.com/Nikea/historydict
 user: Nikea
 vc: git
 ---
@@ -450,7 +458,7 @@ host: github.com
 protocol: https
 repo_name: python-blosc
 ssh_user: null
-url: https://github.com/Blosc/python-blosc.git
+url: https://github.com/Blosc/python-blosc
 user: Blosc
 vc: git
 ---
@@ -594,8 +602,8 @@ host: github.com
 protocol: https
 repo_name: nsls2-detector-handlers
 ssh_user: null
-url: https://github.com/nsls-ii/nsls2-detector-handlers.git
-user: nsls-ii
+url: https://github.com/NSLS-II/nsls2-detector-handlers.git
+user: NSLS-II
 vc: git
 ---
 host: github.com
@@ -626,16 +634,16 @@ host: github.com
 protocol: https
 repo_name: bcsio
 ssh_user: null
-url: https://github.com/nsls-ii/bcsio.git
-user: nsls-ii
+url: https://github.com/NSLS-II/bcsio.git
+user: NSLS-II
 vc: git
 ---
 host: github.com
 protocol: https
 repo_name: mily
 ssh_user: null
-url: https://github.com/nsls-ii/mily.git
-user: nsls-ii
+url: https://github.com/NSLS-II/mily.git
+user: NSLS-II
 vc: git
 ---
 host: github.com
@@ -756,6 +764,22 @@ repo_name: orjson
 ssh_user: null
 url: https://github.com/ijl/orjson.git
 user: ijl
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: uvloop
+ssh_user: null
+url: https://github.com/MagicStack/uvloop.git
+user: MagicStack
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: httptools
+ssh_user: null
+url: https://github.com/MagicStack/httptools.git
+user: MagicStack
 vc: git
 ---
 host: github.com

@@ -158,6 +158,12 @@ packages: prompt-toolkit pygments traitlets decorator matplotlib-inline stack-da
 default_branch: main
 function: main_build
 kind: source_install
+name: executing
+proj_name: executing
+---
+default_branch: main
+function: main_build
+kind: source_install
 name: IPython
 proj_name: ipython
 ---
