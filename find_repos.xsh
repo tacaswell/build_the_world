@@ -1,3 +1,4 @@
+import argparse
 from typing import Dict, Optional
 from collections import defaultdict
 from pathlib import Path
@@ -9,7 +10,12 @@ import yaml
 from xonsh.dirstack import with_pushd
 from xonsh.tools import XonshCalledProcessError
 
-_, path = sys.argv
+parser = argparse.ArgumentParser(description='Find source repos.')
+parser.add_argument("path", help='Top path to start searching for repos in.', type=Path)
+parser.add_argument("--update-used", help="If the used repo yaml should be updated.", action='store_true')
+args = parser.parse_args()
+
+path = args.path
 
 
 def find_git_repos(path):
@@ -309,3 +315,21 @@ for repo_path in find_hg_repos(path):
 
 with open("all_repos.yaml", "w") as fout:
     yaml.dump_all([asdict(_) for _ in projects], fout)
+
+if args.update_used:
+    local_checkouts = {co.name: co for co in projects}
+
+    repos = []
+
+    for order in sorted(Path('build_order.d').glob('[!.]*yaml')):
+        with open(order) as fin:
+            build_order = list(yaml.unsafe_load_all(fin))
+
+        for step in build_order:
+            if step['kind'] != 'source_install':
+                continue
+            lc = local_checkouts[step['proj_name']]
+            repos.append(asdict(lc.primary_remote))
+
+    with open("used_repos.yaml", "w") as fout:
+        yaml.dump_all(repos, fout)
