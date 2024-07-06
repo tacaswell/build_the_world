@@ -19,9 +19,3 @@ proj_name: bluesky-httpserver
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: jsonpatch
----
-default_branch: main
-function: main_build
-kind: source_install
-name: bluesky-adaptive
-proj_name: bluesky-adaptive
