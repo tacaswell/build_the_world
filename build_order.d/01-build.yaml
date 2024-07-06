@@ -629,7 +629,7 @@ packages: hatch-requirements-txt
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: pymongo
+packages: pymongo dnspython
 ---
 default_branch: master
 function: main_build
