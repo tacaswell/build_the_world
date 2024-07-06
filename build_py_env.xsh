@@ -15,6 +15,7 @@ from xonsh.dirstack import with_pushd
 $RAISE_SUBPROC_ERROR = False
 $XONSH_TRACE_SUBPROC = True
 $PIP_NO_BUILD_ISOLATION = 1
+# $PYO3_USE_ABI3_FORWARD_COMPATIBILITY = 1
 
 $CXXFLAGS = ' '.join(('-fpermissive', ${...}.get('CXXFLAGS', '')))
 
@@ -116,7 +117,8 @@ def auto_main(upstream_remote='origin', upstream_branch='master'):
                 if len(cur_branch):
                     git branch -d @(cur_branch)
             else:
-                git push tacaswell
+                if $GITHUB_USER in $(git remote -v):
+                    git push $GITHUB_USER
 
 
 def cleanup_cython():
