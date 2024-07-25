@@ -424,6 +424,22 @@ vc: git
 ---
 host: github.com
 protocol: https
+repo_name: wrapt
+ssh_user: null
+url: https://github.com/GrahamDumpleton/wrapt.git
+user: GrahamDumpleton
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: opentelemetry-python
+ssh_user: null
+url: https://github.com/open-telemetry/opentelemetry-python.git
+user: open-telemetry
+vc: git
+---
+host: github.com
+protocol: https
 repo_name: ophyd
 ssh_user: null
 url: https://github.com/bluesky/ophyd.git
@@ -680,18 +696,18 @@ vc: git
 ---
 host: github.com
 protocol: https
-repo_name: wrapt
-ssh_user: null
-url: https://github.com/GrahamDumpleton/wrapt.git
-user: GrahamDumpleton
-vc: git
----
-host: github.com
-protocol: https
 repo_name: mplcairo
 ssh_user: null
 url: https://github.com/matplotlib/mplcairo.git
 user: matplotlib
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: watchfiles
+ssh_user: null
+url: https://github.com/samuelcolvin/watchfiles.git
+user: samuelcolvin
 vc: git
 ---
 host: github.com
@@ -780,6 +796,14 @@ repo_name: httptools
 ssh_user: null
 url: https://github.com/MagicStack/httptools.git
 user: MagicStack
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: fastapi
+ssh_user: null
+url: https://github.com/tiangolo/fastapi.git
+user: tiangolo
 vc: git
 ---
 host: github.com
