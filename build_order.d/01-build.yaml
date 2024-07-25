@@ -505,6 +505,22 @@ flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: flexcache flexparser pint
 ---
+flags: --pre --upgrade --no-build-isolation
+packages: deprecated
+kind: pip
+---
+default_branch: develop
+function: main_build
+kind: source_install
+name: wrapt
+proj_name: wrapt
+---
+default_branch: main
+function: opentelemetry_build
+kind: source_install
+name: opentelemetry-api
+proj_name: opentelemetry-python
+---
 default_branch: master
 function: main_build
 kind: source_install
@@ -770,20 +786,14 @@ kind: source_install
 name: pims
 proj_name: pims
 ---
-default_branch: develop
-function: main_build
-kind: source_install
-name: wrapt
-proj_name: wrapt
----
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: docutils dpkt netifaces sphinx-rtd-theme sphinxcontrib-jquery ujson
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: vcrpy httpie cookiecutter pytest-instafail tzlocal doct boltons binaryornot
-  python-slugify humanize chardet pysocks text-unidecode
+packages:
+  binaryornot boltons chardet cookiecutter doct httpie humanize pysocks pytest-instafail python-slugify requests text-unidecode tzlocal vcrpy
 ---
 flags: --no-build-isolation --pre --upgrade
 kind: pip

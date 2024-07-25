@@ -177,6 +177,14 @@ def watchfiles_build(**kwargs):
         python .github/set_version.py
     return !(pip install --no-build-isolation .)
 
+
+
+def opentelemetry_build(**kwargs):
+    auto_main(**kwargs)
+    git_cleanup()
+    return !(pip install --no-build-isolation ./opentelemetry-api)
+
+
 def setup_py_build(**kwargs):
     auto_main(**kwargs)
     git_cleanup()
