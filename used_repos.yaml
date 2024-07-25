@@ -1,33 +1,65 @@
 host: github.com
 protocol: https
-repo_name: flit
+repo_name: python-blosc
 ssh_user: null
-url: https://github.com/pypa/flit.git
-user: pypa
+url: https://github.com/Blosc/python-blosc
+user: Blosc
 vc: git
 ---
 host: github.com
 protocol: https
-repo_name: wheel
+repo_name: wrapt
 ssh_user: null
-url: https://github.com/pypa/wheel.git
-user: pypa
+url: https://github.com/GrahamDumpleton/wrapt.git
+user: GrahamDumpleton
 vc: git
 ---
 host: github.com
 protocol: https
-repo_name: pip
+repo_name: httptools
 ssh_user: null
-url: https://github.com/pypa/pip.git
-user: pypa
+url: https://github.com/MagicStack/httptools.git
+user: MagicStack
 vc: git
 ---
 host: github.com
 protocol: https
-repo_name: Pillow
+repo_name: uvloop
 ssh_user: null
-url: https://github.com/python-pillow/Pillow.git
-user: python-pillow
+url: https://github.com/MagicStack/uvloop.git
+user: MagicStack
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: bcsio
+ssh_user: null
+url: https://github.com/NSLS-II/bcsio.git
+user: NSLS-II
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: mily
+ssh_user: null
+url: https://github.com/NSLS-II/mily.git
+user: NSLS-II
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: nsls2-detector-handlers
+ssh_user: null
+url: https://github.com/NSLS-II/nsls2-detector-handlers.git
+user: NSLS-II
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: historydict
+ssh_user: null
+url: https://github.com/Nikea/historydict
+user: Nikea
 vc: git
 ---
 host: github.com
@@ -40,278 +72,6 @@ vc: git
 ---
 host: github.com
 protocol: https
-repo_name: pybind11
-ssh_user: null
-url: https://github.com/pybind/pybind11.git
-user: pybind
-vc: git
----
-host: github.com
-protocol: https
-repo_name: cython
-ssh_user: null
-url: https://github.com/cython/cython.git
-user: cython
-vc: git
----
-host: github.com
-protocol: https
-repo_name: build
-ssh_user: null
-url: https://github.com/pypa/build.git
-user: pypa
-vc: git
----
-host: github.com
-protocol: https
-repo_name: meson
-ssh_user: null
-url: https://github.com/mesonbuild/meson.git
-user: mesonbuild
-vc: git
----
-host: github.com
-protocol: https
-repo_name: meson-python
-ssh_user: null
-url: https://github.com/mesonbuild/meson-python
-user: mesonbuild
-vc: git
----
-host: github.com
-protocol: https
-repo_name: numpy
-ssh_user: null
-url: https://github.com/numpy/numpy.git
-user: numpy
-vc: git
----
-host: github.com
-protocol: https
-repo_name: pythran
-ssh_user: null
-url: https://github.com/serge-sans-paille/pythran.git
-user: serge-sans-paille
-vc: git
----
-host: github.com
-protocol: https
-repo_name: scipy
-ssh_user: null
-url: https://github.com/scipy/scipy.git
-user: scipy
-vc: git
----
-host: github.com
-protocol: https
-repo_name: h5py
-ssh_user: null
-url: https://github.com/h5py/h5py.git
-user: h5py
-vc: git
----
-host: github.com
-protocol: https
-repo_name: pexpect
-ssh_user: null
-url: https://github.com/pexpect/pexpect.git
-user: pexpect
-vc: git
----
-host: github.com
-protocol: https
-repo_name: parso
-ssh_user: null
-url: https://github.com/davidhalter/parso.git
-user: davidhalter
-vc: git
----
-host: github.com
-protocol: https
-repo_name: pyzmq
-ssh_user: null
-url: https://github.com/zeromq/pyzmq.git
-user: zeromq
-vc: git
----
-host: github.com
-protocol: https
-repo_name: jedi
-ssh_user: null
-url: https://github.com/davidhalter/jedi.git
-user: davidhalter
-vc: git
----
-host: github.com
-protocol: https
-repo_name: executing
-ssh_user: null
-url: https://github.com/alexmojaki/executing.git
-user: alexmojaki
-vc: git
----
-host: github.com
-protocol: https
-repo_name: ipython
-ssh_user: null
-url: https://github.com/ipython/ipython
-user: ipython
-vc: git
----
-host: github.com
-protocol: https
-repo_name: nbformat
-ssh_user: null
-url: https://github.com/jupyter/nbformat.git
-user: jupyter
-vc: git
----
-host: github.com
-protocol: https
-repo_name: nbconvert
-ssh_user: null
-url: https://github.com/jupyter/nbconvert.git
-user: jupyter
-vc: git
----
-host: github.com
-protocol: https
-repo_name: python-certifi
-ssh_user: null
-url: https://github.com/certifi/python-certifi.git
-user: certifi
-vc: git
----
-host: github.com
-protocol: https
-repo_name: contourpy
-ssh_user: null
-url: https://github.com/contourpy/contourpy.git
-user: contourpy
-vc: git
----
-host: github.com
-protocol: https
-repo_name: dateutil
-ssh_user: null
-url: https://github.com/dateutil/dateutil.git
-user: dateutil
-vc: git
----
-host: github.com
-protocol: https
-repo_name: cycler
-ssh_user: null
-url: https://github.com/matplotlib/cycler.git
-user: matplotlib
-vc: git
----
-host: github.com
-protocol: https
-repo_name: matplotlib
-ssh_user: null
-url: https://github.com/matplotlib/matplotlib.git
-user: matplotlib
-vc: git
----
-host: github.com
-protocol: https
-repo_name: mpl-gui
-ssh_user: null
-url: https://github.com/matplotlib/mpl-gui.git
-user: matplotlib
-vc: git
----
-host: github.com
-protocol: https
-repo_name: pandas
-ssh_user: null
-url: https://github.com/pandas-dev/pandas.git
-user: pandas-dev
-vc: git
----
-host: github.com
-protocol: https
-repo_name: mplfinance
-ssh_user: null
-url: https://github.com/matplotlib/mplfinance.git
-user: matplotlib
-vc: git
----
-host: github.com
-protocol: https
-repo_name: networkx
-ssh_user: null
-url: https://github.com/networkx/networkx.git
-user: networkx
-vc: git
----
-host: github.com
-protocol: https
-repo_name: toolz
-ssh_user: null
-url: https://github.com/pytoolz/toolz.git
-user: pytoolz
-vc: git
----
-host: github.com
-protocol: https
-repo_name: pyyaml
-ssh_user: null
-url: https://github.com/yaml/pyyaml.git
-user: yaml
-vc: git
----
-host: github.com
-protocol: https
-repo_name: lxml
-ssh_user: null
-url: https://github.com/lxml/lxml.git
-user: lxml
-vc: git
----
-host: github.com
-protocol: https
-repo_name: pytest
-ssh_user: null
-url: https://github.com/pytest-dev/pytest.git
-user: pytest-dev
-vc: git
----
-host: github.com
-protocol: https
-repo_name: sphinx
-ssh_user: null
-url: https://github.com/sphinx-doc/sphinx.git
-user: sphinx-doc
-vc: git
----
-host: github.com
-protocol: ssh
-repo_name: cffi
-ssh_user: git
-url: git@github.com:python-cffi/cffi.git
-user: python-cffi
-vc: git
----
-host: github.com
-protocol: https
-repo_name: dask
-ssh_user: null
-url: https://github.com/dask/dask.git
-user: dask
-vc: git
----
-host: github.com
-protocol: https
-repo_name: distributed
-ssh_user: null
-url: https://github.com/dask/distributed.git
-user: dask
-vc: git
----
-host: github.com
-protocol: https
 repo_name: pywt
 ssh_user: null
 url: https://github.com/PyWavelets/pywt.git
@@ -320,34 +80,26 @@ vc: git
 ---
 host: github.com
 protocol: https
-repo_name: tifffile
-ssh_user: null
-url: https://github.com/cgohlke/tifffile.git
-user: cgohlke
-vc: git
----
-host: github.com
-protocol: https
-repo_name: scikit-image
-ssh_user: null
-url: https://github.com/scikit-image/scikit-image.git
-user: scikit-image
-vc: git
----
-host: github.com
-protocol: https
-repo_name: uritemplate
-ssh_user: null
-url: https://github.com/python-hyper/uritemplate.git
-user: python-hyper
-vc: git
----
-host: github.com
-protocol: https
 repo_name: sip
 ssh_user: null
 url: https://github.com/Python-SIP/sip
 user: Python-SIP
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: aiohttp
+ssh_user: null
+url: https://github.com/aio-libs/aiohttp.git
+user: aio-libs
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: frozenlist
+ssh_user: null
+url: https://github.com/aio-libs/frozenlist.git
+user: aio-libs
 vc: git
 ---
 host: github.com
@@ -368,90 +120,18 @@ vc: git
 ---
 host: github.com
 protocol: https
-repo_name: frozenlist
+repo_name: executing
 ssh_user: null
-url: https://github.com/aio-libs/frozenlist.git
-user: aio-libs
+url: https://github.com/alexmojaki/executing.git
+user: alexmojaki
 vc: git
 ---
 host: github.com
 protocol: https
-repo_name: aiohttp
+repo_name: arrow
 ssh_user: null
-url: https://github.com/aio-libs/aiohttp.git
-user: aio-libs
-vc: git
----
-host: github.com
-protocol: https
-repo_name: cytoolz
-ssh_user: null
-url: https://github.com/pytoolz/cytoolz.git
-user: pytoolz
-vc: git
----
-host: github.com
-protocol: https
-repo_name: intake
-ssh_user: null
-url: https://github.com/intake/intake.git
-user: intake
-vc: git
----
-host: github.com
-protocol: https
-repo_name: historydict
-ssh_user: null
-url: https://github.com/Nikea/historydict
-user: Nikea
-vc: git
----
-host: github.com
-protocol: https
-repo_name: numcodecs
-ssh_user: null
-url: https://github.com/zarr-developers/numcodecs.git
-user: zarr-developers
-vc: git
----
-host: github.com
-protocol: https
-repo_name: pycurl
-ssh_user: null
-url: https://github.com/pycurl/pycurl.git
-user: pycurl
-vc: git
----
-host: github.com
-protocol: https
-repo_name: wrapt
-ssh_user: null
-url: https://github.com/GrahamDumpleton/wrapt.git
-user: GrahamDumpleton
-vc: git
----
-host: github.com
-protocol: https
-repo_name: opentelemetry-python
-ssh_user: null
-url: https://github.com/open-telemetry/opentelemetry-python.git
-user: open-telemetry
-vc: git
----
-host: github.com
-protocol: https
-repo_name: ophyd
-ssh_user: null
-url: https://github.com/bluesky/ophyd.git
-user: bluesky
-vc: git
----
-host: github.com
-protocol: https
-repo_name: event-model
-ssh_user: null
-url: https://github.com/bluesky/event-model.git
-user: bluesky
+url: https://github.com/apache/arrow.git
+user: apache
 vc: git
 ---
 host: github.com
@@ -472,10 +152,10 @@ vc: git
 ---
 host: github.com
 protocol: https
-repo_name: python-blosc
+repo_name: bluesky-adaptive
 ssh_user: null
-url: https://github.com/Blosc/python-blosc
-user: Blosc
+url: https://github.com/bluesky/bluesky-adaptive.git
+user: bluesky
 vc: git
 ---
 host: github.com
@@ -488,10 +168,34 @@ vc: git
 ---
 host: github.com
 protocol: https
-repo_name: confluent-kafka-python
+repo_name: bluesky-httpserver
 ssh_user: null
-url: https://github.com/confluentinc/confluent-kafka-python.git
-user: confluentinc
+url: https://github.com/bluesky/bluesky-httpserver.git
+user: bluesky
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: bluesky-live
+ssh_user: null
+url: https://github.com/bluesky/bluesky-live.git
+user: bluesky
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: bluesky-queueserver
+ssh_user: null
+url: https://github.com/bluesky/bluesky-queueserver.git
+user: bluesky
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: bluesky-queueserver-api
+ssh_user: null
+url: https://github.com/bluesky/bluesky-queueserver-api.git
+user: bluesky
 vc: git
 ---
 host: github.com
@@ -512,17 +216,49 @@ vc: git
 ---
 host: github.com
 protocol: https
-repo_name: happi
+repo_name: bluesky-widgets
 ssh_user: null
-url: https://github.com/pcdshub/happi.git
-user: pcdshub
+url: https://github.com/bluesky/bluesky-widgets.git
+user: bluesky
 vc: git
 ---
 host: github.com
 protocol: https
-repo_name: suitcase-utils
+repo_name: databroker
 ssh_user: null
-url: https://github.com/bluesky/suitcase-utils.git
+url: https://github.com/bluesky/databroker.git
+user: bluesky
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: databroker-pack
+ssh_user: null
+url: https://github.com/bluesky/databroker-pack.git
+user: bluesky
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: event-model
+ssh_user: null
+url: https://github.com/bluesky/event-model.git
+user: bluesky
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: hklpy
+ssh_user: null
+url: https://github.com/bluesky/hklpy.git
+user: bluesky
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: ophyd
+ssh_user: null
+url: https://github.com/bluesky/ophyd.git
 user: bluesky
 vc: git
 ---
@@ -544,17 +280,17 @@ vc: git
 ---
 host: github.com
 protocol: https
-repo_name: suitcase-jsonl
+repo_name: suitcase-json-metadata
 ssh_user: null
-url: https://github.com/bluesky/suitcase-jsonl.git
+url: https://github.com/bluesky/suitcase-json-metadata.git
 user: bluesky
 vc: git
 ---
 host: github.com
 protocol: https
-repo_name: suitcase-json-metadata
+repo_name: suitcase-jsonl
 ssh_user: null
-url: https://github.com/bluesky/suitcase-json-metadata.git
+url: https://github.com/bluesky/suitcase-jsonl.git
 user: bluesky
 vc: git
 ---
@@ -608,34 +344,10 @@ vc: git
 ---
 host: github.com
 protocol: https
-repo_name: hklpy
+repo_name: suitcase-utils
 ssh_user: null
-url: https://github.com/bluesky/hklpy.git
+url: https://github.com/bluesky/suitcase-utils.git
 user: bluesky
-vc: git
----
-host: github.com
-protocol: https
-repo_name: nsls2-detector-handlers
-ssh_user: null
-url: https://github.com/NSLS-II/nsls2-detector-handlers.git
-user: NSLS-II
-vc: git
----
-host: github.com
-protocol: https
-repo_name: pyqtgraph
-ssh_user: null
-url: https://github.com/pyqtgraph/pyqtgraph.git
-user: pyqtgraph
-vc: git
----
-host: github.com
-protocol: https
-repo_name: curio
-ssh_user: null
-url: https://github.com/dabeaz/curio.git
-user: dabeaz
 vc: git
 ---
 host: github.com
@@ -648,82 +360,10 @@ vc: git
 ---
 host: github.com
 protocol: https
-repo_name: bcsio
+repo_name: python-certifi
 ssh_user: null
-url: https://github.com/NSLS-II/bcsio.git
-user: NSLS-II
-vc: git
----
-host: github.com
-protocol: https
-repo_name: mily
-ssh_user: null
-url: https://github.com/NSLS-II/mily.git
-user: NSLS-II
-vc: git
----
-host: github.com
-protocol: https
-repo_name: awkward
-ssh_user: null
-url: https://github.com/scikit-hep/awkward.git
-user: scikit-hep
-vc: git
----
-host: github.com
-protocol: https
-repo_name: numexpr
-ssh_user: null
-url: https://github.com/pydata/numexpr.git
-user: pydata
-vc: git
----
-host: github.com
-protocol: https
-repo_name: pyerfa
-ssh_user: null
-url: https://github.com/liberfa/pyerfa.git
-user: liberfa
-vc: git
----
-host: github.com
-protocol: https
-repo_name: pims
-ssh_user: null
-url: https://github.com/soft-matter/pims.git
-user: soft-matter
-vc: git
----
-host: github.com
-protocol: https
-repo_name: mplcairo
-ssh_user: null
-url: https://github.com/matplotlib/mplcairo.git
-user: matplotlib
-vc: git
----
-host: github.com
-protocol: https
-repo_name: watchfiles
-ssh_user: null
-url: https://github.com/samuelcolvin/watchfiles.git
-user: samuelcolvin
-vc: git
----
-host: github.com
-protocol: https
-repo_name: scikit-learn
-ssh_user: null
-url: https://github.com/scikit-learn/scikit-learn
-user: scikit-learn
-vc: git
----
-host: github.com
-protocol: https
-repo_name: sympy
-ssh_user: null
-url: https://github.com/sympy/sympy
-user: sympy
+url: https://github.com/certifi/python-certifi.git
+user: certifi
 vc: git
 ---
 host: github.com
@@ -736,42 +376,90 @@ vc: git
 ---
 host: github.com
 protocol: https
-repo_name: mpl-qtthread
+repo_name: tifffile
 ssh_user: null
-url: https://github.com/tacaswell/mpl-qtthread.git
-user: tacaswell
+url: https://github.com/cgohlke/tifffile.git
+user: cgohlke
 vc: git
 ---
 host: github.com
 protocol: https
-repo_name: bluesky-live
+repo_name: confluent-kafka-python
 ssh_user: null
-url: https://github.com/bluesky/bluesky-live.git
-user: bluesky
+url: https://github.com/confluentinc/confluent-kafka-python.git
+user: confluentinc
 vc: git
 ---
 host: github.com
 protocol: https
-repo_name: bluesky-widgets
+repo_name: contourpy
 ssh_user: null
-url: https://github.com/bluesky/bluesky-widgets.git
-user: bluesky
+url: https://github.com/contourpy/contourpy.git
+user: contourpy
 vc: git
 ---
 host: github.com
 protocol: https
-repo_name: arrow
+repo_name: cython
 ssh_user: null
-url: https://github.com/apache/arrow.git
-user: apache
+url: https://github.com/cython/cython.git
+user: cython
 vc: git
 ---
 host: github.com
 protocol: https
-repo_name: greenlet
+repo_name: curio
 ssh_user: null
-url: https://github.com/python-greenlet/greenlet.git
-user: python-greenlet
+url: https://github.com/dabeaz/curio.git
+user: dabeaz
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: dask
+ssh_user: null
+url: https://github.com/dask/dask.git
+user: dask
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: distributed
+ssh_user: null
+url: https://github.com/dask/distributed.git
+user: dask
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: dateutil
+ssh_user: null
+url: https://github.com/dateutil/dateutil.git
+user: dateutil
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: jedi
+ssh_user: null
+url: https://github.com/davidhalter/jedi.git
+user: davidhalter
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: parso
+ssh_user: null
+url: https://github.com/davidhalter/parso.git
+user: davidhalter
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: h5py
+ssh_user: null
+url: https://github.com/h5py/h5py.git
+user: h5py
 vc: git
 ---
 host: github.com
@@ -784,74 +472,18 @@ vc: git
 ---
 host: github.com
 protocol: https
-repo_name: uvloop
+repo_name: intake
 ssh_user: null
-url: https://github.com/MagicStack/uvloop.git
-user: MagicStack
+url: https://github.com/intake/intake.git
+user: intake
 vc: git
 ---
 host: github.com
 protocol: https
-repo_name: httptools
+repo_name: ipython
 ssh_user: null
-url: https://github.com/MagicStack/httptools.git
-user: MagicStack
-vc: git
----
-host: github.com
-protocol: https
-repo_name: fastapi
-ssh_user: null
-url: https://github.com/tiangolo/fastapi.git
-user: tiangolo
-vc: git
----
-host: github.com
-protocol: https
-repo_name: databroker
-ssh_user: null
-url: https://github.com/bluesky/databroker.git
-user: bluesky
-vc: git
----
-host: github.com
-protocol: https
-repo_name: databroker-pack
-ssh_user: null
-url: https://github.com/bluesky/databroker-pack.git
-user: bluesky
-vc: git
----
-host: github.com
-protocol: https
-repo_name: bluesky-queueserver
-ssh_user: null
-url: https://github.com/bluesky/bluesky-queueserver.git
-user: bluesky
-vc: git
----
-host: github.com
-protocol: https
-repo_name: bluesky-queueserver-api
-ssh_user: null
-url: https://github.com/bluesky/bluesky-queueserver-api.git
-user: bluesky
-vc: git
----
-host: github.com
-protocol: https
-repo_name: bluesky-httpserver
-ssh_user: null
-url: https://github.com/bluesky/bluesky-httpserver.git
-user: bluesky
-vc: git
----
-host: github.com
-protocol: https
-repo_name: typed_ast
-ssh_user: null
-url: https://github.com/python/typed_ast.git
-user: python
+url: https://github.com/ipython/ipython
+user: ipython
 vc: git
 ---
 host: github.com
@@ -864,8 +496,368 @@ vc: git
 ---
 host: github.com
 protocol: https
-repo_name: bluesky-adaptive
+repo_name: nbconvert
 ssh_user: null
-url: https://github.com/bluesky/bluesky-adaptive.git
-user: bluesky
+url: https://github.com/jupyter/nbconvert.git
+user: jupyter
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: nbformat
+ssh_user: null
+url: https://github.com/jupyter/nbformat.git
+user: jupyter
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: pyerfa
+ssh_user: null
+url: https://github.com/liberfa/pyerfa.git
+user: liberfa
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: lxml
+ssh_user: null
+url: https://github.com/lxml/lxml.git
+user: lxml
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: cycler
+ssh_user: null
+url: https://github.com/matplotlib/cycler.git
+user: matplotlib
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: matplotlib
+ssh_user: null
+url: https://github.com/matplotlib/matplotlib.git
+user: matplotlib
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: mpl-gui
+ssh_user: null
+url: https://github.com/matplotlib/mpl-gui.git
+user: matplotlib
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: mplcairo
+ssh_user: null
+url: https://github.com/matplotlib/mplcairo.git
+user: matplotlib
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: mplfinance
+ssh_user: null
+url: https://github.com/matplotlib/mplfinance.git
+user: matplotlib
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: meson
+ssh_user: null
+url: https://github.com/mesonbuild/meson.git
+user: mesonbuild
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: meson-python
+ssh_user: null
+url: https://github.com/mesonbuild/meson-python
+user: mesonbuild
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: networkx
+ssh_user: null
+url: https://github.com/networkx/networkx.git
+user: networkx
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: numpy
+ssh_user: null
+url: https://github.com/numpy/numpy.git
+user: numpy
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: opentelemetry-python
+ssh_user: null
+url: https://github.com/open-telemetry/opentelemetry-python.git
+user: open-telemetry
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: pandas
+ssh_user: null
+url: https://github.com/pandas-dev/pandas.git
+user: pandas-dev
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: happi
+ssh_user: null
+url: https://github.com/pcdshub/happi.git
+user: pcdshub
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: pexpect
+ssh_user: null
+url: https://github.com/pexpect/pexpect.git
+user: pexpect
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: pybind11
+ssh_user: null
+url: https://github.com/pybind/pybind11.git
+user: pybind
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: pycurl
+ssh_user: null
+url: https://github.com/pycurl/pycurl.git
+user: pycurl
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: numexpr
+ssh_user: null
+url: https://github.com/pydata/numexpr.git
+user: pydata
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: build
+ssh_user: null
+url: https://github.com/pypa/build.git
+user: pypa
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: flit
+ssh_user: null
+url: https://github.com/pypa/flit.git
+user: pypa
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: pip
+ssh_user: null
+url: https://github.com/pypa/pip.git
+user: pypa
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: wheel
+ssh_user: null
+url: https://github.com/pypa/wheel.git
+user: pypa
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: pyqtgraph
+ssh_user: null
+url: https://github.com/pyqtgraph/pyqtgraph.git
+user: pyqtgraph
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: pytest
+ssh_user: null
+url: https://github.com/pytest-dev/pytest.git
+user: pytest-dev
+vc: git
+---
+host: github.com
+protocol: ssh
+repo_name: cffi
+ssh_user: git
+url: git@github.com:python-cffi/cffi.git
+user: python-cffi
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: greenlet
+ssh_user: null
+url: https://github.com/python-greenlet/greenlet.git
+user: python-greenlet
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: uritemplate
+ssh_user: null
+url: https://github.com/python-hyper/uritemplate.git
+user: python-hyper
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: Pillow
+ssh_user: null
+url: https://github.com/python-pillow/Pillow.git
+user: python-pillow
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: cytoolz
+ssh_user: null
+url: https://github.com/pytoolz/cytoolz.git
+user: pytoolz
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: toolz
+ssh_user: null
+url: https://github.com/pytoolz/toolz.git
+user: pytoolz
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: watchfiles
+ssh_user: null
+url: https://github.com/samuelcolvin/watchfiles.git
+user: samuelcolvin
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: awkward
+ssh_user: null
+url: https://github.com/scikit-hep/awkward.git
+user: scikit-hep
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: scikit-image
+ssh_user: null
+url: https://github.com/scikit-image/scikit-image.git
+user: scikit-image
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: scikit-learn
+ssh_user: null
+url: https://github.com/scikit-learn/scikit-learn
+user: scikit-learn
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: scipy
+ssh_user: null
+url: https://github.com/scipy/scipy.git
+user: scipy
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: pythran
+ssh_user: null
+url: https://github.com/serge-sans-paille/pythran.git
+user: serge-sans-paille
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: pims
+ssh_user: null
+url: https://github.com/soft-matter/pims.git
+user: soft-matter
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: sphinx
+ssh_user: null
+url: https://github.com/sphinx-doc/sphinx.git
+user: sphinx-doc
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: sympy
+ssh_user: null
+url: https://github.com/sympy/sympy
+user: sympy
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: mpl-qtthread
+ssh_user: null
+url: https://github.com/tacaswell/mpl-qtthread.git
+user: tacaswell
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: fastapi
+ssh_user: null
+url: https://github.com/tiangolo/fastapi.git
+user: tiangolo
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: pyyaml
+ssh_user: null
+url: https://github.com/yaml/pyyaml.git
+user: yaml
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: numcodecs
+ssh_user: null
+url: https://github.com/zarr-developers/numcodecs.git
+user: zarr-developers
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: pyzmq
+ssh_user: null
+url: https://github.com/zeromq/pyzmq.git
+user: zeromq
 vc: git

@@ -334,4 +334,4 @@ if args.update_used:
             repos.append(asdict(lc.primary_remote))
 
     with open("used_repos.yaml", "w") as fout:
-        yaml.dump_all(repos, fout)
+        yaml.dump_all(sorted(repos, key=lambda x: (x['user'], x['repo_name'])), fout)
