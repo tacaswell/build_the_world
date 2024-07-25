@@ -170,6 +170,13 @@ def main_build(**kwargs):
     return !(pip install --no-build-isolation .)
 
 
+def watchfiles_build(**kwargs):
+    auto_main(**kwargs)
+    git_cleanup()
+    with ${...}.swap(VERSION='-'.join($(git describe --tags).strip()[1:].split('-')[:2])):
+        python .github/set_version.py
+    return !(pip install --no-build-isolation .)
+
 def setup_py_build(**kwargs):
     auto_main(**kwargs)
     git_cleanup()

@@ -820,10 +820,15 @@ flags: --no-build-isolation --pre --upgrade
 kind: pip
 packages: build
 ---
+default_branch: main
+function: watchfiles_build
+kind: source_install
+name: watchfiles
+proj_name: watchfiles
+---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: pymdown-extensions blinker feedgenerator markdown ordered-set unidecode
-  watchfiles pelican[markdown]
+packages: pymdown-extensions blinker feedgenerator markdown ordered-set unidecode pelican[markdown]
 ---
 flags: --no-build-isolation --pre --upgrade
 kind: pip
