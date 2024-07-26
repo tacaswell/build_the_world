@@ -323,9 +323,7 @@ packages: pydocstyle flake8-docstrings pytest-cov pytest-rerunfailures pytest-ti
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: colorspacious ipywidgets numpydoc pydata-sphinx-theme mpl-sphinx-theme sphinxcontrib-svg2pdfconverter
-  sphinx-gallery sphinx-copybutton sphinx-panels sphinx-design comm jupyterlab-widgets
-  tabulate widgetsnbextension accessible-pygments sphinx-tags
+packages: accessible-pygments colorspacious comm ipywidgets jupyterlab-widgets mpl-sphinx-theme numpydoc pydata-sphinx-theme sphinx sphinx-copybutton sphinx-design sphinx-gallery sphinx-panels sphinx-tags sphinxcontrib-svg2pdfconverter tabulate widgetsnbextension
 ---
 flags: ''
 kind: pip-remove
