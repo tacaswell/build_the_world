@@ -827,6 +827,12 @@ flags: --pre --upgrade --no-build-isolation
 packages: cachetools
 kind: pip
 ---
+default_branch: main
+function: main_build
+kind: source_install
+name: data-prototype
+proj_name: data-prototype
+---
 flags: --pre --upgrade --no-build-isolation
 packages: mdit-py-plugins
 kind: pip
