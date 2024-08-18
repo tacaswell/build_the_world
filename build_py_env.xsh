@@ -173,6 +173,7 @@ def main_build(**kwargs):
 def watchfiles_build(**kwargs):
     auto_main(**kwargs)
     git_cleanup()
+    git checkout Cargo.lock Cargo.toml
     with ${...}.swap(VERSION='-'.join($(git describe --tags).strip()[1:].split('-')[:2])):
         python .github/set_version.py
     return !(pip install --no-build-isolation .)
