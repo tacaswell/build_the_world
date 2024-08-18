@@ -727,6 +727,14 @@ user: pytest-dev
 vc: git
 ---
 host: github.com
+protocol: https
+repo_name: cpython
+ssh_user: null
+url: https://github.com/python/cpython.git
+user: python
+vc: git
+---
+host: github.com
 protocol: ssh
 repo_name: cffi
 ssh_user: git
