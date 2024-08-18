@@ -192,6 +192,10 @@ packages: bleach jinja2 markupsafe mistune nbclient pandocfilters beautifulsoup4
   jupyterlab-pygments tinycss2 jupyter-client soupsieve webencodings python-dateutil
   tornado
 ---
+flags: --pre --upgrade --no-build-isolation
+packages: tinycss2<1.3
+kind: pip
+---
 default_branch: main
 function: main_build
 kind: source_install
@@ -305,10 +309,8 @@ name: pytest
 proj_name: pytest
 ---
 flags: --pre --upgrade --no-build-isolation
+packages: alabaster babel imagesize snowballstemmer sphinx sphinxcontrib-applehelp sphinxcontrib-devhelp sphinxcontrib-htmlhelp sphinxcontrib-jsmath sphinxcontrib-qthelp sphinxcontrib-serializinghtml sphinxcontrib-video
 kind: pip
-packages: alabaster babel imagesize snowballstemmer sphinxcontrib-htmlhelp sphinxcontrib-serializinghtml
-  sphinxcontrib-applehelp sphinxcontrib-devhelp sphinxcontrib-jsmath sphinxcontrib-qthelp
-  sphinx docutils
 ---
 default_branch: master
 function: main_build
@@ -318,12 +320,26 @@ proj_name: sphinx
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: pydocstyle flake8-docstrings pytest-cov pytest-rerunfailures pytest-timeout
-  pytest-xdist pytest-xvfb execnet pyvirtualdisplay tomli coverage
+packages:   docutils
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: accessible-pygments colorspacious comm ipywidgets jupyterlab-widgets mpl-sphinx-theme numpydoc pydata-sphinx-theme sphinx sphinx-copybutton sphinx-design sphinx-gallery sphinx-panels sphinx-tags sphinxcontrib-svg2pdfconverter tabulate widgetsnbextension
+packages: accessible-pygments mpl-sphinx-theme numpydoc pydata-sphinx-theme sphinx-copybutton tabulate
+---
+flags: --pre --upgrade --no-build-isolation
+kind: pip
+packages: pydocstyle flake8-docstrings pytest-cov pytest-rerunfailures pytest-timeout
+  pytest-xdist pytest-xvfb execnet pyvirtualdisplay tomli coverage
+---
+default_branch: master
+function: main_build
+kind: source_install
+name: sphinx-design
+proj_name: sphinx-design
+---
+flags: --pre --upgrade --no-build-isolation
+kind: pip
+packages: colorspacious comm ipywidgets jupyterlab-widgets sphinx-gallery sphinx-tags sphinxcontrib-svg2pdfconverter widgetsnbextension
 ---
 flags: ''
 kind: pip-remove
@@ -503,15 +519,15 @@ flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: flexcache flexparser pint
 ---
-flags: --pre --upgrade --no-build-isolation
-packages: deprecated
-kind: pip
----
 default_branch: develop
 function: main_build
 kind: source_install
 name: wrapt
 proj_name: wrapt
+---
+flags: --pre --upgrade --no-build-isolation
+packages: deprecated
+kind: pip
 ---
 default_branch: main
 function: opentelemetry_build
@@ -664,8 +680,18 @@ name: suitcase-nxstxm
 proj_name: suitcase-nxstxm
 ---
 flags: --pre --upgrade --no-build-isolation
+packages: sphinxcontrib-jquery
 kind: pip
-packages: codecov docutils sphinx-rtd-theme sphinxcontrib-jquery
+---
+default_branch: master
+function: main_build
+kind: source_install
+name: sphinx_rtd_theme
+proj_name: sphinx_rtd_theme
+---
+flags: --pre --upgrade --no-build-isolation
+kind: pip
+packages: codecov
 ---
 default_branch: master
 function: main_build
@@ -786,7 +812,7 @@ proj_name: pims
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: docutils dpkt netifaces sphinx-rtd-theme sphinxcontrib-jquery ujson
+packages: dpkt netifaces sphinxcontrib-jquery ujson
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
@@ -798,8 +824,22 @@ kind: pip
 packages: xarray
 ---
 flags: --pre --upgrade --no-build-isolation
+packages: cachetools
 kind: pip
-packages: jupyterlab-git jupyterlab-spellchecker myst-parser mdit-py-plugins nbdime
+---
+flags: --pre --upgrade --no-build-isolation
+packages: mdit-py-plugins
+kind: pip
+---
+default_branch: master
+function: main_build
+kind: source_install
+name: MyST-Parser
+proj_name: MyST-Parser
+---
+flags: --pre --upgrade --no-build-isolation
+kind: pip
+packages: jupyterlab-git jupyterlab-spellchecker mdit-py-plugins nbdime
   gitpython jupyter-server-mathjax colorama gitdb smmap jupyterlab
 ---
 flags: -y

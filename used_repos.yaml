@@ -456,6 +456,22 @@ vc: git
 ---
 host: github.com
 protocol: https
+repo_name: MyST-Parser
+ssh_user: null
+url: https://github.com/executablebooks/MyST-Parser.git
+user: executablebooks
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: sphinx-design
+ssh_user: null
+url: https://github.com/executablebooks/sphinx-design.git
+user: executablebooks
+vc: git
+---
+host: github.com
+protocol: https
 repo_name: h5py
 ssh_user: null
 url: https://github.com/h5py/h5py.git
@@ -748,6 +764,14 @@ repo_name: toolz
 ssh_user: null
 url: https://github.com/pytoolz/toolz.git
 user: pytoolz
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: sphinx_rtd_theme
+ssh_user: null
+url: https://github.com/readthedocs/sphinx_rtd_theme.git
+user: readthedocs
 vc: git
 ---
 host: github.com
