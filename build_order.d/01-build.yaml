@@ -559,7 +559,7 @@ proj_name: area-detector-handlers
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: tqdm zict<3 msgpack-numpy super-state-machine heapdict
+packages: tqdm zict<3 msgpack-numpy heapdict
 ---
 default_branch: main
 function: main_build
