@@ -51,7 +51,6 @@ with with_pushd(wd):
     ./configure \
         --prefix=@(prefix) \
         --enable-shared LDFLAGS=@(f"-Wl,-rpath,$HOME/.pybuild/{args.target}/lib") \
-        --with-ssl \
         @('--disable-gil' if args.freethread else '')
     make -j
     make install
