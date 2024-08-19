@@ -8,11 +8,10 @@ from pathlib import Path
 from subprocess import CalledProcessError
 
 from xonsh.dirstack import with_pushd
+import sys
 
 $RAISE_SUBPROC_ERROR = False
 $XONSH_TRACE_SUBPROC = False
-$PIP_NO_BUILD_ISOLATION = 1
-# $PYO3_USE_ABI3_FORWARD_COMPATIBILITY=1
 
 
 def extract_git_shas():
@@ -63,11 +62,20 @@ for step in build_order:
                 is_merged = bool(!(git merge-base --is-ancestor  HEAD @(upstream)))
             shas = extract_git_shas()
             return locals()
-    out[step['name']] = foo(upstream_branch, lc['local_checkout'])
+    out[step['proj_name']] = foo(upstream_branch, lc['local_checkout'])
 
+extra_remotes = []
 
 for k, v in out.items():
     if v['cur_branch'] != v['upstream_branch']:
         print(f"{k} ({v['checkout']})")
         print(f"   default: {v['upstream_branch']}")
         print(f"   on: {v['cur_branch']} [{v['shas']['describe']}]({v['tracking_branch'] if v['has_tracking'] else '-'})")
+        if v['has_tracking']:
+            remote_name, *junk = v['tracking_branch'].partition('/')
+            extra_remotes.append(
+                {'proj_name': k, 'branch': v['cur_branch'], 'remote': local_checkouts[k]['remotes'][remote_name], 'remote_name': remote_name}
+            )
+
+with open('extra_remotes.yaml', 'w') as fout:
+    yaml.dump_all(sorted(extra_remotes, key=lambda x: x['proj_name']), fout)

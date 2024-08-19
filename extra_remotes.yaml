@@ -1,0 +1,143 @@
+branch: 313t
+proj_name: argon2-cffi-bindings
+remote:
+  host: github.com
+  protocol: https
+  repo_name: argon2-cffi-bindings
+  ssh_user: null
+  url: https://github.com/minrk/argon2-cffi-bindings.git
+  user: minrk
+  vc: git
+remote_name: minrk
+---
+branch: fix_py312
+proj_name: bluesky-httpserver
+remote:
+  host: github.com
+  protocol: https
+  repo_name: bluesky-httpserver
+  ssh_user: null
+  url: https://github.com/tacaswell/bluesky-httpserver.git
+  user: tacaswell
+  vc: git
+remote_name: tacaswell
+---
+branch: mnt/setup.py_version
+proj_name: cffi
+remote:
+  host: github.com
+  protocol: https
+  repo_name: cffi
+  ssh_user: null
+  url: https://github.com/tacaswell/cffi.git
+  user: tacaswell
+  vc: git
+remote_name: tacaswell
+---
+branch: '3.13'
+proj_name: executing
+remote:
+  host: github.com
+  protocol: https
+  repo_name: executing
+  ssh_user: null
+  url: https://github.com/alexmojaki/executing.git
+  user: alexmojaki
+  vc: git
+remote_name: upstream
+---
+branch: starlette-0.38
+proj_name: fastapi
+remote:
+  host: github.com
+  protocol: https
+  repo_name: fastapi
+  ssh_user: null
+  url: https://github.com/musicinmybrain/fastapi.git
+  user: musicinmybrain
+  vc: git
+remote_name: musicinmybrain
+---
+branch: py313
+proj_name: greenlet
+remote:
+  host: github.com
+  protocol: https
+  repo_name: greenlet
+  ssh_user: null
+  url: https://github.com/vstinner/greenlet.git
+  user: vstinner
+  vc: git
+remote_name: vstinner
+---
+branch: fix_py312
+proj_name: hklpy
+remote:
+  host: github.com
+  protocol: https
+  repo_name: hklpy
+  ssh_user: null
+  url: https://github.com/tacaswell/hklpy.git
+  user: tacaswell
+  vc: git
+remote_name: tacaswell
+---
+branch: py313
+proj_name: msgspec
+remote:
+  host: github.com
+  protocol: https
+  repo_name: msgspec
+  ssh_user: null
+  url: https://github.com/edgarrmondragon/msgspec.git
+  user: edgarrmondragon
+  vc: git
+remote_name: edgarrmondragon
+---
+branch: hacky_hack
+proj_name: pip
+remote:
+  host: github.com
+  protocol: https
+  repo_name: pip
+  ssh_user: null
+  url: https://github.com/tacaswell/pip.git
+  user: tacaswell
+  vc: git
+remote_name: tacaswell
+---
+branch: isra/fix-pathlib-with-ns
+proj_name: pytest
+remote:
+  host: github.com
+  protocol: https
+  repo_name: pytest
+  ssh_user: null
+  url: https://github.com/flared/pytest.git
+  user: flared
+  vc: git
+remote_name: flared
+---
+branch: mnt/uncap_sphinx
+proj_name: sphinx-design
+remote:
+  host: github.com
+  protocol: https
+  repo_name: sphinx-design
+  ssh_user: null
+  url: https://github.com/tacaswell/sphinx-design.git
+  user: tacaswell
+  vc: git
+remote_name: tacaswell
+---
+branch: PyO3
+proj_name: watchfiles
+remote:
+  host: github.com
+  protocol: https
+  repo_name: watchfiles
+  ssh_user: null
+  url: https://github.com/FlickerSoul/watchfiles.git
+  user: FlickerSoul
+  vc: git
+remote_name: FlickerSoul
