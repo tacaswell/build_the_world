@@ -383,9 +383,15 @@ kind: source_install
 name: dask
 proj_name: dask
 ---
+default_branch: main
+function: msgpack_build
+kind: source_install
+name: msgpack-python
+proj_name: msgpack-python
+---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: msgpack sortedcontainers tblib zict
+packages: sortedcontainers tblib zict
 ---
 default_branch: main
 function: main_build

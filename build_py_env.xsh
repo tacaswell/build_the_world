@@ -173,6 +173,13 @@ def main_build(**kwargs):
     return !(pip install --no-build-isolation .)
 
 
+def msgpack_build(**kwargs):
+    auto_main(**kwargs)
+    git_cleanup()
+    !(make cython)
+    return !(pip install --no-build-isolation .)
+
+
 def watchfiles_build(**kwargs):
     auto_main(**kwargs)
     git_cleanup()

@@ -616,6 +616,14 @@ vc: git
 ---
 host: github.com
 protocol: https
+repo_name: msgpack-python
+ssh_user: null
+url: https://github.com/msgpack/msgpack-python.git
+user: msgpack
+vc: git
+---
+host: github.com
+protocol: https
 repo_name: networkx
 ssh_user: null
 url: https://github.com/networkx/networkx.git
@@ -743,10 +751,10 @@ user: python
 vc: git
 ---
 host: github.com
-protocol: ssh
+protocol: https
 repo_name: cffi
-ssh_user: git
-url: git@github.com:python-cffi/cffi.git
+ssh_user: null
+url: https://github.com/python-cffi/cffi.git
 user: python-cffi
 vc: git
 ---
