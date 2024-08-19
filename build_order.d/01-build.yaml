@@ -331,7 +331,7 @@ kind: pip
 packages: pydocstyle flake8-docstrings pytest-cov pytest-rerunfailures pytest-timeout
   pytest-xdist pytest-xvfb execnet pyvirtualdisplay tomli coverage
 ---
-default_branch: master
+default_branch: main
 function: main_build
 kind: source_install
 name: sphinx-design
