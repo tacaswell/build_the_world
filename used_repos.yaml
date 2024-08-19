@@ -480,6 +480,14 @@ vc: git
 ---
 host: github.com
 protocol: https
+repo_name: argon2-cffi-bindings
+ssh_user: null
+url: https://github.com/hynek/argon2-cffi-bindings.git
+user: hynek
+vc: git
+---
+host: github.com
+protocol: https
 repo_name: orjson
 ssh_user: null
 url: https://github.com/ijl/orjson.git

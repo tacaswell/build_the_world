@@ -359,9 +359,15 @@ kind: source_install
 name: cffi
 proj_name: cffi
 ---
+default_branch: main
+function: main_build
+kind: source_install
+name: argon2-cffi-bindings
+proj_name: argon2-cffi-bindings
+---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: anyio argon2-cffi argon2-cffi-bindings arrow async-lru debugpy fqdn h11
+packages: anyio argon2-cffi arrow async-lru debugpy fqdn h11
   httpcore httpx ipykernel isoduration json5 jsonpointer jupyter-events jupyter-lsp
   jupyter-server jupyter-server-terminals jupyterlab-server nest-asyncio notebook-shim
   overrides prometheus-client psutil python-json-logger rfc3339-validator rfc3986-validator
