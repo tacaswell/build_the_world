@@ -11,6 +11,9 @@ from subprocess import CalledProcessError
 
 from xonsh.dirstack import with_pushd
 
+if "/usr/bin/vendor_perl" not in $PATH:
+    $PATH.append("/usr/bin/vendor_perl")
+
 
 $RAISE_SUBPROC_ERROR = False
 $XONSH_TRACE_SUBPROC = True
