@@ -496,6 +496,14 @@ vc: git
 ---
 host: github.com
 protocol: https
+repo_name: python-zstandard
+ssh_user: null
+url: https://github.com/indygreg/python-zstandard.git
+user: indygreg
+vc: git
+---
+host: github.com
+protocol: https
 repo_name: intake
 ssh_user: null
 url: https://github.com/intake/intake.git
@@ -715,6 +723,22 @@ protocol: https
 repo_name: pip
 ssh_user: null
 url: https://github.com/pypa/pip.git
+user: pypa
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: setuptools
+ssh_user: null
+url: https://github.com/pypa/setuptools.git
+user: pypa
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: twine
+ssh_user: null
+url: https://github.com/pypa/twine.git
 user: pypa
 vc: git
 ---

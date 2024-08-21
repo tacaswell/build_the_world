@@ -11,6 +11,12 @@ packages: setuptools
 default_branch: main
 function: main_build
 kind: source_install
+name: setuptools
+proj_name: setuptools
+---
+default_branch: main
+function: main_build
+kind: source_install
 name: wheel
 proj_name: wheel
 ---
@@ -437,16 +443,16 @@ kind: source_install
 name: sip
 proj_name: sip
 ---
-flags: --pre --upgrade
+flags: --pre --upgrade --no-build-isolation
+packages: packaging pyqt-builder
 kind: pip
-packages: PyQt6 pyqt6-qt6 pyqt6-sip
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: asv asv-runner coverage cryptography jaraco-classes jaraco-context jaraco-functools
-  jeepney keyring markdown-it-py mdurl more-itertools nh3 outcome pkginfo py-cpuinfo
-  pympler pytest-benchmark qtpy readme-renderer requests-toolbelt rfc3986 rich secretstorage
-  trio twine
+packages: asv asv-runner coverage jaraco-classes jaraco-context jaraco-functools
+  jeepney markdown-it-py mdurl more-itertools nh3 outcome pkginfo py-cpuinfo
+  pympler pytest-benchmark qtpy readme-renderer requests-toolbelt rfc3986 rich
+  trio
 ---
 default_branch: master
 function: main_build
@@ -587,7 +593,7 @@ proj_name: python-blosc
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: aiofiles aiosqlite anyio asciitree asgi-correlation-id canonicaljson crc32c donfig fasteners h5netcdf lz4 mongomock mongoquery ndindex parquet sentinels starlette thriftpy2 watchgod websockets zarr zstandard
+packages: aiofiles aiosqlite anyio asciitree asgi-correlation-id canonicaljson crc32c donfig fasteners h5netcdf lz4 mongomock mongoquery ndindex parquet sentinels starlette thriftpy2 watchgod websockets
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
@@ -925,12 +931,6 @@ function: main_build
 kind: source_install
 name: imagecodecs
 proj_name: imagecodecs
----
-default_branch: main
-function: main_build
-kind: source_install
-name: mpl-qtthread
-proj_name: mpl-qtthread
 ---
 default_branch: main
 function: main_build

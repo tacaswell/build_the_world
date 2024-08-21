@@ -1,0 +1,30 @@
+---
+default_branch: main
+function: main_build
+kind: source_install
+name: zstandard
+proj_name: python-zstandard
+---
+flags: --pre --upgrade --no-build-isolation
+kind: pip
+packages: zarr
+---
+flags: --pre --upgrade --no-build-isolation
+kind: pip
+packages: cryptography secretstorage keyring
+---
+default_branch: main
+function: main_build
+kind: source_install
+name: twine
+proj_name: twine
+---
+flags: --pre --upgrade --no-build-isolation
+kind: pip
+packages: PyQt6 pyqt6-qt6 pyqt6-sip
+---
+default_branch: main
+function: main_build
+kind: source_install
+name: mpl-qtthread
+proj_name: mpl-qtthread
