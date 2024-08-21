@@ -39,8 +39,9 @@ for project in extra_remotes:
     if project['remote_name'] not in remotes:
         with with_pushd(wd):
             git remote add @(project['remote_name']) @(project['remote']['url'])
-            git fetch @(project['remote_name'])
+
     with with_pushd(wd):
+        git fetch @(project['remote_name'])
         if $(git branch --list @(project['branch'])):
             git reset --hard @(project['remote_name'])/@(project['branch'])
         else:

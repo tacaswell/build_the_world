@@ -86,10 +86,10 @@ branch: mnt/py_int_types
 proj_name: msgpack-python
 remote:
   host: github.com
-  protocol: ssh
+  protocol: https
   repo_name: msgpack-python
-  ssh_user: git
-  url: git@github.com:tacaswell/msgpack-python.git
+  ssh_user: null
+  url: https://github.com/tacaswell/msgpack-python.git
   user: tacaswell
   vc: git
 remote_name: tacaswell
