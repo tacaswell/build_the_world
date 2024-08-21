@@ -120,7 +120,7 @@ def auto_main(upstream_remote='origin', upstream_branch='master'):
                 if len(cur_branch):
                     git branch -d @(cur_branch)
             else:
-                if $GITHUB_USER in $(git remote -v):
+                if "GITHUB_USER" in ${...} and $GITHUB_USER in $(git remote -v):
                     git push $GITHUB_USER
 
 
