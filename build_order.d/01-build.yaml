@@ -158,8 +158,7 @@ proj_name: jedi
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: prompt-toolkit pygments traitlets decorator matplotlib-inline stack-data
-  asttokens pure-eval wcwidth
+packages: asttokens decorator executing matplotlib-inline prompt-toolkit pure-eval pygments stack-data traitlets wcwidth
 ---
 default_branch: master
 function: main_build
