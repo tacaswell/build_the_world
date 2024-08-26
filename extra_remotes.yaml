@@ -46,18 +46,6 @@ remote:
   vc: git
 remote_name: upstream
 ---
-branch: starlette-0.38
-proj_name: fastapi
-remote:
-  host: github.com
-  protocol: https
-  repo_name: fastapi
-  ssh_user: null
-  url: https://github.com/musicinmybrain/fastapi.git
-  user: musicinmybrain
-  vc: git
-remote_name: musicinmybrain
----
 branch: py313
 proj_name: greenlet
 remote:
@@ -82,18 +70,6 @@ remote:
   vc: git
 remote_name: tacaswell
 ---
-branch: mnt/py_int_types
-proj_name: msgpack-python
-remote:
-  host: github.com
-  protocol: https
-  repo_name: msgpack-python
-  ssh_user: null
-  url: https://github.com/tacaswell/msgpack-python.git
-  user: tacaswell
-  vc: git
-remote_name: tacaswell
----
 branch: py313
 proj_name: msgspec
 remote:
@@ -113,10 +89,10 @@ remote:
   protocol: https
   repo_name: opentelemetry-python
   ssh_user: null
-  url: https://github.com/tacaswell/opentelemetry-python.git
-  user: tacaswell
+  url: https://github.com/Ronald-TR/opentelemetry-python.git
+  user: Ronald-TR
   vc: git
-remote_name: tacaswell
+remote_name: Ronald-TR
 ---
 branch: hacky_hack
 proj_name: pip
