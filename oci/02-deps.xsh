@@ -18,7 +18,7 @@ buildah config --workingdir=btw  @(container)
 
 buildah run @(container) -- pacman -Syu --noconfirm
 buildah run @(container) -- pacman -Sy ack --noconfirm
-buildah run @(container) -- pacman -Sy base-devel libjpeg-turbo cmake ccache gcc-fortran  blas-openblas  openblas hdf5 libxml2 libxslt graphviz --noconfirm
+buildah run @(container) -- pacman -Sy base-devel libjpeg-turbo cmake ccache gcc-fortran  blas-openblas  openblas hdf5 libxml2 libxslt graphviz npm --noconfirm
 
 with open(Path(scratchmnt) / 'root' / '.bashrc', 'a') as fout:
     fout.write(

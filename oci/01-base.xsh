@@ -19,6 +19,7 @@ btw = (Path(scratchmnt) / 'btw')
 if not btw.exists():
     git clone https://github.com/tacaswell/build_the_world @(btw)
 else:
+    buildah run --workingdir=btw @(container)  -- git remote update
     buildah run --workingdir=btw @(container)  -- git reset --hard origin/main
 
 xonsh ensure_clones.xsh --target @(scratchmnt)/src
