@@ -40,7 +40,7 @@ for project in extra_remotes:
     with with_pushd(wd):
         if project['remote_name'] not in remotes:
             git remote add @(project['remote_name']) @(project['remote']['url'])
-        if remotes[project['remote_name']]['push'] != project['remote']['url']:
+        elif remotes[project['remote_name']]['push'] != project['remote']['url']:
             git remote set-url @(project['remote_name']) @(project['remote']['url'])
         git fetch @(project['remote_name'])
         if $(git branch --list @(project['branch'])):
