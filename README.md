@@ -21,18 +21,6 @@ The goals of this project are:
 4. Be able to easily switch any package to a source install for development.
 5. Be easy to re-build everything from scratch.
 
-## History
-
-The first version of this was a bash script that complied CPython and created a
-virtual environment.  Very quickly the script started to automate installing
-Python packages from source.  The number of projects that I was installing from
-version control rapidly grew -- driven by needing to work around projects that
-ship pre-cythonized c files in their sdists, needing un-released bug-fixes to
-support the main branch of CPython, or just projects I was personally
-contributing to.  Eventually a single `bash` script (without functions!) was refactored
-to a `bash` script _with_ functions, to a `xonsh` script with all of checkout locations
-hard-coded at the top of the file, to the current state which uses a handful of `xonsh` scripts
-and a `yaml` file to track where the checkouts are.
 
 ## Code quality
 
@@ -59,17 +47,16 @@ on.  At a minimum running these scripts will require:
 5. cmake
 6. npm
 7. git
-8. hg
-9. find
-10. make + autotools
-11. libhdf5 + headers
-12. all of the image libraries + headers supported by imagecodecs
-13. [gidgethub](https://gidgethub.readthedocs.io/en/latest/) (optional,
+8. find
+9. make + autotools
+10. libhdf5 + headers
+11. all of the image libraries + headers supported by imagecodecs
+12. [gidgethub](https://gidgethub.readthedocs.io/en/latest/) (optional,
     can be in a venv, needed to refresh default branch names)
-14. meson
-15. openblas
-16. patchelf
-17. a development version of librdkafka
+13. meson
+14. openblas
+15. patchelf
+16. a development version of librdkafka
 
 This has been run (mostly successfully) on:
 
@@ -82,6 +69,8 @@ This has been run (mostly successfully) on:
 
 
 ## Usage
+
+### Set up source tree(s)
 
 To use project is currently a multi step process.  The first step is to make
 sure all of the relevant projects are cloned locally.  In principle there is
@@ -107,8 +96,20 @@ $ xonsh find_repos.xsh path/to/source/directory
 will find all of the git and hg checkouts under the given directory and will
 write out a file `all_repos.yaml` with information about all of the checkouts
 it found.  While this is walking the repositories it will also change the url
-on any `git://` urls to `https://` as github has stopped supporting the
-unauthenticaed git protocol for fetching repostiory data.
+on any `git://` urls for fetch to `https://` as github has stopped supporting
+the unauthenticated git protocol for fetching repostiory data.
+
+A third step is move some projects to a particular tracking branch for bug-fixes or
+compatibility with non-released versions of Python:
+
+```bash
+$ xonsh setup_extra_remotes.xsh                 # this will reset --hard to the tracking branch
+$ xonsh find_repos.xsh path/to/source/directory # make repo metadata is up-to-date
+```
+
+The non-standard branches are tracked in `extra_remotes.yaml`.
+
+### Build everything
 
 Once all of the required repositories are checked out and found, run
 
@@ -116,8 +117,9 @@ Once all of the required repositories are checked out and found, run
 $ xonsh make_bleeding.xsh
 ```
 
-which will start from CPython try to build everything.  If something goes wrong
-in the middle (which it often does), you can resolve the issue
+which will start from CPython try to move to the tip of the current default
+branch and then build everything.  If something goes wrong in the middle (which
+it often does), you can resolve the issue
 
 ```xonsh
 $ vox activate bleeding  # or how ever you activate venvs in your shell
@@ -126,8 +128,19 @@ $ xonsh build_py_env.xsh --continue
 $ # repeat as needed
 ```
 
+To update the metadata about any non-default branches required to make the build run
+(or if any of the projects can move back to the default branch) run
+
+```bash
+$ xonsh repo_reort.xsh
+```
+
+and commit the updated `extra_remotes.yaml` to the repo.
+
 Eventually you will have a virtual environment with the development branch of
 a large swath of the Scientific Python (and some web) ecosystem installed!
+
+### Control CPython branch and free-threading
 
 If you want to build a different branch of CPython than `main`, you can use the
 `--branch` flag to select the branch and `--target` flag to control the venv name
@@ -136,6 +149,13 @@ If you want to build a different branch of CPython than `main`, you can use the
 $ xonsh make_bleeding.xsh --branch=aardvark_special  --target burrow
 ```
 
+To build CPython 3.13 with free threading enabled:
+
+```bash
+# xonsh make_bleeding.xsh --target py313t --branch 3.13 --freethread
+```
+
+### Start with existing CPython build
 
 If you only want to install the development versions of the downstream
 projects, but not CPython itself, you can do:
@@ -147,6 +167,63 @@ $ xonsh build_py_env.xsh
 $ # fix as needed
 $ xonsh build_py_env.xsh --continue
 ```
+
+## Add new projects
+
+The build order is stored in the `build_order.d/*yaml` files which are run in
+alphabetic order in the order the projects are listed in the files.
+
+Each file is formatted as a list of dictionaries.
+
+### Add new source install
+
+To add a new install from a git checkout, add a section like:
+
+```yaml
+default_branch: main    # the default branch for the project
+function: numpy_build   # the function in build_py_env.xsh used to build it
+kind: source_install    # must be "source_install" to do a source install
+name: numpy             # name that shows up in the log
+proj_name: numpy        # the name top level folder when cloned, matched against all_repos.yaml
+```
+
+to the correct place in one of the files in `build_order.d`.  Most projects can
+use the function `main_build`, but some projects require custom steps to build
+(e.g. manually regenerating cython output, special steps to get the version
+right).
+
+### Add package from pypi
+
+To add packages from
+
+
+```yaml
+flags: --pre --upgrade --no-build-isolation    # flags to pass to the invocation of pip
+kind: pip                                      # must be 'pip'
+packages: beniget gast ply                     # list of packages to install
+```
+
+The custom version of `pip` that is used (assuming you are using my branch) will output
+a copy-paste-able error message to add missing dependencies.
+
+For the build flags `--pre --upgrade` are to stay in the spirit of being on the
+bleeding edge without yet installing from git and are optional.
+
+The `--no-build-isolation` is required for almost all packages to avoid errors
+creating the captive virtual environment used when pip attempts isolated builds.
+
+## Containers
+
+There are scripts in `oci` to build [`buildah`](https://buildah.io) to build
+OCI images that run this build.  It works up the first need for packages form
+AUR.
+
+This seemed like a good idea, but all of the checked out source results in a
+9GB image.
+
+Eventually the goal is to get a version of these on a container registry and
+generate them on CI.  This is part of this project I very much would like help
+with!
 
 ## FAQ
 
@@ -204,3 +281,18 @@ $ xonsh build_py_env.xsh --continue
     silly activity.  I am being honest about my current ambitions for it and
     the history.  If this seems interesting / fun / useful to you then lets be
     friends!
+
+## History
+
+The first version of this was a bash script that complied CPython and created a
+virtual environment.  Very quickly the script started to automate installing
+Python packages from source.  The number of projects that I was installing from
+version control rapidly grew -- driven by needing to work around projects that
+ship pre-cythonized c files in their sdists, needing un-released bug-fixes to
+support the main branch of CPython, or just projects I was personally
+contributing to.  Eventually a single `bash` script (without functions!) was
+refactored to a `bash` script _with_ functions, to a `xonsh` script with all of
+checkout locations hard-coded at the top of the file, to a handful of `xonsh`
+scripts and a `yaml` file to track where the checkouts are, to the current
+state of a handful of `xonsh` scripts and a small fleet of `yaml` files to
+track where the source is, what branches are being used, and the build order.
