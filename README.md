@@ -194,7 +194,7 @@ right).
 
 ### Add package from pypi
 
-To add packages from
+To add packages from pypi add an entry like:
 
 
 ```yaml
