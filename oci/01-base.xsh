@@ -27,9 +27,9 @@ xonsh ensure_clones.xsh --target @(scratchmnt)/src
 buildah run @(container) -- pacman -Syu --noconfirm
 buildah run @(container) -- pacman -Sy git xonsh python python-yaml --noconfirm
 
-buildah run --workingdir=btw @(container)  -- xonsh find_repos.xsh ../src/
+buildah run --workingdir=btw @(container) -- xonsh find_repos.xsh ../src/
 buildah run --workingdir=btw @(container) -- xonsh setup_extra_remotes.xsh
-buildah run --workingdir=btw @(container)  -- xonsh find_repos.xsh ../src/
+buildah run --workingdir=btw @(container) -- xonsh find_repos.xsh ../src/
 
 buildah unmount @(container)
 buildah commit @(container) btw-source
