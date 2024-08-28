@@ -22,30 +22,6 @@ remote:
   vc: git
 remote_name: tacaswell
 ---
-branch: mnt/setup.py_version
-proj_name: cffi
-remote:
-  host: github.com
-  protocol: https
-  repo_name: cffi
-  ssh_user: null
-  url: https://github.com/tacaswell/cffi.git
-  user: tacaswell
-  vc: git
-remote_name: tacaswell
----
-branch: '3.13'
-proj_name: executing
-remote:
-  host: github.com
-  protocol: https
-  repo_name: executing
-  ssh_user: null
-  url: https://github.com/alexmojaki/executing.git
-  user: alexmojaki
-  vc: git
-remote_name: upstream
----
 branch: py313
 proj_name: greenlet
 remote:
