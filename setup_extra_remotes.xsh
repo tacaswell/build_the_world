@@ -1,3 +1,5 @@
+from pathlib import Path
+
 import yaml
 from collections import defaultdict
 
@@ -30,20 +32,34 @@ local_checkouts = {co['name']: co for co in checkouts}
 del checkouts
 
 with open('extra_remotes.yaml') as fin:
-    extra_remotes = list(yaml.unsafe_load_all(fin))
+    extra_remotes = {r['proj_name']: r for r in yaml.unsafe_load_all(fin)}
 
-for project in extra_remotes:
-    lc = local_checkouts[project['proj_name']]
+
+build_order = []
+for order in  sorted(Path('build_order.d').glob('[!.]*yaml')):
+    with open(order) as fin:
+        build_order += [
+            bs
+            for bs in yaml.unsafe_load_all(fin)
+            if bs['kind'] == 'source_install'
+        ]
+
+for step in build_order:
+    lc = local_checkouts[step['proj_name']]
     wd = lc['local_checkout']
-    remotes = get_git_remotes(wd)
-
-    with with_pushd(wd):
-        if project['remote_name'] not in remotes:
-            git remote add @(project['remote_name']) @(project['remote']['url'])
-        elif remotes[project['remote_name']]['push'] != project['remote']['url']:
-            git remote set-url @(project['remote_name']) @(project['remote']['url'])
-        git fetch @(project['remote_name'])
-        if $(git branch --list @(project['branch'])):
-            git reset --hard @(project['remote_name'])/@(project['branch'])
-        else:
-            git switch -c @(project['branch']) -t @(project['remote_name'])/@(project['branch'])
+    print(step['proj_name'], wd)
+    if project := extra_remotes.get(step['proj_name'], None):
+        remotes = get_git_remotes(wd)
+        with with_pushd(wd):
+            if project['remote_name'] not in remotes:
+                git remote add @(project['remote_name']) @(project['remote']['url'])
+            elif remotes[project['remote_name']]['push'] != project['remote']['url']:
+                git remote set-url @(project['remote_name']) @(project['remote']['url'])
+            git fetch @(project['remote_name'])
+            if $(git branch --list @(project['branch'])):
+                git reset --hard @(project['remote_name'])/@(project['branch'])
+            else:
+                git switch -c @(project['branch']) -t @(project['remote_name'])/@(project['branch'])
+    else:
+        with with_pushd(wd):
+            git switch @(step['default_branch'])
