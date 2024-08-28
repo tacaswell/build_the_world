@@ -497,8 +497,7 @@ proj_name: cytoolz
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: colorlog click mypy-extensions packaging pathspec platformdirs black aiohttp
-  aiosignal attrs
+packages: colorlog click mypy-extensions packaging pathspec platformdirs black aiosignal attrs
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
