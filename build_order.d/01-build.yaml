@@ -930,18 +930,6 @@ kind: source_install
 name: imagecodecs
 proj_name: imagecodecs
 ---
-default_branch: main
-function: main_build
-kind: source_install
-name: bluesky-live
-proj_name: bluesky-live
----
-default_branch: master
-function: main_build
-kind: source_install
-name: bluesky-widgets
-proj_name: bluesky-widgets
----
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: xkcdpass
