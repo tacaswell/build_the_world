@@ -886,10 +886,6 @@ kind: source_install
 name: mplcairo
 proj_name: mplcairo
 ---
-flags: --no-build-isolation --pre --upgrade
-kind: pip
-packages: build
----
 default_branch: main
 function: watchfiles_build
 kind: source_install
