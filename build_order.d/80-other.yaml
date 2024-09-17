@@ -1,5 +1,7 @@
+---
 default_branch: main
 function: main_build
 kind: source_install
 name: msgspec
 proj_name: msgspec
+...
