@@ -345,10 +345,41 @@ def build_aiohttp(**kwargs):
 def imagecodecs_build(upstream_branch, **kwargs):
     # nuke the c files to force cython to run
     git remote update
-    git rebase origin/@(upstream_branch)
+    auto_main(**kwargs)
+    git clean -xfd
     cleanup_cython()
     # rm imagecodecs/_*.c || true
-    return !(pip install -v --no-build-isolation    .)
+    helper = """
+def customize_build(EXTENSIONS, OPTIONS):
+    EXTENSIONS['jpeg8']['sources'] = []
+    del EXTENSIONS['apng']
+    del EXTENSIONS['jetraw']
+    del EXTENSIONS['jpegxr']
+    del EXTENSIONS['jpegxs']
+    del EXTENSIONS['jpeg2k']
+    EXTENSIONS['lzham']['libraries'] = ['lzhamdll', 'lzhamcomp', 'lzhamdecomp']
+    del EXTENSIONS['lzo']
+    del EXTENSIONS['mozjpeg']
+    del EXTENSIONS['pcodec']
+    del EXTENSIONS['sperr']
+    del EXTENSIONS['sz3']
+    del EXTENSIONS['ultrahdr']
+
+
+"""
+    with open("imagecodecs_distributor_setup.py", 'w') as fout:
+        fout.write(helper)
+        print(helper)
+    ret = !(python setup.py bdist_wheel)
+    if ret:
+        wheel_file, = g`dist/*.whl`
+        ret2 = !(pip install @(wheel_file))
+        if not ret2:
+            return ret2
+
+    return ret
+
+
 
 
 def build_cffi():

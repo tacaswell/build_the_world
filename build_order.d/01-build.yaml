@@ -921,7 +921,7 @@ name: sympy
 proj_name: sympy
 ---
 default_branch: master
-function: main_build
+function: imagecodecs_build
 kind: source_install
 name: imagecodecs
 proj_name: imagecodecs
