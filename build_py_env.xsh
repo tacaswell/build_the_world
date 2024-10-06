@@ -186,8 +186,10 @@ def watchfiles_build(**kwargs):
     git checkout Cargo.lock Cargo.toml
     with ${...}.swap(VERSION='-'.join($(git describe --tags).strip()[1:].split('-')[:2])):
         python .github/set_version.py
-    return !(pip install --no-build-isolation .)
-
+    ret = !(pip install --no-build-isolation .)
+    ret.returncode
+    git checkout Cargo.lock Cargo.toml
+    return ret
 
 
 def opentelemetry_build(**kwargs):
