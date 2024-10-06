@@ -1,9 +1,12 @@
+---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: asyncpg dask-expr llvmlite numba sparse
+...
 ---
 default_branch: main
 function: main_build
 kind: source_install
 name: bluesky-adaptive
 proj_name: bluesky-adaptive
+...

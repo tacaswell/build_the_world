@@ -1,456 +1,556 @@
+---
 default_branch: main
 function: flit_build
 kind: source_install
 name: flit
 proj_name: flit
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: setuptools
+...
 ---
 default_branch: main
 function: main_build
 kind: source_install
 name: setuptools
 proj_name: setuptools
+...
 ---
 default_branch: main
 function: main_build
 kind: source_install
 name: wheel
 proj_name: wheel
+...
 ---
 default_branch: main
 function: main_build
 kind: source_install
 name: pip_src
 proj_name: pip
+...
 ---
 default_branch: main
 function: main_build
 kind: source_install
 name: Pillow
 proj_name: Pillow
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: mccabe pycodestyle pyflakes
+...
 ---
 default_branch: main
 function: main_build
 kind: source_install
 name: flake8
 proj_name: flake8
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: flake8-force
+...
 ---
 default_branch: master
 function: main_build
 kind: source_install
 name: pybind11
 proj_name: pybind11
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: cmake ninja
+...
 ---
 default_branch: master
 function: cython_build
 kind: source_install
 name: cython
 proj_name: cython
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: packaging pyproject-hooks
+...
 ---
 default_branch: main
 function: main_build
 kind: source_install
 name: build
 proj_name: build
+...
 ---
 flags: --no-build-isolation --pre --upgrade
 kind: pip
 packages: ninja pyparsing pyproject-metadata
+...
 ---
 default_branch: master
 function: main_build
 kind: source_install
 name: meson
 proj_name: meson
+...
 ---
 default_branch: main
 function: main_build
 kind: source_install
 name: meson-python
 proj_name: meson-python
+...
 ---
 default_branch: main
 function: numpy_build
 kind: source_install
 name: numpy
 proj_name: numpy
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: beniget gast ply
+...
 ---
 default_branch: master
 function: main_build
 kind: source_install
 name: pythran
 proj_name: pythran
+...
 ---
 default_branch: main
 function: scipy_build
 kind: source_install
 name: scipy
 proj_name: scipy
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: pkgconfig six
+...
 ---
 default_branch: master
 function: main_build
 kind: source_install
 name: h5py
 proj_name: h5py
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: ptyprocess
+...
 ---
 default_branch: master
 function: main_build
 kind: source_install
 name: pexpect
 proj_name: pexpect
+...
 ---
 default_branch: master
 function: main_build
 kind: source_install
 name: parso
 proj_name: parso
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: setuptools_scm[toml] typing-extensions
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: scikit-build distro pathspec scikit-build-core
+...
 ---
 default_branch: main
 function: main_build
 kind: source_install
 name: pyzmq
 proj_name: pyzmq
+...
 ---
 default_branch: master
 function: main_build
 kind: source_install
 name: jedi
 proj_name: jedi
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: asttokens decorator executing matplotlib-inline prompt-toolkit pure-eval pygments stack-data traitlets wcwidth
+packages: asttokens decorator executing matplotlib-inline prompt-toolkit pure-eval pygments stack-data
+  traitlets wcwidth
+...
 ---
 default_branch: master
 function: main_build
 kind: source_install
 name: executing
 proj_name: executing
+...
 ---
 default_branch: main
 function: main_build
 kind: source_install
 name: IPython
 proj_name: ipython
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: hatchling hatch-nodejs-version editables pluggy trove-classifiers pathspec
+...
 ---
 flags: --no-build-isolation --pre --upgrade
 kind: pip
 packages: maturin
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: jsonschema fastjsonschema jupyter-core attrs jsonschema-specifications referencing rpds-py platformdirs
+...
 ---
 default_branch: main
 function: main_build
 kind: source_install
 name: nbformat
 proj_name: nbformat
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: bleach jinja2 markupsafe mistune nbclient pandocfilters beautifulsoup4 defusedxml jupyterlab-pygments tinycss2 jupyter-client soupsieve webencodings python-dateutil tornado
+packages: bleach jinja2 markupsafe mistune nbclient pandocfilters beautifulsoup4 defusedxml jupyterlab-pygments
+  tinycss2 jupyter-client soupsieve webencodings python-dateutil tornado
+...
 ---
 flags: --pre --upgrade --no-build-isolation
+kind: pip
 packages: tinycss2<1.3
-kind: pip
+...
 ---
 default_branch: main
 function: main_build
 kind: source_install
 name: nbconvert
 proj_name: nbconvert
+...
 ---
 default_branch: master
 function: main_build
 kind: source_install
 name: certifi
 proj_name: python-certifi
+...
 ---
 flags: --no-build-isolation --pre --upgrade
 kind: pip
 packages: cppy
+...
 ---
 default_branch: main
 function: main_build
 kind: source_install
 name: contourpy
 proj_name: contourpy
+...
 ---
 default_branch: master
 function: main_build
 kind: source_install
 name: dateutil
 proj_name: dateutil
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: fonttools kiwisolver
+...
 ---
 default_branch: main
 function: main_build
 kind: source_install
 name: cycler
 proj_name: cycler
+...
 ---
 default_branch: main
 function: main_build
 kind: source_install
 name: matplotlib
 proj_name: matplotlib
+...
 ---
 default_branch: main
 function: main_build
 kind: source_install
 name: mpl-gui
 proj_name: mpl-gui
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: versioneer
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: pytz tzdata
+...
 ---
 default_branch: main
 function: pandas_build
 kind: source_install
 name: pandas
 proj_name: pandas
+...
 ---
 default_branch: master
 function: main_build
 kind: source_install
 name: mplfinance
 proj_name: mplfinance
+...
 ---
 default_branch: main
 function: main_build
 kind: source_install
 name: networkx
 proj_name: networkx
+...
 ---
 default_branch: master
 function: main_build
 kind: source_install
 name: toolz
 proj_name: toolz
+...
 ---
 default_branch: main
 function: main_build
 kind: source_install
 name: pyyaml
 proj_name: pyyaml
+...
 ---
 default_branch: master
 function: main_build
 kind: source_install
 name: lxml
 proj_name: lxml
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: pygraphviz pydot
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: pre-commit cfgv identify nodeenv virtualenv distlib filelock
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: iniconfig
+...
 ---
 default_branch: main
 function: main_build
 kind: source_install
 name: pytest
 proj_name: pytest
+...
 ---
 flags: --pre --upgrade --no-build-isolation
-packages: alabaster babel imagesize snowballstemmer sphinx sphinxcontrib-applehelp sphinxcontrib-devhelp sphinxcontrib-htmlhelp sphinxcontrib-jsmath sphinxcontrib-qthelp sphinxcontrib-serializinghtml sphinxcontrib-video
 kind: pip
+packages: alabaster babel imagesize snowballstemmer sphinx sphinxcontrib-applehelp sphinxcontrib-devhelp
+  sphinxcontrib-htmlhelp sphinxcontrib-jsmath sphinxcontrib-qthelp sphinxcontrib-serializinghtml sphinxcontrib-video
+...
 ---
 default_branch: master
 function: main_build
 kind: source_install
 name: sphinx
 proj_name: sphinx
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages:   docutils
+packages: docutils
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: accessible-pygments mpl-sphinx-theme numpydoc pydata-sphinx-theme sphinx-copybutton tabulate
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: pydocstyle flake8-docstrings pytest-cov pytest-rerunfailures pytest-timeout pytest-xdist pytest-xvfb execnet pyvirtualdisplay tomli coverage
+packages: pydocstyle flake8-docstrings pytest-cov pytest-rerunfailures pytest-timeout pytest-xdist pytest-xvfb
+  execnet pyvirtualdisplay tomli coverage
+...
 ---
 default_branch: main
 function: main_build
 kind: source_install
 name: sphinx-design
 proj_name: sphinx-design
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: colorspacious comm ipywidgets jupyterlab-widgets sphinx-gallery sphinx-tags sphinxcontrib-svg2pdfconverter widgetsnbextension
+packages: colorspacious comm ipywidgets jupyterlab-widgets sphinx-gallery sphinx-tags sphinxcontrib-svg2pdfconverter
+  widgetsnbextension
+...
 ---
 flags: ''
 kind: pip-remove
 packages: flake8-per-file-ignores
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: jupyter-packaging hatch-jupyter-builder deprecation tomlkit
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: pycparser
+...
 ---
 default_branch: main
 function: main_build
 kind: source_install
 name: cffi
 proj_name: cffi
+...
 ---
 default_branch: main
 function: main_build
 kind: source_install
 name: argon2-cffi-bindings
 proj_name: argon2-cffi-bindings
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: anyio argon2-cffi arrow async-lru debugpy fqdn h11 httpcore httpx ipykernel isoduration json5 jsonpointer jupyter-events jupyter-lsp jupyter-server jupyter-server-terminals jupyterlab-server nest-asyncio notebook-shim overrides prometheus-client psutil python-json-logger rfc3339-validator rfc3986-validator send2trash sniffio terminado types-python-dateutil uri-template webcolors websocket-client
+packages: anyio argon2-cffi arrow async-lru debugpy fqdn h11 httpcore httpx ipykernel isoduration json5
+  jsonpointer jupyter-events jupyter-lsp jupyter-server jupyter-server-terminals jupyterlab-server nest-asyncio
+  notebook-shim overrides prometheus-client psutil python-json-logger rfc3339-validator rfc3986-validator
+  send2trash sniffio terminado types-python-dateutil uri-template webcolors websocket-client
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: cloudpickle fsspec importlib-metadata partd zipp locket click
+...
 ---
 default_branch: main
 function: main_build
 kind: source_install
 name: dask
 proj_name: dask
+...
 ---
 default_branch: main
 function: msgpack_build
 kind: source_install
 name: msgpack-python
 proj_name: msgpack-python
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: sortedcontainers tblib zict
+...
 ---
 default_branch: main
 function: main_build
 kind: source_install
 name: distributed
 proj_name: distributed
+...
 ---
 default_branch: main
 function: main_build
 kind: source_install
 name: pywt
 proj_name: pywt
+...
 ---
 flags: --no-build-isolation --pre --upgrade
 kind: pip
 packages: lazy_loader
+...
 ---
 default_branch: master
 function: main_build
 kind: source_install
 name: tifffile
 proj_name: tifffile
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: imageio
+...
 ---
 default_branch: main
 function: main_build
 kind: source_install
 name: scikit-image
 proj_name: scikit-image
+...
 ---
 default_branch: main
 function: main_build
 kind: source_install
 name: uritemplate
 proj_name: uritemplate
+...
 ---
 default_branch: main
 function: main_build
 kind: source_install
 name: sip
 proj_name: sip
+...
 ---
 flags: --pre --upgrade --no-build-isolation
+kind: pip
 packages: packaging pyqt-builder
-kind: pip
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: asv asv-runner coverage jaraco-classes jaraco-context jaraco-functools jeepney markdown-it-py mdurl more-itertools nh3 outcome pkginfo py-cpuinfo pympler pytest-benchmark qtpy readme-renderer requests-toolbelt rfc3986 rich trio
+packages: asv asv-runner coverage jaraco-classes jaraco-context jaraco-functools jeepney markdown-it-py
+  mdurl more-itertools nh3 outcome pkginfo py-cpuinfo pympler pytest-benchmark qtpy readme-renderer requests-toolbelt
+  rfc3986 rich trio
+...
 ---
 default_branch: master
 function: main_build
 kind: source_install
 name: multidict
 proj_name: multidict
+...
 ---
 flags: --pre --upgrade
 kind: pip
 packages: expandvars
+...
 ---
 default_branch: master
 function: build_yarl
@@ -459,6 +559,7 @@ kwargs:
   name: yarl
 name: yarl
 proj_name: yarl
+...
 ---
 default_branch: master
 function: build_yarl
@@ -467,455 +568,548 @@ kwargs:
   name: frozenlist
 name: frozenlist
 proj_name: frozenlist
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: aiosignal aiohappyeyeballs
+...
 ---
 default_branch: master
 function: build_aiohttp
 kind: source_install
 name: aiohttp
 proj_name: aiohttp
+...
 ---
 default_branch: master
 function: main_build
 kind: source_install
 name: cytoolz
 proj_name: cytoolz
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: colorlog click mypy-extensions packaging pathspec platformdirs black aiosignal attrs
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: appdirs entrypoints
+...
 ---
 default_branch: master
 function: main_build
 kind: source_install
 name: intake
 proj_name: intake
+...
 ---
 default_branch: main
 function: main_build
 kind: source_install
 name: historydict
 proj_name: historydict
+...
 ---
 default_branch: main
 function: numcodecs_build
 kind: source_install
 name: numcodecs
 proj_name: numcodecs
+...
 ---
 flags: --upgrade --no-build-isolation --pre --no-binary cftime
 kind: pip
 packages: cftime
+...
 ---
 default_branch: master
 function: main_build
 kind: source_install
 name: pycurl
 proj_name: pycurl
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: flexcache flexparser pint
+...
 ---
 default_branch: develop
 function: main_build
 kind: source_install
 name: wrapt
 proj_name: wrapt
+...
 ---
 flags: --pre --upgrade --no-build-isolation
-packages: deprecated
 kind: pip
+packages: deprecated
+...
 ---
 default_branch: main
 function: opentelemetry_build
 kind: source_install
 name: opentelemetry-api
 proj_name: opentelemetry-python
+...
 ---
 default_branch: master
 function: main_build
 kind: source_install
 name: ophyd
 proj_name: ophyd
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: importlib-resources
+...
 ---
 default_branch: main
 function: main_build
 kind: source_install
 name: event-model
 proj_name: event-model
+...
 ---
 default_branch: master
 function: main_build
 kind: source_install
 name: area-detector-handlers
 proj_name: area-detector-handlers
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: tqdm zict<3 msgpack-numpy heapdict
+...
 ---
 default_branch: main
 function: main_build
 kind: source_install
 name: bluesky
 proj_name: bluesky
+...
 ---
 default_branch: main
 function: main_build
 kind: source_install
 name: python-blosc
 proj_name: python-blosc
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: aiofiles aiosqlite anyio asciitree asgi-correlation-id canonicaljson crc32c donfig fasteners h5netcdf lz4 mongomock mongoquery ndindex parquet sentinels starlette thriftpy2 watchgod websockets
+packages: aiofiles aiosqlite anyio asciitree asgi-correlation-id canonicaljson crc32c donfig fasteners
+  h5netcdf lz4 mongomock mongoquery ndindex parquet sentinels starlette thriftpy2 watchgod websockets
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: frozendict
+...
 ---
 default_branch: main
 function: main_build
 kind: source_install
 name: bluesky-darkframes
 proj_name: bluesky-darkframes
+...
 ---
 default_branch: master
 function: main_build
 kind: source_install
 name: confluent-kafka-python
 proj_name: confluent-kafka-python
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: openpyxl xlrd et-xmlfile
+...
 ---
 default_branch: master
 function: main_build
 kind: source_install
 name: bluesky-spreadsheet
 proj_name: bluesky-spreadsheet
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: aiohttp-jinja2 mily
+...
 ---
 default_branch: main
 function: main_build
 kind: source_install
 name: bluesky-ui
 proj_name: bluesky-ui
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: coloredlogs prettytable simplejson humanfriendly
+...
 ---
 default_branch: master
 function: main_build
 kind: source_install
 name: happi
 proj_name: happi
+...
 ---
 default_branch: master
 function: main_build
 kind: source_install
 name: suitcase-utils
 proj_name: suitcase-utils
+...
 ---
 default_branch: master
 function: main_build
 kind: source_install
 name: suitcase-csv
 proj_name: suitcase-csv
+...
 ---
 default_branch: master
 function: main_build
 kind: source_install
 name: suitcase-dataexchange
 proj_name: suitcase-dataexchange
+...
 ---
 default_branch: master
 function: main_build
 kind: source_install
 name: suitcase-jsonl
 proj_name: suitcase-jsonl
+...
 ---
 default_branch: master
 function: main_build
 kind: source_install
 name: suitcase-json-metadata
 proj_name: suitcase-json-metadata
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: hatch-requirements-txt
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: pymongo dnspython
+...
 ---
 default_branch: master
 function: main_build
 kind: source_install
 name: suitcase-mongo
 proj_name: suitcase-mongo
+...
 ---
 default_branch: master
 function: main_build
 kind: source_install
 name: suitcase-msgpack
 proj_name: suitcase-msgpack
+...
 ---
 default_branch: master
 function: main_build
 kind: source_install
 name: suitcase-nxstxm
 proj_name: suitcase-nxstxm
+...
 ---
 flags: --pre --upgrade --no-build-isolation
-packages: sphinxcontrib-jquery
 kind: pip
+packages: sphinxcontrib-jquery
+...
 ---
 default_branch: master
 function: main_build
 kind: source_install
 name: sphinx_rtd_theme
 proj_name: sphinx_rtd_theme
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: codecov
+...
 ---
 default_branch: master
 function: main_build
 kind: source_install
 name: suitcase-server
 proj_name: suitcase-server
+...
 ---
 default_branch: master
 function: main_build
 kind: source_install
 name: suitcase-specfile
 proj_name: suitcase-specfile
+...
 ---
 default_branch: main
 function: main_build
 kind: source_install
 name: suitcase-tiff
 proj_name: suitcase-tiff
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: bluesky-kafka json-rpc jupyter-console python-multipart annotated-types hiredis redis async-timeout
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: apischema pyresttable
+...
 ---
 default_branch: main
 function: main_build
 kind: source_install
 name: hklpy
 proj_name: hklpy
+...
 ---
 default_branch: main
 function: main_build
 kind: source_install
 name: nsls2-detector-handlers
 proj_name: nsls2-detector-handlers
+...
 ---
 flags: --pre --upgrade --no-build-isolation
-packages: colorama
 kind: pip
+packages: colorama
+...
 ---
 default_branch: master
 function: main_build
 kind: source_install
 name: pyqtgraph
 proj_name: pyqtgraph
+...
 ---
 default_branch: master
 function: main_build
 kind: source_install
 name: curio
 proj_name: curio
+...
 ---
 default_branch: master
 function: main_build
 kind: source_install
 name: caproto
 proj_name: caproto
+...
 ---
 default_branch: master
 function: main_build
 kind: source_install
 name: bcsio
 proj_name: bcsio
+...
 ---
 default_branch: master
 function: main_build
 kind: source_install
 name: mily
 proj_name: mily
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: hatch-fancy-pypi-readme
+...
 ---
 default_branch: main
 function: awkward_build
 kind: source_install
 name: awkward
 proj_name: awkward
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: signalslot contexter
+...
 ---
 default_branch: master
 function: main_build
 kind: source_install
 name: numexpr
 proj_name: numexpr
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: extension_helpers
+...
 ---
 default_branch: main
 function: main_build
 kind: source_install
 name: pyerfa
 proj_name: pyerfa
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: astropy-iers-data
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: slicerator
+...
 ---
 default_branch: main
 function: main_build
 kind: source_install
 name: pims
 proj_name: pims
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: dpkt netifaces sphinxcontrib-jquery ujson
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: binaryornot boltons chardet cookiecutter doct httpie humanize pysocks pytest-instafail python-slugify requests text-unidecode tzlocal vcrpy
+packages: binaryornot boltons chardet cookiecutter doct httpie humanize pysocks pytest-instafail python-slugify
+  requests text-unidecode tzlocal vcrpy
+...
 ---
 flags: --no-build-isolation --pre --upgrade
 kind: pip
 packages: xarray
+...
 ---
 flags: --pre --upgrade --no-build-isolation
-packages: cachetools
 kind: pip
+packages: cachetools
+...
 ---
 default_branch: main
 function: main_build
 kind: source_install
 name: data-prototype
 proj_name: data-prototype
+...
 ---
 flags: --pre --upgrade --no-build-isolation
-packages: mdit-py-plugins
 kind: pip
+packages: mdit-py-plugins
+...
 ---
 default_branch: master
 function: main_build
 kind: source_install
 name: MyST-Parser
 proj_name: MyST-Parser
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: jupyterlab-git jupyterlab-spellchecker mdit-py-plugins nbdime gitpython jupyter-server-mathjax colorama gitdb smmap jupyterlab
+packages: jupyterlab-git jupyterlab-spellchecker mdit-py-plugins nbdime gitpython jupyter-server-mathjax
+  colorama gitdb smmap jupyterlab
+...
 ---
 flags: -y
 kind: pip-remove
 packages: pyepics
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: xcffib pytest-tornasync
+...
 ---
 flags: --pre --upgrade --no-build-isolation --no-cache-dir
 kind: pip
 packages: cairocffi
+...
 ---
 flags: --no-build-isolation --pre --upgrade
 kind: pip
 packages: pycairo
+...
 ---
 default_branch: main
 function: main_build
 kind: source_install
 name: mplcairo
 proj_name: mplcairo
+...
 ---
 default_branch: main
 function: watchfiles_build
 kind: source_install
 name: watchfiles
 proj_name: watchfiles
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: pymdown-extensions blinker feedgenerator markdown ordered-set unidecode pelican[markdown]
+...
 ---
 flags: --no-build-isolation --pre --upgrade
 kind: pip
 packages: mypy
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: joblib threadpoolctl
+...
 ---
 default_branch: main
 function: main_build
 kind: source_install
 name: scikit-learn
 proj_name: scikit-learn
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: mpmath
+...
 ---
 default_branch: master
 function: main_build
 kind: source_install
 name: sympy
 proj_name: sympy
+...
 ---
 default_branch: master
 function: imagecodecs_build
 kind: source_install
 name: imagecodecs
 proj_name: imagecodecs
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: xkcdpass
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: blosc2
+...

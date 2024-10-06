@@ -212,6 +212,16 @@ bleeding edge without yet installing from git and are optional.
 The `--no-build-isolation` is required for almost all packages to avoid errors
 creating the captive virtual environment used when pip attempts isolated builds.
 
+### Format yaml files
+
+You can use [`yq`](https://github.com/mikefarah/yq) to format the yaml.  This
+takes care of wrapping long lines, sorting the keys and adding the start/send
+markup to the yaml.
+
+```bash
+yq -iYS --explicit-start --explicit-end -w 100 .  build_order.d/*.yaml
+```
+
 ## Containers
 
 There are scripts in `oci` to build [`buildah`](https://buildah.io) to build

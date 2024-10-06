@@ -1,49 +1,63 @@
+---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: annotated-types cachetools cachey jmespath pydantic pydantic-core pydantic-settings python-dotenv shellingham typer
+packages: annotated-types cachetools cachey jmespath pydantic pydantic-core pydantic-settings python-dotenv
+  shellingham typer
+...
 ---
 default_branch: master
 function: main_build
 kind: source_install
 name: greenlet
 proj_name: greenlet
+...
 ---
 default_branch: master
 function: main_build
 kind: source_install
 name: orjson
 proj_name: orjson
+...
 ---
 default_branch: master
 function: main_build
 kind: source_install
 name: uvloop
 proj_name: uvloop
+...
 ---
 default_branch: master
 function: main_build
 kind: source_install
 name: httptools
 proj_name: httptools
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: dep-logic findpython hishel installer pbs-installer pdm pdm-backend resolvelib socksio truststore unearth typer
+packages: dep-logic findpython hishel installer pbs-installer pdm pdm-backend resolvelib socksio truststore
+  unearth typer
+...
 ---
 flags: --pre --upgrade --no-build-isolation
+kind: pip
 packages: email-validator uvicorn
-kind: pip
+...
 ---
 flags: --pre --upgrade --no-build-isolation --no-deps
-packages: fastapi-cli
 kind: pip
+packages: fastapi-cli
+...
 ---
 default_branch: master
 function: main_build
 kind: source_install
 name: fastapi
 proj_name: fastapi
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: alembic ecdsa email-validator fastapi-cli ldap3 mako pamela pyasn1 python-jose rsa sqlalchemy uvicorn
+packages: alembic ecdsa email-validator fastapi-cli ldap3 mako pamela pyasn1 python-jose rsa sqlalchemy
+  uvicorn
+...

@@ -1,21 +1,26 @@
+---
 default_branch: main
 function: main_build
 kind: source_install
 name: bluesky-queueserver
 proj_name: bluesky-queueserver
+...
 ---
 default_branch: main
 function: main_build
 kind: source_install
 name: bluesky-queueserver-api
 proj_name: bluesky-queueserver-api
+...
 ---
 default_branch: main
 function: main_build
 kind: source_install
 name: bluesky-httpserver
 proj_name: bluesky-httpserver
+...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: jsonpatch
+...

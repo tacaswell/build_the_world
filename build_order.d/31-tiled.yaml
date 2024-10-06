@@ -1,19 +1,24 @@
+---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: tiled
+...
 ---
 flags: --pre --upgrade --no-build-isolation
-packages: json-merge-patch jsonpatch
 kind: pip
+packages: json-merge-patch jsonpatch
+...
 ---
 default_branch: main
 function: main_build
 kind: source_install
 name: databroker
 proj_name: databroker
+...
 ---
 default_branch: master
 function: main_build
 kind: source_install
 name: databroker-pack
 proj_name: databroker-pack
+...
