@@ -67,15 +67,20 @@ for step in build_order:
 extra_remotes = []
 
 for k, v in out.items():
-    if v['cur_branch'] != v['upstream_branch']:
+    off_dflt_branch = v['cur_branch'] != v['upstream_branch']
+    dirty_src = 'dirty' in v['shas']['describe']
+    if off_dflt_branch or dirty_src:
         print(f"{k} ({v['checkout']})")
-        print(f"   default: {v['upstream_branch']}")
-        print(f"   on: {v['cur_branch']} [{v['shas']['describe']}]({v['tracking_branch'] if v['has_tracking'] else '-'})")
-        if v['has_tracking']:
-            remote_name, *junk = v['tracking_branch'].partition('/')
-            extra_remotes.append(
-                {'proj_name': k, 'branch': v['cur_branch'], 'remote': local_checkouts[k]['remotes'][remote_name], 'remote_name': remote_name}
-            )
+        if off_dflt_branch:
+            print(f"   default: {v['upstream_branch']}")
+            print(f"   on: {v['cur_branch']} [{v['shas']['describe']}]({v['tracking_branch'] if v['has_tracking'] else '-'})")
+            if v['has_tracking']:
+                remote_name, *junk = v['tracking_branch'].partition('/')
+                extra_remotes.append(
+                    {'proj_name': k, 'branch': v['cur_branch'], 'remote': local_checkouts[k]['remotes'][remote_name], 'remote_name': remote_name}
+                )
+        if dirty_src:
+            print("   DIRTY")
 
 with open('extra_remotes.yaml', 'w') as fout:
     yaml.dump_all(sorted(extra_remotes, key=lambda x: x['proj_name']), fout)
