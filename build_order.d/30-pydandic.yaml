@@ -1,7 +1,6 @@
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: annotated-types cachetools cachey jmespath pydantic pydantic-core pydantic-settings
-  python-dotenv shellingham typer
+packages: annotated-types cachetools cachey jmespath pydantic pydantic-core pydantic-settings python-dotenv shellingham typer
 ---
 default_branch: master
 function: main_build

@@ -182,8 +182,7 @@ packages: maturin
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: jsonschema fastjsonschema jupyter-core attrs jsonschema-specifications referencing
-  rpds-py platformdirs
+packages: jsonschema fastjsonschema jupyter-core attrs jsonschema-specifications referencing rpds-py platformdirs
 ---
 default_branch: main
 function: main_build
@@ -193,9 +192,7 @@ proj_name: nbformat
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: bleach jinja2 markupsafe mistune nbclient pandocfilters beautifulsoup4 defusedxml
-  jupyterlab-pygments tinycss2 jupyter-client soupsieve webencodings python-dateutil
-  tornado
+packages: bleach jinja2 markupsafe mistune nbclient pandocfilters beautifulsoup4 defusedxml jupyterlab-pygments tinycss2 jupyter-client soupsieve webencodings python-dateutil tornado
 ---
 flags: --pre --upgrade --no-build-isolation
 packages: tinycss2<1.3
@@ -333,8 +330,7 @@ packages: accessible-pygments mpl-sphinx-theme numpydoc pydata-sphinx-theme sphi
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: pydocstyle flake8-docstrings pytest-cov pytest-rerunfailures pytest-timeout
-  pytest-xdist pytest-xvfb execnet pyvirtualdisplay tomli coverage
+packages: pydocstyle flake8-docstrings pytest-cov pytest-rerunfailures pytest-timeout pytest-xdist pytest-xvfb execnet pyvirtualdisplay tomli coverage
 ---
 default_branch: main
 function: main_build
@@ -372,11 +368,7 @@ proj_name: argon2-cffi-bindings
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: anyio argon2-cffi arrow async-lru debugpy fqdn h11
-  httpcore httpx ipykernel isoduration json5 jsonpointer jupyter-events jupyter-lsp
-  jupyter-server jupyter-server-terminals jupyterlab-server nest-asyncio notebook-shim
-  overrides prometheus-client psutil python-json-logger rfc3339-validator rfc3986-validator
-  send2trash sniffio terminado types-python-dateutil uri-template webcolors websocket-client
+packages: anyio argon2-cffi arrow async-lru debugpy fqdn h11 httpcore httpx ipykernel isoduration json5 jsonpointer jupyter-events jupyter-lsp jupyter-server jupyter-server-terminals jupyterlab-server nest-asyncio notebook-shim overrides prometheus-client psutil python-json-logger rfc3339-validator rfc3986-validator send2trash sniffio terminado types-python-dateutil uri-template webcolors websocket-client
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
@@ -448,10 +440,7 @@ kind: pip
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: asv asv-runner coverage jaraco-classes jaraco-context jaraco-functools
-  jeepney markdown-it-py mdurl more-itertools nh3 outcome pkginfo py-cpuinfo
-  pympler pytest-benchmark qtpy readme-renderer requests-toolbelt rfc3986 rich
-  trio
+packages: asv asv-runner coverage jaraco-classes jaraco-context jaraco-functools jeepney markdown-it-py mdurl more-itertools nh3 outcome pkginfo py-cpuinfo pympler pytest-benchmark qtpy readme-renderer requests-toolbelt rfc3986 rich trio
 ---
 default_branch: master
 function: main_build
@@ -729,8 +718,7 @@ proj_name: suitcase-tiff
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: bluesky-kafka json-rpc jupyter-console python-multipart annotated-types
-  hiredis redis async-timeout
+packages: bluesky-kafka json-rpc jupyter-console python-multipart annotated-types hiredis redis async-timeout
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
@@ -832,8 +820,7 @@ packages: dpkt netifaces sphinxcontrib-jquery ujson
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages:
-  binaryornot boltons chardet cookiecutter doct httpie humanize pysocks pytest-instafail python-slugify requests text-unidecode tzlocal vcrpy
+packages: binaryornot boltons chardet cookiecutter doct httpie humanize pysocks pytest-instafail python-slugify requests text-unidecode tzlocal vcrpy
 ---
 flags: --no-build-isolation --pre --upgrade
 kind: pip
@@ -861,8 +848,7 @@ proj_name: MyST-Parser
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: jupyterlab-git jupyterlab-spellchecker mdit-py-plugins nbdime
-  gitpython jupyter-server-mathjax colorama gitdb smmap jupyterlab
+packages: jupyterlab-git jupyterlab-spellchecker mdit-py-plugins nbdime gitpython jupyter-server-mathjax colorama gitdb smmap jupyterlab
 ---
 flags: -y
 kind: pip-remove
