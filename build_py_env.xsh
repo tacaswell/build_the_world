@@ -340,7 +340,7 @@ def build_aiohttp(**kwargs):
     make generate
     popd
     python tools/gen.py
-    cythonize -3 aiohttp/*.pyx
+    cython -3 aiohttp/*.pyx
     return !(pip install --no-build-isolation     .)
 
 
@@ -452,6 +452,7 @@ for build_step in record.steps:
             pre_done.add(build_step['packages'])
         else:
             pre_done.add(build_step['name'])
+
 print(pre_done)
 for j, step in enumerate(build_order):
     print('*'*45)
