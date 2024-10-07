@@ -4,6 +4,11 @@ kind: pip
 packages: asyncpg dask-expr llvmlite numba sparse
 ...
 ---
+flags: --pre --upgrade --no-build-isolation
+kind: pip
+packages: bluesky-live bluesky-widgets suitcase-utils
+...
+---
 default_branch: main
 function: main_build
 kind: source_install
