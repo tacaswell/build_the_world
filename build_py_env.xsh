@@ -326,7 +326,6 @@ def build_yarl(name, **kwargs):
     auto_main(**kwargs)
     git clean -xfd
     cleanup_cython()
-    cythonize @(name)/*.pyx
     return !(pip install --no-build-isolation     .)
 
 def build_aiohttp(**kwargs):
