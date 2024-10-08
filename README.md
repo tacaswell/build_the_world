@@ -78,7 +78,7 @@ enough information in `all_repos.yaml` and `build_order.yaml` to identify and
 clone any missing repositories.
 
 ```bash
-xonsh ensure_clones.xonsh
+xonsh ensure_clones.xsh
 ```
 
 will attempt clone most of the repositories (`sip` will need to be done by hand

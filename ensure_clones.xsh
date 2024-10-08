@@ -35,7 +35,7 @@ bnl_orgs = {
 }
 
 def source_clone(org, repo, dest='other_source'):
-    target = Path(args.target) / dest / org
+    target = Path(args.target).expanduser() / dest / org
     target.mkdir(parents=True, exist_ok=True)
     cd @(target)
     if not (target / repo).exists():
