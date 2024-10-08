@@ -155,6 +155,14 @@ To build CPython 3.13 with free threading enabled:
 # xonsh make_bleeding.xsh --target py313t --branch 3.13 --freethread
 ```
 
+
+To build CPython 3.13 with the jit enabled
+
+```bash
+# xonsh make_bleeding.xsh --target py313 --branch 3.13 --jit
+```
+
+
 ### Start with existing CPython build
 
 If you only want to install the development versions of the downstream
