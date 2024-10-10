@@ -1,14 +1,26 @@
-branch: 313t
+branch: mnt/avoid_wheel_pkg
 proj_name: argon2-cffi-bindings
 remote:
   host: github.com
   protocol: https
   repo_name: argon2-cffi-bindings
   ssh_user: null
-  url: https://github.com/minrk/argon2-cffi-bindings.git
-  user: minrk
+  url: https://github.com/tacaswell/argon2-cffi-bindings.git
+  user: tacaswell
   vc: git
-remote_name: minrk
+remote_name: tacaswell
+---
+branch: fix/handle_FailedPause
+proj_name: bluesky
+remote:
+  host: github.com
+  protocol: https
+  repo_name: bluesky
+  ssh_user: null
+  url: https://github.com/tacaswell/bluesky.git
+  user: tacaswell
+  vc: git
+remote_name: tacaswell
 ---
 branch: fix_py312
 proj_name: bluesky-httpserver
@@ -22,17 +34,17 @@ remote:
   vc: git
 remote_name: tacaswell
 ---
-branch: py313
-proj_name: greenlet
+branch: mnt/optional_frameworks
+proj_name: caproto
 remote:
   host: github.com
   protocol: https
-  repo_name: greenlet
+  repo_name: caproto
   ssh_user: null
-  url: https://github.com/vstinner/greenlet.git
-  user: vstinner
+  url: https://github.com/tacaswell/caproto.git
+  user: tacaswell
   vc: git
-remote_name: vstinner
+remote_name: tacaswell
 ---
 branch: fix_py312
 proj_name: hklpy
@@ -58,18 +70,6 @@ remote:
   vc: git
 remote_name: edgarrmondragon
 ---
-branch: mnt/bump_importlib-metadata
-proj_name: opentelemetry-python
-remote:
-  host: github.com
-  protocol: https
-  repo_name: opentelemetry-python
-  ssh_user: null
-  url: https://github.com/Ronald-TR/opentelemetry-python.git
-  user: Ronald-TR
-  vc: git
-remote_name: Ronald-TR
----
 branch: hacky_hack
 proj_name: pip
 remote:
@@ -82,7 +82,7 @@ remote:
   vc: git
 remote_name: tacaswell
 ---
-branch: bld/auto_nogil
+branch: bld/prefer_setuptools_wheel
 proj_name: pyerfa
 remote:
   host: github.com
@@ -105,6 +105,18 @@ remote:
   user: flared
   vc: git
 remote_name: flared
+---
+branch: patch-1
+proj_name: pyyaml
+remote:
+  host: github.com
+  protocol: https
+  repo_name: pyyaml
+  ssh_user: null
+  url: https://github.com/henryiii/pyyaml.git
+  user: henryiii
+  vc: git
+remote_name: henryiii
 ---
 branch: mnt/uncap_sphinx
 proj_name: sphinx-design

@@ -552,6 +552,11 @@ kind: pip
 packages: expandvars
 ...
 ---
+flags: --pre --upgrade --no-build-isolation
+kind: pip
+packages: propcache
+...
+---
 default_branch: master
 function: build_yarl
 kind: source_install
