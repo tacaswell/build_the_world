@@ -229,6 +229,13 @@ name: nbformat
 proj_name: nbformat
 ...
 ---
+default_branch: master
+function: main_build
+kind: source_install
+name: tornado
+proj_name: tornado
+...
+---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: bleach jinja2 markupsafe mistune nbclient pandocfilters beautifulsoup4 defusedxml jupyterlab-pygments

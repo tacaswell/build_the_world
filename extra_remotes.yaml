@@ -130,6 +130,18 @@ remote:
   vc: git
 remote_name: tacaswell
 ---
+branch: bld/prefer_setuptools_over_wheel_for_wheel
+proj_name: tornado
+remote:
+  host: github.com
+  protocol: ssh
+  repo_name: tornado
+  ssh_user: git
+  url: git@github.com:tacaswell/tornado.git
+  user: tacaswell
+  vc: git
+remote_name: tacaswell
+---
 branch: bugfix/1116-pkginfo-warnings
 proj_name: twine
 remote:

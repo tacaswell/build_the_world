@@ -904,6 +904,14 @@ vc: git
 ---
 host: github.com
 protocol: https
+repo_name: tornado
+ssh_user: null
+url: https://github.com/tornadoweb/tornado.git
+user: tornadoweb
+vc: git
+---
+host: github.com
+protocol: https
 repo_name: pyyaml
 ssh_user: null
 url: https://github.com/yaml/pyyaml.git
