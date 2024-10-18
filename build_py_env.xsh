@@ -31,8 +31,9 @@ if sys.platform == 'darwin':
         "-L/opt/homebrew/opt/openblas/lib",
         "-L/opt/homebrew/Cellar/libxcb/1.15/lib/",
         '-L/opt/homebrew/Cellar/libyaml/0.2.5/lib/',
-        '-L/opt/homebrew/Cellar/librdkafka/1.9.0/lib',
+        '-L/opt/homebrew/Cellar/librdkafka/2.6.0/lib',
         '-L/opt/homebrew/Cellar/libxcb/1.15/lib',
+        '-L/opt/homebrew/Cellar/graphviz/12.1.2/lib'
         )
     )
     $LD_LIBRARY_PATH = '/opt/homebrew/Cellar/libxcb/1.15/lib/'
@@ -41,13 +42,13 @@ if sys.platform == 'darwin':
     $CFLAGS = ' '.join(
         (
         '-I/opt/homebrew/Cellar/libyaml/0.2.5/include/',
-        '-I/opt/homebrew/Cellar/graphviz/3.0.0/include',
-        '-I/opt/homebrew/Cellar/librdkafka/1.9.0/include',
+        '-I/opt/homebrew/Cellar/graphviz/12.1.2/include',
+        '-I/opt/homebrew/Cellar/librdkafka/2.6.0/include',
         '-I/opt/homebrew/Cellar/libxcb/1.15/include',
         ${...}.get('CFLAGS', '')
         )
     )
-    $HDF5_DIR = '/opt/homebrew/Cellar/hdf5/1.12.2_2'
+    $HDF5_DIR = '/opt/homebrew/Cellar/hdf5/1.14.4.3'
     # un-comment these to build freetype with CF compilers
     # del $host_alias
     # del $build_alias
@@ -60,7 +61,7 @@ else:
             os_release[k] = v
     if os_release['ID'] == 'fedora':
        MESON_LAPACK = '-Csetup-args=-Dblas=flexiblas -Csetup-args=-Dlapack=flexiblas'
-$CFLAGS='-DCYTHON_FAST_THREAD_STATE=0'
+$CFLAGS=' '.join(['-DCYTHON_FAST_THREAD_STATE=0', $CFLAGS])
 
 
 build_order = []
@@ -243,12 +244,16 @@ def numpy_build(**kwargs):
     git submodule update
 
     CFLAGS = (" -Wall -O2 -pipe -fomit-frame-pointer  "
-              "-fno-strict-aliasing -Wmaybe-uninitialized  "
+              "-fno-strict-aliasing "
+              # "-Wmaybe-uninitialized  "
               "-Wdeprecated-declarations -Wimplicit-function-declaration  "
-              "-march=native -DCYTHON_FAST_THREAD_STATE=0")
+              "-march=native "
+              "-DCYTHON_FAST_THREAD_STATE=0"
+              )
     # CFLAGS = ""
+    print($CFLAGS)
     with ${...}.swap(CFLAGS=CFLAGS):
-        ret = !(python -m build --no-isolation --skip-dependency-check @(MESON_LAPACK.split()) .)
+        ret = !(python -m build --no-isolation @(MESON_LAPACK.split()) .)
         if ret:
             wheel_file, = g`dist/*.whl`
             ret2 = !(pip install @(wheel_file))
