@@ -18,7 +18,9 @@ if "/usr/bin/vendor_perl" not in $PATH:
 $RAISE_SUBPROC_ERROR = False
 $XONSH_TRACE_SUBPROC = True
 $PIP_NO_BUILD_ISOLATION = 1
-# $PYO3_USE_ABI3_FORWARD_COMPATIBILITY = 1
+# YOLO don't check if it is a supported version of Python
+$UNSAFE_PYO3_SKIP_VERSION_CHECK = 1
+
 
 $CXXFLAGS = ' '.join(('-fpermissive', ${...}.get('CXXFLAGS', '')))
 
