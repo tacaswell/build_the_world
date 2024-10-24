@@ -880,7 +880,7 @@ proj_name: suitcase-tiff
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: bluesky-kafka json-rpc jupyter-console python-multipart annotated-types hiredis redis async-timeout
+packages: annotated-types anyio async-timeout bluesky-kafka hiredis json-rpc jupyter-console python-multipart redis
 ...
 ---
 flags: --pre --upgrade --no-build-isolation
