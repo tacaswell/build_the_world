@@ -63,7 +63,7 @@ else:
             os_release[k] = v
     if os_release['ID'] == 'fedora':
        MESON_LAPACK = '-Csetup-args=-Dblas=flexiblas -Csetup-args=-Dlapack=flexiblas'
-$CFLAGS=' '.join(['-DCYTHON_FAST_THREAD_STATE=0', $CFLAGS])
+$CFLAGS=' '.join(['-DCYTHON_FAST_THREAD_STATE=0', ${...}.get('CFLAGS', '')])
 
 
 build_order = []
