@@ -20,7 +20,7 @@ $XONSH_TRACE_SUBPROC = True
 $PIP_NO_BUILD_ISOLATION = 1
 # YOLO don't check if it is a supported version of Python
 $UNSAFE_PYO3_SKIP_VERSION_CHECK = 1
-
+$UNSAFE_PYO3_BUILD_FREE_THREADED = 1
 
 $CXXFLAGS = ' '.join(('-fpermissive', ${...}.get('CXXFLAGS', '')))
 
