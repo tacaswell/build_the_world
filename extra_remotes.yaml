@@ -70,18 +70,6 @@ remote:
   vc: git
 remote_name: tacaswell
 ---
-branch: bld/prefer_setuptools_wheel
-proj_name: pyerfa
-remote:
-  host: github.com
-  protocol: https
-  repo_name: pyerfa
-  ssh_user: null
-  url: https://github.com/tacaswell/pyerfa.git
-  user: tacaswell
-  vc: git
-remote_name: tacaswell
----
 branch: isra/fix-pathlib-with-ns
 proj_name: pytest
 remote:
@@ -118,7 +106,7 @@ remote:
   vc: git
 remote_name: tacaswell
 ---
-branch: bld/prefer_setuptools_over_wheel_for_wheel
+branch: mnt/freethread_build
 proj_name: tornado
 remote:
   host: github.com
