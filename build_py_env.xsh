@@ -347,6 +347,9 @@ def build_aiohttp(**kwargs):
     popd
     python tools/gen.py
     cython -3 aiohttp/*.pyx
+    cython -3 aiohttp/_websocket/*.pyx
+    # because why not
+    cython -3 aiohttp/_websocket/reader_c.py
     return !(pip install --no-build-isolation     .)
 
 
