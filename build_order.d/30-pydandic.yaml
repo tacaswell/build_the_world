@@ -15,13 +15,6 @@ proj_name: greenlet
 default_branch: master
 function: main_build
 kind: source_install
-name: orjson
-proj_name: orjson
-...
----
-default_branch: master
-function: main_build
-kind: source_install
 name: uvloop
 proj_name: uvloop
 ...

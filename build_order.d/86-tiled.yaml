@@ -1,12 +1,19 @@
 ---
-flags: --pre --upgrade --no-build-isolation
-kind: pip
-packages: tiled
+default_branch: master
+function: main_build
+kind: source_install
+name: orjson
+proj_name: orjson
 ...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: json-merge-patch jsonpatch
+...
+---
+flags: --pre --upgrade --no-build-isolation
+kind: pip
+packages: tiled
 ...
 ---
 default_branch: main
