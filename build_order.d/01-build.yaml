@@ -646,7 +646,21 @@ proj_name: pycurl
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: flexcache flexparser pint
+packages: flexcache
+...
+---
+default_branch: main
+function: main_build
+kind: source_install
+name: flexparser
+proj_name: flexparser
+...
+---
+default_branch: main
+function: main_build
+kind: source_install
+name: pint
+proj_name: pint
 ...
 ---
 default_branch: develop
