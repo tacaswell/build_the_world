@@ -46,18 +46,6 @@ remote:
   vc: git
 remote_name: tacaswell
 ---
-branch: py314
-proj_name: msgspec
-remote:
-  host: github.com
-  protocol: https
-  repo_name: msgspec
-  ssh_user: null
-  url: https://github.com/tacaswell/msgspec.git
-  user: tacaswell
-  vc: git
-remote_name: tacaswell
----
 branch: hacky_hack
 proj_name: pip
 remote:
