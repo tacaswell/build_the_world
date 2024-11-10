@@ -840,6 +840,14 @@ vc: git
 ---
 host: github.com
 protocol: https
+repo_name: scikit-beam
+ssh_user: null
+url: https://github.com/scikit-beam/scikit-beam.git
+user: scikit-beam
+vc: git
+---
+host: github.com
+protocol: https
 repo_name: awkward
 ssh_user: null
 url: https://github.com/scikit-hep/awkward.git
@@ -876,6 +884,14 @@ repo_name: pythran
 ssh_user: null
 url: https://github.com/serge-sans-paille/pythran.git
 user: serge-sans-paille
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: silx
+ssh_user: null
+url: https://github.com/silx-kit/silx.git
+user: silx-kit
 vc: git
 ---
 host: github.com
