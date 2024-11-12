@@ -209,6 +209,11 @@ proj_name: ipython
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: pickleshare
+...
+---
+flags: --pre --upgrade --no-build-isolation
+kind: pip
 packages: hatchling hatch-nodejs-version editables pluggy trove-classifiers pathspec
 ...
 ---
