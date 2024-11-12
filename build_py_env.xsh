@@ -410,6 +410,25 @@ def build_scipp(**kwargs):
 
     return !(cmake --build . --target install)
 
+def get_python_fingerprint():
+    script = """
+import json
+import platform
+import sysconfig
+import sys
+
+json.dump(
+    {
+        "build": platform.python_build(),
+        "vars": sysconfig.get_config_vars(),
+        "paths": sysconfig.get_paths(),
+    },
+    sys.stdout,
+    indent=2,
+)
+
+"""
+    return json.loads($(python -c @(script)))
 
 class JsonBuildRecord:
     @classmethod
@@ -423,6 +442,7 @@ class JsonBuildRecord:
         record = {'start_time': now.isoformat(),
                   'build_steps': [],
                   'uid': uid,
+                  **get_python_fingerprint()
                   }
         with open(p / fname, 'w') as fin:
             json.dump(record, fin)
