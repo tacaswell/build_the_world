@@ -457,7 +457,7 @@ class JsonBuildRecord:
     def add_build_record(self, build_data):
         self._data['build_steps'].append(build_data)
         with open(self._fname, 'w') as fin:
-            json.dump(self._data, fin)
+            json.dump(self._data, fin, indent=2)
 
     @property
     def steps(self):
