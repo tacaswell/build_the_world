@@ -34,16 +34,17 @@ bnl_orgs = {
     "astropy",
 }
 
-def source_clone(org, repo, dest='other_source'):
-    target = Path(args.target).expanduser() / dest / org
+def source_clone(target, org, repo, dest='other_source'):
+    target = target / dest / org
     target.mkdir(parents=True, exist_ok=True)
     cd @(target)
     if not (target / repo).exists():
         git clone --recursive @('https://github.com/' + '/'.join((org, repo)))
     else:
         cd @(target / repo)
-        git remote update
+        # git remote update
 
+target = Path(args.target).expanduser()
 
 
 with open('used_repos.yaml') as fin:
@@ -53,8 +54,8 @@ print(set(b["user"] for b in required_repos))
 
 for remote in required_repos:
     if not args.caswell:
-        source_clone(remote['user'], remote['repo_name'], dest='')
+        source_clone(target, remote['user'], remote['repo_name'], dest='')
     elif remote["user"].lower() in bnl_orgs:
-        source_clone(remote['user'], remote['repo_name'], dest='bnl')
+        source_clone(target, remote['user'], remote['repo_name'], dest='bnl')
     else:
-        source_clone(remote['user'] ,remote['repo_name'], dest='p')
+        source_clone(target, remote['user'] ,remote['repo_name'], dest='p')
