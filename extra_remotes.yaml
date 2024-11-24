@@ -1,14 +1,26 @@
-branch: mnt/avoid_wheel_pkg
+branch: nogil
 proj_name: argon2-cffi-bindings
 remote:
   host: github.com
   protocol: https
   repo_name: argon2-cffi-bindings
   ssh_user: null
-  url: https://github.com/tacaswell/argon2-cffi-bindings.git
-  user: tacaswell
+  url: https://github.com/hynek/argon2-cffi-bindings.git
+  user: hynek
   vc: git
-remote_name: tacaswell
+remote_name: origin
+---
+branch: qt_generalization
+proj_name: bluesky
+remote:
+  host: github.com
+  protocol: https
+  repo_name: bluesky
+  ssh_user: null
+  url: https://github.com/sharingT/bluesky.git
+  user: sharingT
+  vc: git
+remote_name: sharingT
 ---
 branch: fix_py312
 proj_name: bluesky-httpserver
@@ -22,7 +34,7 @@ remote:
   vc: git
 remote_name: tacaswell
 ---
-branch: mnt/optional_frameworks
+branch: enh/no_search_mirror
 proj_name: caproto
 remote:
   host: github.com
@@ -30,6 +42,18 @@ remote:
   repo_name: caproto
   ssh_user: null
   url: https://github.com/tacaswell/caproto.git
+  user: tacaswell
+  vc: git
+remote_name: tacaswell
+---
+branch: revert_sorting
+proj_name: cython
+remote:
+  host: github.com
+  protocol: https
+  repo_name: cython
+  ssh_user: null
+  url: https://github.com/tacaswell/cython.git
   user: tacaswell
   vc: git
 remote_name: tacaswell
@@ -94,18 +118,6 @@ remote:
   vc: git
 remote_name: tacaswell
 ---
-branch: mnt/cython_long_removal
-proj_name: silx
-remote:
-  host: github.com
-  protocol: https
-  repo_name: silx
-  ssh_user: null
-  url: https://github.com/tacaswell/silx.git
-  user: tacaswell
-  vc: git
-remote_name: tacaswell
----
 branch: mnt/uncap_sphinx
 proj_name: sphinx-design
 remote:
@@ -141,15 +153,3 @@ remote:
   user: pypa
   vc: git
 remote_name: upstream
----
-branch: PyO3
-proj_name: watchfiles
-remote:
-  host: github.com
-  protocol: https
-  repo_name: watchfiles
-  ssh_user: null
-  url: https://github.com/FlickerSoul/watchfiles.git
-  user: FlickerSoul
-  vc: git
-remote_name: FlickerSoul
