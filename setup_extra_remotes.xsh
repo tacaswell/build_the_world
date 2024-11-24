@@ -1,4 +1,5 @@
 from pathlib import Path
+import re
 
 import yaml
 from collections import defaultdict
@@ -9,6 +10,14 @@ from xonsh.dirstack import with_pushd
 $RAISE_SUBPROC_ERROR = False
 $XONSH_TRACE_SUBPROC = False
 $PIP_NO_BUILD_ISOLATION = 1
+
+def fix_remotes():
+    for j, r in enumerate($(git remote).strip().split('\n')):
+        remote_url = $(git remote get-url @(r)).strip()
+        if ret := re.search(r'git@github.com:(?P<org>.+)/(?P<repo>.*)', remote_url):
+            git remote set-url @(r) f'https://github.com/{ret["org"]}/{ret["repo"]}'
+            git remote set-url @(r) --push  f'git@github.com:{ret["org"]}/{ret["repo"]}'
+
 
 def get_git_remotes(repo):
     """Given a path to a repository, get remotes
@@ -51,6 +60,7 @@ for step in build_order:
     if project := extra_remotes.get(step['proj_name'], None):
         remotes = get_git_remotes(wd)
         with with_pushd(wd):
+            fix_remotes()
             if project['remote_name'] not in remotes:
                 git remote add @(project['remote_name']) @(project['remote']['url'])
             elif remotes[project['remote_name']]['push'] != project['remote']['url']:
@@ -62,4 +72,5 @@ for step in build_order:
                 git switch -c @(project['branch']) -t @(project['remote_name'])/@(project['branch'])
     else:
         with with_pushd(wd):
+            fix_remotes()
             git switch @(step['default_branch'])
