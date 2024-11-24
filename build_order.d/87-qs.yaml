@@ -19,8 +19,3 @@ kind: source_install
 name: bluesky-httpserver
 proj_name: bluesky-httpserver
 ...
----
-flags: --pre --upgrade --no-build-isolation
-kind: pip
-packages: jsonpatch
-...

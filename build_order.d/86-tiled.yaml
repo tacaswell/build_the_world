@@ -8,11 +8,6 @@ proj_name: orjson
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: json-merge-patch jsonpatch
-...
----
-flags: --pre --upgrade --no-build-isolation
-kind: pip
 packages: tiled
 ...
 ---

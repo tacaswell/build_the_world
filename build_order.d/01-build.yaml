@@ -391,6 +391,11 @@ packages: alabaster babel imagesize snowballstemmer sphinx sphinxcontrib-applehe
   sphinxcontrib-htmlhelp sphinxcontrib-jsmath sphinxcontrib-qthelp sphinxcontrib-serializinghtml sphinxcontrib-video
 ...
 ---
+flags: --pre --upgrade --no-build-isolation
+kind: pip
+packages: roman-numerals-py
+...
+---
 default_branch: master
 function: main_build
 kind: source_install

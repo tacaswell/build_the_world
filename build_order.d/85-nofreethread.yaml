@@ -11,6 +11,13 @@ kind: pip
 packages: zarr
 ...
 ---
+default_branch: main
+function: main_build
+kind: source_install
+name: msgspec
+proj_name: msgspec
+...
+---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: cryptography secretstorage keyring
