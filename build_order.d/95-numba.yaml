@@ -4,9 +4,23 @@ kind: pip
 packages: asyncpg dask-expr llvmlite numba sparse
 ...
 ---
+default_branch: main
+function: main_build
+kind: source_install
+name: bluesky-live
+proj_name: bluesky-live
+...
+---
+default_branch: master
+function: main_build
+kind: source_install
+name: bluesky-widgets
+proj_name: bluesky-widgets
+...
+---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: bluesky-live bluesky-widgets suitcase-utils
+packages: suitcase-utils
 ...
 ---
 default_branch: main
