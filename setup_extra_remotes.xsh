@@ -18,6 +18,9 @@ def fix_remotes():
             git remote set-url @(r) f'https://github.com/{ret["org"]}/{ret["repo"]}'
             git remote set-url @(r) --push  f'git@github.com:{ret["org"]}/{ret["repo"]}'
 
+        remote_url = $(git remote get-url @(r)).strip()
+        if remote_url.startswith('https') and not remote_url.endswith('.git'):
+            git remote set-url @(r) f'{remote_url}.git'
 
 def get_git_remotes(repo):
     """Given a path to a repository, get remotes
@@ -70,7 +73,9 @@ for step in build_order:
                 git reset --hard @(project['remote_name'])/@(project['branch'])
             else:
                 git switch -c @(project['branch']) -t @(project['remote_name'])/@(project['branch'])
+            git pull
     else:
         with with_pushd(wd):
             fix_remotes()
             git switch @(step['default_branch'])
+            git pull

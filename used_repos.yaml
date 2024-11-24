@@ -2,7 +2,7 @@ host: github.com
 protocol: https
 repo_name: python-blosc
 ssh_user: null
-url: https://github.com/Blosc/python-blosc
+url: https://github.com/Blosc/python-blosc.git
 user: Blosc
 vc: git
 ---
@@ -58,7 +58,7 @@ host: github.com
 protocol: https
 repo_name: historydict
 ssh_user: null
-url: https://github.com/Nikea/historydict
+url: https://github.com/Nikea/historydict.git
 user: Nikea
 vc: git
 ---
@@ -66,7 +66,7 @@ host: github.com
 protocol: https
 repo_name: flake8
 ssh_user: null
-url: https://github.com/PyCQA/flake8
+url: https://github.com/PyCQA/flake8.git
 user: PyCQA
 vc: git
 ---
@@ -82,7 +82,7 @@ host: github.com
 protocol: https
 repo_name: sip
 ssh_user: null
-url: https://github.com/Python-SIP/sip
+url: https://github.com/Python-SIP/sip.git
 user: Python-SIP
 vc: git
 ---
@@ -176,6 +176,14 @@ vc: git
 ---
 host: github.com
 protocol: https
+repo_name: bluesky-live
+ssh_user: null
+url: https://github.com/bluesky/bluesky-live.git
+user: bluesky
+vc: git
+---
+host: github.com
+protocol: https
 repo_name: bluesky-queueserver
 ssh_user: null
 url: https://github.com/bluesky/bluesky-queueserver.git
@@ -203,6 +211,14 @@ protocol: https
 repo_name: bluesky-ui
 ssh_user: null
 url: https://github.com/bluesky/bluesky-ui.git
+user: bluesky
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: bluesky-widgets
+ssh_user: null
+url: https://github.com/bluesky/bluesky-widgets.git
 user: bluesky
 vc: git
 ---
@@ -514,7 +530,7 @@ host: github.com
 protocol: https
 repo_name: ipython
 ssh_user: null
-url: https://github.com/ipython/ipython
+url: https://github.com/ipython/ipython.git
 user: ipython
 vc: git
 ---
@@ -567,10 +583,10 @@ user: matplotlib
 vc: git
 ---
 host: github.com
-protocol: ssh
+protocol: https
 repo_name: data-prototype
-ssh_user: git
-url: git@github.com:matplotlib/data-prototype.git
+ssh_user: null
+url: https://github.com/matplotlib/data-prototype.git
 user: matplotlib
 vc: git
 ---
@@ -618,7 +634,7 @@ host: github.com
 protocol: https
 repo_name: meson-python
 ssh_user: null
-url: https://github.com/mesonbuild/meson-python
+url: https://github.com/mesonbuild/meson-python.git
 user: mesonbuild
 vc: git
 ---
@@ -778,7 +794,7 @@ host: github.com
 protocol: https
 repo_name: cffi
 ssh_user: null
-url: https://github.com/python-cffi/cffi.git
+url: https://github.com/python-cffi/cffi
 user: python-cffi
 vc: git
 ---
@@ -866,7 +882,7 @@ host: github.com
 protocol: https
 repo_name: scikit-learn
 ssh_user: null
-url: https://github.com/scikit-learn/scikit-learn
+url: https://github.com/scikit-learn/scikit-learn.git
 user: scikit-learn
 vc: git
 ---
@@ -914,7 +930,7 @@ host: github.com
 protocol: https
 repo_name: sympy
 ssh_user: null
-url: https://github.com/sympy/sympy
+url: https://github.com/sympy/sympy.git
 user: sympy
 vc: git
 ---

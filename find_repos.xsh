@@ -333,6 +333,6 @@ if args.update_used:
             lc = local_checkouts[step['proj_name']]
             repos.append(asdict(lc.primary_remote))
     repos.append(asdict(local_checkouts['cpython'].primary_remote))
-
+    repos = filter(lambda x: x['vc'] == 'git', repos)
     with open("used_repos.yaml", "w") as fout:
         yaml.dump_all(sorted(repos, key=lambda x: (x['user'], x['repo_name'])), fout)
