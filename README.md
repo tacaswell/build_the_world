@@ -51,12 +51,10 @@ on.  At a minimum running these scripts will require:
 9. make + autotools
 10. libhdf5 + headers
 11. all of the image libraries + headers supported by imagecodecs
-12. [gidgethub](https://gidgethub.readthedocs.io/en/latest/) (optional,
-    can be in a venv, needed to refresh default branch names)
-13. meson
-14. openblas
-15. patchelf
-16. a development version of librdkafka
+12. meson
+13. openblas
+14. patchelf
+15. a development version of librdkafka
 
 This has been run (mostly successfully) on:
 
@@ -64,7 +62,8 @@ This has been run (mostly successfully) on:
   of AUR packages installed (mostly for imagecodecs).
 - an OSX 12.4 M1 machine with a fair number of brew packages installed.  I have
   not gotten imagecodecs or cairocffi to build yet.
-- an up-to-date Fedora 37 machine with a few non-standard repositories (mostly kafka)
+- an up-to-date Fedora 41 machine with a few non-standard repositories (kafka
+  not building) with a lot of -devel packages for imagecodecs
 - under Windows Subsystem for Linux (skipping all the kafka related packages and imagecodecs)
 
 
@@ -81,10 +80,7 @@ clone any missing repositories.
 xonsh ensure_clones.xsh
 ```
 
-will attempt clone most of the repositories (`sip` will need to be done by hand
-because it is mecurial and hosted directly by riverbank) in an organization
-that makes sense to my (and is related to which email address I use when
-commiting to them).  Your mileage may vary.
+will attempt clone most of the repositories.
 
 The second step is locate all of the checkouts.
 
