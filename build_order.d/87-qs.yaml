@@ -1,4 +1,16 @@
 ---
+default_branch: master
+function: main_build
+kind: source_install
+name: confluent-kafka-python
+proj_name: confluent-kafka-python
+...
+---
+flags: --pre --upgrade --no-build-isolation
+kind: pip
+packages: bluesky-kafka
+...
+---
 default_branch: main
 function: main_build
 kind: source_install

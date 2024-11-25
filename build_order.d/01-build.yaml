@@ -755,13 +755,6 @@ name: bluesky-darkframes
 proj_name: bluesky-darkframes
 ...
 ---
-default_branch: master
-function: main_build
-kind: source_install
-name: confluent-kafka-python
-proj_name: confluent-kafka-python
-...
----
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: openpyxl xlrd et-xmlfile
@@ -904,7 +897,7 @@ proj_name: suitcase-tiff
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: annotated-types anyio async-timeout bluesky-kafka hiredis json-rpc jupyter-console python-multipart redis
+packages: annotated-types anyio async-timeout hiredis json-rpc jupyter-console python-multipart redis
 ...
 ---
 flags: --pre --upgrade --no-build-isolation
