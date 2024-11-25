@@ -46,18 +46,6 @@ remote:
   vc: git
 remote_name: tacaswell
 ---
-branch: revert_sorting
-proj_name: cython
-remote:
-  host: github.com
-  protocol: https
-  repo_name: cython
-  ssh_user: null
-  url: https://github.com/tacaswell/cython.git
-  user: tacaswell
-  vc: git
-remote_name: tacaswell
----
 branch: fix_py312
 proj_name: hklpy
 remote:
