@@ -989,7 +989,7 @@ packages: extension_helpers
 ...
 ---
 default_branch: main
-function: main_build
+function: pyerfa_build
 kind: source_install
 name: pyerfa
 proj_name: pyerfa

@@ -175,6 +175,13 @@ def main_build(**kwargs):
     git_cleanup()
     return !(pip install --no-build-isolation .)
 
+def pyerfa_build(**kwargs):
+    auto_main(**kwargs)
+    git_cleanup()
+    with with_pushd('liberfa/erfa'):
+        git_cleanup()
+    return !(pip install --no-build-isolation .)
+
 
 def msgpack_build(**kwargs):
     auto_main(**kwargs)
