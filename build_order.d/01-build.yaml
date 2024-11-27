@@ -1156,3 +1156,13 @@ kind: source_install
 name: pyopengl-accelerate
 proj_name: pyopengl
 ...
+---
+flags: --pre --upgrade --no-build-isolation
+kind: pip
+packages: pytools nanobind
+...
+---
+flags: --pre --upgrade --no-build-isolation
+kind: pip
+packages:  pyopencl
+...
