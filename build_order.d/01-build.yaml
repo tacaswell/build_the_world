@@ -1142,3 +1142,17 @@ flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: blosc2
 ...
+---
+default_branch: master
+function: main_build
+kind: source_install
+name: pyopengl
+proj_name: pyopengl
+...
+---
+default_branch: master
+function: pyopengl_accel_build
+kind: source_install
+name: pyopengl-accelerate
+proj_name: pyopengl
+...

@@ -70,6 +70,18 @@ remote:
   vc: git
 remote_name: tacaswell
 ---
+branch: cython-modernization
+proj_name: pyopengl
+remote:
+  host: github.com
+  protocol: https
+  repo_name: pyopengl
+  ssh_user: null
+  url: https://github.com/tacaswell/pyopengl.git
+  user: tacaswell
+  vc: git
+remote_name: tacaswell
+---
 branch: isra/fix-pathlib-with-ns
 proj_name: pytest
 remote:

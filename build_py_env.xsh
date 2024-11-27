@@ -183,6 +183,14 @@ def pyerfa_build(**kwargs):
     return !(pip install --no-build-isolation .)
 
 
+def pyopengl_accel_build(**kwargs):
+    auto_main(**kwargs)
+    git_cleanup()
+    with with_pushd('accelerate/'):
+        b = !(pip install --no-build-isolation .)
+    return b
+
+
 def msgpack_build(**kwargs):
     auto_main(**kwargs)
     git_cleanup()

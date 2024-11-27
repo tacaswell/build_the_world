@@ -624,6 +624,14 @@ vc: git
 ---
 host: github.com
 protocol: https
+repo_name: pyopengl
+ssh_user: null
+url: https://github.com/mcfletch/pyopengl.git
+user: mcfletch
+vc: git
+---
+host: github.com
+protocol: https
 repo_name: meson
 ssh_user: null
 url: https://github.com/mesonbuild/meson.git
