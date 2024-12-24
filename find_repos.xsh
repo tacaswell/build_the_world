@@ -19,7 +19,7 @@ path = args.path
 
 
 def find_git_repos(path):
-    for candidate in !(find @(path) -type d -name '.git'):
+    for candidate in $(find @(path) -type d -name '.git').split():
         candidate = candidate.strip()
         if '.tox' in str(candidate):
             continue
