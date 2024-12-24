@@ -2,7 +2,7 @@ host: github.com
 protocol: https
 repo_name: python-blosc
 ssh_user: null
-url: https://github.com/Blosc/python-blosc.git
+url: https://github.com/Blosc/python-blosc
 user: Blosc
 vc: git
 ---
@@ -34,7 +34,7 @@ host: github.com
 protocol: https
 repo_name: bcsio
 ssh_user: null
-url: https://github.com/NSLS-II/bcsio.git
+url: https://github.com/NSLS-II/bcsio
 user: NSLS-II
 vc: git
 ---
@@ -42,7 +42,7 @@ host: github.com
 protocol: https
 repo_name: mily
 ssh_user: null
-url: https://github.com/NSLS-II/mily.git
+url: https://github.com/NSLS-II/mily
 user: NSLS-II
 vc: git
 ---
@@ -50,7 +50,7 @@ host: github.com
 protocol: https
 repo_name: nsls2-detector-handlers
 ssh_user: null
-url: https://github.com/NSLS-II/nsls2-detector-handlers.git
+url: https://github.com/NSLS-II/nsls2-detector-handlers
 user: NSLS-II
 vc: git
 ---
@@ -58,7 +58,7 @@ host: github.com
 protocol: https
 repo_name: historydict
 ssh_user: null
-url: https://github.com/Nikea/historydict.git
+url: https://github.com/Nikea/historydict
 user: Nikea
 vc: git
 ---
@@ -66,7 +66,7 @@ host: github.com
 protocol: https
 repo_name: flake8
 ssh_user: null
-url: https://github.com/PyCQA/flake8.git
+url: https://github.com/PyCQA/flake8
 user: PyCQA
 vc: git
 ---
@@ -82,7 +82,7 @@ host: github.com
 protocol: https
 repo_name: sip
 ssh_user: null
-url: https://github.com/Python-SIP/sip.git
+url: https://github.com/Python-SIP/sip
 user: Python-SIP
 vc: git
 ---
@@ -530,7 +530,7 @@ host: github.com
 protocol: https
 repo_name: ipython
 ssh_user: null
-url: https://github.com/ipython/ipython.git
+url: https://github.com/ipython/ipython
 user: ipython
 vc: git
 ---
@@ -556,6 +556,14 @@ repo_name: nbformat
 ssh_user: null
 url: https://github.com/jupyter/nbformat.git
 user: jupyter
+vc: git
+---
+host: github.com
+protocol: ssh
+repo_name: multianalyzer
+ssh_user: git
+url: git@github.com:kif/multianalyzer.git
+user: kif
 vc: git
 ---
 host: github.com
@@ -626,7 +634,15 @@ host: github.com
 protocol: https
 repo_name: pyopengl
 ssh_user: null
-url: https://github.com/mcfletch/pyopengl.git
+url: https://github.com/mcfletch/pyopengl
+user: mcfletch
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: pyopengl
+ssh_user: null
+url: https://github.com/mcfletch/pyopengl
 user: mcfletch
 vc: git
 ---
@@ -642,7 +658,7 @@ host: github.com
 protocol: https
 repo_name: meson-python
 ssh_user: null
-url: https://github.com/mesonbuild/meson-python.git
+url: https://github.com/mesonbuild/meson-python
 user: mesonbuild
 vc: git
 ---
@@ -802,7 +818,7 @@ host: github.com
 protocol: https
 repo_name: cffi
 ssh_user: null
-url: https://github.com/python-cffi/cffi
+url: https://github.com/python-cffi/cffi.git
 user: python-cffi
 vc: git
 ---
@@ -890,7 +906,7 @@ host: github.com
 protocol: https
 repo_name: scikit-learn
 ssh_user: null
-url: https://github.com/scikit-learn/scikit-learn.git
+url: https://github.com/scikit-learn/scikit-learn
 user: scikit-learn
 vc: git
 ---
@@ -938,7 +954,7 @@ host: github.com
 protocol: https
 repo_name: sympy
 ssh_user: null
-url: https://github.com/sympy/sympy.git
+url: https://github.com/sympy/sympy
 user: sympy
 vc: git
 ---
