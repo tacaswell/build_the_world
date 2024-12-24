@@ -65,10 +65,11 @@ ln $HOME/.pybuild/@(args.target)/bin/python3 $HOME/.pybuild/@(args.target)/bin/p
 source-bash  f'~/.virtualenvs/{args.target}/bin/activate'
 
 pip install --upgrade pip
-pip cache remove '*cp312-linux*' || true
-pip cache remove '*cp313-linux*' || true
-pip cache remove '*cp314-linux*' || true
-pip cache remove '*cp315-linux*' || true
+
+pip cache remove '*cp313?-linux*' || true
+pip cache remove '*cp314?-linux*' || true
+pip cache remove '*cp315?-linux*' || true
+pip cache remove '*cp316?-linux*' || true
 
 
 @(xonsh_abs_path) build_py_env.xsh
