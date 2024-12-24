@@ -51,6 +51,5 @@ proj_name: fastapi
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: alembic ecdsa email-validator fastapi-cli ldap3 mako pamela pyasn1 python-jose rsa sqlalchemy
-  uvicorn
+packages: alembic ecdsa ldap3 mako pamela pyasn1 python-jose rich-toolkit rsa sqlalchemy
 ...
