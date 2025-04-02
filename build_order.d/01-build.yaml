@@ -200,6 +200,11 @@ name: executing
 proj_name: executing
 ...
 ---
+flags: --pre --upgrade --no-build-isolation
+kind: pip
+packages: ipython-pygments-lexers
+...
+---
 default_branch: main
 function: main_build
 kind: source_install
@@ -387,8 +392,7 @@ proj_name: pytest
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: alabaster babel imagesize snowballstemmer sphinx sphinxcontrib-applehelp sphinxcontrib-devhelp
-  sphinxcontrib-htmlhelp sphinxcontrib-jsmath sphinxcontrib-qthelp sphinxcontrib-serializinghtml sphinxcontrib-video
+packages: alabaster babel imagesize roman-numerals-py snowballstemmer sphinx sphinxcontrib-applehelp sphinxcontrib-devhelp sphinxcontrib-htmlhelp sphinxcontrib-jsmath sphinxcontrib-qthelp sphinxcontrib-serializinghtml sphinxcontrib-video
 ...
 ---
 flags: --pre --upgrade --no-build-isolation
@@ -460,13 +464,11 @@ kind: source_install
 name: argon2-cffi-bindings
 proj_name: argon2-cffi-bindings
 ...
+
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: anyio argon2-cffi arrow async-lru debugpy fqdn h11 httpcore httpx ipykernel isoduration json5
-  jsonpointer jupyter-events jupyter-lsp jupyter-server jupyter-server-terminals jupyterlab-server nest-asyncio
-  notebook-shim overrides prometheus-client psutil python-json-logger rfc3339-validator rfc3986-validator
-  send2trash sniffio terminado types-python-dateutil uri-template webcolors websocket-client
+packages: anyio anyioutils argon2-cffi arrow async-lru debugpy fqdn h11 httpcore httpx ipykernel isoduration json5 jsonpointer jupyter-events jupyter-lsp jupyter-server jupyter-server-terminals jupyterlab-server nest-asyncio notebook-shim outcome overrides prometheus-client psutil python-json-logger rfc3339-validator rfc3986-validator send2trash sniffio terminado types-python-dateutil uri-template webcolors websocket-client zmq-anyio
 ...
 ---
 flags: --pre --upgrade --no-build-isolation
@@ -635,6 +637,11 @@ name: historydict
 proj_name: historydict
 ...
 ---
+flags: --pre --upgrade --no-build-isolation
+kind: pip
+packages: deprecated wrapt
+...
+---
 default_branch: main
 function: numcodecs_build
 kind: source_install
@@ -685,6 +692,11 @@ kind: pip
 packages: deprecated
 ...
 ---
+flags: --pre --upgrade --no-build-isolation
+kind: pip
+packages: importlib-metadata
+...
+---
 default_branch: main
 function: opentelemetry_build
 kind: source_install
@@ -720,7 +732,7 @@ proj_name: area-detector-handlers
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: tqdm zict<3 msgpack-numpy heapdict
+packages: tqdm msgpack-numpy heapdict
 ...
 ---
 default_branch: main
@@ -897,7 +909,7 @@ proj_name: suitcase-tiff
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: annotated-types anyio async-timeout hiredis json-rpc jupyter-console python-multipart redis
+packages: annotated-types anyio async-timeout hiredis json-rpc jupyter-console pyjwt python-multipart redis
 ...
 ---
 flags: --pre --upgrade --no-build-isolation
@@ -938,7 +950,7 @@ name: curio
 proj_name: curio
 ...
 ---
-default_branch: master
+default_branch: main
 function: main_build
 kind: source_install
 name: caproto
@@ -1094,7 +1106,7 @@ proj_name: watchfiles
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: pymdown-extensions blinker feedgenerator markdown ordered-set unidecode pelican[markdown]
+packages: blinker feedgenerator markdown ordered-set pelican[markdown] pygments pymdown-extensions unidecode
 ...
 ---
 flags: --no-build-isolation --pre --upgrade
@@ -1162,9 +1174,11 @@ kind: pip
 packages: pytools nanobind
 ...
 ---
-flags: --pre --upgrade --no-build-isolation
-kind: pip
-packages:  pyopencl
+default_branch: main
+function: main_build
+kind: source_install
+name: pyopencl
+proj_name: pyopencl
 ...
 ---
 default_branch: main

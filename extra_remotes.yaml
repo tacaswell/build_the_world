@@ -10,7 +10,7 @@ remote:
   vc: git
 remote_name: origin
 ---
-branch: mnt/copier_upgrade_run
+branch: tst/split_RE_fixture
 proj_name: bluesky
 remote:
   host: github.com
@@ -18,30 +18,6 @@ remote:
   repo_name: bluesky
   ssh_user: null
   url: https://github.com/tacaswell/bluesky.git
-  user: tacaswell
-  vc: git
-remote_name: tacaswell
----
-branch: master
-proj_name: bluesky-httpserver
-remote:
-  host: github.com
-  protocol: https
-  repo_name: bluesky-httpserver
-  ssh_user: null
-  url: https://github.com/bluesky/bluesky-httpserver.git
-  user: bluesky
-  vc: git
-remote_name: upstream
----
-branch: fix/native_arrays
-proj_name: caproto
-remote:
-  host: github.com
-  protocol: https
-  repo_name: caproto
-  ssh_user: null
-  url: https://github.com/tacaswell/caproto.git
   user: tacaswell
   vc: git
 remote_name: tacaswell
@@ -58,7 +34,19 @@ remote:
   vc: git
 remote_name: tacaswell
 ---
-branch: mnt/py313
+branch: api/bump_python_support
+proj_name: mpl-gui
+remote:
+  host: github.com
+  protocol: https
+  repo_name: mpl-gui
+  ssh_user: null
+  url: https://github.com/tacaswell/mpl-gui.git
+  user: tacaswell
+  vc: git
+remote_name: tacaswell
+---
+branch: fix/dflt_type_leak
 proj_name: ophyd
 remote:
   host: github.com
@@ -66,6 +54,30 @@ remote:
   repo_name: ophyd
   ssh_user: null
   url: https://github.com/tacaswell/ophyd.git
+  user: tacaswell
+  vc: git
+remote_name: tacaswell
+---
+branch: enh/py314
+proj_name: parso
+remote:
+  host: github.com
+  protocol: https
+  repo_name: parso
+  ssh_user: null
+  url: https://github.com/tacaswell/parso.git
+  user: tacaswell
+  vc: git
+remote_name: tacaswell
+---
+branch: fix/av14
+proj_name: pims
+remote:
+  host: github.com
+  protocol: https
+  repo_name: pims
+  ssh_user: null
+  url: https://github.com/tacaswell/pims.git
   user: tacaswell
   vc: git
 remote_name: tacaswell
