@@ -18,8 +18,9 @@ $PIP_NO_BUILD_ISOLATION = 1
 parser = argparse.ArgumentParser(description='Build the world.')
 parser.add_argument("--target", help="name of env to create", type=str, default='bleeding')
 parser.add_argument("--branch", help="CPython branch to build", type=str, default=None)
-parser.add_argument("--no-pull", help="Try pull before building cpython (if on a branch)", action='store_true')
-parser.add_argument("--clang", help="Try to use clang", action='store_true')
+parser.add_argument("--no-pull", help="Do not try to pull before building cpython (if on a branch)", action='store_true')
+parser.add_argument("--clang", help="Use clang", action='store_true')
+parser.add_argument("--debug", help="Debug build of CPython", action='store_true')
 parser.add_argument("--freethread", help="Try to use freethreading (no GIL)", action='store_true')
 parser.add_argument("--jit", help="Try to use the experimental jit", action='store_true')
 args = parser.parse_args()
@@ -52,6 +53,9 @@ with with_pushd(wd):
     ./configure \
         --prefix=@(prefix) \
         --enable-shared LDFLAGS=@(f"-Wl,-rpath,$HOME/.pybuild/{args.target}/lib") \
+        --enable-optimizations \
+        --with-lto \
+        @('--with-pydebug' if args.debug else '')  \
         @('--disable-gil' if args.freethread else '') \
         @('--enable-experimental-jit' if args.jit else '')
     make -j

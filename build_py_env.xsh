@@ -435,6 +435,7 @@ import sys
 json.dump(
     {
         "build": platform.python_build(),
+        "compiler": platform.python_compiler(),
         "vars": sysconfig.get_config_vars(),
         "paths": sysconfig.get_paths(),
     },
