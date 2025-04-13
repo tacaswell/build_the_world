@@ -10,6 +10,18 @@ remote:
   vc: git
 remote_name: origin
 ---
+branch: protobuf-30
+proj_name: arrow
+remote:
+  host: github.com
+  protocol: https
+  repo_name: arrow
+  ssh_user: null
+  url: https://github.com/christian-heusel/arrow.git
+  user: christian-heusel
+  vc: git
+remote_name: christian-heusel
+---
 branch: tst/split_RE_fixture
 proj_name: bluesky
 remote:
