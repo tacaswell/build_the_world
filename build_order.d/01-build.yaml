@@ -414,12 +414,7 @@ proj_name: sphinx
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: docutils
-...
----
-flags: --pre --upgrade --no-build-isolation
-kind: pip
-packages: accessible-pygments mpl-sphinx-theme numpydoc pydata-sphinx-theme sphinx-copybutton tabulate
+packages: accessible-pygments docutils mpl-sphinx-theme numpydoc pydata-sphinx-theme sphinx-copybutton tabulate
 ...
 ---
 flags: --pre --upgrade --no-build-isolation
