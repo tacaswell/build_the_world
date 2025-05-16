@@ -1,7 +1,7 @@
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: cachey jmespath pydantic pydantic-core pydantic-settings python-dotenv shellingham typer typing-inspection
+packages: cachey click jmespath pydantic pydantic-core pydantic-settings python-dotenv shellingham typer typing-inspection
 ...
 ---
 default_branch: master
@@ -49,5 +49,6 @@ proj_name: fastapi
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: alembic ecdsa ldap3 mako pamela pyasn1 python-jose rich-toolkit rsa sqlalchemy
+packages: alembic ecdsa ldap3 mako pamela pyasn1 pycryptodomex python-jose rich-toolkit rsa sqlalchemy
+...
 ...

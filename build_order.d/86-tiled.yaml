@@ -11,6 +11,11 @@ kind: pip
 packages: tiled
 ...
 ---
+flags: --pre --upgrade --no-build-isolation
+kind: pip
+packages: stamina tenacity
+...
+---
 default_branch: main
 function: main_build
 kind: source_install

@@ -56,6 +56,11 @@ kind: pip
 packages: flake8-force
 ...
 ---
+flags: --pre --upgrade --no-build-isolation
+kind: pip
+packages: pathspec scikit-build-core
+...
+---
 default_branch: master
 function: main_build
 kind: source_install
@@ -170,7 +175,7 @@ packages: setuptools_scm[toml] typing-extensions
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: scikit-build distro pathspec scikit-build-core
+packages: scikit-build distro
 ...
 ---
 default_branch: main
@@ -751,6 +756,11 @@ proj_name: python-blosc
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: toml
+...
+---
+flags: --pre --upgrade --no-build-isolation
+kind: pip
 packages: aiofiles aiosqlite anyio asciitree asgi-correlation-id canonicaljson crc32c donfig fasteners
   h5netcdf lz4 mongomock mongoquery ndindex parquet sentinels starlette thriftpy2 watchgod websockets
 ...
@@ -1171,7 +1181,7 @@ proj_name: pyopengl
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: pytools nanobind
+packages: pytools nanobind siphash24
 ...
 ---
 default_branch: main
