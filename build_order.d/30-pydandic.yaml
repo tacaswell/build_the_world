@@ -51,4 +51,8 @@ flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: alembic ecdsa ldap3 mako pamela pyasn1 pycryptodomex python-jose rich-toolkit rsa sqlalchemy
 ...
+---
+flags: --pre --upgrade --no-build-isolation
+kind: pip
+packages: copier dunamai funcy jinja2-ansible-filters plumbum questionary typing-inspection copier-templates-extensions
 ...
