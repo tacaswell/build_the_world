@@ -25,7 +25,7 @@ name: bluesky-queueserver-api
 proj_name: bluesky-queueserver-api
 ...
 ---
-default_branch: master
+default_branch: main
 function: main_build
 kind: source_install
 name: bluesky-httpserver
