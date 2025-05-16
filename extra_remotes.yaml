@@ -10,30 +10,6 @@ remote:
   vc: git
 remote_name: origin
 ---
-branch: protobuf-30
-proj_name: arrow
-remote:
-  host: github.com
-  protocol: https
-  repo_name: arrow
-  ssh_user: null
-  url: https://github.com/christian-heusel/arrow.git
-  user: christian-heusel
-  vc: git
-remote_name: christian-heusel
----
-branch: tst/split_RE_fixture
-proj_name: bluesky
-remote:
-  host: github.com
-  protocol: https
-  repo_name: bluesky
-  ssh_user: null
-  url: https://github.com/tacaswell/bluesky.git
-  user: tacaswell
-  vc: git
-remote_name: tacaswell
----
 branch: fix_py312
 proj_name: hklpy
 remote:
@@ -42,6 +18,18 @@ remote:
   repo_name: hklpy
   ssh_user: null
   url: https://github.com/tacaswell/hklpy.git
+  user: tacaswell
+  vc: git
+remote_name: tacaswell
+---
+branch: fix/deep_copy_recurse
+proj_name: matplotlib
+remote:
+  host: github.com
+  protocol: https
+  repo_name: matplotlib
+  ssh_user: null
+  url: https://github.com/tacaswell/matplotlib.git
   user: tacaswell
   vc: git
 remote_name: tacaswell
@@ -58,7 +46,19 @@ remote:
   vc: git
 remote_name: tacaswell
 ---
-branch: fix/dflt_type_leak
+branch: fix_new_implementation
+proj_name: mpl-qtthread
+remote:
+  host: github.com
+  protocol: https
+  repo_name: mpl-qtthread
+  ssh_user: null
+  url: https://github.com/tacaswell/mpl-qtthread.git
+  user: tacaswell
+  vc: git
+remote_name: tacaswell
+---
+branch: mnt/new_shape_convention
 proj_name: ophyd
 remote:
   host: github.com
@@ -162,18 +162,6 @@ remote:
   repo_name: sphinx-design
   ssh_user: null
   url: https://github.com/tacaswell/sphinx-design.git
-  user: tacaswell
-  vc: git
-remote_name: tacaswell
----
-branch: mnt/freethread_build
-proj_name: tornado
-remote:
-  host: github.com
-  protocol: https
-  repo_name: tornado
-  ssh_user: null
-  url: https://github.com/tacaswell/tornado.git
   user: tacaswell
   vc: git
 remote_name: tacaswell
