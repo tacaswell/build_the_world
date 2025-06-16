@@ -704,7 +704,7 @@ name: opentelemetry-api
 proj_name: opentelemetry-python
 ...
 ---
-default_branch: master
+default_branch: main
 function: main_build
 kind: source_install
 name: ophyd
