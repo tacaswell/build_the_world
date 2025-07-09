@@ -464,11 +464,15 @@ kind: source_install
 name: argon2-cffi-bindings
 proj_name: argon2-cffi-bindings
 ...
-
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: anyio anyioutils argon2-cffi arrow async-lru debugpy fqdn h11 httpcore httpx ipykernel isoduration json5 jsonpointer jupyter-events jupyter-lsp jupyter-server jupyter-server-terminals jupyterlab-server nest-asyncio notebook-shim outcome overrides prometheus-client psutil python-json-logger rfc3339-validator rfc3986-validator send2trash sniffio terminado types-python-dateutil uri-template webcolors websocket-client zmq-anyio
+packages: anyio anyioutils debugpy ipykernel nest-asyncio outcome psutil pyzmq sniffio zmq-anyio
+...
+---
+flags: --pre --upgrade --no-build-isolation
+kind: pip
+packages: argon2-cffi arrow async-lru fqdn h11 httpcore httpx isoduration json5 jsonpointer jupyter-events jupyter-lsp jupyter-server jupyter-server-terminals jupyterlab-server notebook-shim overrides prometheus-client python-json-logger rfc3339-validator rfc3986-validator send2trash terminado truststore types-python-dateutil uri-template webcolors websocket-client
 ...
 ---
 flags: --pre --upgrade --no-build-isolation
@@ -754,10 +758,17 @@ kind: pip
 packages: toml
 ...
 ---
+default_branch: main
+function: main_build
+kind: source_install
+name: starlette
+proj_name: starlette
+...
+---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: aiofiles aiosqlite anyio asciitree asgi-correlation-id canonicaljson crc32c donfig fasteners
-  h5netcdf lz4 mongomock mongoquery ndindex parquet sentinels starlette thriftpy2 watchgod websockets
+packages: aiofiles aiosqlite asciitree asgi-correlation-id canonicaljson crc32c donfig fasteners
+  h5netcdf lz4 mongomock mongoquery ndindex parquet sentinels thriftpy2 websockets
 ...
 ---
 flags: --pre --upgrade --no-build-isolation
@@ -914,7 +925,7 @@ proj_name: suitcase-tiff
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: annotated-types anyio async-timeout hiredis json-rpc jupyter-console pyjwt python-multipart redis
+packages: annotated-types async-timeout hiredis json-rpc jupyter-console pyjwt python-multipart redis
 ...
 ---
 flags: --pre --upgrade --no-build-isolation
