@@ -758,7 +758,7 @@ kind: pip
 packages: toml
 ...
 ---
-default_branch: main
+default_branch: master
 function: main_build
 kind: source_install
 name: starlette
