@@ -472,7 +472,7 @@ packages: anyio anyioutils debugpy ipykernel nest-asyncio outcome psutil pyzmq s
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: argon2-cffi arrow async-lru fqdn h11 httpcore httpx isoduration json5 jsonpointer jupyter-events jupyter-lsp jupyter-server jupyter-server-terminals jupyterlab-server notebook-shim overrides prometheus-client python-json-logger rfc3339-validator rfc3986-validator send2trash terminado truststore types-python-dateutil uri-template webcolors websocket-client
+packages: argon2-cffi arrow async-lru fqdn h11 httpcore httpx isoduration json5 jsonpointer jupyter-events jupyter-lsp jupyter-server jupyter-server-terminals jupyterlab-server lark notebook-shim overrides prometheus-client python-json-logger rfc3339-validator rfc3986-validator rfc3987-syntax send2trash terminado truststore types-python-dateutil uri-template webcolors websocket-client
 ...
 ---
 flags: --pre --upgrade --no-build-isolation
