@@ -32,6 +32,18 @@ name: pip_src
 proj_name: pip
 ...
 ---
+flags: --pre --upgrade --no-build-isolation
+kind: pip
+packages: pathspec scikit-build-core
+...
+---
+default_branch: master
+function: main_build
+kind: source_install
+name: pybind11
+proj_name: pybind11
+...
+---
 default_branch: main
 function: main_build
 kind: source_install
@@ -54,18 +66,6 @@ proj_name: flake8
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: flake8-force
-...
----
-flags: --pre --upgrade --no-build-isolation
-kind: pip
-packages: pathspec scikit-build-core
-...
----
-default_branch: master
-function: main_build
-kind: source_install
-name: pybind11
-proj_name: pybind11
 ...
 ---
 flags: --pre --upgrade --no-build-isolation
