@@ -407,7 +407,7 @@ proj_name: pytest
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: alabaster babel imagesize roman-numerals-py snowballstemmer sphinx sphinxcontrib-applehelp sphinxcontrib-devhelp sphinxcontrib-htmlhelp sphinxcontrib-jsmath sphinxcontrib-qthelp sphinxcontrib-serializinghtml sphinxcontrib-video
+packages: alabaster babel docutils imagesize roman-numerals-py snowballstemmer sphinx sphinxcontrib-applehelp sphinxcontrib-devhelp sphinxcontrib-htmlhelp sphinxcontrib-jsmath sphinxcontrib-qthelp sphinxcontrib-serializinghtml sphinxcontrib-video
 ...
 ---
 flags: --pre --upgrade --no-build-isolation
@@ -424,7 +424,7 @@ proj_name: sphinx
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: accessible-pygments docutils mpl-sphinx-theme numpydoc pydata-sphinx-theme sphinx-copybutton tabulate
+packages: accessible-pygments mpl-sphinx-theme numpydoc pydata-sphinx-theme sphinx-copybutton tabulate
 ...
 ---
 flags: --pre --upgrade --no-build-isolation
