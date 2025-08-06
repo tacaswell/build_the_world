@@ -1,11 +1,4 @@
 ---
-default_branch: main
-function: flit_build
-kind: source_install
-name: flit
-proj_name: flit
-...
----
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: setuptools
@@ -21,15 +14,39 @@ proj_name: setuptools
 default_branch: main
 function: main_build
 kind: source_install
-name: wheel
-proj_name: wheel
+name: pip_src
+proj_name: pip
+...
+---
+default_branch: master
+function: main_build
+kind: source_install
+name: certifi
+proj_name: python-certifi
+...
+---
+flags: --pre --upgrade --no-build-isolation
+kind: pip
+packages: charset-normalizer docutils idna requests tomli-w urllib3
+...
+---
+default_branch: main
+function: flit_build
+kind: source_install
+name: flit
+proj_name: flit
+...
+---
+flags: --pre --upgrade --no-build-isolation
+kind: pip
+packages: packaging
 ...
 ---
 default_branch: main
 function: main_build
 kind: source_install
-name: pip_src
-proj_name: pip
+name: wheel
+proj_name: wheel
 ...
 ---
 flags: --pre --upgrade --no-build-isolation
@@ -82,7 +99,7 @@ proj_name: cython
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: packaging pyproject-hooks
+packages: pyproject-hooks
 ...
 ---
 default_branch: main
@@ -267,13 +284,6 @@ function: main_build
 kind: source_install
 name: nbconvert
 proj_name: nbconvert
-...
----
-default_branch: master
-function: main_build
-kind: source_install
-name: certifi
-proj_name: python-certifi
 ...
 ---
 flags: --no-build-isolation --pre --upgrade
@@ -553,7 +563,7 @@ proj_name: sip
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: packaging pyqt-builder
+packages: pyqt-builder
 ...
 ---
 flags: --pre --upgrade --no-build-isolation
