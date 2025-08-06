@@ -1058,7 +1058,7 @@ packages: dpkt netifaces sphinxcontrib-jquery ujson
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: binaryornot boltons chardet cookiecutter doct httpie humanize pysocks pytest-instafail python-slugify
-  requests text-unidecode tzlocal vcrpy
+  text-unidecode tzlocal vcrpy
 ...
 ---
 flags: --no-build-isolation --pre --upgrade
