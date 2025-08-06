@@ -383,9 +383,16 @@ name: lxml
 proj_name: lxml
 ...
 ---
+default_branch: main
+function: main_build
+kind: source_install
+name: pygraphviz
+proj_name: pygraphviz
+...
+---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: pygraphviz pydot
+packages: pydot
 ...
 ---
 flags: --pre --upgrade --no-build-isolation
