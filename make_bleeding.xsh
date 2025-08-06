@@ -58,7 +58,7 @@ with with_pushd(wd):
         @('--with-pydebug' if args.debug else '')  \
         @('--disable-gil' if args.freethread else '') \
         @('--enable-experimental-jit' if args.jit else '')
-    make -j
+    make -j$(nproc)
     make install
 
 $HOME/.pybuild/@(args.target)/bin/python3 -m venv --copies --clear ~/.virtualenvs/@(args.target)
