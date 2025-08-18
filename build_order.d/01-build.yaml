@@ -1090,6 +1090,11 @@ kind: pip
 packages: mdit-py-plugins
 ...
 ---
+flags: --pre --upgrade --no-build-isolation
+kind: pip
+packages: markdown-it-py<4
+...
+---
 default_branch: master
 function: main_build
 kind: source_install
@@ -1099,7 +1104,7 @@ proj_name: MyST-Parser
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: jupyterlab-git jupyterlab-spellchecker mdit-py-plugins nbdime gitpython jupyter-server-mathjax
+packages: jupyterlab-git jupyterlab-spellchecker nbdime gitpython jupyter-server-mathjax
   colorama gitdb smmap jupyterlab
 ...
 ---
