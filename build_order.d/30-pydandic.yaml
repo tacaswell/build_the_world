@@ -27,7 +27,29 @@ proj_name: httptools
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: dep-logic findpython hishel id installer pbs-installer pdm pdm-backend resolvelib socksio truststore unearth
+packages: pbs-installer resolvelib socksio truststore
+...
+---
+flags: --pre --upgrade --no-build-isolation
+kind: pip
+packages: pdm-backend
+...
+# ---
+# flags: --pre --upgrade --no-build-isolation
+# kind: pip
+# packages: dep-logic findpython hishel id installer pbs-installer  resolvelib socksio unearth
+# ...
+---
+flags: --pre --upgrade --no-build-isolation
+kind: pip
+packages: dep-logic findpython hishel id installer unearth
+...
+---
+default_branch: main
+function: main_build
+kind: source_install
+name: pdm
+proj_name: pdm
 ...
 ---
 flags: --pre --upgrade --no-build-isolation
