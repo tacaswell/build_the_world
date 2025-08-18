@@ -456,6 +456,14 @@ vc: git
 ---
 host: github.com
 protocol: https
+repo_name: httpx
+ssh_user: null
+url: https://github.com/encode/httpx.git
+user: encode
+vc: git
+---
+host: github.com
+protocol: https
 repo_name: starlette
 ssh_user: null
 url: https://github.com/encode/starlette.git
@@ -724,6 +732,14 @@ repo_name: happi
 ssh_user: null
 url: https://github.com/pcdshub/happi.git
 user: pcdshub
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: pdm
+ssh_user: null
+url: https://github.com/pdm-project/pdm.git
+user: pdm-project
 vc: git
 ---
 host: github.com
