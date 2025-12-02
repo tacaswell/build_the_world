@@ -59,7 +59,7 @@ kind: pip
 packages: pathspec scikit-build-core
 ...
 ---
-default_branch: main
+default_branch: master
 function: main_build
 kind: source_install
 name: pybind11
@@ -424,12 +424,12 @@ proj_name: pytest
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: alabaster babel docutils imagesize roman-numerals-py snowballstemmer sphinx sphinxcontrib-applehelp sphinxcontrib-devhelp sphinxcontrib-htmlhelp sphinxcontrib-jsmath sphinxcontrib-qthelp sphinxcontrib-serializinghtml sphinxcontrib-video
+packages: roman-numerals
 ...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: roman-numerals
+packages: alabaster babel docutils imagesize roman-numerals-py snowballstemmer sphinx sphinxcontrib-applehelp sphinxcontrib-devhelp sphinxcontrib-htmlhelp sphinxcontrib-jsmath sphinxcontrib-qthelp sphinxcontrib-serializinghtml sphinxcontrib-video
 ...
 ---
 default_branch: master
