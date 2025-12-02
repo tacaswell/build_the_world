@@ -237,7 +237,7 @@ def cython_build(**kwargs):
     auto_main(**kwargs)
     git clean -xfd
     git submodule update
-    return !(pip install --upgrade --no-use-pep517 --no-build-isolation     .)
+    return !(pip install --upgrade --no-build-isolation     .)
 
 
 def awkward_build(**kwargs):
