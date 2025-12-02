@@ -1,3 +1,15 @@
+branch: mnt/qt_agnostic
+proj_name: bluesky-widgets
+remote:
+  host: github.com
+  protocol: https
+  repo_name: bluesky-widgets
+  ssh_user: null
+  url: https://github.com/tacaswell/bluesky-widgets.git
+  user: tacaswell
+  vc: git
+remote_name: tacaswell
+---
 branch: harden_gha
 proj_name: cycler
 remote:
@@ -34,7 +46,7 @@ remote:
   vc: git
 remote_name: tacaswell
 ---
-branch: enh/threads
+branch: fix_hidpi_loop
 proj_name: matplotlib
 remote:
   host: github.com
@@ -70,26 +82,14 @@ remote:
   vc: git
 remote_name: tacaswell
 ---
-branch: mnt/cblosc-build
-proj_name: numcodecs
+branch: enh/SubscritionStatus_child
+proj_name: ophyd
 remote:
   host: github.com
   protocol: https
-  repo_name: numcodecs
+  repo_name: ophyd
   ssh_user: null
-  url: https://github.com/tacaswell/numcodecs.git
-  user: tacaswell
-  vc: git
-remote_name: tacaswell
----
-branch: enh/py314
-proj_name: parso
-remote:
-  host: github.com
-  protocol: https
-  repo_name: parso
-  ssh_user: null
-  url: https://github.com/tacaswell/parso.git
+  url: https://github.com/tacaswell/ophyd.git
   user: tacaswell
   vc: git
 remote_name: tacaswell
@@ -153,30 +153,6 @@ remote:
   user: flared
   vc: git
 remote_name: flared
----
-branch: patch-1
-proj_name: pyyaml
-remote:
-  host: github.com
-  protocol: https
-  repo_name: pyyaml
-  ssh_user: null
-  url: https://github.com/henryiii/pyyaml.git
-  user: henryiii
-  vc: git
-remote_name: henryiii
----
-branch: mnt/np_and_cython_updates
-proj_name: scikit-beam
-remote:
-  host: github.com
-  protocol: https
-  repo_name: scikit-beam
-  ssh_user: null
-  url: https://github.com/tacaswell/scikit-beam.git
-  user: tacaswell
-  vc: git
-remote_name: tacaswell
 ---
 branch: mnt/uncap_sphinx
 proj_name: sphinx-design
