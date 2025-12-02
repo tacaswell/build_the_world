@@ -34,15 +34,10 @@ flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: pdm-backend
 ...
-# ---
-# flags: --pre --upgrade --no-build-isolation
-# kind: pip
-# packages: dep-logic findpython hishel id installer pbs-installer  resolvelib socksio unearth
-# ...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: dep-logic findpython hishel id installer unearth
+packages: anysqlite dep-logic findpython hishel<1 id installer unearth
 ...
 ---
 default_branch: main
@@ -60,6 +55,11 @@ packages: email-validator uvicorn
 flags: --pre --upgrade --no-build-isolation --no-deps
 kind: pip
 packages: fastapi-cli
+...
+---
+flags: --pre --upgrade --no-build-isolation
+kind: pip
+packages: annotated-doc
 ...
 ---
 default_branch: master

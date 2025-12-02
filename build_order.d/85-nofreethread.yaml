@@ -8,7 +8,7 @@ proj_name: python-zstandard
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: zarr
+packages: google-crc32c zarr
 ...
 ---
 default_branch: main

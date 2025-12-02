@@ -11,6 +11,11 @@ name: setuptools
 proj_name: setuptools
 ...
 ---
+flags: --pre --upgrade --no-build-isolation
+kind: pip
+packages: flit-core
+...
+---
 default_branch: main
 function: main_build
 kind: source_install
@@ -362,6 +367,11 @@ name: networkx
 proj_name: networkx
 ...
 ---
+flags: --pre --upgrade --no-build-isolation
+kind: pip
+packages: setuptools-git-versioning
+...
+---
 default_branch: master
 function: main_build
 kind: source_install
@@ -419,7 +429,7 @@ packages: alabaster babel docutils imagesize roman-numerals-py snowballstemmer s
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: roman-numerals-py
+packages: roman-numerals
 ...
 ---
 default_branch: master
@@ -427,6 +437,13 @@ function: main_build
 kind: source_install
 name: sphinx
 proj_name: sphinx
+...
+---
+default_branch: main
+function: main_build
+kind: source_install
+name: sphinx-design
+proj_name: sphinx-design
 ...
 ---
 flags: --pre --upgrade --no-build-isolation
@@ -438,13 +455,6 @@ flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: pydocstyle flake8-docstrings pytest-cov pytest-rerunfailures pytest-timeout pytest-xdist pytest-xvfb
   execnet pyvirtualdisplay tomli coverage
-...
----
-default_branch: main
-function: main_build
-kind: source_install
-name: sphinx-design
-proj_name: sphinx-design
 ...
 ---
 flags: --pre --upgrade --no-build-isolation
@@ -653,7 +663,7 @@ proj_name: cytoolz
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: colorlog click mypy-extensions packaging pathspec platformdirs black aiosignal attrs
+packages: black colorlog mypy-extensions pytokens
 ...
 ---
 flags: --pre --upgrade --no-build-isolation
