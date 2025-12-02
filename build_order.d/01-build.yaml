@@ -59,7 +59,7 @@ kind: pip
 packages: pathspec scikit-build-core
 ...
 ---
-default_branch: master
+default_branch: main
 function: main_build
 kind: source_install
 name: pybind11
@@ -802,7 +802,7 @@ kind: pip
 packages: toml
 ...
 ---
-default_branch: master
+default_branch: main
 function: main_build
 kind: source_install
 name: starlette
