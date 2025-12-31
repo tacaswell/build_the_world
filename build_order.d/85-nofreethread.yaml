@@ -30,6 +30,13 @@ name: twine
 proj_name: twine
 ...
 ---
+default_branch: master
+function: main_build
+kind: source_install
+name: orjson
+proj_name: orjson
+...
+---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: PyQt6 pyqt6-qt6 pyqt6-sip
