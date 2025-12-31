@@ -1171,7 +1171,7 @@ packages: blinker feedgenerator markdown ordered-set pelican[markdown] pygments 
 ---
 flags: --no-build-isolation --pre --upgrade
 kind: pip
-packages: mypy
+packages: mypy librt
 ...
 ---
 flags: --pre --upgrade --no-build-isolation
