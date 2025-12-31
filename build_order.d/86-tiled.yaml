@@ -1,9 +1,7 @@
 ---
-default_branch: master
-function: main_build
-kind: source_install
-name: orjson
-proj_name: orjson
+flags: --pre --upgrade --no-build-isolation
+kind: pip
+packages: pydantic-settings<2.12
 ...
 ---
 flags: --pre --upgrade --no-build-isolation
