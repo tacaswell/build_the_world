@@ -7,13 +7,6 @@ packages: cachey click jmespath pydantic pydantic-core pydantic-settings python-
 default_branch: master
 function: main_build
 kind: source_install
-name: greenlet
-proj_name: greenlet
-...
----
-default_branch: master
-function: main_build
-kind: source_install
 name: uvloop
 proj_name: uvloop
 ...
@@ -38,6 +31,11 @@ packages: pdm-backend
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: anysqlite dep-logic findpython hishel<1 id installer unearth
+...
+---
+flags: --pre --upgrade --no-build-isolation
+kind: pip
+packages: hishel
 ...
 ---
 default_branch: main
@@ -67,6 +65,13 @@ function: main_build
 kind: source_install
 name: fastapi
 proj_name: fastapi
+...
+---
+default_branch: master
+function: main_build
+kind: source_install
+name: greenlet
+proj_name: greenlet
 ...
 ---
 flags: --pre --upgrade --no-build-isolation
