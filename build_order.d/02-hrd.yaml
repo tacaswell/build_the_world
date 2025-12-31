@@ -1,0 +1,30 @@
+---
+default_branch: main
+function: main_build
+kind: source_install
+name: pyopencl
+proj_name: pyopencl
+...
+---
+default_branch: main
+function: main_build
+kind: source_install
+name: multianalyzer
+proj_name: multianalyzer
+...
+
+---
+default_branch: main
+function: main_build
+kind: source_install
+name: multihead
+proj_name: multihead
+...
+
+---
+default_branch: main
+function: main_build
+kind: source_install
+name: hrd_tools
+proj_name: hrd_tools
+...

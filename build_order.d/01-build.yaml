@@ -1233,17 +1233,3 @@ flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: pytools nanobind siphash24
 ...
----
-default_branch: main
-function: main_build
-kind: source_install
-name: pyopencl
-proj_name: pyopencl
-...
----
-default_branch: main
-function: main_build
-kind: source_install
-name: multianalyzer
-proj_name: multianalyzer
-...
