@@ -429,15 +429,15 @@ packages: roman-numerals
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: alabaster babel docutils imagesize roman-numerals-py snowballstemmer sphinx sphinxcontrib-applehelp sphinxcontrib-devhelp sphinxcontrib-htmlhelp sphinxcontrib-jsmath sphinxcontrib-qthelp sphinxcontrib-serializinghtml sphinxcontrib-video
+packages: alabaster babel docutils imagesize roman-numerals-py snowballstemmer sphinx<9 sphinxcontrib-applehelp sphinxcontrib-devhelp sphinxcontrib-htmlhelp sphinxcontrib-jsmath sphinxcontrib-qthelp sphinxcontrib-serializinghtml sphinxcontrib-video
 ...
----
-default_branch: master
-function: main_build
-kind: source_install
-name: sphinx
-proj_name: sphinx
-...
+# ---
+# default_branch: master
+# function: main_build
+# kind: source_install
+# name: sphinx
+# proj_name: sphinx
+# ...
 ---
 default_branch: main
 function: main_build
@@ -1115,11 +1115,6 @@ proj_name: data-prototype
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: mdit-py-plugins
-...
----
-flags: --pre --upgrade --no-build-isolation
-kind: pip
-packages: markdown-it-py<4
 ...
 ---
 default_branch: master
