@@ -1,3 +1,5 @@
 all_repos.yaml
 *~
 logs/*.json
+__pycache__
+\#*
