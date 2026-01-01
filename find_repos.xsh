@@ -4,6 +4,7 @@ from collections import defaultdict
 from pathlib import Path
 import sys
 from dataclasses import dataclass, asdict
+import tqdm
 
 import yaml
 
@@ -56,10 +57,20 @@ def get_git_remotes(repo):
     return dict(remotes)
 
 def get_work_trees(repo):
-    with with_pushd(repo):
-        primary, *worktrees = [Path(_.split()[0]) for _ in !(git worktree list).itercheck()]
+    a = $(git -C @(repo) worktree list  --porcelain)
 
-    return primary, worktrees
+    primary, *rest =[
+    {
+        k: v
+        for k, v in [
+            ___.split(" ") if " " in ___ else ("branch", None) for ___ in __
+        ]
+    }
+    for __ in [_.split("\n") for _ in a.split("\n\n") if len(_)]
+    ]
+
+    return primary, rest
+
 
 def get_hg_remotes(repo):
     """Given a path to a repository,
@@ -260,12 +271,13 @@ print(sys.version_info)
 
 projects = []
 
-for repo_path in find_git_repos(path):
-    print(repo_path)
+for repo_path in tqdm.tqdm(find_git_repos(path)):
+    base, worktrees = get_work_trees(repo_path)
+    if str(repo_path) != base['worktree']:
+        continue
     remotes = {}
     fix_git_protcol_to_https(repo_path)
     for k, v in get_git_remotes(repo_path).items():
-        print(f"\t{k}")
         parsed = {direction: parse_git_name(url) for direction, url in v.items()}
         assert len(parsed) == 2
         remotes[k] = parsed["fetch"]
@@ -279,6 +291,7 @@ for repo_path in find_git_repos(path):
         primary_remote = next(iter(remotes.values()))
     if primary_remote is None:
         continue
+
     projects.append(
         Project(
             name=primary_remote.repo_name,
@@ -290,10 +303,8 @@ for repo_path in find_git_repos(path):
 
 
 for repo_path in find_hg_repos(path):
-    print(repo_path)
     remotes = {}
     for k, url in get_hg_remotes(repo_path).items():
-        print(f"\t{k}")
         remotes[k] = parse_hg_name(url)
     if not len(remotes):
         continue
