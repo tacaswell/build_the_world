@@ -481,10 +481,23 @@ class JsonBuildRecord:
         for record in self._data['build_steps']:
             yield record
 
+    def matches_finger_print(self, fp):
+        for k, v in fp.items():
+            if self._data[k] != v:
+                return False
+        return True
+
 
 if '--continue' in sys.argv:
-    p, *_ = sorted(Path('logs').glob('*.json'), reverse=True)
-    record = JsonBuildRecord(p)
+    record_files = sorted(Path('logs').glob('*.json'), reverse=True)
+    finger_print = get_python_fingerprint()
+    for p in record_files:
+        record = JsonBuildRecord(p)
+        if record.matches_finger_print(finger_print):
+            print(f"Continuing with log file {p}")
+            break
+    else:
+        raise RuntimeError(f"No matching logs found for {finger_print}")
 else:
     record = JsonBuildRecord.start_record()
 
