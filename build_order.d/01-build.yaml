@@ -967,9 +967,16 @@ name: suitcase-tiff
 proj_name: suitcase-tiff
 ...
 ---
+default_branch: main
+function: main_build
+kind: source_install
+name: hiredis-py
+proj_name: hiredis-py
+...
+---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: annotated-types async-timeout hiredis json-rpc jupyter-console pyjwt python-multipart redis
+packages: annotated-types async-timeout json-rpc jupyter-console pyjwt python-multipart redis
 ...
 ---
 flags: --pre --upgrade --no-build-isolation

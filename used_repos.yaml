@@ -56,6 +56,14 @@ vc: git
 ---
 host: github.com
 protocol: https
+repo_name: hrd_tools
+ssh_user: null
+url: https://github.com/NSLS2/hrd_tools.git
+user: NSLS2
+vc: git
+---
+host: github.com
+protocol: https
 repo_name: historydict
 ssh_user: null
 url: https://github.com/Nikea/historydict
@@ -912,6 +920,14 @@ vc: git
 ---
 host: github.com
 protocol: https
+repo_name: hiredis-py
+ssh_user: null
+url: https://github.com/redis/hiredis-py.git
+user: redis
+vc: git
+---
+host: github.com
+protocol: https
 repo_name: watchfiles
 ssh_user: null
 url: https://github.com/samuelcolvin/watchfiles.git
@@ -984,14 +1000,6 @@ vc: git
 ---
 host: github.com
 protocol: https
-repo_name: sphinx
-ssh_user: null
-url: https://github.com/sphinx-doc/sphinx.git
-user: sphinx-doc
-vc: git
----
-host: github.com
-protocol: https
 repo_name: sympy
 ssh_user: null
 url: https://github.com/sympy/sympy
@@ -1003,6 +1011,14 @@ protocol: https
 repo_name: mpl-qtthread
 ssh_user: null
 url: https://github.com/tacaswell/mpl-qtthread.git
+user: tacaswell
+vc: git
+---
+host: github.com
+protocol: ssh
+repo_name: multihead
+ssh_user: git
+url: git@github.com:tacaswell/multihead.git
 user: tacaswell
 vc: git
 ---
