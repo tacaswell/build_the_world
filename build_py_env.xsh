@@ -390,6 +390,7 @@ def customize_build(EXTENSIONS, OPTIONS):
     del EXTENSIONS['sperr']
     del EXTENSIONS['sz3']
     del EXTENSIONS['ultrahdr']
+    del EXTENSIONS['htj2k']
 
 
 """
