@@ -55,6 +55,7 @@ on.  At a minimum running these scripts will require:
 13. openblas
 14. patchelf
 15. a development version of librdkafka
+16. robin-map
 
 This has been run (mostly successfully) on:
 
@@ -310,3 +311,11 @@ checkout locations hard-coded at the top of the file, to a handful of `xonsh`
 scripts and a `yaml` file to track where the checkouts are, to the current
 state of a handful of `xonsh` scripts and a small fleet of `yaml` files to
 track where the source is, what branches are being used, and the build order.
+
+## Bugs found
+
+- change to pybind11 exposed (known) gcc regression https://github.com/contourpy/contourpy/issues/512 / https://github.com/pybind/pybind11/pull/5908
+- macro changes broke numpy build https://github.com/python/cpython/issues/142163 / https://github.com/python/cpython/pull/142164
+- build broken due to argparse changes https://github.com/pypa/build/pull/960
+- meson broke Panda's config https://github.com/pandas-dev/pandas/pull/63406
+- use of deprecated functions in hiredis-py https://github.com/redis/hiredis-py/pull/218
