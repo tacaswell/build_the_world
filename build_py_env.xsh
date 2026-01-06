@@ -329,12 +329,13 @@ index 77a22957f..ce35d81eb 100644
     cd ../
     mkdir dist
     $ARROW_HOME=$PWD +'/dist'
+    $PREFIX = $(python -c "import sysconfig;print(sysconfig.get_path('data'))") + '/lib'
     $LD_LIBRARY_PATH= [$PWD+"/dist/lib"]
     $CMAKE_PREFIX_PATH=[$ARROW_HOME]
     # patch from Arch packages
     # patch < lz4-cmake.patch  -p 1
     cmake -S arrow/cpp -B arrow/cpp/build \
-               -DCMAKE_INSTALL_PREFIX=$ARROW_HOME \
+               -DCMAKE_INSTALL_PREFIX=$PREFIX \
                --preset ninja-release-python
     cmake --build arrow/cpp/build --target install -j
     pushd arrow/python
