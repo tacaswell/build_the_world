@@ -407,7 +407,7 @@ packages: pydot
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: pre-commit cfgv identify nodeenv virtualenv distlib filelock
+packages: prek
 ...
 ---
 flags: --pre --upgrade --no-build-isolation
