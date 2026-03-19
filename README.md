@@ -319,3 +319,4 @@ track where the source is, what branches are being used, and the build order.
 - build broken due to argparse changes https://github.com/pypa/build/pull/960
 - meson broke Panda's config https://github.com/pandas-dev/pandas/pull/63406
 - use of deprecated functions in hiredis-py https://github.com/redis/hiredis-py/pull/218
+- use of deprecated/removed function is pycurl https://github.com/pycurl/pycurl/pull/934
