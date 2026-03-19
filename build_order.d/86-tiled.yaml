@@ -11,7 +11,7 @@ packages: tiled
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: stamina tenacity
+packages: stamina tenacity duckdb adbc-driver-manager
 ...
 ---
 default_branch: main

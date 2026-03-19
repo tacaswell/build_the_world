@@ -1,4 +1,14 @@
 ---
+flags: --pre --upgrade --no-build-isolation
+kind: pip
+packages: semantic-version setuptools-rust
+...
+---
+flags: --pre --upgrade --no-build-isolation
+kind: pip
+packages: libcst pyyaml-ft
+...
+---
 default_branch: main
 function: build_pyarrow
 kind: source_install

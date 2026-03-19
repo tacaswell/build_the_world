@@ -602,9 +602,7 @@ packages: pyqt-builder
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: asv asv-runner coverage jaraco-classes jaraco-context jaraco-functools jeepney markdown-it-py
-  mdurl more-itertools nh3 outcome pkginfo py-cpuinfo pympler pytest-benchmark qtpy readme-renderer requests-toolbelt
-  rfc3986 rich trio
+packages: asv asv-runner distlib filelock jaraco-classes jaraco-context jaraco-functools jeepney markdown-it-py mdurl more-itertools nh3 pkginfo py-cpuinfo pympler pytest-benchmark python-discovery qtpy readme-renderer requests-toolbelt rfc3986 rich trio virtualenv
 ...
 ---
 default_branch: master
