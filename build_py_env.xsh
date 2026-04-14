@@ -541,7 +541,7 @@ for j, step in enumerate(build_order):
                     'start_time': start_time,
                     'stop_time': stop_time,
                     'shas': shas,
-                    'step_inedx': j,
+                    'step_index': j,
                     'name': step['name'],
                     'returncode': build_log.returncode
                 }
@@ -574,7 +574,7 @@ for j, step in enumerate(build_order):
                 'stop_time': build_log.endtime,
                 'packages': step['packages'],
                 'flags': step['flags'],
-                'step_inedx': j,
+                'step_index': j,
                 'name': step['packages'],
                 'returncode': build_log.returncode
             }
