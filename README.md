@@ -56,6 +56,7 @@ on.  At a minimum running these scripts will require:
 14. patchelf
 15. a development version of librdkafka
 16. robin-map
+17. rg
 
 This has been run (mostly successfully) on:
 
