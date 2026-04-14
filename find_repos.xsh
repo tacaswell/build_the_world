@@ -336,7 +336,7 @@ if args.update_used:
 
     for order in sorted(Path('build_order.d').glob('[!.]*yaml')):
         with open(order) as fin:
-            build_order = list(yaml.unsafe_load_all(fin))
+            build_order = list(yaml.safe_load_all(fin))
 
         for step in build_order:
             if step['kind'] != 'source_install':

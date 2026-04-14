@@ -38,13 +38,13 @@ def get_git_remotes(repo):
 
 
 with open('all_repos.yaml') as fin:
-    checkouts = list(yaml.unsafe_load_all(fin))
+    checkouts = list(yaml.safe_load_all(fin))
 
 local_checkouts = {co['name']: co for co in checkouts}
 del checkouts
 
 with open('extra_remotes.yaml') as fin:
-    extra_remotes = {r['proj_name']: r for r in yaml.unsafe_load_all(fin)}
+    extra_remotes = {r['proj_name']: r for r in yaml.safe_load_all(fin)}
 
 
 build_order = []
@@ -52,7 +52,7 @@ for order in  sorted(Path('build_order.d').glob('[!.]*yaml')):
     with open(order) as fin:
         build_order += [
             bs
-            for bs in yaml.unsafe_load_all(fin)
+            for bs in yaml.safe_load_all(fin)
             if bs['kind'] == 'source_install'
         ]
 

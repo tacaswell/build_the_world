@@ -22,10 +22,10 @@ def extract_git_shas():
 build_order = []
 for order in  sorted(Path('build_order.d').glob('[!.]*yaml')):
     with open(order) as fin:
-        build_order += list(yaml.unsafe_load_all(fin))
+        build_order += list(yaml.safe_load_all(fin))
 
 with open('all_repos.yaml') as fin:
-    checkouts = list(yaml.unsafe_load_all(fin))
+    checkouts = list(yaml.safe_load_all(fin))
 
 local_checkouts = {co['name']: co for co in checkouts}
 

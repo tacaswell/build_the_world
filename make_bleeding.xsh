@@ -52,7 +52,7 @@ if target.startswith('py'):
 
 
 with open('all_repos.yaml') as fin:
-    checkouts = list(yaml.unsafe_load_all(fin))
+    checkouts = list(yaml.safe_load_all(fin))
 wd_mapping = {co['name']: co['local_checkout'] for co in checkouts}
 
 wd = wd_mapping['cpython']

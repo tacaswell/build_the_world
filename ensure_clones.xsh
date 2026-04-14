@@ -48,7 +48,7 @@ target = Path(args.target).expanduser()
 
 
 with open('used_repos.yaml') as fin:
-    required_repos = list(yaml.unsafe_load_all(fin))
+    required_repos = list(yaml.safe_load_all(fin))
 
 print(set(b["user"] for b in required_repos))
 
