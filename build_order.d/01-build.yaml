@@ -192,7 +192,7 @@ proj_name: parso
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: setuptools_scm[toml] typing-extensions
+packages: setuptools_scm[toml] typing-extensions vcs-versioning
 ...
 ---
 flags: --pre --upgrade --no-build-isolation
