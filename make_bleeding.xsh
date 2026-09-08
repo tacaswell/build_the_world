@@ -11,7 +11,7 @@ from xonsh.dirstack import with_pushd
 
 xonsh_abs_path = str(Path(sys.executable).parent / 'xonsh')
 
-$RAISE_SUBPROC_ERROR = True
+$XONSH_SUBPROC_CMD_RAISE_ERROR = True
 
 $XONSH_TRACE_SUBPROC = True
 $PIP_NO_BUILD_ISOLATION = 1
@@ -30,9 +30,11 @@ target = args.target
 branch = args.branch
 if target is None and branch is not None:
     if branch == 'main':
-        target = 'cp315'
+        target = 'cp316'
     elif re.match(r'3\.[0-9]+', branch):
         target = f'cp{branch.replace(".", "")}'
+
+    cache_target = f'*{target}?-linux*'
 
     if args.freethread:
         target += 't'
@@ -94,10 +96,7 @@ source-bash  f'~/.virtualenvs/{target}/bin/activate'
 
 pip install --upgrade pip
 
-pip cache remove '*cp313?-linux*' || true
-pip cache remove '*cp314?-linux*' || true
-pip cache remove '*cp315?-linux*' || true
-pip cache remove '*cp316?-linux*' || true
+pip cache remove @(cache_target) || true
 
 
 @(xonsh_abs_path) build_py_env.xsh

@@ -7,7 +7,7 @@ from collections import defaultdict
 from xonsh.dirstack import with_pushd
 
 
-$RAISE_SUBPROC_ERROR = False
+$XONSH_SUBPROC_CMD_RAISE_ERROR = False
 $XONSH_TRACE_SUBPROC = False
 $PIP_NO_BUILD_ISOLATION = 1
 

@@ -1,4 +1,4 @@
-$RAISE_SUBPROC_ERROR = True
+$XONSH_SUBPROC_CMD_RAISE_ERROR = True
 
 from pathlib import Path
 import yaml

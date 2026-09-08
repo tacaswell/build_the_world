@@ -9,10 +9,9 @@ from subprocess import CalledProcessError
 
 from xonsh.dirstack import with_pushd
 import sys
-
-$RAISE_SUBPROC_ERROR = False
-$XONSH_TRACE_SUBPROC = False
-
+$XONSH_SUBPROC_CMD_RAISE_ERROR = False
+$XONSH_TRACE_SUBPROC = True
+$XONSH_TRACEBACK_LOGFILE = 'error.log'
 
 def extract_git_shas():
     headsha = $(git rev-parse HEAD).strip()
@@ -50,15 +49,15 @@ for step in build_order:
 
     def foo(upstream_branch, checkout):
         with with_pushd(checkout):
-            with ${...}.swap(RAISE_SUBPROC_ERROR=False):
+            with ${...}.swap(XONSH_SUBPROC_CMD_RAISE_ERROR=False):
                 tracking = !(git rev-parse --abbrev-ref --symbolic-full-name '@{u}')
                 has_tracking = bool(tracking)
                 tracking_branch = tracking.output.strip()
                 del tracking
-            with ${...}.swap(RAISE_SUBPROC_ERROR=True):
+            with ${...}.swap(XONSH_SUBPROC_CMD_RAISE_ERROR=True):
                 cur_branch = $(git branch --show-current).strip()
                 upstream = f'{upstream_remote}/{upstream_branch}'
-            with ${...}.swap(RAISE_SUBPROC_ERROR=False):
+            with ${...}.swap(XONSH_SUBPROC_CMD_RAISE_ERROR=False):
                 is_merged = bool(!(git merge-base --is-ancestor  HEAD @(upstream)))
             shas = extract_git_shas()
             return locals()
