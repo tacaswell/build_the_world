@@ -321,3 +321,6 @@ track where the source is, what branches are being used, and the build order.
 - meson broke Panda's config https://github.com/pandas-dev/pandas/pull/63406
 - use of deprecated functions in hiredis-py https://github.com/redis/hiredis-py/pull/218
 - use of deprecated/removed function is pycurl https://github.com/pycurl/pycurl/pull/934
+- setting of a attributes via c in cython https://github.com/cython/cython/issues/7890
+- fallout from cython getting stricter https://github.com/zeromq/pyzmq/pull/2207
+- type inference of shared base type in exception https://github.com/cython/cython/issues/7902 / https://github.com/cython/cython/pull/7903
