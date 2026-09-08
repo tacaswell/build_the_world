@@ -1,33 +1,26 @@
 ---
+flags: --pre --upgrade --no-build-isolation
+kind: pip
+packages: fabio
+...
+---
 default_branch: main
 function: main_build
 kind: source_install
-name: zstandard
-proj_name: python-zstandard
+name: silx
+proj_name: silx
 ...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: google-crc32c zarr
+packages: pyfai
 ...
 ---
 default_branch: main
 function: main_build
 kind: source_install
-name: msgspec
-proj_name: msgspec
-...
----
-flags: --pre --upgrade --no-build-isolation
-kind: pip
-packages: cryptography secretstorage keyring
-...
----
-default_branch: main
-function: main_build
-kind: source_install
-name: twine
-proj_name: twine
+name: scikit-beam
+proj_name: scikit-beam
 ...
 ---
 default_branch: master

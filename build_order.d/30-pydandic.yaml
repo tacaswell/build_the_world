@@ -4,6 +4,18 @@ kind: pip
 packages: annotated-doc cachey jmespath pydantic pydantic-core pydantic-settings python-dotenv shellingham typer typing-inspection
 ...
 ---
+flags: --pre --upgrade --no-build-isolation
+kind: pip
+packages: h2 hpack hyperframe
+...
+---
+default_branch: main
+function: main_build
+kind: source_install
+name: python-blosc
+proj_name: python-blosc2
+...
+---
 default_branch: master
 function: main_build
 kind: source_install
@@ -36,6 +48,11 @@ packages: anysqlite dep-logic findpython hishel<1 id installer unearth
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: hishel
+...
+---
+flags: --pre --upgrade --no-build-isolation
+kind: pip
+packages: argcomplete
 ...
 ---
 default_branch: main

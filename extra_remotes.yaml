@@ -1,11 +1,23 @@
-branch: mnt/qt_agnostic
-proj_name: bluesky-widgets
+branch: fix/autobugs
+proj_name: bluesky
 remote:
   host: github.com
   protocol: https
-  repo_name: bluesky-widgets
+  repo_name: bluesky
   ssh_user: null
-  url: https://github.com/tacaswell/bluesky-widgets.git
+  url: https://github.com/tacaswell/bluesky.git
+  user: tacaswell
+  vc: git
+remote_name: tacaswell
+---
+branch: mnt/remove_314b1_workaround
+proj_name: build
+remote:
+  host: github.com
+  protocol: https
+  repo_name: build
+  ssh_user: null
+  url: https://github.com/tacaswell/build.git
   user: tacaswell
   vc: git
 remote_name: tacaswell
@@ -22,17 +34,17 @@ remote:
   vc: git
 remote_name: tacaswell
 ---
-branch: harden_gha
-proj_name: data-prototype
+branch: master
+proj_name: hiredis-py
 remote:
   host: github.com
   protocol: https
-  repo_name: data-prototype
+  repo_name: hiredis-py
   ssh_user: null
-  url: https://github.com/tacaswell/data-prototype.git
-  user: tacaswell
+  url: https://github.com/redis/hiredis-py.git
+  user: redis
   vc: git
-remote_name: tacaswell
+remote_name: upstream
 ---
 branch: fix_py312
 proj_name: hklpy
@@ -42,18 +54,6 @@ remote:
   repo_name: hklpy
   ssh_user: null
   url: https://github.com/tacaswell/hklpy.git
-  user: tacaswell
-  vc: git
-remote_name: tacaswell
----
-branch: fix_hidpi_loop
-proj_name: matplotlib
-remote:
-  host: github.com
-  protocol: https
-  repo_name: matplotlib
-  ssh_user: null
-  url: https://github.com/tacaswell/matplotlib.git
   user: tacaswell
   vc: git
 remote_name: tacaswell
@@ -78,18 +78,6 @@ remote:
   repo_name: mplfinance
   ssh_user: null
   url: https://github.com/tacaswell/mplfinance.git
-  user: tacaswell
-  vc: git
-remote_name: tacaswell
----
-branch: enh/SubscritionStatus_child
-proj_name: ophyd
-remote:
-  host: github.com
-  protocol: https
-  repo_name: ophyd
-  ssh_user: null
-  url: https://github.com/tacaswell/ophyd.git
   user: tacaswell
   vc: git
 remote_name: tacaswell
@@ -130,7 +118,7 @@ remote:
   vc: git
 remote_name: schaeferpp
 ---
-branch: cython-modernization
+branch: mnt/workaround_cython
 proj_name: pyopengl
 remote:
   host: github.com
@@ -142,17 +130,17 @@ remote:
   vc: git
 remote_name: tacaswell
 ---
-branch: isra/fix-pathlib-with-ns
-proj_name: pytest
+branch: mnt/fix_cython
+proj_name: pyzmq
 remote:
   host: github.com
   protocol: https
-  repo_name: pytest
+  repo_name: pyzmq
   ssh_user: null
-  url: https://github.com/flared/pytest.git
-  user: flared
+  url: https://github.com/tacaswell/pyzmq.git
+  user: tacaswell
   vc: git
-remote_name: flared
+remote_name: tacaswell
 ---
 branch: mnt/uncap_sphinx
 proj_name: sphinx-design

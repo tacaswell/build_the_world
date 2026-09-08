@@ -6,13 +6,37 @@ name: pyopencl
 proj_name: pyopencl
 ...
 ---
+flags: --pre --upgrade --no-build-isolation
+kind: pip
+packages: freetype-py
+...
+---
+default_branch: master
+function: main_build
+kind: source_install
+name: xrt
+proj_name: xrt
+...
+
+---
 default_branch: main
 function: main_build
 kind: source_install
 name: multianalyzer
 proj_name: multianalyzer
 ...
-
+---
+flags: --pre --upgrade --no-build-isolation
+kind: pip
+packages: llvmlite numba
+...
+---
+default_branch: main
+function: main_build
+kind: source_install
+name: sparse
+proj_name: sparse
+...
 ---
 default_branch: main
 function: main_build

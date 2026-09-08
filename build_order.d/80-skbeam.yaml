@@ -1,24 +1,10 @@
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: fabio hdf5plugin
-...
----
-default_branch: main
-function: main_build
-kind: source_install
-name: silx
-proj_name: silx
+packages: hdf5plugin
 ...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: asteval dill lmfit pyfai uncertainties
-...
----
-default_branch: main
-function: main_build
-kind: source_install
-name: scikit-beam
-proj_name: scikit-beam
+packages: asteval dill lmfit uncertainties
 ...

@@ -197,7 +197,7 @@ packages: setuptools_scm[toml] typing-extensions vcs-versioning
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: scikit-build distro
+packages: distro
 ...
 ---
 default_branch: main
@@ -232,6 +232,11 @@ kind: pip
 packages: ipython-pygments-lexers
 ...
 ---
+flags: --pre --upgrade --no-build-isolation
+kind: pip
+packages: psutil
+...
+---
 default_branch: main
 function: main_build
 kind: source_install
@@ -246,7 +251,7 @@ packages: pickleshare
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: hatchling hatch-nodejs-version editables pluggy trove-classifiers pathspec
+packages: hatchling hatch-nodejs-version editables tomlkit pluggy trove-classifiers pathspec
 ...
 ---
 flags: --no-build-isolation --pre --upgrade
@@ -424,12 +429,12 @@ proj_name: pytest
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: roman-numerals
+packages: roman-numerals roman-numerals-py
 ...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: alabaster babel docutils imagesize roman-numerals-py snowballstemmer sphinx<9 sphinxcontrib-applehelp sphinxcontrib-devhelp sphinxcontrib-htmlhelp sphinxcontrib-jsmath sphinxcontrib-qthelp sphinxcontrib-serializinghtml sphinxcontrib-video
+packages: alabaster babel imagesize snowballstemmer sphinx sphinxcontrib-applehelp sphinxcontrib-devhelp sphinxcontrib-htmlhelp sphinxcontrib-jsmath sphinxcontrib-qthelp sphinxcontrib-serializinghtml sphinxcontrib-video sphinxcontrib-jquery docutils
 ...
 # ---
 # default_branch: master
@@ -463,7 +468,7 @@ packages: colorspacious comm ipywidgets jupyterlab-widgets sphinx-gallery sphinx
   widgetsnbextension
 ...
 ---
-flags: ''
+flags: '--yes'
 kind: pip-remove
 packages: flake8-per-file-ignores
 ...
@@ -494,7 +499,7 @@ proj_name: argon2-cffi-bindings
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: anyio anyioutils debugpy ipykernel nest-asyncio outcome psutil pyzmq sniffio zmq-anyio
+packages: anyio anyioutils debugpy ipykernel nest-asyncio nest-asyncio2 outcome sniffio zmq-anyio
 ...
 ---
 flags: --pre --upgrade --no-build-isolation
@@ -788,11 +793,21 @@ name: bluesky
 proj_name: bluesky
 ...
 ---
+flags: --pre --upgrade --no-build-isolation
+kind: pip
+packages: scikit-build
+...
+---
 default_branch: main
 function: main_build
 kind: source_install
 name: python-blosc
 proj_name: python-blosc
+...
+---
+flags: '--yes'
+kind: pip-remove
+packages: scikit-build
 ...
 ---
 flags: --pre --upgrade --no-build-isolation
@@ -810,7 +825,7 @@ proj_name: starlette
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: aiofiles aiosqlite asciitree asgi-correlation-id canonicaljson crc32c donfig fasteners
-  h5netcdf lz4 mongomock mongoquery ndindex parquet sentinels thriftpy2 websockets
+  h5netcdf lz4 mongomock mongoquery ndindex parquet sentinels thriftpy2 websockets ijson
 ...
 ---
 flags: --pre --upgrade --no-build-isolation
@@ -965,7 +980,7 @@ name: suitcase-tiff
 proj_name: suitcase-tiff
 ...
 ---
-default_branch: main
+default_branch: master
 function: main_build
 kind: source_install
 name: hiredis-py
@@ -1131,8 +1146,7 @@ proj_name: MyST-Parser
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: jupyterlab-git jupyterlab-spellchecker nbdime gitpython jupyter-server-mathjax
-  colorama gitdb smmap jupyterlab
+packages: gitdb gitpython jupyter-builder jupyter-server-mathjax jupyterlab jupyterlab-git jupyterlab-git-core jupyterlab-spellchecker nbdime smmap
 ...
 ---
 flags: -y
@@ -1176,12 +1190,17 @@ packages: blinker feedgenerator markdown ordered-set pelican[markdown] pygments 
 ---
 flags: --no-build-isolation --pre --upgrade
 kind: pip
-packages: mypy librt
+packages: ast-serialize mypy librt
 ...
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: joblib threadpoolctl
+...
+---
+flags: --pre --upgrade --no-build-isolation
+kind: pip
+packages: narwhals
 ...
 ---
 default_branch: main
@@ -1213,11 +1232,6 @@ proj_name: imagecodecs
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: xkcdpass
-...
----
-flags: --pre --upgrade --no-build-isolation
-kind: pip
-packages: blosc2
 ...
 ---
 default_branch: master
