@@ -1,4 +1,18 @@
 ---
+default_branch: main
+function: main_build
+kind: source_install
+name: zstandard
+proj_name: python-zstandard
+...
+---
+default_branch: main
+function: main_build
+kind: source_install
+name: msgspec
+proj_name: msgspec
+...
+---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: fabio
@@ -16,18 +30,23 @@ kind: pip
 packages: pyfai
 ...
 ---
+flags: --pre --upgrade --no-build-isolation
+kind: pip
+packages: cryptography secretstorage keyring
+...
+---
+default_branch: main
+function: main_build
+kind: source_install
+name: twine
+proj_name: twine
+...
+---
 default_branch: main
 function: main_build
 kind: source_install
 name: scikit-beam
 proj_name: scikit-beam
-...
----
-default_branch: master
-function: main_build
-kind: source_install
-name: orjson
-proj_name: orjson
 ...
 ---
 flags: --pre --upgrade --no-build-isolation

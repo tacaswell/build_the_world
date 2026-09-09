@@ -90,11 +90,6 @@ kind: pip
 packages: flake8-force
 ...
 ---
-flags: --pre --upgrade --no-build-isolation
-kind: pip
-packages: cmake ninja
-...
----
 default_branch: master
 function: cython_build
 kind: source_install
@@ -216,7 +211,19 @@ proj_name: jedi
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: asttokens decorator executing matplotlib-inline prompt-toolkit pure-eval pygments stack-data
+packages: hatchling pluggy tomlkit trove-classifiers
+...
+---
+default_branch: master
+function: main_build
+kind: source_install
+name: pygments
+proj_name: pygments
+...
+---
+flags: --pre --upgrade --no-build-isolation
+kind: pip
+packages: asttokens decorator executing matplotlib-inline prompt-toolkit pure-eval  stack-data
   traitlets wcwidth
 ...
 ---
@@ -251,7 +258,7 @@ packages: pickleshare
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: hatchling hatch-nodejs-version editables tomlkit pluggy trove-classifiers pathspec
+packages: hatch-nodejs-version editables pathspec
 ...
 ---
 flags: --no-build-isolation --pre --upgrade
@@ -524,9 +531,16 @@ kind: pip
 packages: argon2-cffi arrow async-lru fqdn isoduration json5 jsonpointer jupyter-events jupyter-lsp jupyter-server jupyter-server-terminals jupyterlab-server lark notebook-shim overrides prometheus-client python-json-logger rfc3339-validator rfc3986-validator rfc3987-syntax send2trash terminado truststore types-python-dateutil uri-template webcolors websocket-client
 ...
 ---
+default_branch: main
+function: main_build
+kind: source_install
+name: cloudpickle
+proj_name: cloudpickle
+...
+---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: cloudpickle fsspec importlib-metadata partd zipp locket click
+packages: fsspec importlib-metadata partd zipp locket click
 ...
 ---
 default_branch: main
@@ -607,7 +621,7 @@ packages: pyqt-builder
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
-packages: asv asv-runner distlib filelock jaraco-classes jaraco-context jaraco-functools jeepney markdown-it-py mdurl more-itertools nh3 pkginfo py-cpuinfo pympler pytest-benchmark python-discovery qtpy readme-renderer requests-toolbelt rfc3986 rich trio virtualenv
+packages: asv asv-runner distlib filelock jaraco-classes jaraco-context jaraco-functools jeepney markdown-it-py mdurl more-itertools nh3 pkginfo py-cpuinfo py-cpuinfo2 pympler pytest-benchmark python-discovery qtpy readme-renderer requests-toolbelt rfc3986 rich trio virtualenv
 ...
 ---
 default_branch: master

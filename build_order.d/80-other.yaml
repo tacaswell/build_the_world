@@ -1,5 +1,0 @@
----
-flags: --pre --upgrade --no-build-isolation
-kind: pip
-packages: json-merge-patch jsonpatch
-...

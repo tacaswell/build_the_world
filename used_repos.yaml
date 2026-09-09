@@ -8,6 +8,14 @@ vc: git
 ---
 host: github.com
 protocol: https
+repo_name: python-blosc2
+ssh_user: null
+url: https://github.com/Blosc/python-blosc2.git
+user: Blosc
+vc: git
+---
+host: github.com
+protocol: https
 repo_name: wrapt
 ssh_user: null
 url: https://github.com/GrahamDumpleton/wrapt.git
@@ -160,14 +168,6 @@ vc: git
 ---
 host: github.com
 protocol: https
-repo_name: bluesky-adaptive
-ssh_user: null
-url: https://github.com/bluesky/bluesky-adaptive.git
-user: bluesky
-vc: git
----
-host: github.com
-protocol: https
 repo_name: bluesky-darkframes
 ssh_user: null
 url: https://github.com/bluesky/bluesky-darkframes.git
@@ -219,14 +219,6 @@ protocol: https
 repo_name: bluesky-ui
 ssh_user: null
 url: https://github.com/bluesky/bluesky-ui.git
-user: bluesky
-vc: git
----
-host: github.com
-protocol: https
-repo_name: bluesky-widgets
-ssh_user: null
-url: https://github.com/bluesky/bluesky-widgets.git
 user: bluesky
 vc: git
 ---
@@ -388,6 +380,14 @@ repo_name: tifffile
 ssh_user: null
 url: https://github.com/cgohlke/tifffile.git
 user: cgohlke
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: cloudpickle
+ssh_user: null
+url: https://github.com/cloudpipe/cloudpickle.git
+user: cloudpipe
 vc: git
 ---
 host: github.com
@@ -600,6 +600,14 @@ vc: git
 ---
 host: github.com
 protocol: https
+repo_name: xrt
+ssh_user: null
+url: https://github.com/kklmn/xrt.git
+user: kklmn
+vc: git
+---
+host: github.com
+protocol: https
 repo_name: pyerfa
 ssh_user: null
 url: https://github.com/liberfa/pyerfa.git
@@ -788,6 +796,14 @@ repo_name: sparse
 ssh_user: null
 url: https://github.com/pydata/sparse.git
 user: pydata
+vc: git
+---
+host: github.com
+protocol: https
+repo_name: pygments
+ssh_user: null
+url: https://github.com/pygments/pygments.git
+user: pygments
 vc: git
 ---
 host: github.com
@@ -1023,10 +1039,10 @@ user: tacaswell
 vc: git
 ---
 host: github.com
-protocol: ssh
+protocol: https
 repo_name: multihead
-ssh_user: git
-url: git@github.com:tacaswell/multihead.git
+ssh_user: null
+url: https://github.com/tacaswell/multihead
 user: tacaswell
 vc: git
 ---

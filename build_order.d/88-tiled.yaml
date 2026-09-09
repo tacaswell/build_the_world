@@ -6,6 +6,11 @@ packages: pydantic-settings<2.12
 ---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
+packages: json-merge-patch jsonpatch
+...
+---
+flags: --pre --upgrade --no-build-isolation
+kind: pip
 packages: tiled
 ...
 ---
