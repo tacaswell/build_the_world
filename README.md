@@ -324,3 +324,4 @@ track where the source is, what branches are being used, and the build order.
 - setting of a attributes via c in cython https://github.com/cython/cython/issues/7890
 - fallout from cython getting stricter https://github.com/zeromq/pyzmq/pull/2207
 - type inference of shared base type in exception https://github.com/cython/cython/issues/7902 / https://github.com/cython/cython/pull/7903
+- dropped opcode upstream used by cloudpickle https://github.com/cloudpipe/cloudpickle/pull/599/
