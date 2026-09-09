@@ -139,7 +139,7 @@ def cleanup_cython():
 
 def setuptools_build(**kwargs):
     auto_main(**kwargs)
-    git clean -xfd
+    git clean -xfd  -e subprojects -e .pixi
     cleanup_cython()
     python bootstrap.py
     return !(pip install --no-build-isolation    .)
@@ -224,7 +224,7 @@ def setup_py_build(**kwargs):
 
 def numcodecs_build(**kwargs):
     auto_main(**kwargs)
-    git clean -xfd
+    git clean -xfd  -e subprojects -e .pixi
     git submodule init
     git submodule update
     cleanup_cython()
@@ -235,14 +235,14 @@ def numcodecs_build(**kwargs):
 
 def cython_build(**kwargs):
     auto_main(**kwargs)
-    git clean -xfd
+    git clean -xfd  -e subprojects -e .pixi
     git submodule update
     return !(pip install --upgrade --no-build-isolation     .)
 
 
 def awkward_build(**kwargs):
     auto_main(**kwargs)
-    git clean -xfd
+    git clean -xfd  -e subprojects -e .pixi
     git submodule init
     git submodule update
     cleanup_cython()
@@ -256,7 +256,7 @@ def awkward_build(**kwargs):
 
 def numpy_build(**kwargs):
     auto_main(**kwargs)
-    git clean -xfd
+    git clean -xfd  -e subprojects -e .pixi
     cleanup_cython()
     git submodule update
 
@@ -283,7 +283,7 @@ def numpy_build(**kwargs):
 
 def scipy_build(**kwargs):
     auto_main(**kwargs)
-    git clean -xfd
+    git clean -xfd  -e subprojects -e .pixi
     git submodule update
     cleanup_cython()
 
@@ -295,7 +295,7 @@ def scipy_build(**kwargs):
 
 def pandas_build(**kwargs):
     auto_main(**kwargs)
-    git clean -xfd
+    git clean -xfd  -e subprojects -e .pixi
     cleanup_cython()
     git submodule update
     ret = !(pip install -v  --no-build-isolation     .)
@@ -305,7 +305,7 @@ def pandas_build(**kwargs):
 def build_pyarrow(**kwargs):
 
     auto_main(**kwargs)
-    git clean -xfd
+    git clean -xfd  -e subprojects -e .pixi
     cleanup_cython()
     $PARQUET_TEST_DATA=$PWD+"/cpp/submodules/parquet-testing/data"
     $PARQUET_TEST_DATA
@@ -318,7 +318,7 @@ def build_pyarrow(**kwargs):
                --preset ninja-release-python
     cmake --build cpp/build --target install -j
     pushd python
-    git clean -xfd
+    git clean -xfd  -e subprojects -e .pixi
     $PYARROW_WITH_PARQUET=1
     $PYARROW_WITH_DATASET=1
     $PYARROW_PARALLEL=25
@@ -330,7 +330,7 @@ def build_pyarrow(**kwargs):
 
 def build_yarl(name, **kwargs):
     auto_main(**kwargs)
-    git clean -xfd
+    git clean -xfd  -e subprojects -e .pixi
     cleanup_cython()
     return !(pip install --no-build-isolation     .)
 
@@ -338,7 +338,7 @@ def build_aiohttp(**kwargs):
     # aiohttp has a makefile, but it pins to specific versions of cython which
     # defeats the point here!
     auto_main(**kwargs)
-    git clean -xfd
+    git clean -xfd  -e subprojects -e .pixi
     cleanup_cython()
     pushd vendor/llhttp/
     npm install
@@ -357,7 +357,7 @@ def imagecodecs_build(upstream_branch, **kwargs):
     # nuke the c files to force cython to run
     git remote update
     auto_main(**kwargs)
-    git clean -xfd
+    git clean -xfd  -e subprojects -e .pixi
     cleanup_cython()
     # rm imagecodecs/_*.c || true
     helper = """
@@ -409,7 +409,7 @@ def build_cffi():
 
 def build_scipp(**kwargs):
     auto_main(**kwargs)
-    git clean -xfd
+    git clean -xfd  -e subprojects -e .pixi
     install_dir = $(python -c 'import site; print(site.getsitepackages()[0].strip(), end="")')
     py_ex = $(which python)
     cmake   -GNinja   -DCMAKE_BUILD_TYPE=Debug   -DPYTHON_EXECUTABLE=@(py_ex) -DCMAKE_INSTALL_PREFIX=@(install_dir)   -DCMAKE_INTERPROCEDURAL_OPTIMIZATION=OFF   -DDYNAMIC_LIB=ON  ..
