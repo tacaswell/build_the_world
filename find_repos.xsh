@@ -4,12 +4,12 @@ from collections import defaultdict
 from pathlib import Path
 import sys
 from dataclasses import dataclass, asdict
+import os
+import subprocess
 import tqdm
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 import yaml
-
-from xonsh.dirstack import with_pushd
-from xonsh.tools import XonshCalledProcessError
 
 parser = argparse.ArgumentParser(description='Find source repos.')
 parser.add_argument("path", help='Top path to start searching for repos in.', type=Path)
@@ -34,55 +34,79 @@ def find_hg_repos(path):
         candidate = candidate.strip()
         yield Path(candidate).resolve().parent
 
+def _git(repo, *args):
+    """Run a git command in a repo using stdlib subprocess (thread-safe)."""
+    return subprocess.run(
+        ["git", "-C", str(repo), *args],
+        capture_output=True, text=True, check=True,
+    ).stdout
+
+
 def fix_git_protcol_to_https(repo):
-    with with_pushd(repo):
-        for ln in !(git remote -v).itercheck():
-            if not ln.strip():
-                continue
+    for ln in _git(repo, "remote", "-v").splitlines():
+        if not ln.strip():
+            continue
+        try:
             name, url, _ = ln.split()
-            if url.startswith('git://') and 'github.com' in url:
-                print(url, '->', url.replace('git://', 'https://'))
-                git remote set-url @(name) @(url.replace('git://', 'https://'))
+        except Exception:
+            print(repo, ln)
+            continue
+        if url.startswith('git://') and 'github.com' in url:
+            new_url = url.replace('git://', 'https://')
+            print(url, '->', new_url)
+            subprocess.run(
+                ["git", "-C", str(repo), "remote", "set-url", name, new_url],
+                check=True,
+            )
+
 
 def get_git_remotes(repo):
-    """Given a path to a repository,
-    """
+    """Given a path to a repository, return its remotes."""
     remotes = defaultdict(dict)
 
-    with with_pushd(repo):
-        for remote in !(git remote -v).itercheck():
-            name, _, rest = remote.strip().partition('\t')
-            url, _, direction = rest.partition(' (')
-            direction = direction[:-1]
-            remotes[name][direction] = url
+    for remote in _git(repo, "remote", "-v").splitlines():
+        if not remote.strip():
+            continue
+        name, _, rest = remote.strip().partition('\t')
+        url, _, direction = rest.partition(' (')
+        direction = direction[:-1]
+        remotes[name][direction] = url
 
     return dict(remotes)
 
-def get_work_trees(repo):
-    a = $(git -C @(repo) worktree list  --porcelain)
 
-    primary, *rest =[
-    {
-        k: v
-        for k, v in [
-            ___.split(" ") if " " in ___ else ("branch", None) for ___ in __
-        ]
-    }
-    for __ in [_.split("\n") for _ in a.split("\n\n") if len(_)]
+def get_work_trees(repo):
+    a = _git(repo, "worktree", "list", "--porcelain")
+
+    primary, *rest = [
+        {
+            k: v
+            for k, v in [
+                ___.split(" ") if " " in ___ else ("branch", None) for ___ in __
+            ]
+        }
+        for __ in [_.split("\n") for _ in a.split("\n\n") if len(_)]
     ]
 
     return primary, rest
 
 
 def get_hg_remotes(repo):
-    """Given a path to a repository,
-    """
+    """Given a path to a repository, return its remotes."""
     remotes = {}
 
-    with with_pushd(repo):
-        for remote in !(hg paths).itercheck():
-            name, _, url = [_.strip() for _ in remote.strip().partition('=')]
-            remotes[name] = url
+    ret = subprocess.run(
+        ["hg", "-R", str(repo), "paths"],
+        capture_output=True, text=True,
+    )
+    if ret.returncode not in (0, 1):
+        print(f"warning: hg paths in {repo} exited {ret.returncode}: {ret.stderr.strip()}")
+    out = ret.stdout
+    for remote in out.splitlines():
+        if not remote.strip():
+            continue
+        name, _, url = [_.strip() for _ in remote.strip().partition('=')]
+        remotes[name] = url
 
     return dict(remotes)
 
@@ -269,14 +293,11 @@ def parse_hg_name(hg_url):
         )
 
 
-print(sys.version_info)
-
-projects = []
-
-for repo_path in tqdm.tqdm(find_git_repos(path)):
+def process_git_repo(repo_path):
+    """Process a single git repo; returns a Project or None. Safe to call from threads."""
     base, worktrees = get_work_trees(repo_path)
     if str(repo_path) != base['worktree']:
-        continue
+        return None
     remotes = {}
     fix_git_protcol_to_https(repo_path)
     for k, v in get_git_remotes(repo_path).items():
@@ -284,7 +305,7 @@ for repo_path in tqdm.tqdm(find_git_repos(path)):
         assert len(parsed) == 2
         remotes[k] = parsed["fetch"]
     if not len(remotes):
-        continue
+        return None
     for k in ["upstream", "origin"]:
         if k in remotes:
             primary_remote = remotes[k]
@@ -292,24 +313,22 @@ for repo_path in tqdm.tqdm(find_git_repos(path)):
     else:
         primary_remote = next(iter(remotes.values()))
     if primary_remote is None:
-        continue
-
-    projects.append(
-        Project(
-            name=primary_remote.repo_name,
-            primary_remote=primary_remote,
-            remotes=remotes,
-            local_checkout=str(repo_path),
-        )
+        return None
+    return Project(
+        name=primary_remote.repo_name,
+        primary_remote=primary_remote,
+        remotes=remotes,
+        local_checkout=str(repo_path),
     )
 
 
-for repo_path in find_hg_repos(path):
+def process_hg_repo(repo_path):
+    """Process a single hg repo; returns a Project or None. Safe to call from threads."""
     remotes = {}
     for k, url in get_hg_remotes(repo_path).items():
         remotes[k] = parse_hg_name(url)
     if not len(remotes):
-        continue
+        return None
     for k in ["origin", "default"]:
         if k in remotes:
             primary_remote = remotes[k]
@@ -317,15 +336,39 @@ for repo_path in find_hg_repos(path):
     else:
         primary_remote = next(iter(remotes.values()))
     if primary_remote is None:
-        continue
-    projects.append(
-        Project(
-            name=primary_remote.repo_name,
-            primary_remote=primary_remote,
-            remotes=remotes,
-            local_checkout=str(repo_path),
-        )
+        return None
+    return Project(
+        name=primary_remote.repo_name,
+        primary_remote=primary_remote,
+        remotes=remotes,
+        local_checkout=str(repo_path),
     )
+
+
+print(sys.version_info)
+
+# Use 2x CPU count workers: git subprocess calls are I/O-bound so threads
+# can overlap while waiting on disk/network.
+_workers = (os.cpu_count() or 1) * 2
+
+projects = []
+
+git_repos = list(find_git_repos(path))
+with ThreadPoolExecutor(max_workers=_workers) as executor:
+    futures = {executor.submit(process_git_repo, repo_path): repo_path for repo_path in git_repos}
+    for future in tqdm.tqdm(as_completed(futures), total=len(git_repos), desc="git repos"):
+        result = future.result()
+        if result is not None:
+            projects.append(result)
+
+
+hg_repos = list(find_hg_repos(path))
+with ThreadPoolExecutor(max_workers=_workers) as executor:
+    futures = {executor.submit(process_hg_repo, repo_path): repo_path for repo_path in hg_repos}
+    for future in tqdm.tqdm(as_completed(futures), total=len(hg_repos), desc="hg repos"):
+        result = future.result()
+        if result is not None:
+            projects.append(result)
 
 
 with open("all_repos.yaml", "w") as fout:
