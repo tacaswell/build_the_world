@@ -24,6 +24,8 @@ def find_git_repos(path):
         candidate = candidate.strip()
         if '.tox' in str(candidate):
             continue
+        if 'crabby-rathbun' in str(candidate):
+            continue
         yield Path(candidate).resolve().parent
 
 
