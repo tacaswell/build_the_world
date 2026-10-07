@@ -221,6 +221,18 @@ name: pygments
 proj_name: pygments
 ...
 ---
+flags: --no-build-isolation --pre --upgrade
+kind: pip
+packages: pdm-backend
+...
+---
+default_branch: main
+function: main_build
+kind: source_install
+name: pelican
+proj_name: pelican
+...
+---
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: asttokens decorator executing matplotlib-inline prompt-toolkit pure-eval  stack-data
@@ -531,7 +543,7 @@ kind: pip
 packages: argon2-cffi arrow async-lru fqdn isoduration json5 jsonpointer jupyter-events jupyter-lsp jupyter-server jupyter-server-terminals jupyterlab-server lark notebook-shim overrides prometheus-client python-json-logger rfc3339-validator rfc3986-validator rfc3987-syntax send2trash terminado truststore types-python-dateutil uri-template webcolors websocket-client
 ...
 ---
-default_branch: main
+default_branch: master
 function: main_build
 kind: source_install
 name: cloudpickle
@@ -1200,13 +1212,6 @@ proj_name: watchfiles
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: blinker feedgenerator markdown ordered-set pymdown-extensions unidecode
-...
----
-default_branch: main
-function: watchfiles_build
-kind: source_install
-name: pelican
-proj_name: pelican
 ...
 ---
 flags: --no-build-isolation --pre --upgrade
