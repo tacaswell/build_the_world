@@ -221,18 +221,6 @@ name: pygments
 proj_name: pygments
 ...
 ---
-flags: --no-build-isolation --pre --upgrade
-kind: pip
-packages: pdm-backend
-...
----
-default_branch: main
-function: main_build
-kind: source_install
-name: pelican
-proj_name: pelican
-...
----
 flags: --pre --upgrade --no-build-isolation
 kind: pip
 packages: asttokens decorator executing matplotlib-inline prompt-toolkit pure-eval  stack-data
@@ -1207,6 +1195,18 @@ function: watchfiles_build
 kind: source_install
 name: watchfiles
 proj_name: watchfiles
+...
+---
+flags: --no-build-isolation --pre --upgrade
+kind: pip
+packages: pdm-backend
+...
+---
+default_branch: main
+function: main_build
+kind: source_install
+name: pelican
+proj_name: pelican
 ...
 ---
 flags: --pre --upgrade --no-build-isolation
